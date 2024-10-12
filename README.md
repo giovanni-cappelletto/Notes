@@ -7,6 +7,7 @@ Questa è la repository in cui carico il codice $\LaTeX$ dei miei appunti. Se do
 - [Perché Github](#why-github)
 - [Visualizzare il pdf](#viewing-pdf)
 - [Aggiornare il pdf](#updating-pdf)
+- [Flashcards](#flashcards)
 
 <a id="why-github"></a>
 
@@ -97,4 +98,14 @@ Se hai già seguito la procedura qui sopra e vuoi semplicemente aggiornare il fi
   MacOS: Cmd+V
 ```
 
-5. Controlla che non siano state inserite nuove immagini sulla cartella `images` di Github. In caso, segui la procedura dal punto 6. al punto 8. di _Visualizzare il pdf_.
+5. Controlla che non siano state inserite nuove immagini sulla cartella `images` di Github. In caso, segui la procedura dal punto 6. al punto 8. di [Visualizzare il pdf](#viewing-pdf).
+
+<a id="flashcards"></a>
+
+## Flashcards
+
+All'interno di questa repository trovi anche un altro file chiamato `Flashcards.md`, in cui scrivo delle domande ipotetiche da esame (ovviamente non so se sono da esame, perché non ho mai fatto un esame universitario in vita mia, ma perlomeno sono domande di teoria che cercano di trattare tutti gli argomenti affrontati 😅).
+
+Per renderizzare il file markdown aprilo su Github oppure utilizza un qualcosa del tipo [Markdown Live Preview](https://markdownlivepreview.com/).
+
+Come per il codice e le immagini, cercherò di aggiornare progressivamente anche questo file.
