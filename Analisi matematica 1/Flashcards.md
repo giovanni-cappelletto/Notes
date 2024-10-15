@@ -24,6 +24,11 @@
 20. Dimostra l'esistenza di una corrispondenza biunivoca tra l'insieme dei numeri pari e quello dei numeri naturali
 21. Cos'è il grafico di un'applicazione?
 22. Come funzionano gli effetti di traslazione/ribaltamento/deformazione?
+23. Cos'è un intorno.
+24. Cosa sono i punti di accumulazione e i punti isolati?
+25. Se un insieme è superiormente o inferiormente limitato, $+ \infty$ o $- \infty$ possono essere dei punti di accumulazione per tale insieme?
+26. Enuncia la definizione di limite.
+27. Perché è fondamentale che il punto $x_0$ a cui tende un limite, sia un punto di accumulaczione?
 
 ## Dimostrazioni
 

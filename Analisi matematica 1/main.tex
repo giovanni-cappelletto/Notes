@@ -1155,20 +1155,128 @@ Si può anche osservare quanto spiegato qui sopra dalla prima immagine della pro
 \end{cases}
 \end{equation*}
 
-\noindent Dato che per la definizione di punto di accumulazione, dall'intersezione $D(x_0,\delta) \cap A$ è necessario togliere $x_0$, togliendo $x = 1$ da $J$, notiamo che esso non cambia e rimane non vuoto. Possiamo quindi concludere che $1$ è punto di accumulazione per l'insieme $A$.\\
+\noindent Dato che per la definizione di punto di accumulazione, dall'intersezione $D(x_0,\delta) \cap A$ è necessario togliere $x_0$, togliendo $x = 1$ da $J$, notiamo che esso rimane non vuoto. Possiamo quindi concludere che $1$ è punto di accumulazione per l'insieme $A$.\\
 
-% \noindent Allo stesso modo, è possibile verificare che $x = 2$ è punto di accumulazione per $A$ DA FARE ES 1, 2, 4 + ES QUI SOTTO \\
+\noindent Allo stesso modo, è possibile verificare che $x = 2$ è punto di accumulazione per $A$:
 
-\noindent Di seguito, sono presenti alcuni esercizi da risolvere da soli: \textit{verificare che $3$ è un punto di accumulazione; verificare che ogni punto $x_0 \in (1,2)$ è di accumulazione per $A$; verificare che se $x > 2 \wedge x \neq 3$, allora non è punto di accumulazione per $A$}.\\
+\begin{equation*}
+    J = \begin{cases}
+        A \quad se \ 2 - \delta < 1 \implies \delta > 1 \\
+        (2-\delta, 2) \quad se \ 2 - \delta > 1 \implies \delta < 1 \\
+        A \quad se \ \delta = 1
+    \end{cases}
+\end{equation*}
+
+\noindent In generale, togliendo $x = 2$ da $J$ notiamo che esso rimane non vuoto. Possiamo quindi concludere che $2$ è punto di accumulazione per l'insieme $A$. Di seguito, è possibile verificare graficamente perché abbiamo ottenuto questi risultati. 
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=7cm]{./images/AccPoints6.pdf}\hfill
+    \includegraphics[width=7cm]{./images/AccPoints7.pdf}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{./images/AccPoints8.pdf}
+\end{figure}
+
+\noindent Verifichiamo ora che qualsiasi $x_0 \in (1, 2)$ è punto di accumulazione per $A$. Semplicemente, essendo $x_0 \in (1, 2)$, ciò significa che $1 < x_0 < 2$. A livello visivo:
+
+\begin{figure}[!h]
+    \centering
+    $\vcenter{\hbox{\includegraphics[width=5cm]{./images/AccPoints9.pdf}}}$\hfill
+    $\vcenter{\hbox{\includegraphics[width=5cm]{./images/AccPoints10.pdf}}}$\hfill
+    $\vcenter{\hbox{\includegraphics[width=5cm]{./images/AccPoints11.pdf}}}$
+\end{figure}
+
+Quindi:
+
+\begin{itemize}
+    \item se $x_0 + \delta < 2$, allora $J = (x_0 - \delta, x_0 + \delta)$;
+    \item se $2 < x_0 + \delta < 3$, allora:
+    \begin{itemize}
+        \item se $x_0 - \delta > 1$, allora $J = (x_0 - \delta, 2)$;
+        \item se $x_0 - \delta < 1$, allora $J = (1, 2)$
+    \end{itemize}
+    \item se $x_0 + \delta > 3$, allora $J = A$;
+    \item se $x_0 + \delta = 2$, allora:
+    \begin{itemize}
+        \item se $x_0 - \delta \leq 1$, allora $J = (1, 2)$;
+        \item se $x_0 - \delta > 1$, allora $J = (x_0 - \delta, 2)$.
+    \end{itemize}
+\end{itemize}
+
+\noindent Togliendo ora $x_0$ da $J$, quest'ultimo rimane non vuoto. Per cui possiamo concludere che qualsiasi $x_0 \in (1, 2)$ è un punto di accumulazione. \\
+
+\noindent Verifichiamo ora che per qualsiasi $x > 2 \wedge x \neq 3$, $x$ non è punto di accumulazione per $A$. Per farlo basta trovare un unico caso per cui vale che $J = ((x_0 - \delta, x_0 + \delta) \cap A) - \{x_0\} = \varnothing$. Prendendo quindi $x_0 + \delta < 3$ oppure prendendo un numero $x > 3$ e un $\delta < \Delta = x - 3$ (dove $\Delta$ è la distanza tra $x$ e $3$), si ha che non vi è nessuna intersezione con l'insieme A e quindi $J = \varnothing$. Per cui possiamo concludere che $3$ non è un punto di accumulazione per $A$. Graficamente:
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{./images/AccPoints12.pdf}
+\end{figure}
 
 \noindent Dimostriamo ora che $x_0 = 3$ non è punto di accumulazione per $A$. Ciò significa che $\exists \Bar{\delta} > 0 \ | \ ((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. \\
 Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{\delta} < 1$ avremo che $((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. Si verifica infatti con, ad esempio, $\Bar{\delta} = \dfrac{1}{2}$. Per questo motivo, possiamo concludere che $3$ non è un punto di accumulazione per $A$.\\
 
-\noindent Altri esercizi da risolvere: \\
-
 \noindent\textbf{ES.} Sia $B = [1, 2] \cup \{3\}$, provare che i punti di accumulazione di $B$ sono tutti e soli quelli dell'insieme $[1,2]$. \\
 
+\noindent Procediamo per casi: 
+
+\begin{itemize}
+    \item Se $x < 1$, allora, come per il primo esempio su questa tipologia di esercizi, $x$ non è punto di accumulazione perché preso un $\delta < \Delta = 1 - x$ (dove $\Delta$ rappresenta la distanza tra $1$ e $x$), l'intersezione $J = \varnothing$;
+    \item se $x = 1$, allora:
+    \begin{itemize}
+        \item se $1 < 1 + \delta < 2 \implies 0 < \delta < 1$, avremo che $J = [1, x_0 + \delta)$;
+        \item se $1 + \delta > 2 \implies \delta > 1$, avremo che $J = [1, 2]$;
+        \item se $1 + \delta = 2 \implies \delta = 1$, avremo che $J = [1, 2)$;
+    \end{itemize}
+    \item se $1 < x < 2$, allora:
+    \begin{itemize}
+        \item se $1 + \delta < 2 \implies \delta < 1$, allora $J = (1 - \delta, 1 + \delta)$;
+        \item se $1 + \delta = 2 \implies \delta = 1$, allora $J = (1 - \delta, 2)$;
+        \item se $1 + \delta > 2 \implies \delta > 1$, allora:
+        \begin{itemize}
+            \item $x_0 - \delta > \Delta = x - 1$, allora $J = (x_0 - \delta, 2]$;
+            \item se $x_0 - \delta < \Delta = x - 1$, allora $J = [1, 2]$;
+            \item se $x_0 - \delta < \Delta = x - 1$, allora $J = (1, 2]$
+        \end{itemize}
+    \end{itemize}
+    \item se $x = 2$, allora: 
+    \begin{itemize}
+        \item se $x_0 - \delta > 1$, allora $J = (x_0 - \delta, 2]$;
+        \item se $x_0 - \delta < 1$, allora $J = A$;
+        \item se $x_0 - \delta = 1$, allora $J = (1, 2]$;
+    \end{itemize}
+    \item se $x > 2$, allora, come per $x < 1$, preso $\delta > \Delta = x - 2$, allora $J = \varnothing$.
+\end{itemize}
+
+\noindent Notiamo come in tutti per qualsiasi $x$ tale che $x < 1$ o $x > 2$, essa non è punto di accumulazione di $a$, mentre $x \in [1, 2]$ è un punto di accumulazione, come volevasi dimostrare.\\
+
 \noindent\textbf{ES.} Sia $I = (a, b)$, $J = [a, b)$, $K = (a, b]$ e $L = [a, b]$. Provare che i punti di accumulazione di $I, J, K, L$ sono tutti e soli i punti $[a, b]$.\\
+
+\noindent Ancora una volta procediamo per casi:
+
+\begin{itemize}
+    \item se $x < a$ e $\delta < \Delta = 1 - x$, allora qualsiasi sia l'insieme che stiamo valutando, esso sarà vuoto;
+    \item se $x = a$, allora l'insieme derivante dall'intersezione sarà pari a $[a, x_0 + \delta)$ (oppure a $[a, b]$, se $x_0 + \delta > b$);
+    \item se $a < x < b$, allora:
+    \begin{itemize}
+        \item se $x_0 + \delta < b$, allora:
+        \begin{itemize}
+            \item se $x_0 - \delta < a$, allora l'insieme derivante dall'intersezione sarà pari a $[a, x_0 + \delta)$;
+            \item se $x_0 - \delta > a$, allora l'insieme derivante dall'intersezione sarà apri a $(x_0 - \delta, x_0 + \delta)$;
+        \end{itemize}
+        \item se $x_0 + \delta > b$, allora:
+        \begin{itemize}
+            \item se $x_0 - \delta < a$, allora l'insieme derivante dall'intersezione sarà pari a $[a, b]$;
+            \item se $x_0 - \delta > a$, allora l'insieme derivante dall'intersezione sarà pari a $(x_0 - \delta, b]$;
+        \end{itemize}
+    \end{itemize}
+    \item se $x = b$, allora l'insieme derivante dall'intersezione sarà pari a $(x_0 + \delta, b]$ (oppure a $[a, b]$, se $x_0 - \delta < a$);
+    \item se $x > b$, allora basterà prendere un $\delta > \Delta = x - b$ per far in modo che qualsiasi sia l'insieme considerato, l'intersezione prodotta sia un insieme vuoto.
+\end{itemize}
+
+\noindent Notiamo quindi che tutti i valori di $x < a \vee x > b$ non sono punti di accumulazione perché l'intersezione prodotta è pari ad un insieme vuoto; mentre i punti $a \leq x \leq b$ sono tutti punti di accumulazione per qualsiasi dei quattro insiemi considerati (a seconda dell'insieme considerato, le parentesi quadre della lista qui sopra potrebbero essere delle parentesi tonde).\\
 
 \noindent\textbf{Def:} Chiamiamo \textbf{punti isolati} i punti $x_0 \in \mathbb{R}$ dell'insieme $A \subset \mathbb{R}$ con $A \neq \varnothing$ se e solo se $x_0$ \textbf{non} è un punto di accumulazione. Un punto, quindi, può appartenere ad un insieme, ma allo stesso tempo essere isolato. \\
 
@@ -1226,9 +1334,8 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 \end{equation*}
 
 \noindent Innanzitutto, notiamo che il dominio della funzione risulta essere $x \neq -2 \implies A = \mathbb{R} - \{-2\} = (-\infty, -2) \cup (-2, + \infty) \neq \varnothing$.\\
-Successivamente, ci chiediamo se $2$ è un punto di accumulazione. \\
-
-% Mostrare che per ogni delta > 0, si ha che 2-delta, 2+delta cap A - {2} \neq 0; mostrare che i punti di accumulazione di A sono dati da R tilde
+Successivamente, ci chiediamo se $2$ è un punto di accumulazione. Guardando il dominio, capiamo subito che qualsiasi sia il $\delta > 0$ preso, l'intersezione tra campo di esistenza e intorno considerato produrrà sempre un insieme non vuoto. Infatti, se $2 - \delta > -2$, allora l'intorno $I = (2 - \delta, 2 + \delta)$; mentre se $2 - \delta < -2$, allora $I = (-2, 2 + \delta$). \\
+È possibile anche mostrare che i punti di accumulazione di $A$ sono dati da $\widetilde{\mathbb{R}}$. Infatti, $A$ non essendo limitato possiede come punti di accumulazione anche $+ \infty$ e $- \infty$, che appartengono proprio a $\widetilde{\mathbb{R}}$. Non ci resta che verificare che tutti i punti appartenenti ad $\mathbb{R}$ sono punti di accumulazione di $A$. Non è complicato notare però che sia che $x < -2$ o che $x > - 2$, qualsiasi sia $\delta > 0$, il nostro intorno $I$ starà sempre intersecando $A$ e quindi l'intersezione sarà un insieme non vuoto. Per cui possiamo concludere che i punti di accumulazione di $A$ sono dati da $\widetilde{\mathbb{R}}$.\\
 
 \noindent Per verificare la definizione di limite:
 
