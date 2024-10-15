@@ -885,7 +885,7 @@ $\forall n \in \mathbb{N}, n \geq 1$ e $a, b \in \mathbb{R}$ si ha che:
 \noindent La tesi è stata verificata, quindi possiamo concludere che il binomio di Newton è effettivamente vero $\forall n \in \mathbb{N}, n \geq 1$.
 \newpage
 
-\part{Applicazioni e funzioni elementari}
+\part{Applicazioni e limiti}
 \section{Applicazione}
 \begin{equation*}
     A \times B = \{ (a, b) \ | \ a \in A, b \in B \}
@@ -944,15 +944,20 @@ $\forall n \in \mathbb{N}, n \geq 1$ e $a, b \in \mathbb{R}$ si ha che:
 
 \noindent\textbf{Def:} Sia $\varphi: A \xrightarrow{} B$. Diremo che $\varphi$ è \textbf{iniettiva} se e solo se:
 
-\begin{equation*}
+\begin{equation}
     \forall a_1, a_2 \in A \ con \ a_1 \neq a_2, \ si \ ha \ che \ \varphi(a_1) \neq \varphi(a_2)
-\end{equation*}
+    \label{eq:7}
+\end{equation}
 
 \noindent Equivalentemente, si può scrivere che: 
 
-\begin{equation*}
+\begin{equation}
     \forall a_1, a_2 \in A \ | \ \varphi(a_1) = \varphi(a_2) \ si \ ha \ che \ a_1 = a_2
-\end{equation*}
+    \label{eq:8}
+\end{equation}
+
+\noindent Non è complicato dimostrare l'equivalenza di queste due definizioni. Basterà infatti procedere con una dimostrazione per contraddizione, che separi implicazione da controimplicazione. Partiamo quindi dall'implicazione ($\Rightarrow$), ovvero dalla definizione (\ref{eq:7}). Come ipotesi abbiamo che $a_1 \neq a_2$, mentre la tesi è che $\varphi(a_1) \neq \varphi(a_2)$. Negando quest'ultima (ovvero $\varphi(a_1) = \varphi(a_2)$), per la definizione di applicazione iniettiva, si ha che $a_1 = a_2$, che va però contro l'ipotesi iniziale. Arriviamo quindi ad una contraddizione. Ciò significa che se $a_1 \neq a_2$, allora per forza si ha che $\varphi(a_1) \neq \varphi(a_2)$. \\
+Procediamo ora a verificare la controimplicazione ($\Leftarrow$; (\ref{eq:8})). L'ipotesi e la tesi sono rispettivamente $\varphi(a_1) = \varphi(a_2)$ e $a_1 = a_2$. Negando la tesi ($a_1 \neq a_2$), per definizione, abbiamo che $\varphi(a_1) \neq \varphi(a_2)$, il che va contro l'ipotesi iniziale. Per cui se $\varphi(a_1) = \varphi(a_2)$, allora per forza si ha che $a_1 = a_2$. \\
 
 \noindent\textbf{Osservazione:} Sia $\varphi: A \xrightarrow{} B$:
 
@@ -1087,5 +1092,154 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
     \{x\in\mathbb{R} \ | \ x > a\}
 \end{equation*}
 
-\noindent ovvero tutti gli intervalli non superiormente limitati.
+\noindent ovvero tutti gli intervalli non superiormente limitati.\\
+
+\noindent\textbf{Intorno di $-\infty$ - Def:}  Ogni intervallo del tipo $(- \infty, a)$ per $a \in \mathbb{R}$:
+
+\begin{equation*}
+    \{x\in\mathbb{R} \ | \ x < a\}
+\end{equation*}
+
+\noindent È facile capire quindi che in questi insiemi si ha:
+
+\begin{gather*}
+    sup((a, +\infty)) = +\infty \qquad inf((a, +\infty)) = a \\
+    sup((-\infty, a)) = a \qquad inf((-\infty, a)) = - \infty
+\end{gather*}
+
+\noindent Prima di continuare con la spiegazione, definiamo l'insieme $\widetilde{\mathbb{R}} = \mathbb{R} \cup \{-\infty, +\infty\}$, dove $\widetilde{\mathbb{R}}$ si legge \textbf{$\mathbb{R}$ esteso}. In altre parole, se $x_0 \in \widetilde{\mathbb{R}}$, allora o $x_0 \in \mathbb{R}$ o $x_0 = +\infty$ oppure $x_0 = - \infty$.\\
+
+\noindent \textbf{Def:} Sia $A \subset \mathbb{R}$ con $A \neq \varnothing$. Sia ora $x_0 \in \mathbb{R}$. Diremo che $x_0$ è \textbf{punto di accumulazione} per $A$ se e solo se:
+
+\begin{equation*}
+    \forall \delta > 0 \ si \ ha \ che \ (D(x_0, \delta) \cap A) - \{x_0\} \neq \varnothing
+\end{equation*}
+
+\noindent In altre parole, significa che esistono punti di $A$, diversi da $x_0$, arbitrariamente vicini a $x_0$. \\
+
+\noindent\textbf{NB!} $D(x_0, \delta)$ è un intorno circolare di $x_0$.\\
+
+\noindent\textbf{NB!} $x_0 \in \mathbb{R}$, ma non deve per forza appartenere ad $A$ per essere un suo punto di accumulazione.\\
+
+\noindent\textbf{ES.} Sia $A = (1, 2) \cup \{3\}$. Quali sono i punti di accumulazione reali di $A$?\\
+\noindent Ipotizziamo che $x < 1$. Prendendo quindi un $\delta > 0$, otteniamo un intorno $I = (x - \delta, x + \delta) \cap A$. In particolare, questo intorno $I$ sarà composto da tutti i numeri compresi tra $1$ e $x + \delta$. Questo però non vale per ogni $\delta > 0$. Infatti, se prendiamo $\delta < \Delta = 1 - x$ (dove $\Delta$ rappresenta la distanza tra $1$ e $x$), si ha che $I = \varnothing$. Ciò significa che se $x < 1$, allora $x$ non è un punto di accumulazione. 
+Si può anche osservare quanto spiegato qui sopra dalla prima immagine della prossima pagina.
+
+\noindent Sia ora $x = 1$ (come detto precedentemente, anche se $1 \notin A$, non significa che esso non possa essere punto di accumulazione per $A$). Allora possiamo prendere un $\delta > 0$, tale che $J = (1 - \delta, 1 + \delta) \cap A \neq \varnothing$. Dato che quest'ultima relazione deve essere verificata per ogni $\delta > 0$, dobbiamo procedere con tutti i casi. Di seguito, troviamo le immagini raffiguranti cosa succede in ogni caso e un sistema finale che riassume tutti i conti.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{./images/AccPoints1.pdf}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=7cm]{./images/AccPoints2.pdf}\hfill
+    \includegraphics[width=7cm]{./images/AccPoints3.pdf}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=7cm]{./images/AccPoints4.pdf}\hfill
+    \includegraphics[width=7cm]{./images/AccPoints5.pdf}
+\end{figure}
+
+\begin{equation*}
+    J =
+    \begin{cases}
+    (1, 1 + \delta) \quad se \ \delta < 1 \\
+    (1, 2) \quad se \ \delta = 1 \\
+    (1, 2) \quad se \ 1 < \delta < 2 \\
+    (1, 2) \quad se \ \delta = 2 \\
+    A \quad se \ \delta > 2
+\end{cases}
+\end{equation*}
+
+\noindent Dato che per la definizione di punto di accumulazione, dall'intersezione $D(x_0,\delta) \cap A$ è necessario togliere $x_0$, togliendo $x = 1$ da $J$, notiamo che esso non cambia e rimane non vuoto. Possiamo quindi concludere che $1$ è punto di accumulazione per l'insieme $A$.\\
+
+% \noindent Allo stesso modo, è possibile verificare che $x = 2$ è punto di accumulazione per $A$ DA FARE ES 1, 2, 4 + ES QUI SOTTO \\
+
+\noindent Di seguito, sono presenti alcuni esercizi da risolvere da soli: \textit{verificare che $3$ è un punto di accumulazione; verificare che ogni punto $x_0 \in (1,2)$ è di accumulazione per $A$; verificare che se $x > 2 \wedge x \neq 3$, allora non è punto di accumulazione per $A$}.\\
+
+\noindent Dimostriamo ora che $x_0 = 3$ non è punto di accumulazione per $A$. Ciò significa che $\exists \Bar{\delta} > 0 \ | \ ((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. \\
+Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{\delta} < 1$ avremo che $((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. Si verifica infatti con, ad esempio, $\Bar{\delta} = \dfrac{1}{2}$. Per questo motivo, possiamo concludere che $3$ non è un punto di accumulazione per $A$.\\
+
+\noindent Altri esercizi da risolvere: \\
+
+\noindent\textbf{ES.} Sia $B = [1, 2] \cup \{3\}$, provare che i punti di accumulazione di $B$ sono tutti e soli quelli dell'insieme $[1,2]$. \\
+
+\noindent\textbf{ES.} Sia $I = (a, b)$, $J = [a, b)$, $K = (a, b]$ e $L = [a, b]$. Provare che i punti di accumulazione di $I, J, K, L$ sono tutti e soli i punti $[a, b]$.\\
+
+\noindent\textbf{Def:} Chiamiamo \textbf{punti isolati} i punti $x_0 \in \mathbb{R}$ dell'insieme $A \subset \mathbb{R}$ con $A \neq \varnothing$ se e solo se $x_0$ \textbf{non} è un punto di accumulazione. Un punto, quindi, può appartenere ad un insieme, ma allo stesso tempo essere isolato. \\
+
+\noindent\textbf{Def:} $+ \infty$ è un punto di accumulazione per $A \subset \mathbb{R}$ con $A \neq \varnothing$ se e solo se ogni intorno di $+ \infty$ contiene punti di $A$. Scritto in simboli:
+
+\begin{equation*}
+    \forall b \in \mathbb{R} \ si \ ha \ che \ A \cap (b, + \infty) \neq \varnothing)
+\end{equation*}
+
+\noindent\textbf{NB!} Nel caso del $+\infty$ o del $-\infty$ non va tolto il numero stesso (infatti nella formula non è presente il $- \{x_0\}$).\\
+
+\noindent\textbf{NB!} Ciò significa che nell'insieme $A$ ci sono numeri arbitrariamente grandi.\\
+
+\noindent\textbf{Def:} $- \infty$ è un punto di accumulazione per $A \subset \mathbb{R}$ con $A \neq \varnothing$ se e solo se:
+
+\begin{equation*}
+    \forall b \in \mathbb{R} \ si \ ha \ che \ A \cap (- \infty, b) \neq \varnothing)
+\end{equation*}
+
+\noindent\textbf{Osservazione:} Se $A$ è superiormente limitato (inferiormente limitato) è possibile che $+ \infty$ ($- \infty$) sia punto di accumulazione per $A$? No, perché se $A$ è superiormente limitato (inferiormente limitato), allora $A$ ammette maggioranti (minoranti). Sia $\Lambda$ maggiorante (minorante) di $A$, cioè $\Lambda \in \mathbb{R}, a \leq \Lambda \quad \forall a \in A$ ($\Lambda \in \mathbb{R}, \Lambda \leq a \quad \forall a \in A$). Allora $A \subset (- \infty, \Lambda)$ ($A \subset (\Lambda, + \infty)$) e se $b = \Lambda + 1$ ($b = \Lambda - 1$), allora $A \cap (\Lambda + 1, +\infty) = \varnothing$ ($A \cap (-\infty, \Lambda - 1) = \varnothing$).\\
+
+\noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A \neq \varnothing$. Sia $x_0 \in \widetilde{\mathbb{R}}$ un punto di accumulazione per $A$. Diremo che $f$ ammette limite $l \in \widetilde{\mathbb{R}}$ per $x$ che tende a $x_0$ e scriveremo  $$\lim_{x \to x_0} f(x) = l$$ se e solo se per ogni intorno $V_l$ di $l$, esiste un intorno $U_{x_0}$ (intorno di $x_0$) tale che $$f(x) \in V_l \quad \forall x \in (U_{x_0} \cap A) - \{x_0\}$$
+
+\noindent\textbf{NB!} È bene specificare che $x_0$ è un punto di accumulazione, altrimenti l'insieme qui sopra potrebbe essere un insieme vuoto $\varnothing$. Proprio per questo motivo, prima di risolvere un limite è bene sempre verificare che $x_0$, ovvero il punto a cui si sta tendendo, sia sempre un punto di accumulazione, altrimenti il limite non esiste.\\
+
+\noindent\textbf{NB!} $U_{x_0}$ dipende da $l$. Più nello specifico, esso dipende da $V_l$, l'intorno di $l$. Quindi se cambio $V_l$, allora cambio anche $U_{x_0}$. \\
+
+\noindent\textbf{NB!} Se $x_0 \in \{-\infty, + \infty\}$, l'ultima intersezione è da leggere come $U_{x_0} \cap A$ (ovvero senza togliere $\{x_0\}$).\\
+
+\noindent\textbf{ES.} Se $l \in \mathbb{R}$ e $x_0 \in \mathbb{R}$, allora $V_l = (l - \varepsilon, l + \varepsilon) \quad \forall \varepsilon > 0$ e $U_{x_0} = (x_0 - \delta_\varepsilon, x_0 + \delta_\varepsilon)$.
+
+\begin{equation*}
+    \implies \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 \ : \ | f(x) - l | < \varepsilon \qquad \forall x \in A, 0 < | x - x_0 | < \delta_\varepsilon
+\end{equation*}
+
+\noindent\textbf{NB!} Dire che $| f(x) - l | < \varepsilon$, significa dire che $f(x) \in V_l$. Mentre dire che $| x - x_0 | < \delta_\varepsilon$, significa dire che $x_0 \in (U_{x_0} \cap A)$. Perché invece è presente $0 < | x - x_0 |$? In generale, se $|u| \geq 0$, si ha che $|u| = 0 \iff u = 0$. Quindi mettere il maggiore stretto di $0$, significa che non si presenterà mai il caso in cui $x - x_0 = 0$, ovvero il caso in cui $x = x_0$. In altre parole, si verifica sempre il caso di $x \neq x_0$.\\
+
+\noindent\textbf{NB!} Quando si parla di \textbf{disco bucato in $x_0$}, significa che è stato preso un disco centrato in $x_0$, ma è stato tolto $x_0$ stesso.\\
+
+% PROVO A SCRIVERE LA DEFINIZIONE DI LIMITE CON L = + \INFTY E X_0 APP. A R
+\noindent\textbf{ES.} Ci chiediamo se esiste il seguente limite:
+
+\begin{equation*}
+    \lim_{x \to -\infty} \frac{2x-1}{\sqrt{x+2}}
+\end{equation*}
+
+\noindent Innanzitutto, troviamo il \textbf{campo di esistenza} (dominio) della funzione. Il numeratore è un semplice polinomio, che ha quindi dominio $\mathbb{R}$, mentre il denominatore, essendo una radice, ha come dominio il proprio argomento maggiore o uguale a zero. Dato però che si trova appunto al denominatore, dobbiamo escludere il caso in cui l'espressione si annulla. Facendo un po' di conti, troviamo quindi che il dominio è $x > -2 \implies (-2, + \infty)$.\\
+
+\noindent Dato che $-\infty$ non è un punto di accumulazione (perché l'insieme è inferiormente limitato), il limite non esiste.\\
+
+\noindent\textbf{ES.} È vero che: 
+
+\begin{equation*}
+    \lim_{x \to 2} \frac{2x-1}{x+1} = \frac{3}{4}
+\end{equation*}
+
+\noindent Innanzitutto, notiamo che il dominio della funzione risulta essere $x \neq -2 \implies A = \mathbb{R} - \{-2\} = (-\infty, -2) \cup (-2, + \infty) \neq \varnothing$.\\
+Successivamente, ci chiediamo se $2$ è un punto di accumulazione. \\
+
+% Mostrare che per ogni delta > 0, si ha che 2-delta, 2+delta cap A - {2} \neq 0; mostrare che i punti di accumulazione di A sono dati da R tilde
+
+\noindent Per verificare la definizione di limite:
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 \ : \ \left| \frac{2x-1}{x+1} - \frac{3}{4} \right| < \varepsilon \qquad \forall x \in A, x \in (2-\delta_\varepsilon, 2+\delta_\varepsilon) - \{2\} \neq \varnothing
+\end{equation*}
+
+\noindent ossia per $\varepsilon > 0$:
+
+\begin{equation*}
+    \left| \frac{2x-1}{x+1} - \frac{3}{4} \right| < \varepsilon \iff \frac{3}{4} - \varepsilon < \frac{2x - 1}{x + 2} < \frac{3}{4} + \varepsilon
+\end{equation*}
+
 \end{document}
