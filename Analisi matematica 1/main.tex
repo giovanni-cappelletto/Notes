@@ -1013,7 +1013,6 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 \noindent\textbf{ES.} Dati $\varphi: [0, + \infty) \xrightarrow{} \mathbb{R} \quad x \longmapsto \sqrt{x}$ e $\Psi: \mathbb{R} \xrightarrow{} \mathbb{R} \quad x \longmapsto 2x$, allora $\varphi + \Psi: x \longmapsto \sqrt{x} + 2x \quad D(\varphi + \Psi) = [0, +\infty) \cap \mathbb{R} = [0, +\infty)$. \\
 
 \noindent\textbf{Def:} Chiamiamo \textbf{grafico} di $\varphi: A \xrightarrow{} B$, l'insieme:
-
 \begin{equation*}
     \Gamma(\varphi) = \mathcal{G}(\varphi) = \{(a, \varphi(a)) \ | \ a \in A\} \quad dove \ \varphi(a) \in B
 \end{equation*}
@@ -1023,7 +1022,6 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 \noindent Sia $f: A \xrightarrow{} \mathbb{R}$ e $c: \mathbb{R} \xrightarrow{} \mathbb{R} \quad x \longmapsto c$. \\
 \noindent Prendiamo ora $D(f + c) = D(f) \cap D(c) = A \cap \mathbb{R} = A$. \\
 \noindent Possiamo capire semplicemente che preso il grafico di $f$ e quello di $f + c$, essi variano solo per la seconda componente:
-
 \begin{gather*}
     \mathcal{G}(f + c) = \{(a, f(a) + c) \ | \ a \in A\}\\
     \mathcal{G}(f) = \{(a, f(a)) \ | \ a \in A\}
@@ -1054,7 +1052,6 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 \noindent\textbf{NB!} A volte si trova anche la notazione $C = \{a-b \ | \ a \in A, b \in B\} = \vcentcolon A - B$, dove, secondo l'esempio di prima, $B = \{c\}$.\\
 
 \noindent\textbf{Def:} Dati $A, B$ con $A \cap B \neq \varnothing$. Siano $\varphi: A \xrightarrow{} \mathbb{R}$ e $\Psi: B \xrightarrow{} \mathbb{R}$. L'applicazione prodotto è:
-
 \begin{gather*}
     \Psi \cdot \varphi: (A \cap B) \xrightarrow{} \mathbb{R}\\
     a \longmapsto \Psi(a) \cdot \varphi(a)
@@ -1063,7 +1060,6 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 \noindent Come nel caso della somma tra due applicazioni, si ha che $\Psi \cdot \varphi = \varphi \cdot \Psi$ perché il prodotto $\Psi(a) \cdot \varphi(a) = \varphi(a) \cdot \Psi(a)$.\\
 
 \noindent\textbf{Def:} Dati $A, B$ con $A \cap B \neq \varnothing$. Siano $\varphi: A \xrightarrow{} \mathbb{R}$ e $\Psi: B \xrightarrow{} \mathbb{R}$. L'applicazione rapporto è:
-
 \begin{gather*}
     \frac{\Psi}{\varphi}: (A \cap B) \cap \{a \in A \ | \ \varphi(a) \neq 0 \} \xrightarrow{} \mathbb{R} \\
     a \longmapsto \frac{\Psi(a)}{\varphi(a)}
@@ -1101,7 +1097,6 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 \end{equation*}
 
 \noindent È facile capire quindi che in questi insiemi si ha:
-
 \begin{gather*}
     sup((a, +\infty)) = +\infty \qquad inf((a, +\infty)) = a \\
     sup((-\infty, a)) = a \qquad inf((-\infty, a)) = - \infty
@@ -1119,9 +1114,11 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 
 \noindent\textbf{NB!} $D(x_0, \delta)$ è un intorno circolare di $x_0$.\\
 
-\noindent\textbf{NB!} $x_0 \in \mathbb{R}$, ma non deve per forza appartenere ad $A$ per essere un suo punto di accumulazione.\\
+\noindent\textbf{NB!} $x_0 \in \mathbb{R}$, ma non deve per forza appartenere ad $A$ per essere un suo punto di accumulazione.
 
-\noindent\textbf{ES.} Sia $A = (1, 2) \cup \{3\}$. Quali sono i punti di accumulazione reali di $A$?\\
+\subsection{Esercizio 5}
+\textbf{Sia $A = (1, 2) \cup \{3\}$. Quali sono i punti di accumulazione reali di $A$?}
+
 \noindent Ipotizziamo che $x < 1$. Prendendo quindi un $\delta > 0$, otteniamo un intorno $I = (x - \delta, x + \delta) \cap A$. In particolare, questo intorno $I$ sarà composto da tutti i numeri compresi tra $1$ e $x + \delta$. Questo però non vale per ogni $\delta > 0$. Infatti, se prendiamo $\delta < \Delta = 1 - x$ (dove $\Delta$ rappresenta la distanza tra $1$ e $x$), si ha che $I = \varnothing$. Ciò significa che se $x < 1$, allora $x$ non è un punto di accumulazione. 
 Si può anche osservare quanto spiegato qui sopra dalla prima immagine della prossima pagina.
 
@@ -1155,9 +1152,12 @@ Si può anche osservare quanto spiegato qui sopra dalla prima immagine della pro
 \end{cases}
 \end{equation*}
 
-\noindent Dato che per la definizione di punto di accumulazione, dall'intersezione $D(x_0,\delta) \cap A$ è necessario togliere $x_0$, togliendo $x = 1$ da $J$, notiamo che esso rimane non vuoto. Possiamo quindi concludere che $1$ è punto di accumulazione per l'insieme $A$.\\
+\noindent Dato che per la definizione di punto di accumulazione, dall'intersezione $D(x_0,\delta) \cap A$ è necessario togliere $x_0$, togliendo $x = 1$ da $J$, notiamo che esso rimane non vuoto. Possiamo quindi concludere che $1$ è punto di accumulazione per l'insieme $A$.
 
-\noindent Allo stesso modo, è possibile verificare che $x = 2$ è punto di accumulazione per $A$:
+\subsection{Esercizio 6}
+\textbf{Verificare che $x = 2$ è punto di accumulazione.}
+
+\noindent Procediamo allo stesso modo di prima:
 
 \begin{equation*}
     J = \begin{cases}
@@ -1180,7 +1180,10 @@ Si può anche osservare quanto spiegato qui sopra dalla prima immagine della pro
     \includegraphics[width=12cm]{./images/AccPoints8.pdf}
 \end{figure}
 
-\noindent Verifichiamo ora che qualsiasi $x_0 \in (1, 2)$ è punto di accumulazione per $A$. Semplicemente, essendo $x_0 \in (1, 2)$, ciò significa che $1 < x_0 < 2$. A livello visivo:
+\subsection{Esercizio 7}
+\textbf{Verificare che qualsiasi $x_0 \in (1, 2)$ è punto di accumulazione per $A$.}
+
+\noindent Semplicemente, essendo $x_0 \in (1, 2)$, ciò significa che $1 < x_0 < 2$. A livello visivo:
 
 \begin{figure}[!h]
     \centering
@@ -1189,7 +1192,7 @@ Si può anche osservare quanto spiegato qui sopra dalla prima immagine della pro
     $\vcenter{\hbox{\includegraphics[width=5cm]{./images/AccPoints11.pdf}}}$
 \end{figure}
 
-Quindi:
+\noindent Quindi:
 
 \begin{itemize}
     \item se $x_0 + \delta < 2$, allora $J = (x_0 - \delta, x_0 + \delta)$;
@@ -1206,19 +1209,26 @@ Quindi:
     \end{itemize}
 \end{itemize}
 
-\noindent Togliendo ora $x_0$ da $J$, quest'ultimo rimane non vuoto. Per cui possiamo concludere che qualsiasi $x_0 \in (1, 2)$ è un punto di accumulazione. \\
+\noindent Togliendo ora $x_0$ da $J$, quest'ultimo rimane non vuoto. Per cui possiamo concludere che qualsiasi $x_0 \in (1, 2)$ è un punto di accumulazione.
 
-\noindent Verifichiamo ora che per qualsiasi $x > 2 \wedge x \neq 3$, $x$ non è punto di accumulazione per $A$. Per farlo basta trovare un unico caso per cui vale che $J = ((x_0 - \delta, x_0 + \delta) \cap A) - \{x_0\} = \varnothing$. Prendendo quindi $x_0 + \delta < 3$ oppure prendendo un numero $x > 3$ e un $\delta < \Delta = x - 3$ (dove $\Delta$ è la distanza tra $x$ e $3$), si ha che non vi è nessuna intersezione con l'insieme A e quindi $J = \varnothing$. Per cui possiamo concludere che $3$ non è un punto di accumulazione per $A$. Graficamente:
+\subsection{Esercizio 8}
+\textbf{Verificare che qualsiasi $x > 2 \wedge x \neq 3$, $x$ non è punto di accumulazione per $A$.}
+
+\noindent Per farlo basta trovare un unico caso per cui vale che $J = ((x_0 - \delta, x_0 + \delta) \cap A) - \{x_0\} = \varnothing$. Prendendo quindi $x_0 + \delta < 3$ oppure prendendo un numero $x > 3$ e un $\delta < \Delta = x - 3$ (dove $\Delta$ è la distanza tra $x$ e $3$), si ha che non vi è nessuna intersezione con l'insieme A e quindi $J = \varnothing$. Per cui possiamo concludere che $3$ non è un punto di accumulazione per $A$. Graficamente:
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=12cm]{./images/AccPoints12.pdf}
 \end{figure}
 
-\noindent Dimostriamo ora che $x_0 = 3$ non è punto di accumulazione per $A$. Ciò significa che $\exists \Bar{\delta} > 0 \ | \ ((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. \\
+\subsection{Esercizio 9}
+\textbf{Dimostrare che $x_0 = 3$ non è punto di accumulazione per $A$.}
+
+\noindent Dire che $x_0 = 3$ non è punto di accumulazione per $A$, significa che $\exists \Bar{\delta} > 0 \ | \ ((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. \\
 Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{\delta} < 1$ avremo che $((3 - \Bar{\delta}, 3 + \Bar{\delta}) \cap A) - \{3\} = \varnothing$. Si verifica infatti con, ad esempio, $\Bar{\delta} = \dfrac{1}{2}$. Per questo motivo, possiamo concludere che $3$ non è un punto di accumulazione per $A$.\\
 
-\noindent\textbf{ES.} Sia $B = [1, 2] \cup \{3\}$, provare che i punti di accumulazione di $B$ sono tutti e soli quelli dell'insieme $[1,2]$. \\
+\subsection{Esercizio 10}
+\textbf{Sia $B = [1, 2] \cup \{3\}$, provare che i punti di accumulazione di $B$ sono tutti e soli quelli dell'insieme $[1,2]$.}
 
 \noindent Procediamo per casi: 
 
@@ -1252,7 +1262,8 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 
 \noindent Notiamo come in tutti per qualsiasi $x$ tale che $x < 1$ o $x > 2$, essa non è punto di accumulazione di $a$, mentre $x \in [1, 2]$ è un punto di accumulazione, come volevasi dimostrare.\\
 
-\noindent\textbf{ES.} Sia $I = (a, b)$, $J = [a, b)$, $K = (a, b]$ e $L = [a, b]$. Provare che i punti di accumulazione di $I, J, K, L$ sono tutti e soli i punti $[a, b]$.\\
+\subsection{Esercizio 11}
+\textbf{Sia $I = (a, b)$, $J = [a, b)$, $K = (a, b]$ e $L = [a, b]$. Provare che i punti di accumulazione di $I, J, K, L$ sono tutti e soli i punti $[a, b]$.}
 
 \noindent Ancora una volta procediamo per casi:
 
@@ -1283,7 +1294,7 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 \noindent\textbf{Def:} $+ \infty$ è un punto di accumulazione per $A \subset \mathbb{R}$ con $A \neq \varnothing$ se e solo se ogni intorno di $+ \infty$ contiene punti di $A$. Scritto in simboli:
 
 \begin{equation*}
-    \forall b \in \mathbb{R} \ si \ ha \ che \ A \cap (b, + \infty) \neq \varnothing)
+    \forall b \in \mathbb{R} \ si \ ha \ che \ (A \cap (b, + \infty) \neq \varnothing)
 \end{equation*}
 
 \noindent\textbf{NB!} Nel caso del $+\infty$ o del $-\infty$ non va tolto il numero stesso (infatti nella formula non è presente il $- \{x_0\}$).\\
@@ -1293,7 +1304,7 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 \noindent\textbf{Def:} $- \infty$ è un punto di accumulazione per $A \subset \mathbb{R}$ con $A \neq \varnothing$ se e solo se:
 
 \begin{equation*}
-    \forall b \in \mathbb{R} \ si \ ha \ che \ A \cap (- \infty, b) \neq \varnothing)
+    \forall b \in \mathbb{R} \ si \ ha \ che \ (A \cap (- \infty, b) \neq \varnothing)
 \end{equation*}
 
 \noindent\textbf{Osservazione:} Se $A$ è superiormente limitato (inferiormente limitato) è possibile che $+ \infty$ ($- \infty$) sia punto di accumulazione per $A$? No, perché se $A$ è superiormente limitato (inferiormente limitato), allora $A$ ammette maggioranti (minoranti). Sia $\Lambda$ maggiorante (minorante) di $A$, cioè $\Lambda \in \mathbb{R}, a \leq \Lambda \quad \forall a \in A$ ($\Lambda \in \mathbb{R}, \Lambda \leq a \quad \forall a \in A$). Allora $A \subset (- \infty, \Lambda)$ ($A \subset (\Lambda, + \infty)$) e se $b = \Lambda + 1$ ($b = \Lambda - 1$), allora $A \cap (\Lambda + 1, +\infty) = \varnothing$ ($A \cap (-\infty, \Lambda - 1) = \varnothing$).\\
@@ -1316,8 +1327,16 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 
 \noindent\textbf{NB!} Quando si parla di \textbf{disco bucato in $x_0$}, significa che è stato preso un disco centrato in $x_0$, ma è stato tolto $x_0$ stesso.\\
 
-% PROVO A SCRIVERE LA DEFINIZIONE DI LIMITE CON L = + \INFTY E X_0 APP. A R
-\noindent\textbf{ES.} Ci chiediamo se esiste il seguente limite:
+\noindent\textbf{ES.} Se invece avessimo $l = + \infty$ e $x_0 \in \mathbb{R}$, allora $V_l = (M, + \infty) \quad \forall M > 0$ e $U_{x_0} = (x_0 - \delta, x_0 + \delta)$.
+
+\begin{equation*}
+    \implies \forall M > 0, \exists \delta > 0 : f(x) > M \qquad \forall x \in (x_0 - \delta, x_0 + \delta) \cap A - \{x_0\}
+\end{equation*}
+
+\noindent\textbf{NB!} Dire che $f(x) > M$, significa dire che $f(x) \in V_l$.
+
+\subsection{Esercizio 12}
+\textbf{Esiste il seguente limite?}
 
 \begin{equation*}
     \lim_{x \to -\infty} \frac{2x-1}{\sqrt{x+2}}
@@ -1325,16 +1344,17 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 
 \noindent Innanzitutto, troviamo il \textbf{campo di esistenza} (dominio) della funzione. Il numeratore è un semplice polinomio, che ha quindi dominio $\mathbb{R}$, mentre il denominatore, essendo una radice, ha come dominio il proprio argomento maggiore o uguale a zero. Dato però che si trova appunto al denominatore, dobbiamo escludere il caso in cui l'espressione si annulla. Facendo un po' di conti, troviamo quindi che il dominio è $x > -2 \implies (-2, + \infty)$.\\
 
-\noindent Dato che $-\infty$ non è un punto di accumulazione (perché l'insieme è inferiormente limitato), il limite non esiste.\\
+\noindent Dato che $-\infty$ non è un punto di accumulazione (perché l'insieme è inferiormente limitato), il limite non esiste.
 
-\noindent\textbf{ES.} È vero che: 
+\subsection{Esercizio 13 - Non finito}
+\textbf{È vero che:}
 
 \begin{equation*}
-    \lim_{x \to 2} \frac{2x-1}{x+1} = \frac{3}{4}
+    \lim_{x \to 2} \frac{2x-1}{x+2} = \frac{3}{4}
 \end{equation*}
 
 \noindent Innanzitutto, notiamo che il dominio della funzione risulta essere $x \neq -2 \implies A = \mathbb{R} - \{-2\} = (-\infty, -2) \cup (-2, + \infty) \neq \varnothing$.\\
-Successivamente, ci chiediamo se $2$ è un punto di accumulazione. Guardando il dominio, capiamo subito che qualsiasi sia il $\delta > 0$ preso, l'intersezione tra campo di esistenza e intorno considerato produrrà sempre un insieme non vuoto. Infatti, se $2 - \delta > -2$, allora l'intorno $I = (2 - \delta, 2 + \delta)$; mentre se $2 - \delta < -2$, allora $I = (-2, 2 + \delta$). \\
+Successivamente, ci chiediamo se $2$ è un punto di accumulazione. Guardando il dominio, capiamo subito che qualsiasi sia il $\delta > 0$ preso, l'intersezione tra campo di esistenza e intorno considerato produrrà sempre un insieme non vuoto. Infatti, se $2 - \delta > -2$, allora l'intorno $I = (2 - \delta, 2 + \delta)$; mentre se $2 - \delta < -2$, allora $I = (2-\delta, -2) \cup (-2, 2 + \delta$). \\
 È possibile anche mostrare che i punti di accumulazione di $A$ sono dati da $\widetilde{\mathbb{R}}$. Infatti, $A$ non essendo limitato possiede come punti di accumulazione anche $+ \infty$ e $- \infty$, che appartengono proprio a $\widetilde{\mathbb{R}}$. Non ci resta che verificare che tutti i punti appartenenti ad $\mathbb{R}$ sono punti di accumulazione di $A$. Non è complicato notare però che sia che $x < -2$ o che $x > - 2$, qualsiasi sia $\delta > 0$, il nostro intorno $I$ starà sempre intersecando $A$ e quindi l'intersezione sarà un insieme non vuoto. Per cui possiamo concludere che i punti di accumulazione di $A$ sono dati da $\widetilde{\mathbb{R}}$.\\
 
 \noindent Per verificare la definizione di limite:
@@ -1348,5 +1368,456 @@ Successivamente, ci chiediamo se $2$ è un punto di accumulazione. Guardando il 
 \begin{equation*}
     \left| \frac{2x-1}{x+1} - \frac{3}{4} \right| < \varepsilon \iff \frac{3}{4} - \varepsilon < \frac{2x - 1}{x + 2} < \frac{3}{4} + \varepsilon
 \end{equation*}
+
+\noindent Consideriamo ora il caso in cui $x + 2 > 0 \implies x > -2$, possiamo quindi moltiplicare a destra e a sinistra per $x + 2$, senza cambiare il segno della disequazione:
+
+\begin{equation*}
+    \left(\frac{3}{4} - \varepsilon\right)(x+2) < 2x - 1 < \left(\frac{3}{4} + \varepsilon\right)(x+2)
+\end{equation*}
+
+\noindent Dividiamo ora le due disequazioni in un sistema e svolgiamo i calcoli:
+
+\begin{equation*}
+    \begin{cases}
+        2x < \dfrac{3}{4}x + \dfrac{3}{2} + \varepsilon x + 2\varepsilon + 1 \\
+        \\
+        2x > \dfrac{3}{4}x + \dfrac{3}{2} - \varepsilon x - 2\varepsilon + 1 \\
+    \end{cases}
+    \implies
+    \begin{cases}
+        x\left(2 - \dfrac{3}{4} - \varepsilon\right) < \dfrac{5}{2} + 2\varepsilon \\
+        \\
+        x\left(2 - \dfrac{3}{4} + \varepsilon \right)>  \dfrac{5}{2} - 2\varepsilon \\
+    \end{cases}
+    \implies
+    \begin{cases}
+        x\left(\dfrac{5 - 4\varepsilon}{4}\right) < \dfrac{5 + 4\varepsilon}{2}\\
+        \\
+        x\left(\dfrac{5 + 4\varepsilon}{4}\right)>  \dfrac{5 - 4\varepsilon}{2} \\
+    \end{cases}
+\end{equation*}
+
+\noindent Consideriamo ora la prima disequazione. Si possono presentare due casi:
+
+\begin{itemize}
+    \item se $5 - 4\varepsilon > 0 \implies \varepsilon < \dfrac{5}{4}$, allora il segno della disequazione non cambia e quindi si ha che: $$x < \frac{2(5+4\varepsilon)}{5-4\varepsilon}$$
+    \item se $5 - 4\varepsilon < 0 \implies \varepsilon > \dfrac{5}{4}$, allora il segno della disequazione viene invertito e quindi si ha che: $$x > \frac{2(5 + 4\varepsilon)}{5 - 4\varepsilon}$$
+\end{itemize}
+
+\noindent Per quanto riguarda invece la seconda disequazione, essendo $5+4\varepsilon>0 \quad \forall \varepsilon > 0$, si ha che: $$x > \frac{2(5-4\varepsilon)}{5 + 4\varepsilon}$$
+
+\noindent Quindi otteniamo: 
+
+\begin{equation*}
+    \begin{cases}
+        \varepsilon < \dfrac{5}{4} \qquad (5 - 4\varepsilon > 0) \\
+        \\
+        a(\varepsilon) = \dfrac{2(5-4\varepsilon)}{5 + 4\varepsilon} < x < \dfrac{2(5+4\varepsilon)}{5-4\varepsilon} = b(\varepsilon)
+    \end{cases}
+    oppure \ \
+    \begin{cases}
+        \varepsilon > \dfrac{5}{4} \qquad (5 - 4\varepsilon < 0) \\
+        \\
+        x > \dfrac{2(5 + 4\varepsilon)}{5 - 4\varepsilon} \\
+    \end{cases}
+\end{equation*}
+
+\noindent Consideriamo ora $a(\varepsilon)$ del primo sistema. Essa dovrà essere sicuramente minore di $x_0 = 2$, altrimenti non sarebbe un intorno valido. Verifichiamo quindi tale ipotesi: 
+
+\begin{equation*}
+    \dfrac{2(5-4\varepsilon)}{5 + 4\varepsilon} < 2
+\end{equation*}
+
+\noindent Possiamo moltiplicare a destra e a sinistra per il denominatore, essendo che $5 + 4\varepsilon > 0 \quad \forall \varepsilon > 0$:
+
+\begin{equation*}
+    5-4\varepsilon < 5 + 4\varepsilon \implies -1 < 1 \implies \forall x \in \mathbb{R}, a(\varepsilon) < 2
+\end{equation*}
+
+\noindent Allo stesso modo, verifichiamo che $b_\varepsilon > 2$: 
+
+\begin{equation*}
+    \dfrac{2(5+4\varepsilon)}{5-4\varepsilon} > 2
+\end{equation*}
+
+\noindent Possiamo moltiplicare a destra e a sinistra per il denominatore, essendo che ci troviamo nel caso in cui $5 - 4\varepsilon > 0$:
+
+\begin{equation*}
+    5+4\varepsilon > 5 - 4\varepsilon \implies 1 > -1 \implies \forall x \in \mathbb{R}, b(\varepsilon) > 2
+\end{equation*}
+
+\noindent Una volta fatto ciò, cerchiamo di riscrivere $a(\varepsilon) = 2 - c(\varepsilon)$ e $b(\varepsilon) = 2 + d(\varepsilon)$. Nel caso di $a(\varepsilon)$:
+
+\begin{equation*}
+    \dfrac{2(5-4\varepsilon)}{5 + 4\varepsilon} + k_\varepsilon = 2
+\end{equation*}
+
+\begin{equation*}
+    \dfrac{2(5-4\varepsilon) + k_\varepsilon(5 + 4\varepsilon)}{5 + 4\varepsilon} = 2
+\end{equation*}
+
+\begin{equation*}
+    10-8\varepsilon + k_\varepsilon(5 + 4\varepsilon) = 10 + 8\varepsilon
+\end{equation*}
+
+\begin{equation*}
+    k_\varepsilon(5 + 4\varepsilon) = 16\varepsilon
+\end{equation*}
+
+\begin{equation*}
+    k_\varepsilon = \frac{16\varepsilon}{5 + 4\varepsilon} = c(\varepsilon) \implies a(\varepsilon) = 2 - c(\varepsilon) = 2 - \frac{16\varepsilon}{5 + 4\varepsilon}
+\end{equation*}
+
+\noindent Nel caso di $b(\varepsilon)$:
+
+\begin{equation*}
+    \frac{2(5+4\varepsilon)}{5-4\varepsilon} - k_\varepsilon = 2
+\end{equation*}
+
+\begin{equation*}
+    10+8\varepsilon-k_\varepsilon(5-4\varepsilon) = 10 - 8\varepsilon
+\end{equation*}
+
+\begin{equation*}
+    k_\varepsilon(5-4\varepsilon) = 16\varepsilon
+\end{equation*}
+
+\begin{equation*}
+    k_\varepsilon = \frac{16\varepsilon}{5-4\varepsilon} = d(\varepsilon) \implies b(\varepsilon) = 2 + d(\varepsilon) = 2 + \frac{16\varepsilon}{5-4\varepsilon}
+\end{equation*}
+
+\noindent Possiamo ora scrivere: 
+
+\begin{equation*}
+    \frac{16\varepsilon}{5+4\varepsilon} < x - 2 < \frac{16\varepsilon}{5-4\varepsilon}
+\end{equation*}
+
+\noindent Per cui $\delta_\varepsilon = min(c(\varepsilon), d(\varepsilon))$, ovvero:
+
+\begin{equation*}
+    \delta_\varepsilon = min\left(\frac{16\varepsilon}{5+4\varepsilon}, \frac{16\varepsilon}{5-4\varepsilon}\right) = \frac{16\varepsilon}{5+4\varepsilon}
+\end{equation*}
+
+\noindent Questo perché il numeratore è uguale e il denominatore è positivo in entrambi i casi; il denominatore di sinistra però è più grande, per cui il numero di sinistra ($c(\varepsilon)$) è più piccolo rispetto a quello di destra ($d(\varepsilon)$).\\
+
+\noindent Non è invece necessario svolgere i calcoli per il caso $x < - 2$. Infatti, qualsiasi intorno contenente $x_0 = 2$, conterrebbe per forza anche $x_0 = -2$ (punto in cui la funzione non esiste, come si può capire dal suo dominio). 
+
+\subsection{Composizione di applicazioni}
+Siano $A, B, C, D \neq \varnothing$, $\varphi: A \xrightarrow{} B$ e $\Psi: C \xrightarrow{} D$ tali che $Imm(\varphi) \subset D_\Psi$.\\
+Allora definiamo \textbf{applicazione composta}:
+\begin{gather*}
+    \Psi \circ \varphi: A \xrightarrow{} D \\
+    \Psi \circ \varphi: a \longmapsto \Psi(\varphi(a))
+\end{gather*}
+
+\noindent Questo avviene perché:
+\begin{gather*}
+    A \overset{\varphi}{\xrightarrow{}} Imm(\varphi) \ (\subset B) \subseteq D_\Psi (\subseteq C) \xrightarrow{} D \ (codominio \ di \ \Psi)\\
+    a \longmapsto \varphi(a) \longmapsto \Psi(\varphi(a))
+\end{gather*}
+
+\noindent\textbf{ES.} Siano: 
+\begin{gather*}
+    f: \mathbb{R} \xrightarrow{} \mathbb{R} \qquad w \longmapsto w^2\\
+    g: \mathbb{R} \xrightarrow{} \mathbb{R} \qquad u \longmapsto u + 1
+\end{gather*}
+
+\noindent Allora: 
+\begin{gather*}
+    (g \circ f)(x) = g(f(x)): \mathbb{R} \ (= D_f)  \xrightarrow{} \mathbb{R} \ (= C_g) \\
+    x \overset{f}{\longmapsto} f(x) = x^2 \overset{g}{\longmapsto} g(x^2) = x^2 + 1
+\end{gather*}
+
+\noindent Mentre: 
+\begin{gather*}
+    (f \circ g)(x) = f(g(x)): \mathbb{R} \ (= D_g)  \xrightarrow{} \mathbb{R} \ (= C_f) \\
+    x \overset{g}{\longmapsto} g(x) = x + 1 \overset{f}{\longmapsto} f(x + 1) = (x + 1)^2
+\end{gather*}
+
+\noindent Notiamo quindi che $(g \circ f) \neq (f \circ g)$. Infatti, $\exists x \in \mathbb{R} \ | \ (x^2 + 1) \neq (x + 1)^2$.\\
+
+\noindent\textbf{NB!} In questo esempio, abbiamo calcolato sia $(g \circ f)$, che $(f \circ g)$ perché in entrambi casi avevamo che l'immagine della prima applicazione era contenuta nel dominio della seconda applicazione. Ad esempio, nel caso della prima applicazione composta, avevamo che $Imm(f) = Imm(x^2) = [0, +\infty) \subseteq \mathbb{R} \ (= D_g)$.\\
+
+\noindent\textbf{ES.} Siano:
+\begin{gather*}
+    f: \mathbb{N} \xrightarrow{} \mathbb{Q} \qquad m \longmapsto \frac{m}{2}\\
+    \\
+    g: \mathbb{N} \xrightarrow{} \mathbb{R} \qquad n \longmapsto n^2
+\end{gather*}
+
+\noindent Allora:
+
+\begin{equation*}
+    (f \circ g)(n) \overset{g}{\longmapsto} g(n) = n^2 \overset{f}{\longmapsto} f(n^2) = \frac{n^2}{2}
+\end{equation*}
+
+\noindent Quindi $(f \circ g)(n): \mathbb{N} \ (= D_g) \xrightarrow{} \mathbb{Q} \ (= C_f)$. Se dovessimo ora calcolare $(g \circ f)(n)$, avremmo che: 
+
+\begin{equation*}
+    (g \circ f)(n): n \overset{f}{\longmapsto} \frac{n}{2}
+\end{equation*}
+
+\noindent dove $\dfrac{n}{2} \in \mathbb{N} \ (= D_g)$ se e solo se $\dfrac{n}{2}$ è pari. Dato che l'applicazione $(g \circ f)(n)$ non vale per ogni numero naturale $n$, l'applicazione non esiste (infatti non è vero che $Imm(f) \ (= \mathbb{Q}) \subset D_g \ (= \mathbb{N})$).
+
+\subsection{Applicazione identità}
+Sia $A$ un insieme non vuoto, $\varphi: A \xrightarrow{} B$ e $id_A: A \xrightarrow{} A$. Essendo che $Imm(id_A) = A \subseteq D_\varphi \ (= A)$, possiamo calcolare:
+\begin{gather*}
+    (\varphi \circ id_A): A \xrightarrow{} B\\
+    a \overset{id_A}{\longmapsto} id_A(a) = a \overset{\varphi}{\longmapsto} \varphi(a)
+\end{gather*}
+
+\noindent $\implies \varphi \circ id_A = \varphi$. Ciò significa che $id_A$ è elemento neutro dell'applicazione composta $\varphi \circ id_A$ (questo ovviamente solo se $id_A$ sta a destra della composizione).\\
+
+\noindent Sia ora $A \overset{\varphi}{\xrightarrow{}} B$ e $a \longmapsto \varphi(a) \in Imm(\varphi) \ (\subseteq B) = \vcentcolon \varphi(A)$. Allora chiamiamo $id_{\varphi(A)}$ l'applicazione tale che $id_{\varphi(A)} \circ \varphi = \varphi$. Quindi si ha che:
+\begin{gather*}
+    A \overset{\varphi}{\longrightarrow} \varphi(A) \overset{id_{\varphi(A)}}{\longrightarrow} \varphi(A) \ (\subset B) \\
+    a \longmapsto \varphi(a) \overset{id_{\varphi(A)}}{\longmapsto} \varphi(a)
+\end{gather*}
+
+\noindent Ciò significa che $id_{\varphi(A)}$ è elemento neutro dell'applicazione composta $id_{\varphi(A)} \circ \varphi$ (questo ovviamente solo se $id_{\varphi(A)}$ sta a sinistra della composizione).\\
+
+\subsection{Applicazione inversa}
+Ipotizziamo di avere un'applicazione del tipo $f: x \longmapsto x^2$. Notiamo che $x = -1 \implies x^2 = 1$ e che $x = 1 \implies x^2 = 1$. Se invece dovessimo ora utilizzare l'applicazione inversa per "tornare indietro" da $x^2 = 1$ a $x$, quale valore di $x$ dovremmo prendere? Questo esempio va contro la definizione di applicazione. Inoltre, per poter utilizzare un'applicazione inversa, l'applicazione di partenza deve essere necessariamente \textbf{iniettiva}.\\
+
+\noindent\textbf{Def:} Siano $A, B \neq \varnothing$ e $\varphi: A \xrightarrow{} B$ iniettiva. Diciamo \textbf{applicazione inversa} di $\varphi$ ($\varphi^{-1}$), un'applicazione:
+\begin{gather*}
+    \Psi: Imm(\varphi) \xrightarrow{} A\\
+    b \longmapsto a \vcentcolon = \Psi(a)
+\end{gather*}
+
+\noindent dove $a$ è l'unico elemento di $A$ tale per cui $\varphi(a) = b$ per la definizione di applicazione iniettiva.\\
+
+\noindent\textbf{NB!} Il codominio di $\varphi^{-1}$ è uguale al dominio di $\varphi$.\\
+
+\noindent Quindi combinando un'applicazione con la sua inversa si ha che:
+\begin{gather*}
+    A \overset{\varphi}{\longrightarrow} Imm(\varphi) \overset{\varphi^{-1}}{\longrightarrow} A\\
+    a \longmapsto \varphi(a) = b \longmapsto \varphi^{-1}(\varphi(a)) = \varphi^{-1}(b) = a
+\end{gather*}
+
+\noindent Dato che: 
+
+\begin{equation*}
+    \varphi^{-1} \circ \varphi: A \xrightarrow{} A \qquad a \longmapsto a
+\end{equation*}
+
+\noindent $\implies (\varphi^{-1} \circ \varphi) = id_A$.\\
+
+\noindent Ma cosa succede se faccio $\varphi \circ \varphi^{-1}$?
+\begin{gather*}
+    \varphi(A) = D_{\varphi^{-1}} \overset{\varphi^{-1}}{\longrightarrow} A \overset{\varphi}{\longrightarrow} \varphi(A)\\
+    b \longmapsto \varphi^{-1} (b) = a \longmapsto \varphi(\varphi^{-1}(b)) = \varphi(a)
+\end{gather*}
+
+\noindent $\implies (\varphi \circ \varphi^{-1}) = id_{\varphi(A)}$.\\
+
+\noindent\textbf{NB!} In generale, possiamo dire che il risultato dell'applicazione composta tra un'applicazione e la sua inversa è uguale al risultato dell'applicazione composta tra un'applicazione inversa e l'applicazione originaria se e solo se ci accertiamo che dominio e codominio siano uguali. Ad esempio, $e^{\log(x)} \neq \log(e^x)$. Infatti:
+\begin{gather*}
+    e^{\log(x)} = x \quad con \ x > 0 \ (id_{(0, +\infty)})\\
+    \log(e^x) = x \ (id_\mathbb{R})
+\end{gather*}
+
+\noindent Quindi $e^{\log(x)} = \log(e^x)$ se e solo se $x > 0$.\\
+
+\noindent\textbf{Proposizione} Siano $A, B \neq \varnothing$ e $\varphi: A \xrightarrow{} B$ applicazione iniettiva. Sia $\varphi^{-1}$ la sua applicazione inversa. Allora:
+
+\begin{itemize}
+    \item $D(\varphi^{-1}) = Imm(\varphi)$;
+    \item $Imm(\varphi^{-1}) = D(\varphi)$.
+\end{itemize}
+
+\subsubsection{Grafico di un'applicazione inversa}
+Siano $\varphi: e^x: \mathbb{R} \xrightarrow{} (0, + \infty)$ e $\varphi^{-1}: (0, + \infty) \xrightarrow{} \mathbb{R}$, allora:
+\begin{gather*}
+    \mathcal{G}(\varphi) = \{(a, \varphi(a)) \ | \ a \in A\}\\
+    \mathcal{G}(\varphi^{-1}) = \{(b, \varphi^{-1}(b)) \ | \ b \in \varphi(A) \ (= D_{\varphi^{-1}})\} 
+\end{gather*}
+
+\noindent Essendo $\varphi$ iniettiva, allora $\varphi^{-1}(b)$ è l'unico elemento $a \in A$ tale che $\varphi(a) = b$. Dato quindi che c'è una corrispondenza biunivoca tra i due insiemi, possiamo quindi riscrivere il grafico come: 
+
+\begin{equation*}
+    \mathcal{G}(\varphi^{-1}) = \{(\varphi(a), a) \ | \ a \in A\}
+\end{equation*}
+
+\noindent In altre parole, stiamo scambiando ascissa con ordinata simmetrizzando rispetto alla retta che ha ascissa uguale ad ordinata (ovvero rispetto alla bisettrice del primo e del terzo quadrante).
+
+\subsection{Monotonia di funzioni}
+\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A \neq \varnothing$. Sia $I$ un intervallo contenuto in $A$. Allora diremo che:
+
+\begin{itemize}
+    \item $f$ è strettamente (debolmente) crescente su $I$ se e solo se $\forall x_1, x_2 \in I$, con $x_1 < x_2$, si ha che: $$f(x_1) < f(x_2) \quad (\leq)$$
+    \item $f$ è strettamente (debolmente) decrescente su $I$ se e solo se $\forall x_1, x_2 \in I$, con $x_1 < x_2$, si ha che: $$f(x_1) > f(x_2) \quad (\geq)$$
+    \item $f$ è strettamente (debolmente) monotona in $I$ se e solo se $f$ è strettamente (debolmente) crescente o decrescente in $I$.
+\end{itemize}
+
+\noindent\textbf{Def:} Sia $I \subseteq \mathbb{R}$ un intervallo $\overset{def}{\iff} \forall x_1, x_2 \in I$, preso $x \in (x_1, x_2)$ si ha che $x \in I$. Graficamente:
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{./images/interval1.pdf}
+\end{figure}
+
+\noindent\textbf{NB!} $J = (1, 2) \cup (2, 4)$ non è un intervallo, ma è un'unione di due intervalli ($I_1 = (1, 2)$ e $I_2 = (2, 4)$) disgiunti tra loro (cioè che non hanno intersezioni). Il punto $x_0 = 2$ infatti non appartiene a $J$, ma è compreso tra $x_1 = \dfrac{3}{2}$ e $x_2 = 3$, per cui non vale $J = (1, 4)$.\\
+
+\noindent\textbf{Osservazione:} Sia $I$ un intervallo con $I \subset \mathbb{R}$ e $f: I \xrightarrow{} \mathbb{R}$ strettamente (debolmente) crescente (decrescente), allora:
+\begin{gather*}
+    (-f): I \xrightarrow{} \mathbb{R}\\
+    x \longmapsto - f(x)
+\end{gather*}
+
+\noindent è strettamente (debolmente) decrescente (crescente) su $I$.\\
+
+\noindent\textbf{Dimostrazione:} Dimostriamo ora il caso di debole (stretta) crescenza. Sia $f$ debolmente (strettamente) crescente su $I$ e $x_1, x_2 \in I, x_1 < x_2$ segue quindi che $f(x_1) \leq f(x_2)$ per il teorema sulla monotonia di funzioni. Moltiplichiamo ora per $-1$:
+
+\begin{equation*}
+    -f(x_1) \geq - f(x_2) \implies  (-f)(x_1) \geq (-f)(x_2)
+\end{equation*}
+
+\noindent\textbf{NB!} Nel caso di stretta crescenza i "$\geq$" vanno sostituiti a "$>$".\\
+
+\noindent Quindi $-f$ verifica su $I$ la definizione di funzione debolmente (strettamente) decrescente. \\
+
+\noindent Allo stesso modo, consideriamo ora il caso di debole (stretta) decrescenza. Sia $f$ debolmente (strettamente) decrescente su $I$ e $x_1, x_2 \in I, x_1 < x_2$ segue quindi che $f(x_1) \geq f(x_2)$ per il teorema sulla monotonia di funzioni. Moltiplichiamo ora per $-1$:
+
+\begin{equation*}
+    -f(x_1) \leq - f(x_2) \implies  (-f)(x_1) \leq (-f)(x_2)
+\end{equation*}
+
+\noindent\textbf{NB!} Nel caso di stretta crescenza i "$\leq$" vanno sostituiti a "$<$".\\
+
+\noindent Quindi $-f$ verifica su $I$ la definizione di funzione debolmente (strettamente) crescente. \\
+
+\noindent Entrambi questi casi si verificano quando moltiplichiamo la nostra $f$ per una costante negativa. Ma cosa succede se una funzione non costante, positiva o negativa che sia, è moltiplicata ad $f$? \\
+Supponiamo di avere $I \subset \mathbb{R}$ intervallo e $f, g: I \xrightarrow{} \mathbb{R}$ con $f, g$ debolmente crescenti (decrescenti) su $I$ (l'importante è che abbiano la stessa monotonia). Supponiamo inoltre che $Imm(f) \subset [0, +\infty)$ e $Imm(g) \subset [0, +\infty)$. Allora:
+\begin{gather*}
+    f \cdot g: I \xrightarrow{} \mathbb{R}\\
+    x \longmapsto f(x) \cdot g(x)
+\end{gather*}
+
+\noindent sarà anch'essa debolmente crescente (decrescente). \\
+
+\noindent\textbf{Dimostrazione:} Partiamo scrivendo il requisito perché $f$ e $g$ siano debolmente crescenti (decrescenti). Sia $x_1, x_2 \in I, x_1 < x_2$. Allora $f(x_1) \leq f(x_2)$ e $g(x_1) \leq g(x_2)$ (nel caso decrescente: ($f(x_1) \geq f(x_2)$) e $g(x_1) \leq g(x_2)$). Dato che $g(x_1) \geq 0$, allora:
+
+\begin{equation}
+    f(x_1)g(x_1) \leq f(x_2)g(x_1)
+    \label{eq:9}    
+\end{equation}
+
+\noindent Allo stesso modo, dato che $f(x_2) \geq 0$, allora:
+
+\begin{equation}
+    f(x_2)g(x_1) \leq f(x_2)g(x_2)
+    \label{eq:10}    
+\end{equation}
+
+\noindent Nel caso di debolmente decrescenti: 
+
+\begin{equation*}
+    f(x_1)g(x_1) \geq f(x_2)g(x_1) \qquad f(x_2)g(x_1) \geq f(x_2)g(x_2)
+\end{equation*}
+
+\noindent Essendo ora che sia in (\ref{eq:9}), che in (\ref{eq:10}) abbiamo la stessa "quantità intermedia" $f(x_2)g(x_1)$, possiamo mettere in relazione tra loro le due disequazioni:
+
+\begin{equation*}
+    f(x_1)g(x_1) \leq g(x_2)f(x_2) \qquad (decrescenti: \ f(x_1)g(x_1) \geq f(x_2)g(x_2))
+\end{equation*}
+
+\noindent e quindi possiamo affermare con certezza che $f \cdot g$ è debolmente crescente (decrescente) in $I$.\\
+
+\noindent\textbf{Proposizione:} Sia $I \subset \mathbb{R}$ un intervallo e sia $f: I \xrightarrow{} \mathbb{R}$, una funzione strettamente crescente (decrescente) in $I$. Allora:
+
+\begin{enumerate}
+    \item $f$ è iniettiva in $I$ (è ovvio perché presi $x_1, x_2 \in I$, con $x_1 < x_2$, allora a seconda del caso $f(x_1) < f(x_2)$ o $f(x_1) > f(x_2)$, ma comunque $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$);
+    \item $f^{-1}$ è strettamente crescente (decrescente) in $I$.
+\end{enumerate}
+
+\noindent\textbf{ES.} Un esempio di utilizzo di questa proposizione è quando abbiamo una funzione del tipo $a^x$ con $a > 1$. Essendo strettamente crescente su $\mathbb{R}$, allora possiamo dire che anche la sua inversa, ovvero $log_a(x)$ è strettamente crescente in $(0, +\infty)$.\\
+
+\noindent\textbf{Osservazione:} Sia $x_0 \in \mathbb{R}$, allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item presi $\delta_1, \delta_2 > 0$ e quindi $D(x_0, \delta_1), D(x_0, \delta_2)$, si ha che $(D(x_0, \delta_1) \cap D(x_0, \delta_2)) = D(x_0, min(\delta_1, \delta_2))$ (a livello visivo, vedere prossima immagine);
+    \item se $x_0 = + \infty$, allora abbiamo un intorno del tipo $(k, + \infty)$ per cui: $(k_1, +\infty) \cap (k_2, +\infty) = (max(k_1, k_2), +\infty)$, che risulta ancora una volta essere un intorno di $+\infty$;
+    \item se $x_0 = - \infty$, allora abbiamo un intorno del tipo $(-\infty, k)$ per cui: $(-\infty, k_1) \cap (-\infty, k_2) = (-\infty, min(k_1, k_2))$, che risulta ancora una volta essere un intorno di $- \infty$. 
+\end{enumerate}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{./images/interval2.pdf}
+\end{figure}
+
+\noindent\textbf{NB!} In generale, se interseco un numero \textbf{finito} di intorni di un certo numero reale $x_0$, ottengo ancora una volta un intorno di quel numero. Lo stesso avviene se interseco più intorni di $+\infty$ (o $-\infty$). Questo discorso però potrebbe non valere quando interseco infiniti intorni.\\
+
+\noindent\textbf{ES.} Prendiamo $x_0 = 0$ e $A_n = D\left(0, \dfrac{1}{n}\right)$ con $n \in \mathbb{N}, n \geq 1$. Il nostro obiettivo è dimostrare che
+
+\begin{equation*}
+    B = \underset{\underset{\scriptstyle n \geq 1}{n \in \mathbb{N}}}{\cap} A_n = \{0\}
+\end{equation*}
+
+\noindent ovvero che l'intersezione dei vari intorni $A_n$ al variare di $n$ con $n \in \mathbb{N}, n \geq 1$ faccia esattamente $0$. Dividiamo la dimostrazione in due step: innanzitutto, proviamo che $A_n \supseteq \{0\}$ e successivamente che $A_n \subseteq \{0\}$ (in questo modo poi è possibile dire che $A_n = \{0\}$).\\
+Partiamo dalla "$\supseteq$", ovvero mostriamo che $0 \in B$. Secondo la definizione di $B$ data precedentemente, ciò risulta equivalente a mostrare che $0$ appartiene a tutti gli insiemi $A_n$. In simboli: $0 \in A_n \quad \forall n \in \mathbb{N}, n \geq 1$. Dato che tutti gli $A_n$ sono centrati in $0$ (perché $A_n = D(0, \frac{1}{n})$), allora:
+
+\begin{equation*}
+     0 \in \underset{\underset{\scriptstyle n \geq 1}{n \in \mathbb{N}}}{\cap} A_n \implies \{0\} \subseteq \underset{\underset{\scriptstyle n \geq 1}{n \in \mathbb{N}}}{\cap} A_n
+\end{equation*}
+
+\noindent Procediamo ora con la seconda parte della dimostrazione ("$\subseteq$"). Sia $x > 0$ e per contraddizione diciamo che $x \in B$. Ciò significa però anche che $x \in A_n \quad \forall n \in \mathbb{N}, n \geq 1$. Ipotizziamo ora che:
+
+\begin{equation}
+    0 < x < \frac{1}{n} \qquad \forall n \in \mathbb{N}, n \geq 1
+    \label{eq:11}
+\end{equation}
+
+\noindent Dato che l'insieme $\left\{\dfrac{1}{n} : n \geq 1\right\}$ è inferiormente limitato e, in particolare, $inf\left\{\dfrac{1}{n} : n \geq 1\right\} = 0$, ovvero $0$ è il massimo dei minoranti (abbiamo determinato tale valore utilizzando la proprietà di Archimede. Infatti $\forall \varepsilon > 0, \exists \Bar{n} \in \mathbb{N} \ | \ \Bar{n} > \frac{1}{\varepsilon} \implies \frac{1}{\Bar{n}} < \varepsilon$), in (\ref{eq:11}) se $x$ fosse minorante, allora $x \leq max(minoranti) \ (= 0)$, ovvero che $x \leq 0$. Arriviamo quindi ad una contraddizione. Ciò significa che nessun $x > 0$ può appartenere a $B$. \\
+Allo stesso modo, sia $x < 0$ per contraddizione:
+
+\begin{equation*}
+    -\frac{1}{n} < x < 0 \qquad \forall n \in \mathbb{N}, n \geq 1
+\end{equation*}
+
+\noindent Definiamo ora $C = \left\{-\dfrac{1}{n} : n \in \mathbb{N}, n \geq 1\right\}$. Secondo questa definizione di $C$, $x$ rappresenta un maggiorante di questo insieme, ma per la proprietà di Archimede $sup(C) = 0$ (potevamo anche ricavarlo molto più semplicemente ricordandoci che $inf(-A) = -sup(A)$), dove $sup(C)$ è proprio il minimo dei maggioranti di $C$. Arriviamo però ancora una volta ad una contraddizione perché stiamo dicendo che esiste un maggiorante $x < 0$, che è più piccolo del minimo dei maggioranti ($0$). Per questo motivo, $x \geq 0$, quindi nessun $x < 0$ è appartenente a $B$.\\
+Dato che come primo step abbiamo dimostrato l'appartenenza di $0$ a $B$ e dato che in questo secondo step abbiamo dimostrato che $B$ non contiene né $x < 0$, né $x > 0$, arriviamo alla conclusione che $B = \{0\}$. Riassumendo quindi presi infiniti intorni e intersecati tra di essi, otteniamo solo il loro centro (che ovviamente non è un intorno).
+
+% PROVARE A FARE \CAP (N, + \INFTY) = \VARNOTHING...
+
+\subsection{Teorema di unicità del limite}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ con $x_0$ punto di accumulazione per $A$.\\
+Suppongo che:
+
+\begin{equation}
+    \lim_{x\to x_0}f(x) = l_1 \in \widetilde{\mathbb{R}}
+    \label{eq:12}
+\end{equation}
+
+\begin{equation}
+    \lim_{x\to x_0}f(x) = l_2 \in \widetilde{\mathbb{R}}
+    \label{eq:13}
+\end{equation}
+
+\noindent allora $l_1 = l_2$.
+
+\subsubsection{Dimostrazione del teorema di unicità del limite}
+Innanzitutto definiamo il primo limite (\ref{eq:12}). $\forall V_{l_1}$ intorno di $l_1$, $\exists U_{x_0}$ intorno di $x_0$ tale che $f(x) \in V_{l_1}$ per ogni $x \in (U_{x_0} \cap A) - \{x_0\}$.\\
+Definiamo ora il secondo limite (\ref{eq:13}). $\forall V_{l_2}$ intorno di $l_2$, $\exists U'_{x_0}$ intorno di $x_0$ tale che $f(x) \in V_{l_2}$ per ogni $x \in (U'_{x_0} \cap A) - \{x_0\}$.\\
+
+\noindent\textbf{NB!} Se $x_0 \in \{+\infty, -\infty\}$, non bisogna scrivere il $- \{x_0\}$ durante l'intersezione tra i due insiemi.\\
+
+\noindent Supponiamo ora che $l_1 \neq l_2$. Allora $\exists V_{l_1}, V_{l_2}$ intorni di $l_1$ e $l_2$ rispettivamente tali che $V_{l_1} \cap V_{l_2} = \varnothing$.\\
+Supponiamo ora che $l_1, l_2 \in \mathbb{R}$ e che $l_1 < l_2$. Possiamo quindi definire la distanza tra $l_2$ e $l_1$ come $d = l_2 - l_1 > 0$. Se prendiamo ora:
+
+\begin{equation*}
+    V_{l_1} = D\left(l_1, \frac{d}{2}\right) \qquad V_{l_2} = D\left(l_2, \frac{d}{2}\right)
+\end{equation*}
+
+\noindent abbiamo effettivamente che $V_{l_1} \cap V_{l_2} = \varnothing$. Graficamente:
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=12cm]{./images/interval3.pdf}
+\end{figure}
+
+% Mostrare per esercizio che funziona anche per l_1 = +\infty, l_2 \in \mathbb{R}; l_1 = -\infty, l_2 \in \mathbb{R}; l_1 = -\infty, l_2 = +\infty
+
+\noindent Chiamiamo ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$, che è un intorno di $x_0$. Sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$ (perché $x_0$ è punto di accumulazione). Allora per la definizione di limite: $f(x) \in V_{l_1}$ (dato che $x \in W_{x_0} \subseteq U_{x_0}$ e se $x \in U_{x_0} \implies f(x) \in V_{l_1}$) e $f(x) \in V_{l_2}$ (dato che $x \in W_{x_0} \subseteq U'_{x_0}$ e se $x \in U'_{x_0} \implies f(x) \in V_{l_2}$). Quindi $f(x) \in V_{l_1} \cap V_{l_2}$, ma prima abbiamo preso apposta $V_{l_1}$ e $V_{l_2}$ tali che $V_{l_1} \cap V_{l_2} = \varnothing$. Siamo quindi arrivati ad una contraddizione. Ne deriva che $l_1 = l_2$ (nella pratica, infatti, non è possibile che una funzione sia arbitrariamente vicina sia ad un $l_1$ che ad un $l_2$ con $l_1 \neq l_2$. Allo stesso modo, se $l_1 = + \infty$ e $l_2 \in \mathbb{R}$, come fa $f(x)$ ad essere arbitrariamente vicina sia a $l_1$, che a $l_2$?!).
 
 \end{document}

@@ -28,12 +28,18 @@
 24. Cosa sono i punti di accumulazione e i punti isolati?
 25. Se un insieme è superiormente o inferiormente limitato, $+ \infty$ o $- \infty$ possono essere dei punti di accumulazione per tale insieme?
 26. Enuncia la definizione di limite.
-27. Perché è fondamentale che il punto $x_0$ a cui tende un limite, sia un punto di accumulaczione?
+27. Perché è fondamentale che il punto $x_0$ a cui tende un limite, sia un punto di accumulazione?
+28. Cos'è un'applicazione composta?
+29. Mostra come funziona l'applicazione identità.
+30. Cos'è un'applicazione inversa e qual è il requisito per poterla usare?
+31. Perché per determinare il grafico di una funzione inversa, il grafico della funzione originaria viene simmetrizzato rispetto alla bisettrice del 1° e 3° quadrante?
+32. Enuncia la definizione di funzione strettamente (debolmente) crescente e decrescente.
 
 ## Dimostrazioni
 
 - Dimostra:
-  $$\sum_{i=1}^n i = \frac{n(n+1)}{2} \quad \forall n \in \mathbb{N}, n \geq 1$$
+
+$$\sum_{i=1}^n i = \frac{n(n+1)}{2} \quad \forall n \in \mathbb{N}, n \geq 1$$
 
 - Dimostra. Estendi poi anche al caso $q = 0$:
 
