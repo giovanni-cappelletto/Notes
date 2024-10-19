@@ -7,6 +7,13 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
 
 \begin{document}
 \part{Insiemi numerici}
@@ -1313,6 +1320,8 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 
 \noindent\textbf{NB!} È bene specificare che $x_0$ è un punto di accumulazione, altrimenti l'insieme qui sopra potrebbe essere un insieme vuoto $\varnothing$. Proprio per questo motivo, prima di risolvere un limite è bene sempre verificare che $x_0$, ovvero il punto a cui si sta tendendo, sia sempre un punto di accumulazione, altrimenti il limite non esiste.\\
 
+\noindent\textbf{Link:} \href{https://www.geogebra.org/m/h4at6wmh}{$\lim_{x\to +\infty}f(x) = l$} - \href{https://www.geogebra.org/m/pde8kmyk}{$\lim_{x\to +\infty}f(x) = +\infty$} - \href{https://www.geogebra.org/m/u28wkgdt}{$\lim_{x\to x_0}f(x) = +\infty$} \\
+
 \noindent\textbf{NB!} $U_{x_0}$ dipende da $l$. Più nello specifico, esso dipende da $V_l$, l'intorno di $l$. Quindi se cambio $V_l$, allora cambio anche $U_{x_0}$. \\
 
 \noindent\textbf{NB!} Se $x_0 \in \{-\infty, + \infty\}$, l'ultima intersezione è da leggere come $U_{x_0} \cap A$ (ovvero senza togliere $\{x_0\}$).\\
@@ -1330,7 +1339,7 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 \noindent\textbf{ES.} Se invece avessimo $l = + \infty$ e $x_0 \in \mathbb{R}$, allora $V_l = (M, + \infty) \quad \forall M > 0$ e $U_{x_0} = (x_0 - \delta, x_0 + \delta)$.
 
 \begin{equation*}
-    \implies \forall M > 0, \exists \delta > 0 : f(x) > M \qquad \forall x \in (x_0 - \delta, x_0 + \delta) \cap A - \{x_0\}
+    \implies \forall M > 0, \exists \delta_M > 0 : f(x) > M \qquad \forall x \in D^0(x_0, \delta_M) \cap A
 \end{equation*}
 
 \noindent\textbf{NB!} Dire che $f(x) > M$, significa dire che $f(x) \in V_l$.
@@ -1776,9 +1785,15 @@ Allo stesso modo, sia $x < 0$ per contraddizione:
 \end{equation*}
 
 \noindent Definiamo ora $C = \left\{-\dfrac{1}{n} : n \in \mathbb{N}, n \geq 1\right\}$. Secondo questa definizione di $C$, $x$ rappresenta un maggiorante di questo insieme, ma per la proprietà di Archimede $sup(C) = 0$ (potevamo anche ricavarlo molto più semplicemente ricordandoci che $inf(-A) = -sup(A)$), dove $sup(C)$ è proprio il minimo dei maggioranti di $C$. Arriviamo però ancora una volta ad una contraddizione perché stiamo dicendo che esiste un maggiorante $x < 0$, che è più piccolo del minimo dei maggioranti ($0$). Per questo motivo, $x \geq 0$, quindi nessun $x < 0$ è appartenente a $B$.\\
-Dato che come primo step abbiamo dimostrato l'appartenenza di $0$ a $B$ e dato che in questo secondo step abbiamo dimostrato che $B$ non contiene né $x < 0$, né $x > 0$, arriviamo alla conclusione che $B = \{0\}$. Riassumendo quindi presi infiniti intorni e intersecati tra di essi, otteniamo solo il loro centro (che ovviamente non è un intorno).
+Dato che come primo step abbiamo dimostrato l'appartenenza di $0$ a $B$ e dato che in questo secondo step abbiamo dimostrato che $B$ non contiene né $x < 0$, né $x > 0$, arriviamo alla conclusione che $B = \{0\}$. Riassumendo quindi presi infiniti intorni e intersecati tra di essi, otteniamo solo il loro centro (che ovviamente non è un intorno).\\
 
-% PROVARE A FARE \CAP (N, + \INFTY) = \VARNOTHING...
+\noindent\textbf{ES.} Un altro esempio di intersezione con un numero infinito di intorni che non restituisce un ulteriore intorno può essere la seguente: 
+
+\begin{equation*}
+    \underset{n \geq 1}{\cap} (n, + \infty) = \varnothing
+\end{equation*}
+
+\noindent Infatti, se prendiamo un qualsiasi intorno del tipo $(x, +\infty)$ con $x \in \mathbb{R}$ e $x > 0$, esisterà sempre un intorno del tipo $(M, +\infty)$ con $M \in \mathbb{N}$ e $M >> 0, M > x$ (per la proprietà di Archimede) tale che la loro intersezione dia un insieme vuoto.
 
 \subsection{Teorema di unicità del limite}
 Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ con $x_0$ punto di accumulazione per $A$.\\
@@ -1816,8 +1831,42 @@ Supponiamo ora che $l_1, l_2 \in \mathbb{R}$ e che $l_1 < l_2$. Possiamo quindi 
     \includegraphics[width=12cm]{./images/interval3.pdf}
 \end{figure}
 
-% Mostrare per esercizio che funziona anche per l_1 = +\infty, l_2 \in \mathbb{R}; l_1 = -\infty, l_2 \in \mathbb{R}; l_1 = -\infty, l_2 = +\infty
+\noindent Chiamiamo ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$, che è un intorno di $x_0$. Sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$ (perché $x_0$ è punto di accumulazione). Allora per la definizione di limite: $f(x) \in V_{l_1}$ (dato che $x \in W_{x_0} \subseteq U_{x_0}$ e se $x \in U_{x_0} \implies f(x) \in V_{l_1}$) e $f(x) \in V_{l_2}$ (dato che $x \in W_{x_0} \subseteq U'_{x_0}$ e se $x \in U'_{x_0} \implies f(x) \in V_{l_2}$). Quindi $f(x) \in V_{l_1} \cap V_{l_2}$, ma prima abbiamo preso apposta $V_{l_1}$ e $V_{l_2}$ tali che $V_{l_1} \cap V_{l_2} = \varnothing$. Siamo quindi arrivati ad una contraddizione. Ne deriva che $l_1 = l_2$ (nella pratica, infatti, non è possibile che una funzione sia arbitrariamente vicina sia ad un $l_1$ che ad un $l_2$ con $l_1 \neq l_2$. Allo stesso modo, se $l_1 = + \infty$ e $l_2 \in \mathbb{R}$, come fa $f(x)$ ad essere arbitrariamente vicina sia a $l_1$, che a $l_2$?!).\\
 
-\noindent Chiamiamo ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$, che è un intorno di $x_0$. Sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$ (perché $x_0$ è punto di accumulazione). Allora per la definizione di limite: $f(x) \in V_{l_1}$ (dato che $x \in W_{x_0} \subseteq U_{x_0}$ e se $x \in U_{x_0} \implies f(x) \in V_{l_1}$) e $f(x) \in V_{l_2}$ (dato che $x \in W_{x_0} \subseteq U'_{x_0}$ e se $x \in U'_{x_0} \implies f(x) \in V_{l_2}$). Quindi $f(x) \in V_{l_1} \cap V_{l_2}$, ma prima abbiamo preso apposta $V_{l_1}$ e $V_{l_2}$ tali che $V_{l_1} \cap V_{l_2} = \varnothing$. Siamo quindi arrivati ad una contraddizione. Ne deriva che $l_1 = l_2$ (nella pratica, infatti, non è possibile che una funzione sia arbitrariamente vicina sia ad un $l_1$ che ad un $l_2$ con $l_1 \neq l_2$. Allo stesso modo, se $l_1 = + \infty$ e $l_2 \in \mathbb{R}$, come fa $f(x)$ ad essere arbitrariamente vicina sia a $l_1$, che a $l_2$?!).
+\noindent Supponiamo ora invece che $l_1 = +\infty$ e che $l_2 \in \mathbb{R}$. Allora abbiamo che $V_{l_1} = (K, + \infty), U_{x_0} = (x_0 - \delta_K, x_0 + \delta_K)$ e $V_{l_2} = (l - \varepsilon, l + \varepsilon), U'_{x_0} = (x_0 - \delta_\varepsilon, x_0 + \delta_\varepsilon)$. Per la definizione di limite quindi abbiamo rispettivamente che: 
+
+\begin{equation*}
+    \forall K > 0, \exists \delta_K > 0 : f(x) > K \qquad \forall x \in ((x_0 - \delta_K, x_0 + \delta_K) \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |f(x) - l_2| < \varepsilon \qquad \forall x \in ((x_0 - \delta_\varepsilon, x_0 + \delta_\varepsilon) \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Ora sia $K > l_2$, allora $d = K - l_2 > 0$ e quindi: $V_{l_1} = (K, + \infty)$ e $V_{l_2} = D\left(l_2, \dfrac{d}{2}\right)$ (dove $\varepsilon = \frac{d}{2}$. Andrebbe bene qualsiasi valore positivo $\varepsilon$ tale che sia inferiore di $d$). In questo modo abbiamo che: $V_{l_1} \cap V_{l_2} = \varnothing$.\\
+Sia ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$ e sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$, allora, per gli stessi motivi visti nella precedente dimostrazione, $f(x) \in V_{l_1} \cap V_{l_2}$, ma abbiamo impostato tali intorni per far in modo che $V_{l_1} \cap V_{l_2} = \varnothing$. Ciò significa che non possono coesistere due limiti distinti di $x_0$ con $l_1 = + \infty$ e $l_2 \in \mathbb{R}$.\\
+
+\noindent Supponiamo ora invece che $l_1 = -\infty$ e che $l_2 \in \mathbb{R}$. Allora abbiamo che $V_{l_1} = (- \infty, K), U_{x_0} = (x_0 - \delta_K, x_0 + \delta_K)$ e $V_{l_2} = (l - \varepsilon, l + \varepsilon), U'_{x_0} = (x_0 - \delta_\varepsilon, x_0 + \delta_\varepsilon)$. Per la definizione di limite quindi abbiamo rispettivamente che: 
+
+\begin{equation*}
+    \forall K > 0, \exists \delta_K > 0 : f(x) < K \qquad \forall x \in ((x_0 - \delta_K, x_0 + \delta_K) \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |f(x) - l_2| < \varepsilon \qquad \forall x \in ((x_0 - \delta_\varepsilon, x_0 + \delta_\varepsilon) \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Ora sia $K < l_2$, allora $d = l_2 - K > 0$ e quindi: $V_{l_1} = (-\infty, K)$ e $V_{l_2} = D\left(l_2, \dfrac{d}{2}\right)$ (dove $\varepsilon = \frac{d}{2}$. Andrebbe bene qualsiasi valore positivo $\varepsilon$ tale che sia inferiore di $d$). In questo modo abbiamo che: $V_{l_1} \cap V_{l_2} = \varnothing$.\\
+Sia ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$ e sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$, allora, per gli stessi motivi visti nella precedente dimostrazione, $f(x) \in V_{l_1} \cap V_{l_2}$, ma abbiamo impostato tali intorni per far in modo che $V_{l_1} \cap V_{l_2} = \varnothing$. Ciò significa che non possono coesistere due limiti distinti di $x_0$ con $l_1 = - \infty$ e $l_2 \in \mathbb{R}$.\\
+
+\noindent Infine, supponiamo ora invece che $l_1 = -\infty$ e che $l_2 = +\infty$. Allora abbiamo che $V_{l_1} = (- \infty, K), U_{x_0} = (x_0 - \delta_K, x_0 + \delta_K)$ e $V_{l_2} = (M, +\infty), U'_{x_0} = (x_0 - \delta_M, x_0 + \delta_M)$. Per la definizione di limite quindi abbiamo rispettivamente che: 
+
+\begin{equation*}
+    \forall K > 0, \exists \delta_K > 0 : f(x) < K \qquad \forall x \in ((x_0 - \delta_K, x_0 + \delta_K) \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    \forall M > 0, \exists \delta_M > 0 : f(x) > M \qquad \forall x \in ((x_0 - \delta_M, x_0 + \delta_M) \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Ora sia $K < M$ e quindi: $V_{l_1} = (-\infty, K)$ e $V_{l_2} = (M, +\infty)$. In questo modo abbiamo che: $V_{l_1} \cap V_{l_2} = \varnothing$.\\
+Sia ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$ e sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$, allora, per gli stessi motivi visti nella precedente dimostrazione, $f(x) \in V_{l_1} \cap V_{l_2}$, ma abbiamo impostato tali intorni per far in modo che $V_{l_1} \cap V_{l_2} = \varnothing$. Ciò significa che non possono coesistere due limiti distinti di $x_0$ con $l_1 = - \infty$ e $l_2 = +\infty$.\\
 
 \end{document}

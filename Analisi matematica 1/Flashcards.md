@@ -34,6 +34,10 @@
 30. Cos'è un'applicazione inversa e qual è il requisito per poterla usare?
 31. Perché per determinare il grafico di una funzione inversa, il grafico della funzione originaria viene simmetrizzato rispetto alla bisettrice del 1° e 3° quadrante?
 32. Enuncia la definizione di funzione strettamente (debolmente) crescente e decrescente.
+33. Se $f$ è strettamente (debolmente) crescente, cosa succede a $-f$? E se invece $f$ fosse strettamente (debolmente) decrescente? Dimostra il risultato ottenuto.
+34. Quali sono le conseguenze di una $f$ strettamente crescente (o decrescente)?
+35. Cosa succede se interseco un numero finito di intorni di $x_0$ tra loro? Mostra cosa succede se interseco un numero infinito?
+36. Enuncia e dimostra il teorema di unicità del limite.
 
 ## Dimostrazioni
 
