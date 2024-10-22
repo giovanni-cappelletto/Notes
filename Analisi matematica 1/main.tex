@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{enumitem}
+\usepackage{wrapfig}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -1015,7 +1016,7 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 
 \noindent Dato che il dominio è $A \cap B$, si capisce che nella somma, l'elemento $a$ deve appartenere sia ad $A$, che a $B$. \\
 
-\noindent Dato che la somma in $\mathbb{R}$ è commutativa, allora: $(\varphi + \Psi) = (\Psi + \varphi)$ perché $\varphi(a) + \Psi(a) = \Psi(a) + \Psi(a)$.\\
+\noindent Dato che la somma in $\mathbb{R}$ è commutativa, allora: $(\varphi + \Psi) = (\Psi + \varphi)$ perché $\varphi(a) + \Psi(a) = \Psi(a) + \varphi(a)$.\\
 
 \noindent\textbf{ES.} Dati $\varphi: [0, + \infty) \xrightarrow{} \mathbb{R} \quad x \longmapsto \sqrt{x}$ e $\Psi: \mathbb{R} \xrightarrow{} \mathbb{R} \quad x \longmapsto 2x$, allora $\varphi + \Psi: x \longmapsto \sqrt{x} + 2x \quad D(\varphi + \Psi) = [0, +\infty) \cap \mathbb{R} = [0, +\infty)$. \\
 
@@ -1290,7 +1291,7 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
             \item se $x_0 - \delta > a$, allora l'insieme derivante dall'intersezione sarà pari a $(x_0 - \delta, b]$;
         \end{itemize}
     \end{itemize}
-    \item se $x = b$, allora l'insieme derivante dall'intersezione sarà pari a $(x_0 + \delta, b]$ (oppure a $[a, b]$, se $x_0 - \delta < a$);
+    \item se $x = b$, allora l'insieme derivante dall'intersezione sarà pari a $(x_0 - \delta, b]$ (oppure a $[a, b]$, se $x_0 - \delta < a$);
     \item se $x > b$, allora basterà prendere un $\delta > \Delta = x - b$ per far in modo che qualsiasi sia l'insieme considerato, l'intersezione prodotta sia un insieme vuoto.
 \end{itemize}
 
@@ -1355,7 +1356,7 @@ Se prendiamo un $\Bar{\delta} > 0$ tale che $3 - \Bar{\delta} > 2 \implies \Bar{
 
 \noindent Dato che $-\infty$ non è un punto di accumulazione (perché l'insieme è inferiormente limitato), il limite non esiste.
 
-\subsection{Esercizio 13 - Non finito}
+\subsection{Esercizio 13}
 \textbf{È vero che:}
 
 \begin{equation*}
@@ -1508,8 +1509,15 @@ Successivamente, ci chiediamo se $2$ è un punto di accumulazione. Guardando il 
 \end{equation*}
 
 \noindent Questo perché il numeratore è uguale e il denominatore è positivo in entrambi i casi; il denominatore di sinistra però è più grande, per cui il numero di sinistra ($c(\varepsilon)$) è più piccolo rispetto a quello di destra ($d(\varepsilon)$).\\
+\noindent Non è invece necessario risolvere il secondo sistema, dato che abbiamo appena verificato che $|f(x) - l| < \varepsilon < \frac{5}{4}$, preso $\varepsilon < \frac{5}{4}$ e $\delta_\varepsilon$, si ha che:
+\begin{gather*}
+    |x - 2| < \delta_\varepsilon \implies 2 - \delta_\varepsilon < x < 2 + \delta_\varepsilon \\
+    |f(x) - l| < \varepsilon < \dfrac{5}{4} \leq e
+\end{gather*}
 
-\noindent Non è invece necessario svolgere i calcoli per il caso $x < - 2$. Infatti, qualsiasi intorno contenente $x_0 = 2$, conterrebbe per forza anche $x_0 = -2$ (punto in cui la funzione non esiste, come si può capire dal suo dominio). 
+\noindent dove $l = \dfrac{3}{4}$ e $e \geq \dfrac{5}{4}$. Quindi $|f(x) - l| < e \quad \forall e \geq \dfrac{5}{4}$. \\
+
+\noindent Anche il caso $x < - 2$ non deve per forza essere trattato. Infatti, qualsiasi intorno contenente $x_0 = 2$, conterrebbe per forza anche $x_0 = -2$ (punto in cui la funzione non esiste, come si può capire dal suo dominio). 
 
 \subsection{Composizione di applicazioni}
 Siano $A, B, C, D \neq \varnothing$, $\varphi: A \xrightarrow{} B$ e $\Psi: C \xrightarrow{} D$ tali che $Imm(\varphi) \subset D_\Psi$.\\
@@ -1868,5 +1876,243 @@ Sia ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$ e sia $x \in (W_{x_0} \cap A) - \{x_0\
 
 \noindent Ora sia $K < M$ e quindi: $V_{l_1} = (-\infty, K)$ e $V_{l_2} = (M, +\infty)$. In questo modo abbiamo che: $V_{l_1} \cap V_{l_2} = \varnothing$.\\
 Sia ora $W_{x_0} = U_{x_0} \cap U'_{x_0}$ e sia $x \in (W_{x_0} \cap A) - \{x_0\} \neq \varnothing$, allora, per gli stessi motivi visti nella precedente dimostrazione, $f(x) \in V_{l_1} \cap V_{l_2}$, ma abbiamo impostato tali intorni per far in modo che $V_{l_1} \cap V_{l_2} = \varnothing$. Ciò significa che non possono coesistere due limiti distinti di $x_0$ con $l_1 = - \infty$ e $l_2 = +\infty$.\\
+
+\subsection{Teorema di permanenza del segno}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Se:
+
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = l \in (0, + \infty) \cup \{+\infty\} \qquad [oppure \ 
+ l \in (- \infty, 0) \cup \{-\infty\}]
+\end{equation*}
+
+\noindent allora $\exists K > 0, \exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) > K \ (> 0) \quad \forall x \in (U_{x_0} \cap A) - \{x_0\}$ (oppure $f(x) < -K \ (< 0)$, se $l$ appartiene al secondo intorno definito tra le parentesi quadre).\\
+
+\noindent\textbf{Link:} \href{https://www.geogebra.org/m/qbgp526U}{Teorema di permanenza del segno}.
+
+\subsubsection{Dimostrazione del teorema della permanenza del segno per $l = +\infty$}
+Dato che $\forall K \in \mathbb{R}, \exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) > K \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, allora se fissiamo $\Bar{K} > 0$ e lo applichiamo a questa definizione, otteniamo che $f(x) > \Bar{K} \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.
+
+\subsubsection{Dimostrazione del teorema della permanenza del segno per $l \in \mathbb{R}, l > 0$}
+Se $l \in \mathbb{R}, l > 0$, allora $V_l = (l - \varepsilon, l + \varepsilon)$ e quindi: $\forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - l| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Ma dire che $|f(x) - l| < \varepsilon$, significa dire che $l - \varepsilon < f(x) < l + \varepsilon$.\\
+Determiniamo ora una $\varepsilon > 0$ tale per cui $0 < l - \varepsilon$ (così anche $f(x) > 0$). Poniamo quindi $\varepsilon = \frac{l}{2}$ (bastava scegliere una $\varepsilon \ | \ l - \varepsilon > 0$), si ottiene così: 
+
+\begin{equation*}
+    0 < \frac{l}{2} < f(x) < \frac{3}{2}l \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent dove $K = \frac{l}{2}$.
+
+\subsubsection{Dimostrazione del teorema della permanenza del segno per $l \in \mathbb{R}, l < 0$}
+Se $l \in \mathbb{R}, l < 0$, allora $V_l = (l - \varepsilon, l + \varepsilon)$ e quindi $\forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - l| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Ma dire che $|f(x) - l| < \varepsilon$, significa dire che $l - \varepsilon < f(x) < l + \varepsilon$.\\
+Determiniamo ora una $\varepsilon > 0$ tale per cui $l + \varepsilon < 0$ (così anche $f(x) < 0$). Poniamo quindi $\varepsilon = -\frac{l}{2}$ (bastava scegliere una $\varepsilon \ | \ l + \varepsilon < 0$; $\varepsilon > 0$, perché $l < 0$), si ottiene così:
+
+\begin{equation*}
+    \frac{3}{2}l < f(x) < \frac{l}{2} \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent dove $\frac{3}{2} l < \frac{l}{2}$ perché $l < 0$ e dove $K = \frac{l}{2}$.
+
+\subsubsection{Dimostrazione del teorema della permanenza del segno per $l = - \infty$}
+Dato che $\forall K \in \mathbb{R}, \exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) < -K \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, allora se fissiamo $\Bar{K} < 0$ e lo applichiamo a questa definizione, otteniamo che $f(x) < \Bar{K} \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.
+
+\subsection{Teorema di limitatezza locale}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ un punto di accumulazione per $A$.\\
+Sia $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$. Allora $\exists U_{x_0}$ intorno di $x_0$ tale che $\{f(x) : x \in U_{x_0} \cap A\}$ è limitato.
+
+\subsubsection{Dimostrazione del teorema di limitatezza locale}
+Dato che $\varepsilon > 0, \exists U_{x_0}$ intorno di $x_0$ tale che $l - 1 < f(x) < l + 1 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.\\
+Ora se $x_0 \notin A \implies (U_{x_0} \cap A) = (U_{x_0} \cap A) - \{x_0\}$. Mentre se $x_0 \in A$, chiamo $a = min\{f(x_0), l - 1\}$ e chiamo $b = max\{f(x_0), l + 1\}$. Allora si ha che $a \leq f(x) \leq b \qquad \forall x \in (U_{x_0} \cap A)$.
+
+\subsection{Teorema del confronto (I)}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e sia $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $\lim_{x \to x_0} f(x) = l_1 \in \mathbb{R}$ e se $\lim_{x \to x_0} g(x) = l_2 \in \mathbb{R}$, con $l_1 < l_2$, si ha che: $$\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) < g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$$
+    \item se $\lim_{x \to x_0} f(x) = -\infty$ e se $\lim_{x \to x_0} g(x) = l \in \mathbb{R} \cup \{+\infty\}$, si ha che: $$\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) < g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$$
+    \item se $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$ e se $\lim_{x \to x_0} g(x) = +\infty$, si ha che: $$\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) < g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$$
+\end{enumerate}
+
+\subsubsection{Dimostrazione del punto a) del teorema del confronto (I)}
+Siano $l_1 < l_2$ con $l_1, l_2 \in \mathbb{R}$. \\
+Se $\lim_{x \to x_0} f(x) = l_1$, fissato $\varepsilon > 0, \exists U'_{x_0}$ intorno di $x_0$ tale che $l_1 - \varepsilon < f(x) < l_1 + \varepsilon \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}$.\\
+Se $\lim_{x \to x_0} g(x) = l_2$, fissato $\varepsilon > 0, \exists U''_{x_0}$ intorno di $x_0$ tale che $l_2 - \varepsilon < g(x) < l_2 + \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}$.\\
+Se $x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}$, scelgo $\varepsilon > 0$ tale che: 
+
+\begin{equation*}
+    (f(x) < ) \ l_1 + \varepsilon \leq l_2 - \varepsilon \ (< g(x))
+\end{equation*}
+
+\noindent Scegliamo quindi $\varepsilon = \frac{l_2 - l_1}{2} > 0$ (ovvero metà della distanza tra $l_2$ e $l_1$). Per $x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}$ si ha che:
+
+\begin{equation*}
+    f(x) < l_1 + \varepsilon = l_1 + \frac{l_2 - l_1}{2} = \frac{l_2 + l_1}{2}
+\end{equation*}
+
+\begin{equation*}
+    g(x) > l_2 - \varepsilon = l_2 - \frac{l_2 - l_1}{2} = \frac{l_2 + l_1}{2}
+\end{equation*}
+
+\begin{equation*}
+    \implies f(x) < \frac{l_2 + l_1}{2} < g(x) \qquad \forall x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\subsubsection{Dimostrazione del punto b) del teorema del confronto (I)}
+Se $\lim_{x \to x_0} f(x) = - \infty$, significa che $\forall K \in \mathbb{R}, \exists U'_{x_0}$ intorno di $x_0$ tale che $f(x) < K \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}$; mentre se $\lim_{x \to x_0} g(x) = l \in \mathbb{R}$, allora fissato $\varepsilon > 0, \exists U''_{x_0}$ intorno di $x_0$ tale che $l - \varepsilon < g(x) < l + \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}$.\\
+Ora se $x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}$ e imponiamo che $K < l$, significa che:
+
+\begin{equation*}
+    (f(x) <) \ K \leq l - \varepsilon \ (< g(x))
+\end{equation*}
+
+\noindent quindi se $\varepsilon \leq |l - K|$, si ha che al più $K = l - \varepsilon$, ovvero che:
+
+\begin{equation*}
+    g(x) > l - \varepsilon = l - l + K = K \implies f(x) < K < g(x) \implies f(x) < g(x)
+\end{equation*}
+
+\subsubsection{Dimostrazione del punto c) del teorema del confronto (I)}
+Se $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$, significa che $\forall \varepsilon > 0, \exists U'_{x_0}$ intorno di $x_0$ tale che $|f(x) - l| < \varepsilon \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}$; mentre se $\lim_{x \to x_0} g(x) = +\infty$, allora fissato $\forall K \in \mathbb{R}, \exists U''_{x_0}$ intorno di $x_0$ tale che $g(x) > K \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}$.\\
+Ora se $x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}$ e imponiamo che $K > l$, significa che:
+
+\begin{equation*}
+    (f(x) <)\ l + \varepsilon \leq K \ (< g(x))
+\end{equation*}
+
+\noindent quindi se $\varepsilon \leq |K - l|$, si ha che al più $K = l + \varepsilon$, ovvero che:
+
+\begin{equation*}
+    g(x) > K = l + \varepsilon \implies f(x) < l + \varepsilon < g(x) \implies f(x) < g(x)
+\end{equation*}
+
+\begin{wrapfigure}{r}{0.21\textwidth}
+\includegraphics[width=0.9\linewidth]{images/comparisonTheoremI.png} 
+\end{wrapfigure}
+
+\noindent\textbf{Osservazione nel punto a):} \\
+\noindent Cosa accadrebbe se $l_1 \leq l_2$? In altre parole, posso dire che $f(x) \leq g(x) \ \forall x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}$? \\
+No, infatti se $x_0 = 0$ e $f(x) = x^3$ e $g(x) = -x^3 \ \forall x \in (U'_{x_0} \cap U''_{x_0} \cap A) - \{x_0\}$ con $A = D_f = \mathbb{R}$, si ha che:
+
+\begin{equation*}
+    \lim_{x \to 0} f(x) = 0 = \lim_{x \to 0} g(x) \quad (ovvero \ l_1 = l_2 = 0)
+\end{equation*}
+
+\noindent ovvero in ogni intorno di $0$, $U_0 = D(0, \delta), \forall \delta > 0$, si ha che:
+
+\begin{itemize}
+    \item per $x > 0$:
+    \begin{itemize}
+        \item $f(x) > 0$;
+        \item $g(x) < 0$;
+    \end{itemize}
+    \item per $x < 0$:
+    \begin{itemize}
+        \item $f(x) < 0$;
+        \item $g(x) > 0$;
+    \end{itemize}
+\end{itemize}
+
+\noindent In altre parole, non abbiamo un intorno del punto $0$, in cui si mantiene una relazione di segno costante.
+
+\subsection{Teorema del confronto II}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A \neq \varnothing$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $\lim_{x \to x_0} f(x) = l_1 \in \mathbb{R}$ e se $\lim_{x \to x_0} g(x) = l_2 \in \mathbb{R}$ e se $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, allora $l_1 \leq l_2$.
+    \item se $\lim_{x \to x_0} g(x) = -\infty$ e se $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, allora $\exists \lim_{x \to x_0} f(x) = - \infty$.
+     \item se $\lim_{x \to x_0} f(x) = +\infty$ e se $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, allora $\exists \lim_{x \to x_0} g(x) = + \infty$.
+\end{enumerate}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth]{images/comparisonTheoremII-1.png} 
+\end{wrapfigure}
+
+\noindent\textbf{Osservazione:} \\
+\noindent Cosa accadrebbe se $f(x) < g(x)$? In altre parole, posso concludere che $l_1 < l_2$?\\
+No, perché preso $f(x) = 0 \ \forall x \in \mathbb{R}$ e 
+
+\begin{wrapfigure}{l}{0.47\textwidth}
+\includegraphics[width=0.9\linewidth]{images/comparisonTheoremII-2.png} 
+\end{wrapfigure}
+
+\begin{equation*}
+    g(x) = 
+    \begin{cases}
+        \frac{1}{x} \ se \ x > 0 \\
+        0 \ se \ x = 0 \\
+        -\frac{1}{x} \ se \ x < 0
+    \end{cases}
+\end{equation*}
+
+\noindent si ha che $\forall x \in (U_0 \cap \mathbb{R}) - \{0\}, f(x) < g(x)$. Lo stesso vale per $x \in U_{+\infty} \cap \mathbb{R}$. Infatti:
+
+\begin{equation*}
+    \lim_{x \to +\infty} g(x) = 0 = \lim_{x \to +\infty} f(x) \quad (ovvero \ l_1 = l_2)
+\end{equation*}
+
+\noindent Questo significa che non possiamo concludere che $f(x) < g(x)$, ma $f(x) \leq g(x)$.\\
+
+\noindent\textbf{ES.} Mostriamo che il teorema funziona anche quando una delle due funzioni non ammette limite.\\
+Diciamo che:
+
+\begin{equation*}
+    \lim_{x \to + \infty} g(x) = \lim_{x \to + \infty} x + \sin(x) = + \infty
+\end{equation*}
+
+\noindent Dato che $\sin(x) \geq - 1, \forall x \in \mathbb{R}$, allora:
+
+\begin{equation*}
+    g(x) = x + \sin(x) \geq x - 1 = f(x) \qquad \forall x \in \mathbb{R}
+\end{equation*}
+
+\noindent Dato che $\lim_{x \to + \infty} f(x) = \lim_{x \to + \infty} x - 1 = + \infty$, allora $\exists \lim_{x \to + \infty} x + \sin(x) = + \infty$.\\
+
+\noindent\textbf{ES.} Mostriamo che il teorema funziona anche quando una delle due funzioni non ammette limite.\\
+Diciamo che:
+
+\begin{equation*}
+    \lim_{x \to - \infty} g(x) = \lim_{x \to - \infty} x + \sin(x) = - \infty
+\end{equation*}
+
+\noindent Dato che $\sin(x) \leq 1, \forall x \in \mathbb{R}$, allora:
+
+\begin{equation*}
+    g(x) = x + \sin(x) \leq x + 1 = f(x) \qquad \forall x \in \mathbb{R}
+\end{equation*}
+
+\noindent Dato che $\lim_{x \to - \infty} f(x) = \lim_{x \to - \infty} x + 1 = - \infty$, allora $\exists \lim_{x \to - \infty} x + \sin(x) = - \infty$.\\
+
+\subsection{Teorema delle tre funzioni o dei due carabinieri}
+Siano $f, g, h: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $A \neq \varnothing$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Inoltre, $\exists \lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\exists \lim_{x \to x_0} g(x) = l \in \mathbb{R}$ (ovvero $f(x)$ e $g(x)$, per $x$ che tende a $x_0$, tendono allo stesso valore reale $l$) e $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq h(x) \leq g(x) \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora possiamo affermare con certezza che:
+
+\begin{equation*}
+    \exists \lim_{x \to x_0} h(x) = l
+\end{equation*}
+
+\noindent\textbf{NB!} Questo teorema vale solo per limiti reali.
+
+\subsubsection{Dimostrazione del teorema delle tre funzioni o dei due carabinieri}
+Sia $\varepsilon > 0$, allora $\exists U'_{x_0}, U''_{x_0}$ intorni di $x_0$ tali che:
+\begin{gather*}
+    |f(x) - l| < \varepsilon \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}\\
+    |g(x) - l| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+\end{gather*}
+
+\noindent Sia $W_{x_0} = U'_{x_0} \cap U''_{x_0} \cap A$ intorno di $x_0$. Se $x \in (W_{x_0} \cap A) - \{x_0\}$, valgono allora tutte le disequazioni scritte precedentemente. Quindi si ha che:
+
+\begin{equation*}
+    l - \varepsilon < f(x) \ (< l + \varepsilon) \quad (disequazione \ del \ limite \ di \ f)
+\end{equation*}
+\begin{equation*}
+    f(x) \leq h(x) \leq g(x) \quad (per \ ipotesi)
+\end{equation*}
+\begin{equation*}
+    (l - \varepsilon <) \ g(x) < l + \varepsilon \quad (disequazione \ del \ limite \ di \ g)
+\end{equation*}
+
+\noindent Quindi $l - \varepsilon \leq h(x) < l + \varepsilon$, cioè $|h(x) - l| < \varepsilon$. Abbiamo fatto vedere che:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists W_{x_0} \ intorno \ di \ x_0 : |h(x) - l| < \varepsilon \quad \forall x \in (W_{x_0} \cap A) - \{x_0\} \implies \lim_{x \to x_0} h(x) = l
+\end{equation*}
+
 
 \end{document}

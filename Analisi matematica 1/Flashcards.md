@@ -38,6 +38,11 @@
 34. Quali sono le conseguenze di una $f$ strettamente crescente (o decrescente)?
 35. Cosa succede se interseco un numero finito di intorni di $x_0$ tra loro? Mostra cosa succede se interseco un numero infinito?
 36. Enuncia e dimostra il teorema di unicità del limite.
+37. Enuncia il teorema di permanenza del segno. Mostra la sua veridicità in tutti i casi possibili.
+38. Enuncia e dimostra il teorema di limitatezza locale.
+39. Enuncia il teorema del confronto I. Mostra la loro veridicità in tutti i casi possibili.
+40. Enuncia il teorema del confronto II.
+41. Enuncia e dimostra il teorema delle tre funzioni o dei due carabinieri.
 
 ## Dimostrazioni
 
