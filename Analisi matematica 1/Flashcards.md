@@ -43,6 +43,9 @@
 39. Enuncia il teorema del confronto I. Mostra la loro veridicità in tutti i casi possibili.
 40. Enuncia il teorema del confronto II.
 41. Enuncia e dimostra il teorema delle tre funzioni o dei due carabinieri.
+42. Come possono essere riscritti i seguenti limiti: $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\lim_{x \to x_0} f(x) = 0$, $\lim_{x \to x_0} f(x) = l \in \mathbb{R} - \{0\}$ e $\lim_{x \to x_0} f(x) = 0$?
+43. Enuncia e dimostra il teorema del limite della somma.
+44.
 
 ## Dimostrazioni
 

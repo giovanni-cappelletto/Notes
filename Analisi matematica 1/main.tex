@@ -2082,7 +2082,7 @@ Diciamo che:
 \noindent Dato che $\lim_{x \to - \infty} f(x) = \lim_{x \to - \infty} x + 1 = - \infty$, allora $\exists \lim_{x \to - \infty} x + \sin(x) = - \infty$.\\
 
 \subsection{Teorema delle tre funzioni o dei due carabinieri}
-Siano $f, g, h: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $A \neq \varnothing$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Inoltre, $\exists \lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\exists \lim_{x \to x_0} g(x) = l \in \mathbb{R}$ (ovvero $f(x)$ e $g(x)$, per $x$ che tende a $x_0$, tendono allo stesso valore reale $l$) e $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq h(x) \leq g(x) \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora possiamo affermare con certezza che:
+Siano $f, g, h: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $A \neq \varnothing$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Inoltre, $\exists \lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\exists \lim_{x \to x_0} g(x) = l \in \mathbb{R}$ (ovvero $f(x)$ e $g(x)$, per $x$ che tende a $x_0$, tendono allo stesso valore reale $l$) e $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq h(x) \leq g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora possiamo affermare con certezza che:
 
 \begin{equation*}
     \exists \lim_{x \to x_0} h(x) = l
@@ -2114,5 +2114,233 @@ Sia $\varepsilon > 0$, allora $\exists U'_{x_0}, U''_{x_0}$ intorni di $x_0$ tal
     \forall \varepsilon > 0, \exists W_{x_0} \ intorno \ di \ x_0 : |h(x) - l| < \varepsilon \quad \forall x \in (W_{x_0} \cap A) - \{x_0\} \implies \lim_{x \to x_0} h(x) = l
 \end{equation*}
 
+\noindent\textbf{ES.} Utilizziamo il teorema dei due carabinieri per dimostrare che:
 
+\begin{equation*}
+    \exists \lim_{x \to 0} h(x) = \lim_{x \to 0} x\sin\left(\frac{1}{x}\right)
+\end{equation*}
+
+\noindent Innanzitutto, determiniamo il dominio di $h(x)$: $D_h: \mathbb{R} - \{0\}$ e capiamo che $0$ è punto di accumulazione per $D_h$.\\
+A questo punto, consideriamo $|h(x)| \geq 0 \implies |x \sin \frac{1}{x}| \geq 0$. Dato che $|ab| = |a||b|$, allora si ha che $0 \leq |x\sin\frac{1}{x}| = |x||\sin\frac{1}{x}|$.\\
+Ora, siccome $0 \leq |\sin x| \leq 1$, allora $0 \leq |x||\sin\frac{1}{x}| \leq |x|$. Quindi se $f(x) = 0$ (una funzione costante nulla) e $g(x) = |x|$, allora si ha che:
+
+\begin{equation*}
+    f(x) \leq |h(x)| \leq g(x)
+\end{equation*}
+
+\noindent Dato che se $x \to 0$, allora $f(x) \to 0$, così come se $x \to 0$, allora $g(x) \to 0$, allora possiamo concludere che, per il teorema dei due carabinieri, $|h(x)| \to 0$. In altre parole:
+
+\begin{equation*}
+    \exists \lim_{x \to 0} \left|x\sin\left(\frac{1}{x}\right)\right| = 0
+\end{equation*}
+
+\noindent Prendiamo ora $h(x) = x\sin\frac{1}{x}$, dato che $\sin\frac{1}{x} \leq 1$, allora $x\sin\frac{1}{x} \leq x$. Allo stesso tempo però $\sin\frac{1}{x} \geq -1$ e quindi $\sin\frac{1}{x} \geq -x$. Quindi possiamo scrivere:
+
+\begin{equation*}
+    -x \leq x\sin\frac{1}{x} \leq x
+\end{equation*}
+
+\noindent Quindi se $\lim_{x \to 0} x = 0$ e $\lim_{x \to 0} -x = 0$, allora $\exists \lim_{x \to 0} |x\sin\frac{1}{x}| = 0$. Non ci resta solo che verificare l'esistenza dei primi due limiti. In entrambi si ha che:
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |h(x) - 0| < \varepsilon \qquad \forall x \in (\mathbb{R} - \{0\} \cap (-\delta_\varepsilon, \delta_\varepsilon))
+\end{equation*}
+
+\noindent ovvero: $|-x| = |x| < \varepsilon \implies (-\varepsilon, \varepsilon)$ e quindi $\delta_\varepsilon = \varepsilon$.\\
+
+\subsection{Funzione di Dirichlet}
+Sia:
+
+\begin{equation*}
+    f(x) = 
+    \begin{cases}
+        -1 \qquad \ se \ x \in \mathbb{Q} \\
+        1 \qquad \ \ \ se \ x \in \mathbb{R - Q}
+    \end{cases}
+\end{equation*}
+
+\noindent Innanzitutto, notiamo che $f(0) = -1$, che $|f(x)| = 1 \quad \forall x \in \mathbb{R}$, che $\lim_{x \to x_0} |f(x)| = 1$ e, infine, che $\nexists \lim_{x \to x_0} f(x)$.\\
+Supponiamo però che $\lim_{x \to x_0} f(x) = l$. Se $l = -1, \forall \varepsilon > 0$ varrebbe la definizione di limite. Fissiamo allora $\varepsilon = \frac{1}{2}$, allora $\exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - (-1)| < \frac{1}{2} \qquad \forall x \in U_0 - \{0\}$. Ma ciò è falso perché $-\frac{3}{2} < f(x) < -\frac{1}{2} \qquad \forall x \in U_0 - \{x_0\}$, ma in ogni intorno bucato di $x_0$, sono presenti infiniti razionali e irrazionali e il valore ottenuto da razionali mappati nella funzione $f(x)$ ($-1$) è diverso da quello ottenuto mappando irrazionali ($1$). Dato quindi che si arriva ad una contraddizione, $l = -1$ non è il valore di $\lim_{x \to 0} f(x)$.\\
+Analogamente, se $l = 1$, allora $|f(x) - 1| < \frac{1}{2} \implies \frac{1}{2} < f(x) < \frac{3}{2} \qquad \forall x \in U_0 - \{0\}$ e, anche qui, ciò non vale per tutti quegli infiniti numeri razionali che si sono in un intorno bucato di $0$. In altre parole, $l = -1$ non è il valore di $\lim_{x \to 0} f(x)$.\\
+Se invece:
+
+\begin{itemize}
+    \item $l > 1$, ma $l - \frac{1}{2} > 1$ (cioè l'estremo inferiore di $V_l$ è più grande di $1$);
+    \item $l < -1$, ma $l + \frac{1}{2} < -1$ (cioè l'estremo superiore di $V_l$ è più piccolo di $-1$);
+    \item $0 < l < 1$, ma $l - \frac{1}{2} > - 1$ e $l + \frac{1}{2} < 1$.
+\end{itemize}
+
+\noindent allora per il teorema della limitatezza locale, esiste un intorno di $x_0$ tale che $\{f(x) : x \in U_{x_0} \cap A\}$ è limitato. In altre parole, imponendo tali vincoli si costruisce un insieme di valori $f(x) > 1$ o $f(x) < -1$ oppure ancora $-1 < f(x) < 1$. \\
+
+\noindent\textbf{Osservazioni:} Sia $A \neq \varnothing$ e $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ di accumulazione per $A$. Allora si ha che:
+
+\begin{enumerate}
+    \item $\lim_{x \to x_0} f(x) = l \in \mathbb{R} \iff \lim_{x \to x_0} (f(x) - l) = 0$;
+    \item $\lim_{x \to x_0} f(x) = 0 \iff \lim_{x \to x_0} |f(x)| = 0$;
+    \item $\lim_{x \to x_0} f(x) = l \in \mathbb{R} - \{0\} \implies \lim_{x \to x_0} |f(x)| = |l|$ (è solo un'implicazione in questo caso. Infatti, se fosse un $\iff$, allora esisterebbero controesempi come la funzione di Dirichlet);
+    \item $\lim_{x \to x_0} f(x) = 0 \iff \lim_{x \to x_0} [f(x)]^2 = 0$;
+\end{enumerate}
+
+\noindent Di seguito, verifichiamo i vari punti qui sopra elencati. \\
+
+\noindent\textbf{Verifica del punto 1)}\\
+\noindent Innanzitutto, scriviamo le due definizioni di limiti:
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - l| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    \forall \varepsilon > 0, \exists V_{x_0} \ intorno \ di \ x_0 : |f(x) - l - 0| < \varepsilon \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Possiamo quindi notare come le due espressioni risultino analoghe.\\
+
+\noindent\textbf{Verifica del punto 2)}\\
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - 0| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    \forall \varepsilon > 0, \exists V_{x_0} \ intorno \ di \ x_0 : ||f(x)| - 0| - 0| < \varepsilon \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Dato che $||f(x)|| = |f(x)|$, allora $||f(x)| - 0| = |f(x) - 0|$. Possiamo quindi notare ancora una volta l'uguaglianza tra le due espressioni.\\
+
+\noindent\textbf{Verifica del punto 3)}\\
+Per la II disuguaglianza triangolare ($||a| - |b|| \leq |a - b|$), si ha che $||f(x)| - |l|| \leq |f(x) - l|$. \\
+Per ipotesi invece: 
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - l| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Ora quindi sappiamo che $||f(x)| - |l|| \leq |f(x) - l| < \varepsilon$, allora possiamo dire che:
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : ||f(x)| - |l|| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent\textbf{Verifica del punto 4)}\\
+\noindent Dimostriamo, innanzitutto, l'implicazione. Quindi:
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - 0| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Notiamo però che se $|f(x)|^2 < \varepsilon^2$, allora anche $[f(x)]^2 < \varepsilon^2$, infatti:
+
+\begin{itemize}
+    \item $f(x) \geq 0 \implies |f(x)| = f(x)$;
+    \item $f(x) \leq 0 \implies [|f(x)|]^2 = [f(x)]^2$
+\end{itemize}
+
+\noindent Se invece consideriamo la controimplicazione:
+
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |[f(x)]^2| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Dato che $|[f(x)]^2| < \varepsilon$, allora $|f(x)| < \sqrt{\varepsilon}$ (ovvero $- \sqrt{\varepsilon} < f(x) < \sqrt{\varepsilon}$). Per la proprietà 2) verificata precedentemente, se $lim_{x \to 0} |f(x)| = 0$, allora $\lim_{x \to 0} f(x) = 0$.
+
+\subsection{Teorema del limite della somma}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $A \neq \varnothing$, $x_0 \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. \\
+Inoltre, assumo che $\lim_{x \to x_0} f(x) = l_1 \in \widetilde{\mathbb{R}}$ e che $\lim_{x \to x_0} g(x) = l_2 \in \widetilde{\mathbb{R}}$. Allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $l_1, l_2 \in \mathbb{R} \implies \lim_{x \to x_0} (f + g)(x) = l_1 + l_2$;
+    \item se almeno uno tra $l_1$ e $l_2$ è $+ \infty$ e nessuno dei due è $- \infty$, allora $\lim_{x \to x_0} (f + g)(x) = + \infty$;
+    \item se almeno uno tra $l_1$ e $l_2$ è $- \infty$ e nessuno dei due è $+ \infty$, allora $\lim_{x \to x_0} (f + g)(x) = - \infty$
+\end{enumerate}
+
+\subsubsection{Dimostrazione se $l_1, l_2 \in \mathbb{R}$}
+Sia $\varepsilon > 0$, allora $\exists U'_{x_0}, U''_{x_0}$ intorni di $x_0$ tale che:
+
+\begin{equation*}
+    |f(x) - l_1| < \varepsilon \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    |f(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Sia ora $W_{x_0} = (U'_{x_0} \cap U''_{x_0})$ un intorno di $x_0$, allora: 
+\begin{equation*}
+    |(f + g)(x) - (l_1 + l_2)| = |f(x) - l_1 + g(x) - l_2|
+\end{equation*}
+
+\noindent Per la I disuguaglianza triangolare ($|a + b| \leq |a| + |b|$), si ha che:
+\begin{equation*}
+    |f(x) - l_1 + g(x) - l_2| \leq |f(x) - l_1| + |g(x) - l_2| < \varepsilon + \varepsilon \qquad \forall x \in (W_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Abbiamo quindi verificato la definizione di limite: $\lim_{x \to x_0} (f+g)(x) = l_1 + l_2$.
+
+\subsubsection{Dimostrazione se $l_1 = +\infty$ $l_2 \in \mathbb{R}$}
+Se $l_1 = +\infty$ e $l_2 \in \mathbb{R}$, allora significa che: 
+\begin{equation*}
+    V_{l_1} = (K, + \infty) \implies \forall K > 0, \exists U'_{x_0} \ intorno \ di \ x_0 : f(x) > K \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    V_{l_2} = (l_2 - \varepsilon, l_2 + \varepsilon) \implies \forall \varepsilon > 0, \exists U''_{x_0} \ intorno \ di \ x_0 : |f(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Se $x \in W_{x_0} = (U'_{x_0} \cap U''_{x_0})$, dato che $f(x) > K$ e $-\varepsilon < g(x) - l_2$, allora:
+\begin{equation*}
+    f(x) + g(x) - l_2 > K - \varepsilon \implies f(x) + g(x) > K + l_2 - \varepsilon \implies f(x) + g(x) > K + H
+\end{equation*}
+
+\noindent Abbiamo quindi verificato che $\lim_{x \to x_0} (f + g)(x) = +\infty$ se $\lim_{x \to x_0} f(x) = +\infty$ e $\lim_{x \to x_0} g(x) = l \in \mathbb{R}$.
+
+\subsubsection{Dimostrazione se $l_1 = -\infty$ $l_2 \in \mathbb{R}$}
+Se $l_1 = -\infty$ e $l_2 \in \mathbb{R}$, allora significa che: 
+\begin{equation*}
+    V_{l_1} = (K, + \infty) \implies \forall K < 0, \exists U'_{x_0} \ intorno \ di \ x_0 : f(x) < K \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    V_{l_2} = (l_2 - \varepsilon, l_2 + \varepsilon) \implies \forall \varepsilon > 0, \exists U''_{x_0} \ intorno \ di \ x_0 : |f(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Se $x \in W_{x_0} = (U'_{x_0} \cap U''_{x_0})$, dato che $f(x) < K$ e $g(x) - l_2 < \varepsilon$, allora:
+\begin{equation*}
+    f(x) + g(x) - l_2 < K + \varepsilon \implies f(x) + g(x) < K + l_2 + \varepsilon \implies f(x) + g(x) < K + H
+\end{equation*}
+
+\noindent Abbiamo quindi verificato che $\lim_{x \to x_0} (f + g)(x) = -\infty$ se $\lim_{x \to x_0} f(x) = -\infty$ e $\lim_{x \to x_0} g(x) = l \in \mathbb{R}$.
+
+\subsubsection{Dimostrazione se $l_1 = +\infty$ $l_2 = +\infty$}
+Se $l_1 = +\infty$ e $l_2 = +\infty$, allora significa che: 
+\begin{equation*}
+    V_{l_1} = (K, + \infty) \implies \forall K > 0, \exists U'_{x_0} \ intorno \ di \ x_0 : f(x) > K \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    V_{l_2} = (M, + \infty) \implies \forall M > 0, \exists U''_{x_0} \ intorno \ di \ x_0 : g(x) > M \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Se $x \in W_{x_0} = (U'_{x_0} \cap U''_{x_0})$, dato che $f(x) > K$ e $g(x) > M$, allora:
+\begin{equation*}
+    f(x) + M > K + M \implies f(x) + g(x) > K + M
+\end{equation*}
+
+\noindent Abbiamo quindi verificato che $\lim_{x \to x_0} (f + g)(x) = +\infty$ se $\lim_{x \to x_0} f(x) = +\infty$ e $\lim_{x \to x_0} g(x) = +\infty$.
+
+\subsubsection{Casi di indeterminazione}
+Se $l_1 = + \infty$ e $l_2 = -\infty$ (o viceversa) si possono presentare diversi casi di limite della somma:
+
+\begin{itemize}
+    \item se $f(x) = x$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = 0$$
+    \item se $f(x) = 2x$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = +\infty$$
+    se $f(x) = \frac{x}{2}$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = -\infty$$
+\end{itemize}
+
+\noindent Notiamo quindi che le somme tra $l_1$ e $l_2$ sono indeterminate; non si può dire nulla a riguardo.\\
+
+\noindent\textbf{Corollario:} Siano $A \neq \varnothing$ e $f,g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $\lim_{x \to x_0} f(x) = +\infty$ e $\exists U_{x_0} \ intorno \ di \ x_0 : inf\{g(x) : x \in (U_{x_0} \cap A) - \{x_0\}\} \in \mathbb{R}$, allora $\lim_{x \to x_0} (f + g)(x) = + \infty$;
+    \item se $\lim_{x \to x_0} f(x) = -\infty$ e $\exists U_{x_0} \ intorno \ di \ x_0 : sup\{g(x) : x \in (U_{x_0} \cap A) - \{x_0\}\} \in \mathbb{R}$, allora $\lim_{x \to x_0} (f + g)(x) = - \infty$;
+\end{enumerate}
+
+\noindent\textbf{ES.} Grazie a questo corollario è possibile risolvere un esercizio che precedentemente abbiamo risolto mediante il teorema del confronto, ovvero determinare il risultato di $\lim_{x \to +\infty} x + \sin(x)$. Infatti, dato che $\sin(x)$ è limitato (perché $-1 \leq \sin(x) \leq 1$), allora possiamo dire che $\lim_{x \to + \infty} x + \sin(x) = +\infty$ e che $\lim_{x \to -\infty} x + \sin(x) = -\infty$.
+
+\subsection{Teorema del limite della prodotto}
+ 
 \end{document}
