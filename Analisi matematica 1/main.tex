@@ -2327,7 +2327,7 @@ Se $l_1 = + \infty$ e $l_2 = -\infty$ (o viceversa) si possono presentare divers
 \begin{itemize}
     \item se $f(x) = x$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = 0$$
     \item se $f(x) = 2x$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = +\infty$$
-    se $f(x) = \frac{x}{2}$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = -\infty$$
+    \item se $f(x) = \frac{x}{2}$ e $g(x) = -x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = - \infty \quad \lim_{x \to +\infty} (f+g)(x) = -\infty$$
 \end{itemize}
 
 \noindent Notiamo quindi che le somme tra $l_1$ e $l_2$ sono indeterminate; non si può dire nulla a riguardo.\\
@@ -2342,5 +2342,154 @@ Se $l_1 = + \infty$ e $l_2 = -\infty$ (o viceversa) si possono presentare divers
 \noindent\textbf{ES.} Grazie a questo corollario è possibile risolvere un esercizio che precedentemente abbiamo risolto mediante il teorema del confronto, ovvero determinare il risultato di $\lim_{x \to +\infty} x + \sin(x)$. Infatti, dato che $\sin(x)$ è limitato (perché $-1 \leq \sin(x) \leq 1$), allora possiamo dire che $\lim_{x \to + \infty} x + \sin(x) = +\infty$ e che $\lim_{x \to -\infty} x + \sin(x) = -\infty$.
 
 \subsection{Teorema del limite della prodotto}
- 
+ Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$ (con $A \neq \varnothing$). Siano anche $\lim_{x \to x_0} f(x) = l_1 \in \widetilde{\mathbb{R}}$ e $\lim_{x \to x_0} g(x) = l_2 \in \widetilde{\mathbb{R}}$, allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $l_1, l_2 \in \mathbb{R} \implies \lim_{x \to x_0} (f \cdot g)(x) = l_1l_2$;
+    \item se $l_1 \in (0, +\infty) \cup \{+\infty\}$ e $l_2 = +\infty \ (- \infty) \implies \lim_{x \to x_0} (f\cdot g)(x) = +\infty \ (-\infty)$;
+    \item se $l_1 \in (-\infty, 0) \cup \{-\infty\}$ e $l_2 = +\infty \ (- \infty) \implies \lim_{x \to x_0} (f\cdot g)(x) = -\infty \ (+\infty)$;
+\end{enumerate}
+
+\subsubsection{Casi di indeterminazione}
+Se $l_1 = 0, l_2 = +\infty \ (-\infty)$ (o viceversa), considero $x_0 = + \infty$, $A = (0, +\infty)$, allora:
+
+\begin{itemize}
+    \item se $f(x) = \frac{1}{x}$ e $g(x) = x$, allora $$\lim_{x \to +\infty} f(x) = 0 \quad \lim_{x \to +\infty} g(x) = + \infty \quad \lim_{x \to +\infty} (f\cdot g)(x) = \lim_{x \to +\infty} (f\cdot g)(x) = 1$$
+    \item se $f(x) = \frac{1}{x^2}$ e $g(x) = x$, allora $$\lim_{x \to +\infty} f(x) = 0 \quad \lim_{x \to +\infty} g(x) = +\infty \quad \lim_{x \to +\infty} (f\cdot g)(x) = 0$$
+    \item se $f(x) = \frac{1}{x}$ e $g(x) = x^2$, allora $$\lim_{x \to +\infty} f(x) = 0 \quad \lim_{x \to +\infty} g(x) = + \infty \quad \lim_{x \to +\infty} (f \cdot g)(x) = +\infty$$
+\end{itemize}
+
+\noindent In altre parole, sono casi indeterminati perché tutte le funzioni $f(x)$ tendono a $0$ e tutte le funzioni $g(x)$ tendono a $+\infty$, ma queste informazioni non sono abbastanza per determinare a cosa tende la funzione $(f \cdot g)(x)$.
+
+\subsection{Teorema del limite del rapporto}
+ Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$ (con $A \neq \varnothing$). Siano anche $\lim_{x \to x_0} f(x) = l_1 \in \widetilde{\mathbb{R}}$ e $\lim_{x \to x_0} g(x) = l_2 \in \widetilde{\mathbb{R}}$, allora:
+
+ \begin{enumerate}[label=\alph{enumi})]
+    \item se $l_1 \in \mathbb{R}, l_2 \in \mathbb{R} - \{0\} \implies \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \dfrac{l_1}{l_2}$;
+    \item se $l_1 \in \mathbb{R}$ e $l_2 = +\infty \ (- \infty) \implies \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = 0$;
+    \item se $l_1 = \pm \infty$ e $l_2 > 0 \ (< 0), l_2 \in \mathbb{R} \implies \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = \pm \infty \ (\mp \infty)$ per il teorema della permanenza del segno;
+    \item se $l_1 = \pm \infty$ e $l_2 = 0$ e $\exists V_{x_0}$ intorno di $x_0$ tale che $g(x) > 0 \ (< 0) \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\} \implies \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = + \infty \ (- \infty)$;
+    \item se $l_1 \in \mathbb{R}, l_1 > 0, l_2 = 0$ e $\exists V_{x_0}$ intorno di $x_0$ tale che $g(x) > 0 \ (< 0) \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\} \implies \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = + \infty \ (- \infty)$;
+    \item se $l_1 \in \mathbb{R}, l_1 < 0, l_2 = 0$ e $\exists V_{x_0}$ intorno di $x_0$ tale che $g(x) > 0 \ (< 0) \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\} \implies \lim_{x \to x_0} \left(\dfrac{f}{g}\right)(x) = - \infty \ (+ \infty)$;
+\end{enumerate}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\includegraphics[width=1\linewidth]{./images/ratioLimits.png} 
+\end{wrapfigure}
+
+\noindent\textbf{NB!} Il caso descritto nel punto \textit{d)} non è indeterminato. Infatti $\frac{f}{g} = f\cdot\frac{1}{g} = \infty$ (il segno poi dipende a seconda di $f$ e di $g$).\\
+
+\noindent\textbf{NB!} Dire che $\exists V_{x_0}$ intorno di $x_0$ tale che $g(x) > 0 \ (< 0) \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\}$ significa dire che la funzione tende a $0$, mantenendo segno costante. Graficamente:
+
+\subsubsection{Casi di indeterminazione}
+Se $l_1 = l_2 = 0$ o $l_1 = l_2 = \pm\infty$, allora:
+
+\begin{itemize}
+    \item se $f(x) = x$ e $g(x) = x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = + \infty \quad \lim_{x \to +\infty} \left(\dfrac{f}{g}\right)(x) = \lim_{x \to +\infty} 1 = 1$$
+    \item se $f(x) = \frac{1}{x^2}$ e $g(x) = \frac{1}{x}$, allora $$\lim_{x \to +\infty} f(x) = 0 \quad \lim_{x \to +\infty} g(x) = 0 \quad \lim_{x \to +\infty} \left(\dfrac{f}{g}\right)(x) = \lim_{x \to +\infty} \left(\dfrac{1}{x}\right) = 0$$
+    \item se $f(x) = x^2$ e $g(x) = x$, allora $$\lim_{x \to +\infty} f(x) = +\infty \quad \lim_{x \to +\infty} g(x) = +\infty \quad \lim_{x \to +\infty} \left(\dfrac{f}{g}\right)(x) = \lim_{x \to +\infty} x = +\infty$$
+\end{itemize}
+
+\noindent\textbf{Def:} Siano $A \neq \varnothing$ e $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. \\
+Se esiste $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$ e $\exists V_{x_0} \ intorno \ di \ x_0 : f(x) > l \ (< l) \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\} \overset{def}{\iff} \lim_{x \to x_0} f(x) = l^+ \ (l^-)$.\\
+
+\noindent\textbf{NB!} Non si può scrivere che se $\lim_{x \to x_0} f(x) = 3$ e $\lim_{x \to x_0} f(x) = 2^+$, allora $\lim_{x \to x_0} (f + g)(x) = 5^+$ perché $2^+ \notin \mathbb{R}$. Infatti, se abbiamo $f(x) = 3 - x^2$, $g(x) = 2 + x ^4$ e $x_0 = 0$, allora $(f + g)(x) = 5 - x^2(x^2 - 1)$. Studiando ora il segno di $(f + g)(x)$, si ha che $x^2(x^2 - 1) < 0 : \ per \ x \in (-1, 1) - \{0\} \implies \lim_{x \to 0} (f + g)(x) = 5^-$ (perché $\lim_{x \to 0} x^2(x^2 - 1)$ tende a $0^-$.
+
+\subsection{Intorni, punti di accumulazione e limiti destri e sinistri}
+Sia $x_0 \in \mathbb{R}$ e $\delta > 0$, allora definiamo:
+
+\begin{itemize}
+    \item $D^+(x_0, \delta) = D(x_0, \delta) \cap \{x \in \mathbb{R} \ | \ x > x_0\}$ disco destro di centro $x_0$ e raggio $\delta$;
+    \item $D^-(x_0, \delta) = D(x_0, \delta) \cap \{x \in \mathbb{R} \ | \ x < x_0\}$ disco sinistro di centro $x_0$ e raggio $\delta$;
+\end{itemize}
+
+\noindent\textbf{Osservazione:} $D^+(x_0, \delta) = (x_0, x_0 + \delta)$ e $D^-(x_0, \delta) = (x_0 - \delta, x_0)$.\\
+
+\noindent\textbf{NB!} $x_0$ è escluso in questi intorni.\\
+
+\noindent\textbf{Def: }Sia $x_0 \in \mathbb{R}$, $A \subseteq \mathbb{R}$, $A \neq \varnothing$. Diremo che $x_0$ è punto di accumulazione a destra (sinistra) per $A$ se e solo se $\forall \delta > 0$ si ha che:
+
+\begin{equation*}
+    D^+(x_0, \delta) \cap A \neq \varnothing \qquad (D^-(x_0, \delta) \cap A \neq \varnothing)
+\end{equation*}
+
+\noindent\textbf{NB!} È la stessa definizione di punto di accumulazione, ma abbiamo cambiato l'intorno bilatero con uno unilatero.\\
+
+\noindent\textbf{ES.} Sia $A = (3, 4)$, allora:
+
+\begin{itemize}
+    \item $3$ è punto di accumulazione a destra, ma non a sinistra. Per questo motivo, non si può calcolare il limite a sinistra;
+    \item $4$ è punto di accumulazione a sinistra, ma non a destra. Per questo motivo, non si può calcolare il limite a destra;
+    \item $x \in (3, 4)$ sono punti di accumulazione sia a destra che a sinistra.
+\end{itemize}
+
+\noindent\textbf{Def:} Siano $A \neq \varnothing$, $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \mathbb{R}$ punto di accumulazione destro (sinistro) per $A$. Sia $l \in \widetilde{\mathbb{R}}$. Diremo che $f$ ammette limite $l$ per $x$ che tende a $x_0$ da destra (sinistra) se e solo se:
+\begin{equation*}
+    \forall V_l \ intorno \ di \ l, \exists U^+_{x_0} \ (U^-_{x_0}) \ intorno \ destro \ (sinistro) \ di \ x_0 \ | \ f(x) \in V_l \qquad \forall x \in U^+_{x_0} \cap A \ (U^-_{x_0} \cap A)
+\end{equation*}
+
+\noindent In tal caso, scriviamo:
+
+\begin{equation*}
+    \lim_{x \to x_0^+} f(x) = l \qquad \lim_{x \to x_0^-} f(x) = l
+\end{equation*}
+
+\noindent\textbf{Teorema:} Siano $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $A \neq \varnothing$ e $x_0 \in \mathbb{R}$ punto di accumulazione per $A$ (cioè sia a destra che a sinistra). Allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $\lim_{x \to x^+_0} f(x) = l_1 \in \widetilde{\mathbb{R}}$ e $\lim_{x \to x^-_0} f(x) = l_2 \in \widetilde{\mathbb{R}}$ con $l_1 = l_2 = l \implies \lim_{x \to x_0} f(x) = l$;
+    \item se $\lim_{x \to x_0} f(x) = l \in \widetilde{\mathbb{R}} \implies \lim_{x \to x^+_0} f(x) = l$ e $\lim_{x \to x^-_0} = l$.
+\end{enumerate}
+
+\noindent\textbf{NB!} Un modo per mostrare che una funzione ammette limite è calcolare il limite destro e quello sinistro e poi verificare che essi siano uguali.\\
+
+\noindent\textbf{Dimostrazione del punto a):} Per ipotesi sappiamo che:
+
+\begin{itemize}
+    \item $\forall V_l \ intorno \ di \ l, \exists \delta_1 > 0 \ per \ cui \ f(x) \in V_l \qquad \forall x \in A \cap (x_0, x_0 + \delta_1)$;
+    \item $\forall V_l \ intorno \ di \ l, \exists \delta_2 > 0 \ per \ cui \ f(x) \in V_l \qquad \forall x \in A \cap (x_0 - \delta_2, x_0)$;
+\end{itemize}
+
+\noindent Chiamiamo allora $\delta = min(\delta_1, \delta_2)$. Allora $f(x) \in V_l \qquad \forall x \in (A \cap (x_0 - \delta, x_0 + \delta)) - \{x_0\}$, ossia è vero per la definizione di limite.\\
+
+\noindent\textbf{Dimostrazione del punto b):} Per ipotesi sappiamo che:
+
+\begin{equation*}
+    \forall V_l \ intorno \ di \ l, \exists \delta > 0 \ per \ cui \ f(x) \in V_l \qquad \forall x \in A \cap (x_0 - \delta, x_0 + \delta) - \{x_0\}
+\end{equation*}
+
+\noindent quindi dividendo l'intorno $(x_0 - \delta, x_0 + \delta) - \{x_0\}$ in due parti otteniamo: $(x_0 - \delta, x_0)$ e $(x_0, x_0 + \delta)$. Per cui dall'ipotesi, possiamo dire che:
+
+\begin{equation*}
+    \forall V_l \ intorno \ di \ l, \exists \delta > 0 \ per \ cui \ f(x) \in V_l \qquad \forall x \in A \cap (x_0 - \delta, x_0) - \{x_0\} \implies \lim_{x \to x^-_0} f(x) = l
+\end{equation*}
+\begin{equation*}
+    \forall V_l \ intorno \ di \ l, \exists \delta > 0 \ per \ cui \ f(x) \in V_l \qquad \forall x \in A \cap (x_0, x_0 + \delta) - \{x_0\} \implies \lim_{x \to x^+_0} f(x) = l
+\end{equation*}
+
+\noindent\textbf{ES.} Siano $A = \mathbb{R} - \{0\}$ e $f(x) = \frac{1}{x}$ e $x_0 = 0$ punto di accumulazione per $A$. Allora:
+
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{1}{x} = +\infty \qquad \lim_{x \to 0^-} \frac{1}{x} = -\infty \qquad \nexists\lim_{x \to 0} \frac{1}{x} 
+\end{equation*}
+
+\noindent Perché per esistere, $\lim_{x \to x^+_0} = \lim_{x \to x^-_0} = l$.
+
+\subsection{Teoremi sui limiti delle funzioni monotone}
+Siano $a, b \in \widetilde{\mathbb{R}}$ e $I = (a, b)$ (ogni volta che si parla di funzioni monotone, il dominio è un intervallo!) e $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$. Allora:
+
+\begin{enumerate}[label=\alph{enumi})]
+    \item se $f$ è debolmente crescente in $I$, allora: $$\lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = inf\{f(x) : x \in (a, b)\}$$ $$\lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = sup\{f(x) : x \in (a, b)\}$$ ovvero il limite destro di $a$ è uguale all'estremo inferiore dell'immagine e il limite sinistro di $b$ è uguale all'estremo superiore di $b$;
+    \item se $f$ è debolmente decrescente in $I$, allora: $$\lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = sup\{f(x) : x \in (a, b)\}$$ $$\lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = inf\{f(x) : x \in (a, b)\}$$ ovvero il limite destro di $a$ è uguale all'estremo inferiore dell'immagine e il limite sinistro di $b$ è uguale all'estremo superiore di $b$;
+\end{enumerate}
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+\includegraphics[width=0.7\linewidth]{images/monotonicFunctionsLimits.pdf} 
+\end{wrapfigure}
+
+\noindent\textbf{NB!} Sia $J = [a, b)$, allora nell'intervallo dell'insieme immagine devo mettere $(a, b)$ oppure $[a, b)$? \\
+Nella tesi continuo a mettere $(a, b)$, perché ci interessano, nel caso di $\lim_{x \to a^+} f(x)$, solo intorni destri di $a$ che quindi non comprendo $a$ stessa. \\
+In altre parole, se cambiamo il dominio in $[a, b]$, $[a, b)$ o $(a, b]$, nella tesi va sempre messo $(a, b)$ perché nella definizione di limite il valore di $f(x_0)$ con $x_0 \in D_f$ e $x_0$ punto di accumulazione per $D_f$, è \textbf{escluso}. Potremmo infatti avere una funzione simile a questa di sinistra.
+
+
 \end{document}

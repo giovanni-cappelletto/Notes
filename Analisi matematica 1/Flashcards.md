@@ -45,7 +45,13 @@
 41. Enuncia e dimostra il teorema delle tre funzioni o dei due carabinieri.
 42. Come possono essere riscritti i seguenti limiti: $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\lim_{x \to x_0} f(x) = 0$, $\lim_{x \to x_0} f(x) = l \in \mathbb{R} - \{0\}$ e $\lim_{x \to x_0} f(x) = 0$?
 43. Enuncia e dimostra il teorema del limite della somma.
-44.
+44. Enuncia il teorema del limite del prodotto.
+45. Enuncia il teorema del limite del prodotto.
+46. Mostra i casi di indeterminazione con i limiti della somma, del prodotto e del rapporto.
+47. Come si definisce un intorno destro e uno sinistro?
+48. Cos'è un punto di accumulazione destro e uno sinistro?
+49. Cos'è un limite destro e uno sinistro? Mostra come sono legati tra loro limite, limite destro e limite sinistro.
+50. A cosa sono equivalenti i limiti destri e sinistri in caso di funzioni monotone?
 
 ## Dimostrazioni
 
