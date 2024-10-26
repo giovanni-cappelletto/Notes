@@ -11,7 +11,7 @@
 7. Enuncia e dimostra la proprietà di Archimede
 8. Enuncia la proprietà della parte intera
 9. Enuncia e dimostra la densità dei razionali nei reali
-10. Cosa significa maggiorante, minorante, massimo, minimo, estremo superiore, estremo inferiormente?
+10. Cosa significa maggiorante, minorante, massimo, minimo, estremo superiore, estremo inferiore?
 11. Dimostra che se un insieme A è contenuto in un insieme B inferiormente limitato, allora anche l'insieme A è inferiomente limitato (puoi anche dimostrare la stessa cosa con superiormente limitato).
 12. Enuncia e dimostra il teorema che lega insiemi superiormente/inferiormente limitati con massimi e minimi
 13. Enuncia e dimostra entrambi i teoremi sulla caratterizzazione di estremi inferiori e superiori reali
@@ -46,12 +46,15 @@
 42. Come possono essere riscritti i seguenti limiti: $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\lim_{x \to x_0} f(x) = 0$, $\lim_{x \to x_0} f(x) = l \in \mathbb{R} - \{0\}$ e $\lim_{x \to x_0} f(x) = 0$?
 43. Enuncia e dimostra il teorema del limite della somma.
 44. Enuncia il teorema del limite del prodotto.
-45. Enuncia il teorema del limite del prodotto.
+45. Enuncia il teorema del limite del rapporto.
 46. Mostra i casi di indeterminazione con i limiti della somma, del prodotto e del rapporto.
 47. Come si definisce un intorno destro e uno sinistro?
 48. Cos'è un punto di accumulazione destro e uno sinistro?
 49. Cos'è un limite destro e uno sinistro? Mostra come sono legati tra loro limite, limite destro e limite sinistro.
 50. A cosa sono equivalenti i limiti destri e sinistri in caso di funzioni monotone?
+51. Dimostra il teorema sui limiti di funzioni monotone.
+52. Presenta tutti i casi che si possono ottenere con i limiti di esponenziali e logaritmi. Dimostra anche il perché dei risultati ottenuti.
+53. Enuncia il teorema sui limiti per sostituzione.
 
 ## Dimostrazioni
 

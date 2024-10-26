@@ -2475,21 +2475,211 @@ Sia $x_0 \in \mathbb{R}$ e $\delta > 0$, allora definiamo:
 
 \noindent Perché per esistere, $\lim_{x \to x^+_0} = \lim_{x \to x^-_0} = l$.
 
-\subsection{Teoremi sui limiti delle funzioni monotone}
+\subsection{Teorema sui limiti delle funzioni monotone}
 Siano $a, b \in \widetilde{\mathbb{R}}$ e $I = (a, b)$ (ogni volta che si parla di funzioni monotone, il dominio è un intervallo!) e $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$. Allora:
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+\includegraphics[width=0.7\linewidth]{images/monotonicFunctionsLimits.pdf} 
+\vspace{-20pt}
+\end{wrapfigure}
 
 \begin{enumerate}[label=\alph{enumi})]
     \item se $f$ è debolmente crescente in $I$, allora: $$\lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = inf\{f(x) : x \in (a, b)\}$$ $$\lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = sup\{f(x) : x \in (a, b)\}$$ ovvero il limite destro di $a$ è uguale all'estremo inferiore dell'immagine e il limite sinistro di $b$ è uguale all'estremo superiore di $b$;
     \item se $f$ è debolmente decrescente in $I$, allora: $$\lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = sup\{f(x) : x \in (a, b)\}$$ $$\lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = inf\{f(x) : x \in (a, b)\}$$ ovvero il limite destro di $a$ è uguale all'estremo inferiore dell'immagine e il limite sinistro di $b$ è uguale all'estremo superiore di $b$;
 \end{enumerate}
 
-\begin{wrapfigure}{l}{0.4\textwidth}
-\includegraphics[width=0.7\linewidth]{images/monotonicFunctionsLimits.pdf} 
-\end{wrapfigure}
-
 \noindent\textbf{NB!} Sia $J = [a, b)$, allora nell'intervallo dell'insieme immagine devo mettere $(a, b)$ oppure $[a, b)$? \\
 Nella tesi continuo a mettere $(a, b)$, perché ci interessano, nel caso di $\lim_{x \to a^+} f(x)$, solo intorni destri di $a$ che quindi non comprendo $a$ stessa. \\
 In altre parole, se cambiamo il dominio in $[a, b]$, $[a, b)$ o $(a, b]$, nella tesi va sempre messo $(a, b)$ perché nella definizione di limite il valore di $f(x_0)$ con $x_0 \in D_f$ e $x_0$ punto di accumulazione per $D_f$, è \textbf{escluso}. Potremmo infatti avere una funzione simile a questa di sinistra.
 
+\subsubsection{Dimostrazione del teorema sui limiti delle funzioni monotone}
+Se $f$ è debolmente crescente su $I$, significa che $(-f)$ è debolmente decrescente su $I$. Applichiamo ora $a)$ sulla funzione $(-f)$:
+
+\begin{equation*}
+    \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} (-f)(x) = sup\{-f(x) : x \in (a, b) \ (x \in (-\infty, b))\}
+\end{equation*}
+
+\noindent Ora, dato che $\lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} (-f)(x) = - \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x)$ e che $sup(-A) = -inf(A)$, si ha che:
+
+\begin{equation*}
+    - \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = - inf(A) \implies \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = inf(A)
+\end{equation*}
+
+\noindent Dimostriamo ora che $\lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = sup\{f(x) : x \in (a, b) \ (x \in (a, +\infty))\}$. Sappiamo che la funzione è monotona crescente ed è definita nell'intervallo $I = (a, b) \ ((a, + \infty))$. Sia ora $b \in \mathbb{R}$ e sia $\Lambda = sup\{f(x) : x \in (a, b) \ ((a, +\infty))\}$.\\
+Ipotizziamo che $\Lambda \in \mathbb{R}$, allora si ha che $\forall \varepsilon > 0, \exists x_\varepsilon : f(x_\varepsilon) > \Lambda - \varepsilon$ per la caratterizzazione degli estremi superiori (ovvero $\Lambda - \varepsilon$, a differenza di $\Lambda$, non è un maggiorante). \\
+Sia ora $x \in (x_\varepsilon, b) \ ((x_\varepsilon, +\infty))$. Dato che il dominio è un intervallo, siamo certi che $x$ sta in esso (visto che $x_\varepsilon > a$). Possiamo quindi calcolare $f(x)$. Inoltre, sappiamo che $x_\varepsilon < x < b \ (x_\varepsilon < x)$. Quindi:
+
+\begin{itemize}
+    \item per definizione data precedentemente, sappiamo che $\Lambda - \varepsilon < f(x_\varepsilon)$;
+    \item dato che $f(x)$ è una funzione strettamente crescente, si ha che $f(x_\varepsilon) \leq f(x)$;
+    \item dato che $\Lambda$ è un maggiorante di $f$ (in particolare, è il minimo dei maggioranti), allora $f(x) \leq \Lambda$;
+    \item sappiamo sicuramente che $\Lambda < \Lambda + \varepsilon$.
+\end{itemize}
+
+\noindent Unendo tutte queste condizioni otteniamo la seguente catena di disuguaglianze:
+\begin{equation*}
+    \Lambda - \varepsilon < f(x_\varepsilon) \leq f(x) \leq \Lambda < \Lambda + \varepsilon
+\end{equation*}
+
+\noindent e dimenticandoci di alcune parti di essa, possiamo vedere proprio che $\Lambda - \varepsilon < f(x) < \Lambda + \varepsilon$. Cioè otteniamo che:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists x_\varepsilon \in I : |f(x) - \Lambda| < \varepsilon \qquad \forall x \in (x_\varepsilon, b) \ (\forall x \in (x_\varepsilon, +\infty))
+\end{equation*}
+
+\noindent Poniamo ora $\delta_\varepsilon = b - x_\varepsilon > 0$ e quindi $x_\varepsilon = b - \delta_\varepsilon$, allora possiamo riscrivere la precedente definizione come: 
+\begin{equation*}
+    \forall \varepsilon > 0, \exists x_\varepsilon \in I : |f(x) - \Lambda| < \varepsilon \qquad \forall x \in (b - \delta_\varepsilon, b) \implies \lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = \Lambda
+\end{equation*}
+
+\noindent dove $(b - \delta_\varepsilon, b)$ rappresenta proprio un intorno sinistro.\\
+
+\noindent Se invece avessimo avuto $\Lambda = +\infty$ (non si studia il caso in cui $\Lambda = -\infty$, altrimenti non potrebbe sicuramente essere $sup(A)$) e $b \in \mathbb{R} \ (b = +\infty)$, essendo $\Lambda = + \infty$, $Imm(f)$ non sarebbe stata superiormente limitata, per cui $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) > K$.\\
+Sia ora $x \in (x_K, b) \subset I \ ((x \in (x_K, +\infty) \subset I))$, dove $I$ è un intervallo, dato che $x > x_K$, allora: 
+\begin{equation*}
+    K < f(x) \leq f(x_K)
+\end{equation*}
+
+\noindent (abbiamo messo "$\leq$" e non "$<$" perché la funzione è debolmente (non strettamente) crescente) e quindi $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) > K \qquad \forall x \in (x_K, b) \ ((\forall x \in (x_K, +\infty))$. Se $\delta_K = b - x_K \implies x_K = b - \delta_K$ e quindi: 
+\begin{equation*}
+    \forall K \in \mathbb{R}, \exists x_K \in I : f(x) > K \qquad \forall x \in (b - \delta_K, b) \ ((\forall x \in (x_K, +\infty)) \implies \lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = +\infty
+\end{equation*}
+
+\noindent Allo stesso modo, se $f$ è debolmente decrescente su $I$, significa che $(-f)$ è debolmente crescente su $I$. Applichiamo ora $a)$ sulla funzione $(-f)$:
+
+\begin{equation*}
+    \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} (-f)(x) = inf\{-f(x) : x \in (a, b) \ (x \in (-\infty, b))\}
+\end{equation*}
+
+\noindent Ora, dato che $\lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} (-f)(x) = - \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x)$ e che $inf(-A) = -sup(A)$, si ha che:
+
+\begin{equation*}
+    - \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = - sup(A) \implies \lim_{x \to \underset{\scriptstyle (-\infty)}{a^+}} f(x) = sup(A)
+\end{equation*}
+
+\noindent Dimostriamo ora che $\lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = inf\{f(x) : x \in (a, b) \ (x \in (a, +\infty))\}$. Sappiamo che la funzione è monotona decrescente ed è definita nell'intervallo $I = (a, b)$. Sia ora $b \in \mathbb{R}$ e sia $\Lambda = inf\{f(x) : x \in (a, b) \ (x \in (a, +\infty))\}$.\\
+Ipotizziamo che $\Lambda \in \mathbb{R}$, allora si ha che $\forall \varepsilon > 0, \exists x_\varepsilon : f(x_\varepsilon) < \Lambda + \varepsilon$ per la caratterizzazione degli estremi superiori (ovvero $\Lambda + \varepsilon$, a differenza di $\Lambda$, non è un minorante). \\
+Sia ora $x \in (x_\varepsilon, b) \ ((x_\varepsilon, +\infty))$. Dato che il dominio è un intervallo, siamo certi che $x$ sta in esso (visto che $x_\varepsilon > a$). Possiamo quindi calcolare $f(x)$. Inoltre, sappiamo che $x_\varepsilon < x < b \ (x_\varepsilon < x)$. Quindi:
+
+\begin{itemize}
+    \item per definizione data precedentemente, sappiamo che $f(x_\varepsilon) < \Lambda + \varepsilon$;
+    \item dato che $f(x)$ è una funzione strettamente decrescente, si ha che $f(x) \leq f(x_\varepsilon)$;
+    \item dato che $\Lambda$ è un minorante di $f$ (in particolare, è il massimo dei minoranti), allora $\Lambda \leq f(x)$;
+    \item sappiamo sicuramente che $\Lambda < \Lambda + \varepsilon$.
+\end{itemize}
+
+\noindent Unendo tutte queste condizioni otteniamo la seguente catena di disuguaglianze:
+\begin{equation*}
+    \Lambda - \varepsilon < \Lambda \leq f(x) \leq f(x_\varepsilon) < \Lambda + \varepsilon
+\end{equation*}
+
+\noindent e dimenticandoci di alcune parti di essa, possiamo vedere proprio che $\Lambda - \varepsilon < f(x) < \Lambda + \varepsilon$. Cioè otteniamo che:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists x_\varepsilon \in I : |f(x) - \Lambda| < \varepsilon \qquad \forall x \in (x_\varepsilon, b) \ (\forall x \in (x_\varepsilon, +\infty))
+\end{equation*}
+
+\noindent Poniamo ora $\delta_\varepsilon = b - x_\varepsilon > 0$ e quindi $x_\varepsilon = b - \delta_\varepsilon$, allora possiamo riscrivere la precedente definizione come: 
+\begin{equation*}
+    \forall \varepsilon > 0, \exists x_\varepsilon \in I : |f(x) - \Lambda| < \varepsilon \qquad \forall x \in (b - \delta_\varepsilon, b) \implies \lim_{x \to b^-} f(x) = \Lambda
+\end{equation*}
+
+\noindent dove $(b - \delta_\varepsilon, b)$ rappresenta proprio un intorno sinistro.\\
+
+\noindent Se invece avessimo avuto $\Lambda = -\infty$ (non si studia il caso in cui $\Lambda = +\infty$, altrimenti non potrebbe sicuramente essere $inf(A)$) e $b \in \mathbb{R} \ (b = +\infty)$, essendo $\Lambda = - \infty$, $Imm(f)$ non sarebbe stata inferiormente limitata, per cui $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) < K$.\\
+Sia ora $x \in (x_K, b) \subset I \ ((x \in (x_K, +\infty) \subset I))$, dove $I$ è un intervallo, dato che $x < x_K$, allora: 
+\begin{equation*}
+    f(x) \leq f(x_K) < K
+\end{equation*}
+
+\noindent (abbiamo messo "$\leq$" e non "$<$" perché la funzione è debolmente (non strettamente) decrescente) e quindi $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) < K \qquad \forall x \in (x_K, b)$. Se $\delta_K = b - x_K \implies x_K = b - \delta_K$ e quindi: 
+\begin{equation*}
+    \forall K \in \mathbb{R}, \exists x_K \in I : f(x) < K \qquad \forall x \in (b - \delta_K, b) \ ((\forall x \in (x_K, +\infty)) \implies \lim_{x \to \underset{\scriptstyle (+\infty)}{b^-}} f(x) = -\infty
+\end{equation*}
+
+\subsection{Limiti di esponenziali e logaritmi}
+\textbf{Teorema:} Sia $a > 0$ con $a \neq 1$. Allora:
+
+\begin{enumerate}
+    \item se $a > 1$, allora si ha che: $$\lim_{x \to - \infty} a^x = 0^+ \qquad \lim_{x \to +\infty} a^x = +\infty$$
+    \item se $0 < a < 1$, allora si ha che: $$\lim_{x \to - \infty} a^x = +\infty \qquad \lim_{x \to +\infty} a^x = 0^+$$
+    \item se $a > 1$, allora si ha che: $$\lim_{x \to 0^+} \log_ax = -\infty \qquad \lim_{x \to +\infty} \log_ax = + \infty$$
+    \item se $0 < a < 1$, allora si ha che: $$\lim_{x \to 0^+} \log_ax = +\infty \qquad \lim_{x \to +\infty} \log_ax = -\infty$$
+\end{enumerate}
+
+\noindent\textbf{NB!} $a = 1$ è escluso perché $1^x = 1 \qquad \forall x \in \mathbb{R}$.
+
+\subsubsection{Dimostrazione dei limiti di esponenziali e logaritmi}
+Sia $a > 1$. $a^x$ è strettamente crescente su $\mathbb{R}$, allora per il teorema sui limiti di funzioni monotone:
+\begin{equation*}
+    \lim_{x \to -\infty} a^x = inf\{f(x) : x \in \mathbb{R}\} \qquad \lim_{x \to +\infty} a^x = sup\{f(x) : x \in \mathbb{R}\}
+\end{equation*}
+
+\noindent Se l'immagine di $a^x$ non è superiormente (inferiormente) limitata, allora il risultato del limite sarà $+\infty \ (-\infty)$. In altre parole, se riusciamo a mostrare che un sottoinsieme dell'immagine non è superiormente limitato, allora nemmeno l'insieme immagine lo è. \\
+Siccome $a > 1$, chiamo $b = a - 1 > 0$, allora per la disuguaglianza di Bernoulli, si ha che $a^n = (1 + b)^n \geq 1 + nb$. Dato che $1 + nb$ non è superiormente limitato (perché $\lim_{n \to +\infty} 1 + nb = +\infty$), possiamo utilizzare il teorema del confronto per dire che $\lim_{n \to +\infty} a^n = +\infty$. Quindi $\{(1 + b)^n = a^n : n \in \mathbb{N}\}$ non è superiormente limitato, ovvero $\{(1 + b)^n = a^n : n \in \mathbb{N}\} = + \infty$.\\
+Dato però che $\{(1 + b)^n = a^n : n \in \mathbb{N}\} \subset \{(1 + b)^x = a^x : x \in \mathbb{R}\}$, allora nemmeno $\{(1 + b)^x = a^x : x \in \mathbb{R}\}$ è superiormente limitato, ovvero $\{(1 + b)^x = a^x : x \in \mathbb{R}\} = +\infty$. Quindi $\lim_{x \to +\infty} a^x = + \infty \quad \ con \ a > 1$.\\
+Ora dimostriamo che $\lim_{x \to - \infty} a^x = 0^+$. Innanzitutto, sappiamo che $\lim_{x \to - \infty} a^x = inf\{f(x) : x \in \mathbb{R}\}$ per il teorema sui limiti di funzioni monotone. Inoltre, nel punto precedente abbiamo dimostrato che $\lim_{n \to +\infty} a^n = +\infty$, allora $\lim_{n \to +\infty} a^{-n} = \lim_{n \to +\infty} \frac{1}{a^n} = 0$ per il limite del rapporto.\\
+Siccome $a^{-n}$ è strettamente decrescente, si ha che:
+\begin{equation*}
+    0 = \lim_{n \to +\infty} a^{-n} = inf\{a^{-n} : n \in \mathbb{N}\}
+\end{equation*}
+Ma $inf\{a^{-n} : n \in \mathbb{N}\} \subsetneq inf\{a^x : x \in \mathbb{R}\}$. Usando poi il fatto che $A \subset B \implies inf(A) \geq inf(B)$ (\textit{Esercizio 1} di questo pdf), si ottiene che:
+\begin{equation*}
+    0 = inf\{a^{-n} : n \in \mathbb{N}\} \geq inf\{a^x : x \in \mathbb{R}\}
+\end{equation*}
+
+\noindent A questo punto, dato che $a^x > 0 \qquad \forall x \in \mathbb{R}$ (significa che non ci sono numeri più piccolo dello zero e quindi che $0$ è un minorante), possiamo utilizzare il teorema del confronto e dire che:
+\begin{equation*}
+    0 \geq inf\{a^x : x \in \mathbb{R}\} = \lim_{x \to -\infty} a^x \geq \lim_{x \to -\infty} 0 = 0
+\end{equation*}
+
+\noindent Quindi $0 \geq \lim_{x \to -\infty} a^x \leq 0 \implies \lim_{x \to -\infty} a^x = 0^+ \quad con \ a > 1; a^x > 0 \quad \forall x \in \mathbb{R}$.\\
+Sia ora $0 < a < 1$, allora $c = \frac{1}{a} > 1$. Sappiamo per il punto 1) che:
+\begin{equation*}
+    \lim_{x \to -\infty} c^x = 0^+ \qquad \lim_{x \to +\infty} c^x = +\infty
+\end{equation*}
+
+\noindent Quindi per il limite del rapporto, si ha che:
+\begin{equation*}
+    \lim_{x \to -\infty} a^x = \lim_{x \to -\infty} \frac{1}{\frac{1}{a^x}} = \lim_{x \to -\infty} \frac{1}{c^x} = +\infty \qquad \lim_{x \to +\infty} a^x = \lim_{x \to +\infty} \frac{1}{\frac{1}{a^x}} = \lim_{x \to +\infty} \frac{1}{c^x} = 0^+
+\end{equation*}
+
+\noindent Dimostriamo ora i punti 3. e 4. Innanzitutto, ricordiamo che $\log_ax = (a^x)^{-1}$ (ovvero che il logaritmo è l'operazione inversa dell'esponenziale), allora se $a > 1$, $\log_ax$ è strettamente crescente (questo perché in un precedente teorema avevamo detto che se una funzione è strettamente crescente (decrescente), allora anche l'inversa lo è), per cui:
+\begin{equation*}
+    \lim_{x \to 0^+} \log_ax = inf\{Imm(\log_ax)\} = inf\{Dom(a^x)\} = inf\{\mathbb{R}\} = - \infty
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to +\infty} \log_ax = sup\{Imm(\log_ax)\} = sup\{Dom(a^x)\} = sup\{\mathbb{R}\} = + \infty
+\end{equation*}
+
+\noindent Se invece $0 < a < 1$, allora $\log_ax$ è strettamente decrescente, per cui:
+\begin{equation*}
+    \lim_{x \to 0^+} \log_ax = sup\{Imm(\log_ax)\} = sup\{Dom(a^x)\} = sup\{\mathbb{R}\} = + \infty
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to +\infty} \log_ax = inf\{Imm(\log_ax)\} = inf\{Dom(a^x)\} = inf\{\mathbb{R}\} = - \infty
+\end{equation*}
+
+\noindent\textbf{NB!} Abbiamo quindi trovato gli \textbf{estremi del campo di esistenza} ovvero i punti di accumulazione non appartenenti al dominio massimale. Ad esempio, $Dom(\log_ax) = (0, +\infty)$, allora questi punti sono $x_0 = 0$ e $x_0 = +\infty$.
+
+\subsection{Teorema sui limiti per sostituzione}
+Cosa succede se devo studiare un limite di una composizione di funzioni, come ad esempio $\lim_{t \to +\infty} 2^\frac{1}{t^2}$?\\
+In questo caso, infatti, si ha una catena di composizione del tipo:
+\begin{equation*}
+    t \longmapsto t^2 \longmapsto \frac{1}{t^2} \longmapsto 2^\frac{1}{t^2}
+\end{equation*}
+
+\noindent È proprio in questi casi quindi che si parla di limiti per sostituzione, ovvero di limiti in cui si cerca di ricondursi a funzioni di cui conosciamo già i valori dei limiti. Ad esempio, conosciamo i valori di:
+\begin{equation*}
+    \lim_{u \to +\infty} u^2 = +\infty \qquad \lim_{w \to +\infty} \frac{1}{w} = 0^+ \qquad \lim_{s \to 0^+} 2^s
+\end{equation*}
+
+\noindent\textbf{Teorema:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e sia $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Assumiamo che $\lim_{x \to x_0} f(x) = l \in \widetilde{\mathbb{R}}$ (dove $f(x)$ rappresenta la funzione più esterna di tutte). Siano inoltre $B \neq \varnothing$, $\varphi: B \subset \mathbb{R} \xrightarrow{} A$ (dato che $\varphi$ rappresenta la prima funzione della nostra composizione, è fondamentale che il suo codominio sia contenuto nel dominio della funzione finale $f(x)$), $t_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $B$. Assumiamo, inoltre, che $\lim_{t \to t_0} \varphi(t) = x_0$ (nell'esempio di prima $x_0 = 0^+$ e $\varphi(t) = \frac{1}{t^2}$) e che valga almeno una delle seguenti ipotesi:
+
+\begin{enumerate}
+    \item $\varphi(t) \neq x_0 \qquad \forall t \in B, t \neq t_0$;
+    \item $x_0 \in A$ e $f(x_0) = l$ e quindi $l \in \mathbb{R}$
+\end{enumerate}
+
+\noindent allora $\lim_{t \to t_0} f(\varphi(t)) = l$, dove ($f(\varphi(t))$ sarebbe $2^\frac{1}{t^2}$ nell'esempio di prima; in pratica, il valore del limite diventa il punto di accumulazione del limite successivo). \\
+In pratica, l'assunzione $\lim_{t \to t_0} \varphi(t) = x_0$ ci sta dicendo che $\varphi(t)$ appartiene ad intorni di $x_0$ e, l'ipotesi 1., aggiunge che si tratta di intorni bucati, dato che $x_0$ non appartiene all'insieme immagine. L'ipotesi 2., invece, dice che la funzione esterna vale in intorni pieni, ovvero che è possibile calcolare $f(x_0)$.
 
 \end{document}
