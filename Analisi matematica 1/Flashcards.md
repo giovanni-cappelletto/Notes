@@ -54,7 +54,11 @@
 50. A cosa sono equivalenti i limiti destri e sinistri in caso di funzioni monotone?
 51. Dimostra il teorema sui limiti di funzioni monotone.
 52. Presenta tutti i casi che si possono ottenere con i limiti di esponenziali e logaritmi. Dimostra anche il perché dei risultati ottenuti.
-53. Enuncia il teorema sui limiti per sostituzione.
+53. Enuncia e dimostra il teorema sui limiti per sostituzione.
+54. Cos'è una successione?
+55. Quali sono i punti di accumulazione per $\mathbb{N}$?
+56. Enuncia il teorema "ponte" o dei limiti mediante le successioni.
+57. Scrivi tutti i limiti notevoli visti e, se fatta in classe, scrivi la loro dimostrazione.
 
 ## Dimostrazioni
 

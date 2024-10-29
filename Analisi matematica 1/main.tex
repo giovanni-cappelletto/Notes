@@ -2533,10 +2533,10 @@ Sia ora $x \in (x_\varepsilon, b) \ ((x_\varepsilon, +\infty))$. Dato che il dom
 
 \noindent dove $(b - \delta_\varepsilon, b)$ rappresenta proprio un intorno sinistro.\\
 
-\noindent Se invece avessimo avuto $\Lambda = +\infty$ (non si studia il caso in cui $\Lambda = -\infty$, altrimenti non potrebbe sicuramente essere $sup(A)$) e $b \in \mathbb{R} \ (b = +\infty)$, essendo $\Lambda = + \infty$, $Imm(f)$ non sarebbe stata superiormente limitata, per cui $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) > K$.\\
+\noindent Se invece avessimo avuto $\Lambda = +\infty$ (non si studia il caso in cui $\Lambda = -\infty$, altrimenti non potrebbe sicuramente essere $sup(A)$) e $b \in \mathbb{R} \ (b = +\infty)$, essendo $\Lambda = + \infty$, $Imm(f)$ non sarebbe stata superiormente limitata, per cui $\forall K \in \mathbb{R}, \exists x_K \in I : f(x_K) > K$.\\
 Sia ora $x \in (x_K, b) \subset I \ ((x \in (x_K, +\infty) \subset I))$, dove $I$ è un intervallo, dato che $x > x_K$, allora: 
 \begin{equation*}
-    K < f(x) \leq f(x_K)
+    K < f(x_K) \leq f(x)
 \end{equation*}
 
 \noindent (abbiamo messo "$\leq$" e non "$<$" perché la funzione è debolmente (non strettamente) crescente) e quindi $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) > K \qquad \forall x \in (x_K, b) \ ((\forall x \in (x_K, +\infty))$. Se $\delta_K = b - x_K \implies x_K = b - \delta_K$ e quindi: 
@@ -2584,7 +2584,7 @@ Sia ora $x \in (x_\varepsilon, b) \ ((x_\varepsilon, +\infty))$. Dato che il dom
 
 \noindent dove $(b - \delta_\varepsilon, b)$ rappresenta proprio un intorno sinistro.\\
 
-\noindent Se invece avessimo avuto $\Lambda = -\infty$ (non si studia il caso in cui $\Lambda = +\infty$, altrimenti non potrebbe sicuramente essere $inf(A)$) e $b \in \mathbb{R} \ (b = +\infty)$, essendo $\Lambda = - \infty$, $Imm(f)$ non sarebbe stata inferiormente limitata, per cui $\forall K \in \mathbb{R}, \exists x_K \in I : f(x) < K$.\\
+\noindent Se invece avessimo avuto $\Lambda = -\infty$ (non si studia il caso in cui $\Lambda = +\infty$, altrimenti non potrebbe sicuramente essere $inf(A)$) e $b \in \mathbb{R} \ (b = +\infty)$, essendo $\Lambda = - \infty$, $Imm(f)$ non sarebbe stata inferiormente limitata, per cui $\forall K \in \mathbb{R}, \exists x_K \in I : f(x_K) < K$.\\
 Sia ora $x \in (x_K, b) \subset I \ ((x \in (x_K, +\infty) \subset I))$, dove $I$ è un intervallo, dato che $x < x_K$, allora: 
 \begin{equation*}
     f(x) \leq f(x_K) < K
@@ -2613,7 +2613,7 @@ Sia $a > 1$. $a^x$ è strettamente crescente su $\mathbb{R}$, allora per il teor
     \lim_{x \to -\infty} a^x = inf\{f(x) : x \in \mathbb{R}\} \qquad \lim_{x \to +\infty} a^x = sup\{f(x) : x \in \mathbb{R}\}
 \end{equation*}
 
-\noindent Se l'immagine di $a^x$ non è superiormente (inferiormente) limitata, allora il risultato del limite sarà $+\infty \ (-\infty)$. In altre parole, se riusciamo a mostrare che un sottoinsieme dell'immagine non è superiormente limitato, allora nemmeno l'insieme immagine lo è. \\
+\noindent Se l'immagine di $a^x$ non è superiormente limitata, allora il risultato del limite sarà $+\infty$. In altre parole, se riusciamo a mostrare che un sottoinsieme dell'immagine non è superiormente limitato, allora nemmeno l'insieme immagine lo è. \\
 Siccome $a > 1$, chiamo $b = a - 1 > 0$, allora per la disuguaglianza di Bernoulli, si ha che $a^n = (1 + b)^n \geq 1 + nb$. Dato che $1 + nb$ non è superiormente limitato (perché $\lim_{n \to +\infty} 1 + nb = +\infty$), possiamo utilizzare il teorema del confronto per dire che $\lim_{n \to +\infty} a^n = +\infty$. Quindi $\{(1 + b)^n = a^n : n \in \mathbb{N}\}$ non è superiormente limitato, ovvero $\{(1 + b)^n = a^n : n \in \mathbb{N}\} = + \infty$.\\
 Dato però che $\{(1 + b)^n = a^n : n \in \mathbb{N}\} \subset \{(1 + b)^x = a^x : x \in \mathbb{R}\}$, allora nemmeno $\{(1 + b)^x = a^x : x \in \mathbb{R}\}$ è superiormente limitato, ovvero $\{(1 + b)^x = a^x : x \in \mathbb{R}\} = +\infty$. Quindi $\lim_{x \to +\infty} a^x = + \infty \quad \ con \ a > 1$.\\
 Ora dimostriamo che $\lim_{x \to - \infty} a^x = 0^+$. Innanzitutto, sappiamo che $\lim_{x \to - \infty} a^x = inf\{f(x) : x \in \mathbb{R}\}$ per il teorema sui limiti di funzioni monotone. Inoltre, nel punto precedente abbiamo dimostrato che $\lim_{n \to +\infty} a^n = +\infty$, allora $\lim_{n \to +\infty} a^{-n} = \lim_{n \to +\infty} \frac{1}{a^n} = 0$ per il limite del rapporto.\\
@@ -2621,7 +2621,7 @@ Siccome $a^{-n}$ è strettamente decrescente, si ha che:
 \begin{equation*}
     0 = \lim_{n \to +\infty} a^{-n} = inf\{a^{-n} : n \in \mathbb{N}\}
 \end{equation*}
-Ma $inf\{a^{-n} : n \in \mathbb{N}\} \subsetneq inf\{a^x : x \in \mathbb{R}\}$. Usando poi il fatto che $A \subset B \implies inf(A) \geq inf(B)$ (\textit{Esercizio 1} di questo pdf), si ottiene che:
+Ma $\{a^{-n} : n \in \mathbb{N}\} \subsetneq \{a^x : x \in \mathbb{R}\}$. Usando poi il fatto che $A \subset B \implies inf(A) \geq inf(B)$ (\textit{Esercizio 1} di questo pdf), si ottiene che:
 \begin{equation*}
     0 = inf\{a^{-n} : n \in \mathbb{N}\} \geq inf\{a^x : x \in \mathbb{R}\}
 \end{equation*}
@@ -2682,4 +2682,187 @@ In questo caso, infatti, si ha una catena di composizione del tipo:
 \noindent allora $\lim_{t \to t_0} f(\varphi(t)) = l$, dove ($f(\varphi(t))$ sarebbe $2^\frac{1}{t^2}$ nell'esempio di prima; in pratica, il valore del limite diventa il punto di accumulazione del limite successivo). \\
 In pratica, l'assunzione $\lim_{t \to t_0} \varphi(t) = x_0$ ci sta dicendo che $\varphi(t)$ appartiene ad intorni di $x_0$ e, l'ipotesi 1., aggiunge che si tratta di intorni bucati, dato che $x_0$ non appartiene all'insieme immagine. L'ipotesi 2., invece, dice che la funzione esterna vale in intorni pieni, ovvero che è possibile calcolare $f(x_0)$.
 
+\subsubsection{Dimostrazione del teorema sui limiti per sostituzione}
+Sia $l \in \mathbb{R}$, per definizione allora:
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = l \iff \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 \ tale \ che \ |f(x) - l| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Inoltre, sappiamo che:
+\begin{equation*}
+    \lim_{t \to t_0} \varphi(t) = x_0 \iff \forall V_{x_0}, \exists W_{t_0} \ intorno \ di \ t_0 \ tale \ che \ \varphi(t) \in V_{x_0} \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}
+\end{equation*}
+
+\noindent Dato che $\varphi(t) \in V_{x_0}$ per la definizione qui sopra e che il nostro obiettivo è fare la composizione di funzioni $f(\varphi(t))$ per cui $\varphi(t) \in A$ (ovvero l'insieme immagine di $\varphi$ deve essere contenuto nel dominio di $f$, cioè $A$), possiamo scrivere: $\varphi(t) \in (V_{x_0} \cap A) \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}$.\\
+Ora siccome abbiamo arbitrarietà nella scelta di $V_{x_0}$, scegliamo $V_{x_0} \vcentcolon = U_{x_0}$. Di conseguenza:
+\begin{equation*}
+    \varphi(t) \in (U_{x_0} \cap A) \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}
+\end{equation*}
+
+\noindent (ora quindi la differenza tra $f$ e $\varphi$ è che $f$ sta in un intorno bucato di $x_0$ per la definizione del suo limite, mentre $\varphi$ sta in un intorno di $x_0$).\\
+Se vale l'\textit{ipotesi 1.}, allora possiamo concludere che:
+\begin{equation*}
+    \varphi(t) \in (U_{x_0} \cap A) - \{x_0\} \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}
+\end{equation*}
+
+\noindent e quindi che:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists W_{t_0} \ intorno \ di \ x_0 : |f(\varphi(t)) - l| < \varepsilon \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = l
+\end{equation*}
+
+\noindent Se vale invece l'\textit{ipotesi 2.}, allora abbiamo che $\lim_{x \to x_0} f(x) = l$ e $f(x_0) = l$. Quindi:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - l| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A)
+\end{equation*}
+
+\noindent (ovvero non dobbiamo togliere $x_0$ dall'intorno $U_{x_0}$). Usando ora di nuovo $\lim_{t \to t_0} \varphi(t) = x_0$ e la scelta $V_{x_0} \vcentcolon = U_{x_0}$ otteniamo che $\varphi(t) \in (U_{x_0} \cap A) \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}$.\\
+Quindi:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists W_{t_0} \ intorno \ di \ t_0 : |f(\varphi(t)) - l| < \varepsilon \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = l
+\end{equation*}
+
+% fare i casi per l=\pm\infty usando solo l'ip a. (perché la b. non ha senso, vedi sul quad.)
+
+\noindent\textbf{ES.} Siano:
+\begin{equation*}
+    f =
+    \begin{cases}
+       0 \quad se \ x \neq 0\\
+       1 \quad se \ x = 0
+    \end{cases}
+\end{equation*}
+
+\noindent $\varphi(t) = 0 \qquad \forall t \in \mathbb{R}, x_0 = 0, t_0 = 0$.\\
+Allora si ha che:
+\begin{equation*}
+    \lim_{x \to 0} f(x) = 0 \ \forall x \neq 0 \qquad \lim_{t \to 0} f(\varphi(t)) = \lim_{t \to 0} f(0) = 1 \ \forall t \in \mathbb{R}
+\end{equation*}
+
+\noindent I limiti non risultano equivalenti, infatti né l'\textit{ipotesi a.} (per essere vera dovremmo avere $\varphi(t) \neq x_0 \implies \varphi(t) \neq 0$, mentre qui abbiamo proprio che $\varphi(t) = x_0 = 0$), né l'\textit{ipotesi b.} (la funzione $f$ è calcolabile in $x_0 = 0$, ma non vale $l$) risultano verificate.\\
+
+\noindent\textbf{ES.} Calcolare $\lim_{t \to 0} 2^\frac{1}{t^2}$, in cui abbiamo che $x \overset{f}{\xrightarrow{}} 2^x$ e $t \overset{\varphi}{\xrightarrow{}} \frac{1}{t^2}$.\\
+In altre parole, vogliamo usare il teorema di sostituzione "ponendo $x = \frac{1}{t^2}$", così possiamo usare $\lim_{x \to x_0} 2^x$. Ma chi è $x_0$?\\
+Osservo che $\lim_{t \to 0} \frac{1}{t^2} = +\infty$ per il limite del rapporto. Pertanto abbiamo ricondotto il problema a $\lim_{x \to +\infty} 2^x = +\infty$. \\
+Ora ci chiediamo, può valere l'\textit{ipotesi 2.}? No, perché $x_0 \notin \mathbb{R}$.\\
+Può valere l'\textit{ipotesi 1.}? Sì, è certamente vera perché $\varphi(t) \neq x_0 \qquad \forall t \in B, t \neq t_0$ con $x_0 = +\infty$.\\
+Allora per il teorema sui limiti per sostituzione:
+\begin{equation*}
+    \lim_{t \to 0} 2^\frac{1}{t^2} = \lim_{x \to +\infty} 2^x = +\infty
+\end{equation*}
+
+\subsection{Successioni}
+Una successione è un'applicazione del tipo $f: A \subset \mathbb{N} \xrightarrow{} \mathbb{R}$. 
+
+\subsubsection{Notazioni per scrivere successioni}
+\begin{itemize}
+    \item $a: A \subset \mathbb{N} \xrightarrow{} \mathbb{R} \qquad n \longmapsto a(n)$
+    \item $\{a(n) : n \in A\}$
+    \item $\{a_n : n \in A\}$
+    \item $\{a_n\}_{n \in A}$
+    \item $a_n, n \in A$
+\end{itemize}
+
+\noindent\textbf{ES.} Un esempio di successione può essere $f: \mathbb{N} - \{0\} \xrightarrow{} \mathbb{R} \qquad n \longmapsto \frac{1}{n}$ e può essere anche scritta come $\{\frac{1}{n} : n \geq 1\}$ o $\frac{1}{n}, n \geq 1$.
+
+\subsubsection{Punti di accumulazione in $\mathbb{N}$}
+% Provare che $A \subset \mathbb{N}$, con $A$ contenente finiti punti \implies A non ha punti di accumulazione
+
+\begin{itemize}
+    \item $-1$, così come $x < 0, x \in \mathbb{R}$, non può essere un punto di accumulazione per $\mathbb{N}$ perché possiamo sempre trovare un $x +\delta < 0$ (per cui $(D(x, \delta) \cap \mathbb{N}) = \varnothing$);
+    \item Nemmeno $x = 0$ va bene perché se prendiamo per esempio $D(m, \frac{1}{2})$, si ha che $(D(0, \frac{1}{2}) \cap \mathbb{N}) = \varnothing$;
+    \item Neanche $m \in \mathbb{N}$ può andare bene perché, allo stesso modo di prima, se prendiamo come intorno $D(m, \frac{1}{2})$, l'intersezione tra questo e l'insieme dei numeri naturali risulta ancora essere vuota;
+    \item Anche prendendo $x > 0, x \in \mathbb{R}$ non risolviamo il nostro problema. Infatti, questo numero $x$ sarà sicuramente compreso tra la sua parte intera e il numero successivo a questa. In simboli: $\lfloor x \rfloor < x < \lfloor x \rfloor + 1$. Per cui basterà prendere come raggio la metà della minima distanza tra un numero intero e l'altro, in simboli: $\delta = \frac{min(\Delta_1, \Delta_2)}{2}$ (dove $\Delta_1$ è la distanza tra $\lfloor x \rfloor$ e $x$, mentre $\Delta_2$ è la distanza tra $\lfloor x \rfloor + 1$ e $x$).
+    \item Se invece prendiamo $x_0 = +\infty$, allora abbiamo un intorno del tipo $(K, +\infty)$. Quindi per la proprietà di Archimede, avremo sicuramente dei numeri naturali maggiori di $K$ (anche perché se non fosse così, significherebbe che $\mathbb{N}$ è superiormente limitato). Per cui otteniamo che $((K, + \infty) \cap \mathbb{N}) \neq \varnothing$ e che $x_0 = +\infty$ è un punto di accumulazione per $\mathbb{N}$.
+\end{itemize}
+
+\noindent Capiamo quindi che l'unico limite che possiamo calcolare quando siamo in presenza di una successione è il limite per $n$ che tende a $+\infty$.\\
+
+\noindent\textbf{ES.} Dimostriamo che $\lim_{n \to +\infty} = 0$.\\
+Ciò significa che:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists K_\varepsilon \in \mathbb{R} : \left|\frac{1}{n} - 0\right| < \varepsilon \qquad \forall n \in (K_\varepsilon, +\infty) \cap \mathbb{N}
+\end{equation*}
+
+\noindent Ora $|\frac{1}{n}| < \varepsilon$ può essere riscritta come:
+\begin{equation*}
+    0 \leq \frac{1}{n} < \varepsilon \iff n > \frac{1}{\varepsilon} = K_\varepsilon
+\end{equation*}
+
+\noindent (dato che ci troviamo nei numeri naturali, il valore minimo che $\frac{1}{n}$ può assumere è $0$ e non $-\varepsilon$). Posto quindi $K_\varepsilon = \frac{1}{\varepsilon}$, abbiamo che:
+\begin{equation*}
+    (K_\varepsilon, +\infty) \cap \mathbb{N} = \{n \in \mathbb{N} \ | \ n \geq \lfloor \tfrac{1}{\varepsilon} \rfloor + 1\}
+\end{equation*}
+
+\subsubsection{Teorema "ponte" o dei limiti mediante successioni}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A \neq \varnothing$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Allora:
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = l \in \widetilde{\mathbb{R}} \iff per \ ogni \ successione \ a_n \in A - \{x_0\} \ tale \ che \ \lim_{n \to +\infty} a_n = x_0 \ si \ ha \ che \ \lim_{n \to +\infty} f(a_n) = l
+\end{equation*}
+
+\noindent\textbf{NB!} Nella definizione qui sopra, attraverso la scrittura $a_n \in A - \{x_0\}$ stiamo imponendo l'\textit{ipotesi 1.} (non possiamo invece usare l'\textit{ipotesi 2.} perché $t_0 = +\infty$).\\
+
+\noindent\textbf{NB!} Il teorema è utile per mostrare che $\nexists \lim_{x \to x_0} f(x)$. Di solito si definiscono due successioni $a_n \neq x_0$ e $b_n \neq x_0$, tali che $\lim_{n \to +\infty} a_n = x_0$ e $\lim_{n \to +\infty} b_n = x_0$, ma $\lim_{n \to +\infty} f(a_n) = l_1 \neq l_2 = \lim_{n \to +\infty} f(b_n)$.\\
+
+\noindent\textbf{ES.} Dimostriamo che $\nexists \lim_{x \to +\infty} \sin(x)$. Basta prendere $a_n = \frac{\pi}{2} + 2\pi n$ e $b_n = n\pi$ con $n \in \mathbb{N}$.\\
+Si ha quindi che $\sin(a_n) = 1 \qquad \forall n \in \mathbb{N}$ e $\sin(b_n) = 0 \qquad \forall n \in \mathbb{N}$. Allora $\nexists \lim_{x \to +\infty} \sin(x)$ perché se esistesse, allora si avrebbe che $1 = \lim_{n \to +\infty} \sin(a_n) = \lim_{n \to +\infty} \sin(b_n) = 0$.\\
+
+\noindent\textbf{Teorema:}
+\begin{equation*}
+    \lim_{n +\infty} \left(1 + \frac{1}{n}\right)^n = e \in (2, 3)
+\end{equation*}
+
+\noindent dove $e$ è il \textbf{numero di Napier} (Nepero).
+
+\subsection{Limiti notevoli}
+\begin{equation}
+    \lim_{x \to +\infty} \left(1 + \frac{1}{x}\right)^x = e
+    \label{eq:limnot1}
+\end{equation}
+\begin{equation}
+    \lim_{x \to -\infty} \left(1 + \frac{1}{x}\right)^x = e
+    \label{eq:limnot2}
+\end{equation}
+\begin{equation}
+    \lim_{x \to 0} (1 + x)^\frac{1}{x} = e
+    \label{eq:limnot3}
+\end{equation}
+\begin{equation}
+    \lim_{x \to 0} \frac{\log_a(1 +x)}{x} = \log_a(e) \qquad con \ a > 0, a \neq 1
+    \label{eq:limnot4}
+\end{equation}
+\begin{equation}
+    \lim_{x \to 0} \frac{a^x - 1}{x} = \log(a)
+    \label{eq:limnot5}
+\end{equation}
+\begin{equation}
+    \lim_{x \to 0} \frac{\sin(x)}{x} = 1
+    \label{eq:limnot6}
+\end{equation}
+\begin{equation}
+    \lim_{x \to 0} \frac{(1 + x)^a - 1}{x} = a \qquad con \ a \in \mathbb{R}
+    \label{eq:limnot7}
+\end{equation}
+\begin{equation}
+    \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}
+    \label{eq:limnot8}
+\end{equation}
+
+\subsubsection{Dimostrazioni sui limiti notevoli}
+\noindent Dimostriamo il quarto limite notevole (\ref{eq:limnot4}). Quando $x \neq 0$ e $1 + x > 0 \implies x > -1$ (ovvero il dominio $D$ equivale a $D = (-1, 0) \cup (0, +\infty)$, cioè $x_0 = 0$ è punto di accumulazione per $D$), possiamo scrivere:
+\begin{equation*}
+    \frac{\log_a(1 +x)}{x} = \log_a[(1 + x)^\frac{1}{x}] \qquad con \ a > 0, a \neq 1
+\end{equation*}
+
+\noindent Chiamiamo ora $\varphi(x) = (1 + x)^\frac{1}{x}$. Grazie al terzo limite notevole (\ref{eq:limnot3}), per $x \to 0$, si ha che $\varphi(x) \to e$. Possiamo quindi utilizzare il teorema di sostituzione dei limiti e scrivere:
+\begin{equation*}
+    \lim_{x \to 0} \frac{\log_a(1 + x)}{x} = \lim_{u \to e} \log_a(u) = \log_a(e)
+\end{equation*}
+
+\noindent Dimostriamo ora il quinto limite notevole (\ref{eq:limnot5}). Sia $t = a^x - 1 \implies a^x = 1 + t \implies x = \log_a(1 + t)$ con $t > -1$. Quindi si ha che:
+\begin{equation*}
+    \lim_{x \to 0} \frac{a^x - 1}{x} = \lim_{x \to 0} \frac{t}{\log_a(1 + t)} = \frac{1}{log_a(e)} = \log(a)
+\end{equation*}
+
+\noindent ($\lim_{x \to 0} \frac{t}{\log_a(1 + t)} = \frac{1}{log_a(e)}$ vale per il quarto limite notevole (\ref{eq:limnot4}), mentre $\frac{1}{log_a(e)} = \log(a)$ si ottiene effettuando il cambio di base del logaritmo).
+    
 \end{document}
