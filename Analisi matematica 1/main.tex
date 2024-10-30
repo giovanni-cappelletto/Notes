@@ -2721,7 +2721,40 @@ Quindi:
     \forall \varepsilon > 0, \exists W_{t_0} \ intorno \ di \ t_0 : |f(\varphi(t)) - l| < \varepsilon \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = l
 \end{equation*}
 
-% fare i casi per l=\pm\infty usando solo l'ip a. (perché la b. non ha senso, vedi sul quad.)
+\noindent Sia $l = +\infty \ (-\infty)$, allora per definizione:
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = +\infty \iff \forall K > 0, \exists U_{x_0} \ intorno \ di \ x_0 \ tale \ che \ f(x) > K \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = -\infty \iff \forall K < 0, \exists U_{x_0} \ intorno \ di \ x_0 \ tale \ che \ f(x) < K \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Inoltre, sappiamo che:
+\begin{equation*}
+    \lim_{t \to t_0} \varphi(t) = x_0 \iff \forall V_{x_0}, \exists W_{t_0} \ intorno \ di \ t_0 \ tale \ che \ \varphi(t) \in V_{x_0} \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}
+\end{equation*}
+
+\noindent Dato che $\varphi(t) \in V_{x_0}$ per la definizione qui sopra e che il nostro obiettivo è fare la composizione di funzioni $f(\varphi(t))$ per cui $\varphi(t) \in A$ (ovvero l'insieme immagine di $\varphi$ deve essere contenuto nel dominio di $f$, cioè $A$), possiamo scrivere: $\varphi(t) \in (V_{x_0} \cap A) \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}$.\\
+Ora siccome abbiamo arbitrarietà nella scelta di $V_{x_0}$, scegliamo $V_{x_0} \vcentcolon = U_{x_0}$. Di conseguenza:
+\begin{equation*}
+    \varphi(t) \in (U_{x_0} \cap A) \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}
+\end{equation*}
+
+\noindent (ora quindi la differenza tra $f$ e $\varphi$ è che $f$ sta in un intorno bucato di $x_0$ per la definizione del suo limite, mentre $\varphi$ sta in un intorno di $x_0$).\\
+Se vale l'\textit{ipotesi 1.}, allora possiamo concludere che:
+\begin{equation*}
+    \varphi(t) \in (U_{x_0} \cap A) - \{x_0\} \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\}
+\end{equation*}
+
+\noindent e quindi che:
+\begin{equation*}
+    \forall K > 0, \exists W_{t_0} \ intorno \ di \ x_0 : f(\varphi(t)) > K \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = +\infty
+\end{equation*}
+\begin{equation*}
+    \forall K < 0, \exists W_{t_0} \ intorno \ di \ x_0 : f(\varphi(t)) < K \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = -\infty
+\end{equation*}
+
+\noindent\textbf{NB!} Non ha senso considerare l'\textit{ipotesi 2.} in questo caso perché quest'ultima vale solo se $l \in \mathbb{R}$.\\
 
 \noindent\textbf{ES.} Siano:
 \begin{equation*}
@@ -2738,7 +2771,7 @@ Allora si ha che:
     \lim_{x \to 0} f(x) = 0 \ \forall x \neq 0 \qquad \lim_{t \to 0} f(\varphi(t)) = \lim_{t \to 0} f(0) = 1 \ \forall t \in \mathbb{R}
 \end{equation*}
 
-\noindent I limiti non risultano equivalenti, infatti né l'\textit{ipotesi a.} (per essere vera dovremmo avere $\varphi(t) \neq x_0 \implies \varphi(t) \neq 0$, mentre qui abbiamo proprio che $\varphi(t) = x_0 = 0$), né l'\textit{ipotesi b.} (la funzione $f$ è calcolabile in $x_0 = 0$, ma non vale $l$) risultano verificate.\\
+\noindent I limiti non risultano equivalenti, infatti né l'\textit{ipotesi 1.} (per essere vera dovremmo avere $\varphi(t) \neq x_0 \implies \varphi(t) \neq 0$, mentre qui abbiamo proprio che $\varphi(t) = x_0 = 0$), né l'\textit{ipotesi 2.} (la funzione $f$ è calcolabile in $x_0 = 0$, ma non vale $l$) risultano verificate.\\
 
 \noindent\textbf{ES.} Calcolare $\lim_{t \to 0} 2^\frac{1}{t^2}$, in cui abbiamo che $x \overset{f}{\xrightarrow{}} 2^x$ e $t \overset{\varphi}{\xrightarrow{}} \frac{1}{t^2}$.\\
 In altre parole, vogliamo usare il teorema di sostituzione "ponendo $x = \frac{1}{t^2}$", così possiamo usare $\lim_{x \to x_0} 2^x$. Ma chi è $x_0$?\\
@@ -2765,8 +2798,6 @@ Una successione è un'applicazione del tipo $f: A \subset \mathbb{N} \xrightarro
 \noindent\textbf{ES.} Un esempio di successione può essere $f: \mathbb{N} - \{0\} \xrightarrow{} \mathbb{R} \qquad n \longmapsto \frac{1}{n}$ e può essere anche scritta come $\{\frac{1}{n} : n \geq 1\}$ o $\frac{1}{n}, n \geq 1$.
 
 \subsubsection{Punti di accumulazione in $\mathbb{N}$}
-% Provare che $A \subset \mathbb{N}$, con $A$ contenente finiti punti \implies A non ha punti di accumulazione
-
 \begin{itemize}
     \item $-1$, così come $x < 0, x \in \mathbb{R}$, non può essere un punto di accumulazione per $\mathbb{N}$ perché possiamo sempre trovare un $x +\delta < 0$ (per cui $(D(x, \delta) \cap \mathbb{N}) = \varnothing$);
     \item Nemmeno $x = 0$ va bene perché se prendiamo per esempio $D(m, \frac{1}{2})$, si ha che $(D(0, \frac{1}{2}) \cap \mathbb{N}) = \varnothing$;
@@ -2776,6 +2807,8 @@ Una successione è un'applicazione del tipo $f: A \subset \mathbb{N} \xrightarro
 \end{itemize}
 
 \noindent Capiamo quindi che l'unico limite che possiamo calcolare quando siamo in presenza di una successione è il limite per $n$ che tende a $+\infty$.\\
+
+\noindent Ne deriva inoltre il fatto che se abbiamo $A \subset \mathbb{N}$, con $A$ contenente finiti punti, allora $A$ non ha punti di accumulazione perché per qualsiasi punto $x_0$ preso, sia che $x_0 < 0$, sia che $x_0 \geq 0$, sarà sempre possibile prendere un raggio abbastanza piccolo tale che $D(x, \delta) \cap A = \varnothing$. Supponiamo per esempio che $A = (2, 7) \in \mathbb{N}$, allora se $x_0 = 2$, ma $\delta = \frac{1}{2}$ allora $D(x_0, \delta) \cap A = \varnothing$; se, per esempio, $4 < x_0 < 5$, allora se $\delta = \frac{min(\Delta_1, \Delta_2)}{2}$ (dove $\Delta_1$ è la distanza tra $\lfloor x \rfloor$ e $x$, mentre $\Delta_2$ è la distanza tra $\lfloor x \rfloor + 1$ e $x$), si ha che $D(x_0, \delta) \cap A = \varnothing$; se invece $x_0 < 2$ o $x_0 > 7$, allora basta prendere rispettivamente un $\delta < 2 - x_0$ o $\delta < x_0 - 7$.\\
 
 \noindent\textbf{ES.} Dimostriamo che $\lim_{n \to +\infty} = 0$.\\
 Ciò significa che:
@@ -2790,7 +2823,7 @@ Ciò significa che:
 
 \noindent (dato che ci troviamo nei numeri naturali, il valore minimo che $\frac{1}{n}$ può assumere è $0$ e non $-\varepsilon$). Posto quindi $K_\varepsilon = \frac{1}{\varepsilon}$, abbiamo che:
 \begin{equation*}
-    (K_\varepsilon, +\infty) \cap \mathbb{N} = \{n \in \mathbb{N} \ | \ n \geq \lfloor \tfrac{1}{\varepsilon} \rfloor + 1\}
+    (K_\varepsilon, +\infty) \cap \mathbb{N} = \left\{n \in \mathbb{N} \ | \ n \geq \left\lfloor \frac{1}{\varepsilon} \right\rfloor + 1\right\}
 \end{equation*}
 
 \subsubsection{Teorema "ponte" o dei limiti mediante successioni}
@@ -2846,6 +2879,18 @@ Si ha quindi che $\sin(a_n) = 1 \qquad \forall n \in \mathbb{N}$ e $\sin(b_n) = 
     \lim_{x \to 0} \frac{1 - \cos(x)}{x^2} = \frac{1}{2}
     \label{eq:limnot8}
 \end{equation}
+\begin{equation}
+    \lim_{n \to +\infty} \left(1 + \frac{x}{n}\right)^n = e^x \qquad con \ x \in \mathbb{R}
+    \label{eq:limnot9}
+\end{equation}
+\begin{equation}
+    \lim_{x \to +\infty} \left(1 + \frac{a}{x}\right)^x = e^a \qquad con \ a \in \mathbb{R}
+    \label{eq:limnot10}
+\end{equation}
+\begin{equation}
+    \lim_{x \to -\infty} \left(1 + \frac{a}{x}\right)^x = e^a \qquad con \ a \in \mathbb{R}
+    \label{eq:limnot11}
+\end{equation}
 
 \subsubsection{Dimostrazioni sui limiti notevoli}
 \noindent Dimostriamo il quarto limite notevole (\ref{eq:limnot4}). Quando $x \neq 0$ e $1 + x > 0 \implies x > -1$ (ovvero il dominio $D$ equivale a $D = (-1, 0) \cup (0, +\infty)$, cioè $x_0 = 0$ è punto di accumulazione per $D$), possiamo scrivere:
@@ -2864,5 +2909,168 @@ Si ha quindi che $\sin(a_n) = 1 \qquad \forall n \in \mathbb{N}$ e $\sin(b_n) = 
 \end{equation*}
 
 \noindent ($\lim_{x \to 0} \frac{t}{\log_a(1 + t)} = \frac{1}{log_a(e)}$ vale per il quarto limite notevole (\ref{eq:limnot4}), mentre $\frac{1}{log_a(e)} = \log(a)$ si ottiene effettuando il cambio di base del logaritmo).
+
+\subsection{Limiti di successioni notevoli}
+\textbf{Proposizione 1:} $\lim_{k \to +\infty} k! = +\infty$.\\
+Infatti, dato che $k! \geq k$ (\textit{Dimostrazione 3.2.1} di questo pdf) e che $\lim_{k \to +\infty} k = +\infty$, allora per il teorema del confronto $\lim_{k \to +\infty} k! = +\infty$.\\
+
+\noindent\textbf{Proposizione 2:} $\lim_{k \to +\infty} a^\frac{1}{k} = 1 \qquad con \ a > 0$.\\
+Infatti, se $a = 1 \implies a^\frac{1}{k} = 1 \qquad \forall k \geq 1$ (in altre parole, si ottiene una successione costante).\\
+Se $a > 1 \implies a^\frac{1}{k} > 1$ dato che la radice k-esima è strettamente crescente. Sia ora:
+\begin{equation*}
+    b_k = a^\frac{1}{k} - 1 > 0 \implies a^\frac{1}{k} = (b_k + 1) \implies a = (b_k + 1)^k
+\end{equation*}
+
+\noindent Per la disuguaglianza di Bernoulli si ha che:
+\begin{equation*}
+    (b_k + 1)^k \geq 1 + kb_k \implies b_k \leq \frac{a - 1}{k}
+\end{equation*}
+
+\noindent Possiamo quindi scrivere che:
+\begin{equation*}
+    0 < b_k \leq \frac{a - 1}{k}
+\end{equation*}
+
+\noindent Ora, dato che $\lim_{k \to +\infty} 0 = 0$ e $\lim_{k \to +\infty} \frac{a - 1}{k} = 0$, per il teorema dei carabinieri possiamo concludere che $\lim_{k \to +\infty} b_k = 0$. Infine, dato che $b_k = a^\frac{1}{k} - 1 \implies a^\frac{1}{k} = 1 + b_k \implies \lim_{k \to +\infty} 1 + b_k = 1$.\\
+Se invece avessimo $0 < a < 1$, allora sia $c = \frac{1}{a} > 1$. Dalla precedente dimostrazione sappiamo che $\lim_{k \to +\infty} c^\frac{1}{k} = 1$, ma sappiamo inoltre che:
+\begin{equation*}
+    \frac{1}{c^\frac{1}{k}} = \frac{1}{(\frac{1}{a})^\frac{1}{k}} = \frac{1}{\frac{1}{a^\frac{1}{k}}} = a^\frac{1}{k} \implies \lim_{k \to +\infty} a^\frac{1}{k} = \lim_{k \to +\infty} \frac{1}{c^\frac{1}{k}} = \frac{1}{1} = 1
+\end{equation*}
+
+\noindent\textbf{Proposizione 3:} $\lim_{k \to +\infty} k^\frac{1}{k} = 1$ (è diversa dalla proposizione precedente. Prima infatti avevamo un $a$ fissato, mentre ora varia sia l'esponente, sia la base).\\
+Sia $k > 1 \implies k^\frac{1}{k} > 1^\frac{1}{k} = 1$ perché $x^\frac{1}{k}$ è strettamente crescente.\\
+Poniamo ora $c_k = k^\frac{1}{k} - 1 > 0$ con $k > 1$. Quindi possiamo scrivere $k = (1 + c_k)^k$ e, per il binomio di Newton, si ha che:
+\begin{equation*}
+    k = (1 + c_k)^k = \sum_{j = 0}^k \binom{k}{j}c_k^j 1^{k - j}
+\end{equation*}
+
+\noindent Innanzitutto, notiamo che $1^{k - j} = 1$, quindi d'ora in poi smetteremo di scriverlo. Inoltre, sappiamo che $k > 1$, ma che $k \in \mathbb{N}$ per cui avremo che $k \geq 2$. La sommatoria qui sopra è quindi sicuramente maggiore della somma dei primi tre termini (che sono sempre presenti dato che $k \geq 2$. In altre parole, sarebbero $j = 0$, $j = 1$ e $j = 2$) che otteniamo sostituendo opportunamente i valori $k$ e $j$. In simboli:
+\begin{equation*}
+    k = \sum_{j = 0}^k \binom{k}{j}c_k^j 1^{k - j} > \binom{k}{0}c_k^0 + \binom{k}{1}c_k^1 + \binom{k}{2}c_k^2 + 0 + ... + 0
+\end{equation*}
+
+\noindent Abbiamo scritto $+ \ 0 \ + \ ... \ + \ 0$ alla fine perché, dato che tutti gli altri ipotetici termini della sommatoria sono sicuramente maggiori di $0$, li abbiamo minorati a $0$. Infatti, la sommatoria risulta ancora maggiore della parte destra della disuguaglianza qui sopra. \\
+A questo punto, calcoliamo i risultati del primo e dell'ultimo termine della parte di destra, mentre il termine centrale lo minoriamo anch'esso a $0$, dato che sarà sicuramente maggiore di $0$:
+\begin{equation*}
+    k > 1 + 0 + \frac{k(k - 1)}{2}c_k^2 \qquad con \ k \geq 2
+\end{equation*}
+\begin{equation*}
+    k - 1 > \frac{k(k - 1)}{2}c_k^2 \iff 1 > \frac{k}{2} c_k^2 \iff c_k^2 < \frac{2}{k} \qquad con \ k \neq 1
+\end{equation*}
+
+\noindent Otteniamo quindi che $0 \leq c_k^2 < \frac{2}{k}$. Dato che $\lim_{k \to +\infty} 0 = 0$ e $\lim_{k \to +\infty} \frac{2}{k} = 0$ per il limite del rapporto, allora per il teorema dei carabinieri possiamo concludere che $\lim_{k \to +\infty} c_k^2 = 0$ e cioè $\lim_{k \to +\infty} c_k = 0$ (per l'\textit{Osservazione 4.} a pagina 50 di questo pdf). Infine, si ha che $c_k = k^\frac{1}{k} - 1 \implies k^\frac{1}{k} = 1 + c_k \implies \lim_{k \to +\infty} 1 + c_k = 1$\\
+
+\noindent\textbf{Proposizione 4:} $\lim_{k \to +\infty} \frac{a^k}{k!} = 0 \qquad \forall a \in \mathbb{R}$.\\
+Se $a = 0 \implies a^k = 0$ e $\frac{a^k}{k!} = 0 \qquad \forall k \in \mathbb{N}, k \geq 1$.\\
+Se $a \neq 0$, allora sia $K = \lfloor |a| \rfloor + 1 > |a|$ per la proprietà della parte intera. La tesi che vogliamo dimostrare è che $\lim_{k \to +\infty} \frac{|a^k|}{k!} = 0$ (che è equivalente a questa proposizione per l'\textit{osservazione 4} a pagina 50 di questo pdf).\\
+Sia quindi $k = K + m$ con $m \in \mathbb{Z}$. Possiamo quindi riscrivere la tesi come:
+\begin{equation*}
+    0 \leq \frac{|a^k|}{k!} = \frac{|a|^{K + m}}{(K + m)!} = \frac{|a|^{K + m}}{K!(K + 1)(K + 2)...(K + m)}
+\end{equation*}
+
+\noindent Cerchiamo ora di separare i valori che dipendono da $K!$ da quelli che dipendono da $m$:
+\begin{equation*}
+    0 \leq \frac{|a|^{K + m}}{K!(K + 1)(K + 2)...(K + m)} = \frac{|a|^K}{K!} \cdot \frac{|a|^m}{(K + 1)(K + 2)...(K + m)}
+\end{equation*}
+
+\noindent Dato che tutte le parti del denominatore più a destra sono maggiori di $K$ ($K + 1 > K$, $K + 2 > K$ e $K + m > K$) li minoriamo a $K$. Inoltre, il loro numero dipenderà da $m$ (perché vanno da $K + 1$ a $K + m$), per cui possiamo scrivere:
+\begin{equation*}
+    0 \leq \frac{|a|^K}{K!} \cdot \frac{|a|^m}{(K + 1)(K + 2)...(K + m)} < \frac{|a|^K}{K!} \cdot \frac{|a|^m}{K^m}
+\end{equation*}
+
+\noindent\textbf{NB!} Nonostante la minorazione, la parte di sinistra risulta inferiore rispetto alla parte di destra. Questo perché a sinistra risulta maggiore il denominatore, per cui avremo un numero più piccolo.\\
+
+\noindent Dato che $\frac{|a|^K}{K!}$ è un numero reale, chiamiamolo $c$, per cui abbiamo:
+\begin{equation*}
+    0 \leq \frac{|a|^K}{K!} \cdot \frac{|a|^m}{(K + 1)(K + 2)...(K + m)} < c \left(\frac{|a|}{K}\right)^m
+\end{equation*}
+
+\noindent Abbiamo quindi ottenuto la seguente catena di disuguaglianze:
+\begin{equation*}
+    0 \leq \frac{|a|^k}{k!} < c \left(\frac{|a|}{K}\right)^m
+\end{equation*}
+
+\noindent Dato che $\lim_{k \to +\infty} 0 = 0$ e $\lim_{m \to +\infty} (\frac{|a|}{K})^m = 0$, allora $\lim_{k \to +\infty} \frac{|a|^k}{k!} = 0$ per il teorema dei carabinieri.\\
+
+\noindent\textbf{NB!} Non abbiamo calcolato $\lim_{m \to +\infty} c(\frac{|a|}{K})^m = 0$, perché tanto $c$ è una costante. Inoltre, abbiamo usato questo limite, anche se $m$ tendeva ad un certo valore (e non $k$), perché tanto $k = K + m$ con $m \in \mathbb{Z}$ e quindi se $k \to +\infty$ abbiamo che anche $m \to +\infty$. Infine, il risultato di questo limite risulta essere $0$ perché si ha che $K = \lfloor |a| \rfloor + 1 > |a| \implies \frac{|a|}{K} < 1$, ovvero la base è compresa tra $0$ e $1$.\\
+
+\noindent\textbf{Proposizione 5:} Sia $a > 0$, allora:
+\begin{equation*}
+    \lim_{x \to 0} a^x = 1 \qquad \lim_{x \to x_0} a^x = a^{x_0} \qquad \forall x_0 \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{NB!} Stiamo quindi dicendo che il limite è uguale al valore della funzione calcolata in $x_0$. In generale, questo vale solo per le \textbf{funzioni continue}.\\
+
+\noindent Iniziamo dimostrando che $\lim_{x \to x_0} a^x = a^{x_0} \qquad \forall x_0 \in \mathbb{R}$, dando per buono che $\lim_{x \to 0} a^x = 1$ (lo dimostreremo in seguito). \\
+Se vale che:
+\begin{equation*}
+    \frac{a^{x_0}}{a^{x_0}} \cdot a^x = a^x \cdot \frac{a^{x_0}}{a^{x_0}} \iff a^x = a^{x_0} \cdot \frac{a^x}{a^{x_0}} \iff a^x = a^{x_0} \cdot a^{x - x_0}
+\end{equation*}
+
+\noindent allora quando $x \to x_0$, si ha che $x - x_0 \to 0$. Quindi:
+\begin{equation*}
+    \lim_{x \to x_0} a^{x - x_0} = \lim_{u \to 0} a^u = 1 \implies \lim_{x \to x_0} a^x = \lim_{x \to x_0} a^{x_0} \cdot a^{x - x_0} = a^{x_0} \lim_{x \to x_0} a^{x - x_0} = a^{x_0}
+\end{equation*}
+
+\noindent Dimostriamo ora che $\lim_{x \to 0} a^x = 1$. \\
+Sia $a = 1 \implies a^x = 1 \qquad \forall x \in \mathbb{R}$ e $\lim_{x \to 0} a^x = 1$.\\
+Sia $0 < a < 1 \implies b = \frac{1}{a} > 1$. Allora:
+\begin{equation*}
+    \lim_{x \to 0} b^x = \lim_{x \to 0} \left(\frac{1}{a}\right)^x = \lim_{x \to 0} \frac{1}{a^x} = \lim_{x \to 0} a^{-x}
+\end{equation*}
+
+\noindent Ci siamo quindi ricondotti al caso in cui la base è un numero maggiore di $1$, non ci resta allora che risolvere proprio questo caso.\\
+Sia $a > 1$ e $x > 0$ (imponiamo questa condizione per trovare intanto il limite destro). Dato che $a^x$ è strettamente crescente, allora $a^x > a^0 = 1$.\\
+Sia ora $x \in (0, 1) \implies \frac{1}{x} > 1 \implies \lfloor \frac{1}{x} \rfloor \geq 1$. Inoltre, per la proprietà della parte intera si ha che:
+\begin{equation*}
+    \left\lfloor \frac{1}{x} \right\rfloor \leq \frac{1}{x} < \left\lfloor \frac{1}{x} \right\rfloor + 1 
+\end{equation*}
+
+\noindent Considerando quindi solo la prima parte di questa disuguaglianza:
+\begin{equation*}
+    \left\lfloor \frac{1}{x} \right\rfloor \leq \frac{1}{x} \implies x \leq \frac{1}{\lfloor \frac{1}{x} \rfloor}
+\end{equation*}
+
+\noindent Dato che $\lfloor \frac{1}{x} \rfloor \in \mathbb{N}$, chiamiamo $k = \lfloor \frac{1}{x} \rfloor$. Sappiamo inoltre che $\lim_{k \to +\infty} a^\frac{1}{k} = 1$. Possiamo quindi scrivere:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists N_\varepsilon > 0 : |a^\frac{1}{k} - 1| < \varepsilon \qquad per \ k > N_\varepsilon
+\end{equation*}
+
+\noindent Per la seconda disuguaglianza della parte intera, si ha che:
+\begin{equation*}
+    1 + \left\lfloor \frac{1}{x} \right\rfloor > \frac{1}{x} \implies \left\lfloor \frac{1}{x} \right\rfloor > \frac{1}{x} - 1
+\end{equation*}
+
+\noindent Quindi se troviamo una $x \in (0, 1)$ tale per cui $\frac{1}{x} - 1 > N_\varepsilon$ il gioco è fatto:
+\begin{equation*}
+    \frac{1}{x} - 1 > N_\varepsilon \iff \frac{1}{x} > N_\varepsilon + 1 \iff x < \frac{1}{N_\varepsilon + 1} = \delta_\varepsilon
+\end{equation*}
+
+\noindent Per $x \in (0, \delta_\varepsilon)$ abbiamo che:
+\begin{equation*}
+    k = \left\lfloor \frac{1}{x} \right\rfloor > \frac{1}{x} - 1 > N_\varepsilon
+\end{equation*}
+
+\noindent e quindi che $a^\frac{1}{\lfloor\frac{1}{x}\rfloor} < 1 + \varepsilon$. In altre parole, abbiamo costruito la seguente catena di disuguaglianze:
+\begin{equation*}
+    1 - \varepsilon < 1 < a^x \leq a^\frac{1}{\lfloor \frac{1}{x} \rfloor} < 1 + \varepsilon \qquad \forall x \in (0, \delta_\varepsilon)
+\end{equation*}
+
+\noindent Ossia abbiamo mostrato che:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |a^x - 1| < \varepsilon \qquad \forall x \in (0, \delta_\varepsilon) \implies \lim_{x \to 0^+} a^x = 1
+\end{equation*}
+
+\noindent Sia ora $x < 0 \implies |x| = -x$ e quindi $a^x = a^{-|x|} = \frac{1}{a^{|x|}}$ e quindi:
+\begin{equation*}
+    \lim_{x \to 0^-} a^x = \lim_{x \to 0^-} \frac{1}{a^{|x|}}
+\end{equation*}
+
+\noindent Chiamiamo ora $u(x) = -x$ e $x(u) = -u$. Di conseguenza:
+\begin{equation*}
+    \lim_{u \to 0^+} \frac{1}{a^u} = \frac{1}{1} = 1 \implies \lim_{x \to 0^-} a^x = 1
+\end{equation*}
+
+\noindent Infine, dato che $\lim_{x \to 0^+} a^x = \lim_{x \to 0^-} a^x = 1$, allora $\lim_{x \to 0} a^x = 1$.
     
 \end{document}

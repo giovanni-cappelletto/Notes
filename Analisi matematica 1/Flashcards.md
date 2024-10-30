@@ -59,6 +59,7 @@
 55. Quali sono i punti di accumulazione per $\mathbb{N}$?
 56. Enuncia il teorema "ponte" o dei limiti mediante le successioni.
 57. Scrivi tutti i limiti notevoli visti e, se fatta in classe, scrivi la loro dimostrazione.
+58. Enuncia e dimostra le varie proposizioni sui limiti di successioni notevoli visti in classe.
 
 ## Dimostrazioni
 
