@@ -2829,7 +2829,7 @@ Ciò significa che:
 \subsubsection{Teorema "ponte" o dei limiti mediante successioni}
 Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A \neq \varnothing$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Allora:
 \begin{equation*}
-    \lim_{x \to x_0} f(x) = l \in \widetilde{\mathbb{R}} \iff per \ ogni \ successione \ a_n \in A - \{x_0\} \ tale \ che \ \lim_{n \to +\infty} a_n = x_0 \ si \ ha \ che \ \lim_{n \to +\infty} f(a_n) = l
+    \lim_{x \to x_0} f(x) = l \in \widetilde{\mathbb{R}} \iff \forall a_n \in A - \{x_0\} \ tale \ che \ \lim_{n \to +\infty} a_n = x_0 \ si \ ha \ che \ \lim_{n \to +\infty} f(a_n) = l
 \end{equation*}
 
 \noindent\textbf{NB!} Nella definizione qui sopra, attraverso la scrittura $a_n \in A - \{x_0\}$ stiamo imponendo l'\textit{ipotesi 1.} (non possiamo invece usare l'\textit{ipotesi 2.} perché $t_0 = +\infty$).\\
@@ -2905,7 +2905,7 @@ Si ha quindi che $\sin(a_n) = 1 \qquad \forall n \in \mathbb{N}$ e $\sin(b_n) = 
 
 \noindent Dimostriamo ora il quinto limite notevole (\ref{eq:limnot5}). Sia $t = a^x - 1 \implies a^x = 1 + t \implies x = \log_a(1 + t)$ con $t > -1$. Quindi si ha che:
 \begin{equation*}
-    \lim_{x \to 0} \frac{a^x - 1}{x} = \lim_{x \to 0} \frac{t}{\log_a(1 + t)} = \frac{1}{log_a(e)} = \log(a)
+    \lim_{x \to 0} \frac{a^x - 1}{x} = \lim_{t \to 0} \frac{t}{\log_a(1 + t)} = \frac{1}{log_a(e)} = \log(a)
 \end{equation*}
 
 \noindent ($\lim_{x \to 0} \frac{t}{\log_a(1 + t)} = \frac{1}{log_a(e)}$ vale per il quarto limite notevole (\ref{eq:limnot4}), mentre $\frac{1}{log_a(e)} = \log(a)$ si ottiene effettuando il cambio di base del logaritmo).
@@ -3071,6 +3071,280 @@ Sia ora $x \in (0, 1) \implies \frac{1}{x} > 1 \implies \lfloor \frac{1}{x} \rfl
     \lim_{u \to 0^+} \frac{1}{a^u} = \frac{1}{1} = 1 \implies \lim_{x \to 0^-} a^x = 1
 \end{equation*}
 
-\noindent Infine, dato che $\lim_{x \to 0^+} a^x = \lim_{x \to 0^-} a^x = 1$, allora $\lim_{x \to 0} a^x = 1$.
-    
+\noindent Infine, dato che $\lim_{x \to 0^+} a^x = \lim_{x \to 0^-} a^x = 1$, allora $\lim_{x \to 0} a^x = 1$.\\
+
+\noindent\textbf{Proposizione 6:} Sia $a > 0$ con $a \neq 1$, allora:
+\begin{equation*}
+    \lim_{x \to 1} \log_a(x) = 0 \qquad \lim_{x \to x_0} \log_a(x) = log_a(x_0) \qquad con \ x_0 > 0
+\end{equation*}
+
+\noindent Iniziamo dimostrando che $\lim_{x \to x_0} = \log_a(x) = \log_a(x_0)$, dando per buono che $\lim_{x \to 1} = \log_a(x) = 0$ (lo dimostreremo in seguito).\\
+Se vale che:
+\begin{equation*}
+    \log_a(x) - \log_a(x_0) = \log_a\left(\frac{x}{x_0}\right)
+\end{equation*}
+
+\noindent allora, per $x \to x_0 \ (> 0)$, $\frac{x}{x_0} \to 1$. Chiamo allora $u = \frac{x}{x_0} \implies \lim_{u \to 1} \log_a(u) = 0$ per la prima parte della proposizione e quindi $\lim_{x \to x_0} \log_a(x) - log_a(x_0) = 0$.\\
+
+\noindent Mostriamo ora che $\lim_{x \to 1} \log_a(x) = 0$. Sia $\varepsilon > 0$, allora:
+\begin{equation*}
+    |\log_a(x) - 0| < \varepsilon \iff -\varepsilon < \log_a(x) < \varepsilon
+\end{equation*}
+
+\noindent Sia ora $a > 1$, allora sappiamo che $a^x$ è strettamente crescente, per cui eleviamo tutto in funzione di $a$ e il verso della disequazione non cambia:
+\begin{equation*}
+    a^{-\varepsilon} < a^{\log_a(x)} < a^\varepsilon \implies a^{-\varepsilon} < x < a^\varepsilon
+\end{equation*}
+
+\noindent Dobbiamo ora capire se questo intorno contiene $1$, dato che è il punto di accumulazione di questo limite (altrimenti non avrebbe senso calcolarlo). Dato che $a^x$ è strettamente crescente, allora $a^\varepsilon > a^0 = 1$ e dato che $a^{-x}$ è strettamente decrescente, allora $a^{-\varepsilon} < a^0 = 1$. \\
+Quindi se $1 \in (a^{-\varepsilon}, a^\varepsilon)$ e $\delta_\varepsilon = min(1 - a^{-\varepsilon}, a^\varepsilon - 1) > 0$, allora:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |\log_a(x) - 0| < \varepsilon \qquad \forall x \in (1 - \delta_\varepsilon, 1 + \delta_\varepsilon) \implies \lim_{x \to 1} \log_a(x) = 0
+\end{equation*}
+
+\noindent Non escludiamo il punto $1$ stesso dall'intorno qui sopra perché $\log_a(1) = 0$, ovvero l'uguaglianza risulta verificata anche nel punto di accumulazione stesso.\\
+
+\noindent Se invece $0 < a < 1$, allora sappiamo che $a^x$ è strettamente decrescente, per cui eleviamo tutto in funzione di $a$ e il verso della disequazione cambia:
+\begin{equation*}
+    a^{-\varepsilon} > a^{\log_a(x)} > a^\varepsilon \implies a^{-\varepsilon} > x > a^\varepsilon
+\end{equation*}
+
+\noindent Dobbiamo ora capire se questo intorno contiene $1$, dato che è il punto di accumulazione di questo limite (altrimenti non avrebbe senso calcolarlo). Dato che $a^x$ è strettamente decrescente, allora $a^\varepsilon < a^0 = 1$ e dato che $a^{-x}$ è strettamente crescente, allora $a^{-\varepsilon} > a^0 = 1$. \\
+Quindi se $1 \in (a^\varepsilon, a^{-\varepsilon})$ e $\delta_\varepsilon = min(1 - a^\varepsilon, a^{-\varepsilon} - 1) > 0$, allora:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |\log_a(x) - 0| < \varepsilon \qquad \forall x \in (1 - \delta_\varepsilon, 1 + \delta_\varepsilon) \implies \lim_{x \to 1} \log_a(x) = 0
+\end{equation*}
+
+\subsection{Funzioni pari e dispari}
+\noindent\textbf{Def:} Sia $A \subset \mathbb{R}$ con $A \neq \varnothing$. Diremo che $A$ è \textbf{simmetrico} rispetto al punto $0$, se e solo se: $a \in A \implies -a \in A$.\\
+
+\noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A$ simmetrico rispetto a $0$. Allora diremo che $f$ è una \textbf{funzione pari} (o dispari) se e solo se:
+\begin{equation*}
+    f(x) = f(-x) \ \forall x \in \mathbb{R} \qquad (f(x) - f(x) \ \forall x \in \mathbb{R})
+\end{equation*}
+
+\noindent\textbf{NB!} Quando studieremo i limiti destri per $x \to x_0$ di funzioni pari, sarà come studiare i limiti sinistri per $x \to -x_0$, dato che $(x, f(x)) \in \mathcal{G}_f$ e $(-x, f(x)) \in \mathcal{G}_f$.\\
+Allo stesso modo, quando studieremo i limiti destri per $x \to x_0$ di funzioni dispari, sarà come studiare i limiti sinistri per $x \to - x_0$ cambiati di segno, dato che $\mathcal{G}_f$ è simmetrico rispetto all'origine.\\
+
+\noindent\textbf{ES.} Mostrare che $f(x) = \log|x|$ è pari. \\
+Innanzitutto, verifichiamo che il dominio sia simmetrico, altrimenti non ha senso parlare di funzione pari o dispari. Il dominio della funzione $f(x)$ equivale a $D_f = \{x \in \mathbb{R} : |x| > 0\} = \mathbb{R} - \{0\}$. Risulta quindi simmetrico.\\
+Sia $x \in D_f$ con $x \neq 0$, allora $f(-x) = \log|-x|$. A questo punto sappiamo che $|ab| = |a||b|$ quindi $|-x| = |-||x| = |x| \implies \log|x| = f(x)$, ovvero che $f(x) = f(-x)$. La funzione è quindi pari.\\
+
+\noindent\textbf{ES.} Non otteniamo invece lo stesso risultato traslando il dominio. Consideriamo $g(x) = \log|x - 1|$. Qui il dominio risulta essere: $D_g = \{x \in \mathbb{R} : |x - 1| > 0\} = \mathbb{R} - \{1\}$, ovvero non è simmetrico rispetto allo zero. Non ha quindi senso parlare di funzione pari o dispari, per cui $g(x)$ non è né pari, né dispari.\\
+
+\noindent\textbf{NB!} Se $D_f$ è simmetrico rispetto a $0$, allora:
+\begin{itemize}
+    \item $f$ \textbf{non} è pari $\iff \exists \Bar{x} \in D_f \ | \ f(\Bar{x}) \neq f(- \Bar{x})$;
+    \item $f$ \textbf{non} è dispari $\iff \exists \Bar{x} \in D_f \ | \ f(\Bar{x}) \neq - f(- \Bar{x})$.
+\end{itemize}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=7cm]{./images/evenFunctions.pdf}\hfill
+    \includegraphics[width=7cm]{./images/oddFunctions.pdf}
+\end{figure}
+
+\noindent\textbf{Proposizione:} Sia $a > 0$, consideriamo quindi $A = (-a, a) - \{0\}$. Sia inoltre $f: A \xrightarrow{} \mathbb{R}$ una funzione pari. Supponiamo che:
+\begin{equation*}
+    \lim_{ \underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x) = l \in \widetilde{\mathbb{R}} \implies \lim_{ \underset{\scriptstyle (x \to 0^-)}{x \to 0^+}} f(x) = l
+\end{equation*}
+
+\noindent Dimostriamo questa proposizione. Supponiamo di conoscere:
+\begin{equation*}
+    l = \lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x)
+\end{equation*}
+
+\noindent Utilizziamo ora il teorema dei limiti per sostituzione, attraverso la funzione:
+\begin{equation*}
+    u: A \xrightarrow{} \mathbb{R} \quad x \longmapsto -x \implies \lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} u(x) = 0^+ \ (0^-)
+\end{equation*}
+
+\noindent Otteniamo quindi: 
+\begin{equation*}
+    l = \lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x) = \lim_{\underset{\scriptstyle (u \to 0^-)}{u \to 0^+}} f(-u)
+\end{equation*}
+
+\noindent Dato che la funzione $f$ è pari, allora possiamo scrivere:
+\begin{equation*}
+    l = \lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x) = \lim_{\underset{\scriptstyle (u \to 0^-)}{u \to 0^+}} f(-u) = \lim_{\underset{\scriptstyle (u \to 0^-)}{u \to 0^+}} f(u)
+\end{equation*}
+
+\noindent Abbiamo quindi dimostrato che il limite destro e il limite sinistro sono uguali per funzioni pari.\\
+
+\noindent\textbf{Proposizione:} Sia $a > 0$ e $A = (-a, a) - \{0\}$. Sia inoltre $f: A \subset \mathbb{R}$ una funzione dispari. Allora:
+\begin{itemize}
+    \item se $\lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x) = l \in \mathbb{R} \implies \lim_{\underset{\scriptstyle (x \to 0^-)}{x \to 0^+}} f(x) = -l \in \mathbb{R}$;
+    \item se $\lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x) = +\infty \implies \lim_{\underset{\scriptstyle (x \to 0^-)}{x \to 0^+}} f(x) = -\infty$;
+    \item se $\lim_{\underset{\scriptstyle (x \to 0^+)}{x \to 0^-}} f(x) = -\infty \implies \lim_{\underset{\scriptstyle (x \to 0^-)}{x \to 0^+}} f(x) = +\infty$;
+\end{itemize}
+
+\noindent Procediamo dimostrando la proposizione qui sopra. Innanzitutto, sfruttiamo il teorema dei limiti per sostituzione come al solito con $u(x) = -x$:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to 0^-)}{x \to 0^+}} f(x) = \lim_{\underset{\scriptstyle (u \to 0^+)}{u \to 0^-}} f(-u)
+\end{equation*}
+
+\noindent Ora dato che stiamo valutando una funzione dispari, si ha che:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to 0^-)}{x \to 0^+}} f(x) = \lim_{\underset{\scriptstyle (u \to 0^+)}{u \to 0^-}} f(-u) = \lim_{\underset{\scriptstyle (u \to 0^+)}{u \to 0^-}} (-f(-u)) = - \lim_{\underset{\scriptstyle (u \to 0^+)}{u \to 0^-}} f(-u)
+\end{equation*}
+
+\noindent Ciò significa che il valore del limite sinistro della funzione sarà uguale al valore del limite destro di quella funzione, ma cambiato di segno.\\
+
+\noindent\textbf{ES.} Sia $f$ pari (o dispari) con $D_f$ non limitato e simmetrico rispetto a 0. Allora detti:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{f(x)}{x} = m_1 \in \mathbb{R} \qquad \lim_{x \to -\infty} \frac{f(x)}{x} = m_2 \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to +\infty} (f(x) - m_1x) = n_1 \in \mathbb{R} \qquad \lim_{x \to -\infty} (f(x) - m_1x) = n_2 \in \mathbb{R} \in \mathbb{R}
+\end{equation*}
+
+\noindent Che relazione esiste tra $m_1$ e $m_2$? E tra $n_1$ e $n_2$?\\
+Se la funzione è pari, allora:
+\begin{equation*}
+    m_2 = \lim_{x \to -\infty} \frac{f(x)}{x}
+\end{equation*}
+
+\noindent e usando la solita sostituzione $u = -x$:
+\begin{equation*}
+    m_2 = \lim_{x \to -\infty} \frac{f(x)}{x} = \lim_{u \to +\infty} \frac{f(-u)}{-u}
+\end{equation*}
+
+\noindent Ora dato che la funzione è pari, si ha che:
+\begin{equation*}
+    m_2 = \lim_{x \to -\infty} \frac{f(x)}{x} = \lim_{u \to +\infty} \frac{f(-u)}{-u} = \lim_{u \to +\infty} \frac{f(u)}{-u} = -\lim_{u \to +\infty} \frac{f(u)}{u} = -m_1 \implies m_2 = -m_1
+\end{equation*}
+
+\noindent Mentre considerando $n_1$ e $n_2$, basta sapere dalla dimostrazione precedente che $m_2 = -m_1$ e basta applicare la sostituzione $u = -x$:
+\begin{equation*}
+    n_2 = \lim_{x \to -\infty} (f(x) - m_2x) = \lim_{x \to -\infty} (f(x) + m_1x) = \lim_{u \to +\infty} (f(-u) + m_1(-u)) = \lim_{u \to +\infty} (f(u) - m_1u) = n_1
+\end{equation*}
+
+\noindent Consideriamo ora il caso in cui la funzione sia dispari. Allora:
+\begin{equation*}
+    m_2 = \lim_{x \to -\infty} \frac{f(x)}{x} = \lim_{u \to +\infty} \frac{f(-u)}{-u} = \lim_{u \to +\infty} \frac{-f(u)}{-u} = \lim_{u \to +\infty} \frac{f(u)}{u} = m_1 \implies m_2 = m_1
+\end{equation*}
+
+\noindent Mentre considerando $n_1$ e $n_2$, basta sapere dalla dimostrazione precedente che $m_2 = m_1$ e basta applicare la sostituzione $u = -x$:
+\begin{equation*}
+    n_2 = \lim_{x \to -\infty} (f(x) - m_2x) = \lim_{x \to -\infty} (f(x) - m_1x) = \lim_{u \to +\infty} (f(-u) - m_1(-u)) = \lim_{u \to +\infty} (-f(u) + m_1u)
+\end{equation*}
+\begin{equation*}
+    = - \lim_{u \to +\infty} (f(u) - m_1u) = -n_1 \implies n_2 = -n_1
+\end{equation*}
+
+\noindent\textbf{NB!} Nel testo dell'esercizio qui sopra è stato specificato che la funzione dovesse essere pari o dispari e che il dominio fosse limitato, ma quando una funzione è pari o dispari, allora ci basta sapere che il dominio è o superiormente o inferiormente limitato per poter concludere che esso è limitato (essendo simmetrico).\\
+
+\noindent Dopo aver fornito alcuni strumenti utili, ritorniamo a dimostrare alcuni limiti notevoli.\\
+Dimostriamo ora il primo (\ref{eq:limnot1}) e il secondo (\ref{eq:limnot2}) limite notevole. Per prima cosa dobbiamo verificare che $+\infty$ e $-\infty$ siano dei punti di accumulazione per il dominio di queste funzioni, altrimenti non avrebbe senso parlare di limite.\\
+
+\noindent\textbf{NB!} $f(x)^{g(x)} \vcentcolon= e^{(\log(f(x))g(x)}$ con $f(x) > 0$.\\
+
+\noindent Per la proprietà qui sopra enunciata, possiamo dire che:
+\begin{equation*}
+    \left(1 + \frac{1}{x}\right)^x = e^{x\log(1 + \frac{1}{x})}
+\end{equation*}
+
+\noindent Dato che stiamo parlando di un esponenziale, le uniche condizioni di esistenza possono trovarsi nel suo esponente. In particolare, abbiamo le seguenti condizioni di esistenza:
+\begin{equation*}
+    \begin{cases}
+        x \in \mathbb{R}\\
+        x \neq 0 \\
+        1 + \frac{1}{x} > 0
+    \end{cases}
+    \iff
+    \begin{cases}
+        x \neq 0 \\
+        \dfrac{x + 1}{x} > 0
+    \end{cases}
+\end{equation*}
+
+\noindent Dividiamo ora il sistema e risolviamolo:
+\begin{equation*}
+    \begin{cases}
+        x \neq 0 \\
+        x > -1 \\
+        x > 0
+    \end{cases}
+    \implies (0, +\infty) \qquad \qquad
+    \begin{cases}
+        x \neq 0 \\
+        x < -1 \\
+        x < 0
+    \end{cases}
+    \implies (-\infty, -1)
+\end{equation*}
+
+\noindent Il dominio risulta essere quindi $D_f = (-\infty, -1) \cup (0, +\infty)$. Non essendo simmetrico, possiamo già intuire che la funzione non è né pari, né dispari. Da com'è fatto il dominio capiamo che $+\infty$ e $-\infty$ sono punti di accumulazione per esso, per cui ha senso parlare di limiti.\\
+Partiamo calcolando i limiti per $x \to +\infty$. Consideriamo quindi $x > 1$, allora per la proprietà della parte intera si ha che:
+\begin{equation*}
+    0 < 1 \leq \lfloor x \rfloor \leq x < \lfloor x \rfloor + 1
+\end{equation*}
+
+\noindent Essendo tutti valori positivi, possiamo effettuare il reciproco, che cambierà il verso di tutte le disequazioni. Otteniamo quindi:
+\begin{equation*}
+    \frac{1}{\lfloor x \rfloor} \geq \frac{1}{x} > \frac{1}{\lfloor x \rfloor + 1}
+\end{equation*}
+
+\noindent A questo punto, dato che la nostra funzione ha come argomento $(1 + \frac{1}{x})$, aggiungiamo $1$ da tutte le parti:
+\begin{equation*}
+      1 + \frac{1}{\lfloor x \rfloor} \geq 1 + \frac{1}{x} > 1 + \frac{1}{\lfloor x \rfloor + 1} > 1
+\end{equation*}
+
+\noindent Eleviamo quindi alla $x$:
+\begin{equation*}
+      \left(1 + \frac{1}{\lfloor x \rfloor}\right)^x \geq \left(1 + \frac{1}{x}\right)^x > \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^x
+\end{equation*}
+
+\noindent Dato che agli estremi vogliamo solo numeri naturali, mentre $x \in \mathbb{R}$, allora possiamo sfruttare la proprietà della parte intera per dire che:
+\begin{equation*}
+     \left(1 + \frac{1}{\lfloor x \rfloor}\right)^{\lfloor x \rfloor + 1} > \left(1 + \frac{1}{\lfloor x \rfloor}\right)^x \qquad \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^x \geq \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^{\lfloor x \rfloor}
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+      \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^{\lfloor x \rfloor} \leq \left(1 + \frac{1}{x}\right)^x < \left(1 + \frac{1}{\lfloor x \rfloor}\right)^{\lfloor x \rfloor + 1}
+\end{equation*}
+
+\noindent Notiamo ora che sia il termine più a sinistra, che il termine più a destra assomigliano molto alla successione: $\lim_{n \to +\infty} (1 + \frac{1}{n})^n = e$. Cerchiamo quindi di ricondurci ad esso:
+\begin{equation*}
+    \lim_{x \to +\infty} \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^{\lfloor x \rfloor} = \lim_{k \to +\infty} \left(1 + \frac{1}{k + 1}\right)^k
+\end{equation*}
+
+\noindent Aggiungiamo ora un $1 + \frac{1}{k + 1}$:
+\begin{equation*}
+    \lim_{x \to +\infty} \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^{\lfloor x \rfloor} = \lim_{k \to +\infty} \left(1 + \frac{1}{k + 1}\right)^k = \lim_{k \to +\infty} \frac{\left(1 + \frac{1}{k + 1}\right)^{k + 1}}{\left(1 + \frac{1}{k + 1}\right)}
+\end{equation*}
+
+\noindent Ora notiamo che, per $k \to +\infty$, il denominatore tende a $1$, mentre il numeratore è proprio il limite di successione notevole che conosciamo:
+\begin{equation*}
+    \implies \lim_{x \to +\infty} \left(1 + \frac{1}{\lfloor x \rfloor + 1}\right)^{\lfloor x \rfloor} = e
+\end{equation*}
+
+\noindent Prendiamo ora il secondo termine della proprietà della parte intera:
+\begin{equation*}
+    \lim_{x \to +\infty} \left(1 + \frac{1}{\lfloor x \rfloor}\right)^{\lfloor x \rfloor + 1} = \lim_{k \to +\infty} \left(1 + \frac{1}{k}\right)^{k + 1} = \lim_{k \to +\infty} \left(1 + \frac{1}{k}\right)^k \left(1 + \frac{1}{k}\right)
+\end{equation*}
+
+\noindent Ancora una volta $\lim_{k \to +\infty} \left(1 + \frac{1}{k}\right) = 1$ e $\lim_{k \to +\infty} \left(1 + \frac{1}{k}\right)^k = e$, quindi per il teorema del limite del prodotto $\lim_{k \to +\infty} \left(1 + \frac{1}{k}\right) \left(1 + \frac{1}{k}\right) = e$.
+\begin{equation*}
+    \implies \lim_{x \to +\infty} \left(1 + \frac{1}{\lfloor x \rfloor}\right)^{\lfloor x \rfloor + 1} = e
+\end{equation*}
+
+\noindent Infine, dato che sia entrambi i termini "alle estremità" della parte intera tendono a $e$ per $x \to +\infty$, allora per il teorema dei carabinieri si ha che:
+\begin{equation*}
+    \lim_{x \to +\infty} \left(1 + \frac{1}{x}\right)^x = e
+\end{equation*}
+
+\noindent Consideriamo ora il caso di $x < 0$ e quindi calcoliamo i limiti per $x \to -\infty$. Chiamiamo $f(x) = (1 + \frac{1}{x})^x$, allora, effettuando la sostituzione $t = -x$, si ha che:
+\begin{equation*}
+    \lim_{x \to -\infty} \left(1 + \frac{1}{x}\right)^x = \lim_{t \to +\infty} f(-t)
+\end{equation*}
+
+\noindent Ma se calcoliamo $f(-t)$:
+\begin{equation*}
+    f(-t) = \left(1 - \frac{1}{t}\right)^{-t} = \left(\frac{t - 1}{t}\right)^{-t} = \left(\frac{t}{t - 1}\right)^t = \left(1 + \frac{1}{t - 1}\right)^t = \left(1 + \frac{1}{t - 1}\right)^{t-1}\left(1 + \frac{1}{t - 1}\right)
+\end{equation*}
+\begin{equation*}
+    \implies \lim_{t \to +\infty} \left(1 + \frac{1}{t - 1}\right)^{t-1}\left(1 + \frac{1}{t - 1}\right) = e = \lim_{x \to -\infty} \left(1 + \frac{1}{x}\right)^x
+\end{equation*}
 \end{document}
