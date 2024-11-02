@@ -35,31 +35,39 @@
 31. Perché per determinare il grafico di una funzione inversa, il grafico della funzione originaria viene simmetrizzato rispetto alla bisettrice del 1° e 3° quadrante?
 32. Enuncia la definizione di funzione strettamente (debolmente) crescente e decrescente.
 33. Se $f$ è strettamente (debolmente) crescente, cosa succede a $-f$? E se invece $f$ fosse strettamente (debolmente) decrescente? Dimostra il risultato ottenuto.
-34. Quali sono le conseguenze di una $f$ strettamente crescente (o decrescente)?
-35. Cosa succede se interseco un numero finito di intorni di $x_0$ tra loro? Mostra cosa succede se interseco un numero infinito?
-36. Enuncia e dimostra il teorema di unicità del limite.
-37. Enuncia il teorema di permanenza del segno. Mostra la sua veridicità in tutti i casi possibili.
-38. Enuncia e dimostra il teorema di limitatezza locale.
-39. Enuncia il teorema del confronto I. Mostra la loro veridicità in tutti i casi possibili.
-40. Enuncia il teorema del confronto II.
-41. Enuncia e dimostra il teorema delle tre funzioni o dei due carabinieri.
-42. Come possono essere riscritti i seguenti limiti: $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\lim_{x \to x_0} f(x) = 0$, $\lim_{x \to x_0} f(x) = l \in \mathbb{R} - \{0\}$ e $\lim_{x \to x_0} f(x) = 0$?
-43. Enuncia e dimostra il teorema del limite della somma.
-44. Enuncia il teorema del limite del prodotto.
-45. Enuncia il teorema del limite del rapporto.
-46. Mostra i casi di indeterminazione con i limiti della somma, del prodotto e del rapporto.
-47. Come si definisce un intorno destro e uno sinistro?
-48. Cos'è un punto di accumulazione destro e uno sinistro?
-49. Cos'è un limite destro e uno sinistro? Mostra come sono legati tra loro limite, limite destro e limite sinistro.
-50. A cosa sono equivalenti i limiti destri e sinistri in caso di funzioni monotone?
-51. Dimostra il teorema sui limiti di funzioni monotone.
-52. Presenta tutti i casi che si possono ottenere con i limiti di esponenziali e logaritmi. Dimostra anche il perché dei risultati ottenuti.
-53. Enuncia e dimostra il teorema sui limiti per sostituzione.
-54. Cos'è una successione?
-55. Quali sono i punti di accumulazione per $\mathbb{N}$?
-56. Enuncia il teorema "ponte" o dei limiti mediante le successioni.
-57. Scrivi tutti i limiti notevoli visti e, se fatta in classe, scrivi la loro dimostrazione.
-58. Enuncia e dimostra le varie proposizioni sui limiti di successioni notevoli visti in classe.
+34. Date due funzioni $f$ e $g$ entrambe debolmente crescenti (decrescenti), come risulta essere l'applicazione prodotto $f \cdot g$?
+35. Quali sono le conseguenze di una $f$ strettamente crescente (o decrescente)?
+36. Cosa succede se interseco un numero finito di intorni di $x_0$ tra loro? Mostra cosa succede se interseco un numero infinito?
+37. Enuncia e dimostra il teorema di unicità del limite.
+38. Enuncia il teorema di permanenza del segno. Mostra la sua veridicità in tutti i casi possibili.
+39. Enuncia e dimostra il teorema di limitatezza locale.
+40. Enuncia il teorema del confronto I. Mostra la loro veridicità in tutti i casi possibili.
+41. Enuncia il teorema del confronto II.
+42. Enuncia e dimostra il teorema delle tre funzioni o dei due carabinieri.
+43. Come possono essere riscritti i seguenti limiti: $\lim_{x \to x_0} f(x) = l \in \mathbb{R}$, $\lim_{x \to x_0} f(x) = 0$, $\lim_{x \to x_0} f(x) = l \in \mathbb{R} - \{0\}$ e $\lim_{x \to x_0} f(x) = 0$? Verifica anche i risultati ottenuti.
+44. Enuncia e dimostra il teorema del limite della somma.
+45. Enuncia il teorema del limite del prodotto.
+46. Enuncia il teorema del limite del rapporto.
+47. Mostra i casi di indeterminazione con i limiti della somma, del prodotto e del rapporto.
+48. Come si definisce un intorno destro e uno sinistro?
+49. Cos'è un punto di accumulazione destro e uno sinistro?
+50. Cos'è un limite destro e uno sinistro? Mostra come sono legati tra loro limite, limite destro e limite sinistro.
+51. A cosa sono equivalenti i limiti destri e sinistri in caso di funzioni monotone?
+52. Dimostra il teorema sui limiti di funzioni monotone.
+53. Presenta tutti i casi che si possono ottenere con i limiti di esponenziali e logaritmi. Dimostra anche il perché dei risultati ottenuti.
+54. Enuncia e dimostra il teorema sui limiti per sostituzione.
+55. Cos'è una successione?
+56. Quali sono i punti di accumulazione per $\mathbb{N}$?
+57. Enuncia il teorema "ponte" o dei limiti mediante le successioni.
+58. Scrivi tutti i limiti notevoli visti e, se fatta in classe, scrivi la loro dimostrazione.
+59. Enuncia e dimostra le varie proposizioni sui limiti di successioni notevoli visti in classe.
+60. Quando una funzione è pari? E quando è dispari?
+61. Dimostra che se il limite per $x \to 0^-$ di una funzione pari è uguale a $l$, allora anche il limite per $x \to 0^+$ è uguale a $l$.
+62. Dimostra che se il limite per $x \to 0^-$ di una funzione dispari è uguale a $l$, allora il limite per $x \to 0^+$ è uguale a $-l$. Aggiungi anche gli ulteriori casi con $\pm \infty$
+63. Come sono definiti $m_1$, $m_2$, $n_1$ e $n_2$? Dimostra che relazione esiste tra di essi in presenza di funzioni pari e dispari.
+64. Dimostra perché $\lim_{x \to +\infty} \left(1 + \frac{1}{x}\right)^x = e$ e $\lim_{x \to -\infty} \left(1 + \frac{1}{x}\right)^x = e$.
+65. Dimostra che $\lim_{n \to +\infty} \left(1 + \frac{x}{n}\right)^n = e^x$ considerando i vari casi al variare del valore di $x$.
+66. Dimostra che $\lim_{x \to +\infty} \left(1 + \frac{a}{x}\right)^x = e^a$ e $\lim_{x \to -\infty} \left(1 + \frac{a}{x}\right)^x = e^a$ considerando i vari casi al variare del valore di $a$.
 
 ## Dimostrazioni
 

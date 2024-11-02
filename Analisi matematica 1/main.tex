@@ -2707,7 +2707,7 @@ Se vale l'\textit{ipotesi 1.}, allora possiamo concludere che:
 
 \noindent e quindi che:
 \begin{equation*}
-    \forall \varepsilon > 0, \exists W_{t_0} \ intorno \ di \ x_0 : |f(\varphi(t)) - l| < \varepsilon \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = l
+    \forall \varepsilon > 0, \exists W_{t_0} \ intorno \ di \ t_0 : |f(\varphi(t)) - l| < \varepsilon \qquad \forall t \in (W_{t_0} \cap B) - \{t_0\} \implies \lim_{t \to t_0} f(\varphi(t)) = l
 \end{equation*}
 
 \noindent Se vale invece l'\textit{ipotesi 2.}, allora abbiamo che $\lim_{x \to x_0} f(x) = l$ e $f(x_0) = l$. Quindi:
@@ -2962,8 +2962,8 @@ A questo punto, calcoliamo i risultati del primo e dell'ultimo termine della par
 
 \noindent\textbf{Proposizione 4:} $\lim_{k \to +\infty} \frac{a^k}{k!} = 0 \qquad \forall a \in \mathbb{R}$.\\
 Se $a = 0 \implies a^k = 0$ e $\frac{a^k}{k!} = 0 \qquad \forall k \in \mathbb{N}, k \geq 1$.\\
-Se $a \neq 0$, allora sia $K = \lfloor |a| \rfloor + 1 > |a|$ per la proprietà della parte intera. La tesi che vogliamo dimostrare è che $\lim_{k \to +\infty} \frac{|a^k|}{k!} = 0$ (che è equivalente a questa proposizione per l'\textit{osservazione 4} a pagina 50 di questo pdf).\\
-Sia quindi $k = K + m$ con $m \in \mathbb{Z}$. Possiamo quindi riscrivere la tesi come:
+Se $a \neq 0$, allora sia $K = \lfloor |a| \rfloor + 1 > |a|$ per la proprietà della parte intera. La tesi che vogliamo dimostrare è che $\lim_{k \to +\infty} \frac{|a^k|}{k!} = 0$ (che è equivalente a questa proposizione per l'\textit{Osservazione 2} a pagina 50 di questo pdf).\\
+In generale, sappiamo che vale la seguente proprietà $k = K + m$ con $m \in \mathbb{Z}$. Prendiamo ora il caso in cui $m \in \mathbb{N}$ e scriviamo quindi la tesi come:
 \begin{equation*}
     0 \leq \frac{|a^k|}{k!} = \frac{|a|^{K + m}}{(K + m)!} = \frac{|a|^{K + m}}{K!(K + 1)(K + 2)...(K + m)}
 \end{equation*}
@@ -2992,7 +2992,7 @@ Sia quindi $k = K + m$ con $m \in \mathbb{Z}$. Possiamo quindi riscrivere la tes
 
 \noindent Dato che $\lim_{k \to +\infty} 0 = 0$ e $\lim_{m \to +\infty} (\frac{|a|}{K})^m = 0$, allora $\lim_{k \to +\infty} \frac{|a|^k}{k!} = 0$ per il teorema dei carabinieri.\\
 
-\noindent\textbf{NB!} Non abbiamo calcolato $\lim_{m \to +\infty} c(\frac{|a|}{K})^m = 0$, perché tanto $c$ è una costante. Inoltre, abbiamo usato questo limite, anche se $m$ tendeva ad un certo valore (e non $k$), perché tanto $k = K + m$ con $m \in \mathbb{Z}$ e quindi se $k \to +\infty$ abbiamo che anche $m \to +\infty$. Infine, il risultato di questo limite risulta essere $0$ perché si ha che $K = \lfloor |a| \rfloor + 1 > |a| \implies \frac{|a|}{K} < 1$, ovvero la base è compresa tra $0$ e $1$.\\
+\noindent\textbf{NB!} Non abbiamo calcolato $\lim_{m \to +\infty} c(\frac{|a|}{K})^m = 0$, perché tanto $c$ è una costante. Inoltre, abbiamo usato questo limite, anche se $m$ tendeva ad un certo valore (e non $k$), perché tanto $k = K + m$ con $m \in \mathbb{N}$ e quindi se $k \to +\infty$ abbiamo che anche $m \to +\infty$. Infine, il risultato di questo limite risulta essere $0$ perché si ha che $K = \lfloor |a| \rfloor + 1 > |a| \implies \frac{|a|}{K} < 1$, ovvero la base è compresa tra $0$ e $1$.\\
 
 \noindent\textbf{Proposizione 5:} Sia $a > 0$, allora:
 \begin{equation*}
@@ -3120,7 +3120,7 @@ Quindi se $1 \in (a^\varepsilon, a^{-\varepsilon})$ e $\delta_\varepsilon = min(
 
 \noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $A$ simmetrico rispetto a $0$. Allora diremo che $f$ è una \textbf{funzione pari} (o dispari) se e solo se:
 \begin{equation*}
-    f(x) = f(-x) \ \forall x \in \mathbb{R} \qquad (f(x) - f(x) \ \forall x \in \mathbb{R})
+    f(x) = f(-x) \ \forall x \in \mathbb{R} \qquad (f(-x) = - f(x) \ \forall x \in \mathbb{R})
 \end{equation*}
 
 \noindent\textbf{NB!} Quando studieremo i limiti destri per $x \to x_0$ di funzioni pari, sarà come studiare i limiti sinistri per $x \to -x_0$, dato che $(x, f(x)) \in \mathcal{G}_f$ e $(-x, f(x)) \in \mathcal{G}_f$.\\
@@ -3195,7 +3195,7 @@ Sia $x \in D_f$ con $x \neq 0$, allora $f(-x) = \log|-x|$. A questo punto sappia
     \lim_{x \to +\infty} \frac{f(x)}{x} = m_1 \in \mathbb{R} \qquad \lim_{x \to -\infty} \frac{f(x)}{x} = m_2 \in \mathbb{R}
 \end{equation*}
 \begin{equation*}
-    \lim_{x \to +\infty} (f(x) - m_1x) = n_1 \in \mathbb{R} \qquad \lim_{x \to -\infty} (f(x) - m_1x) = n_2 \in \mathbb{R} \in \mathbb{R}
+    \lim_{x \to +\infty} (f(x) - m_1x) = n_1 \in \mathbb{R} \qquad \lim_{x \to -\infty} (f(x) - m_1x) = n_2 \in \mathbb{R}
 \end{equation*}
 
 \noindent Che relazione esiste tra $m_1$ e $m_2$? E tra $n_1$ e $n_2$?\\
@@ -3347,4 +3347,24 @@ Partiamo calcolando i limiti per $x \to +\infty$. Consideriamo quindi $x > 1$, a
 \begin{equation*}
     \implies \lim_{t \to +\infty} \left(1 + \frac{1}{t - 1}\right)^{t-1}\left(1 + \frac{1}{t - 1}\right) = e = \lim_{x \to -\infty} \left(1 + \frac{1}{x}\right)^x
 \end{equation*}
+
+\noindent Dimostriamo ora il nono limite notevole (\ref{eq:limnot9}) con $x \in \mathbb{R}$. Partiamo dal caso in cui $x = 0$, allora semplicemente si ha che:
+\begin{equation*}
+    \lim_{n \to +\infty} \left(1 + \frac{0}{n}\right)^n =  \lim_{n \to +\infty} 1^n = 1 = e^0
+\end{equation*}
+
+\noindent Prendiamo ora il caso in cui $x > 0$. Utilizzando la sostituzione $t = \frac{n}{x}$, si ha che:
+\begin{equation*}
+    \lim_{n \to +\infty} \left(1 + \frac{x}{n}\right)^n = \lim_{t \to +\infty} \left(1 + \frac{1}{t}\right)^{tx} = \left[\lim_{t \to +\infty} \left(1 + \frac{1}{t}\right)^t\right]^x = e^x
+\end{equation*}
+
+\noindent (abbiamo spostato la "$x$" al di fuori dal limite, tanto il suo valore non dipende dal limite stesso). Consideriamo ora il caso $x < 0$ e anche qui applichiamo la sostituzione $t = -\frac{n}{x}$ (dato che è presente un "-", se $n \to +\infty$, allora $t \to -\infty$. Non importa che sia $+\infty$, tanto considerando la sostituzione fatta, non ci troviamo più nei naturali, ma nei reali. Per cui anche $-\infty$ è un punto di accumulazione):
+\begin{equation*}
+    \lim_{n \to +\infty} \left(1 - \frac{x}{n}\right)^n = \lim_{t \to -\infty} \left(1 + \frac{1}{t}\right)^{-tx} = \left[\lim_{t \to -\infty} \left(\frac{t + 1}{t}\right)^{-t}\right]^x = \left[\lim_{t \to -\infty} \left(\frac{t}{t + 1}\right)^t\right]^x
+\end{equation*}
+\begin{equation*}
+    = \left[\lim_{t \to -\infty} \left(1 + \frac{1}{t + 1}\right)^t\right]^x = \left[\lim_{t \to -\infty} \frac{\left(1 + \frac{1}{t + 1}\right)^{t + 1}}{\left(1 + \frac{1}{t + 1}\right)^t}\right]^x = e^x
+\end{equation*}
+
+\noindent Effettuando gli stessi passaggi e le stesse sostituzioni, è possibile dimostrare anche il decimo (\ref{eq:limnot10}) e l'undicesimo (\ref{eq:limnot11}) limite notevole (ovviamente in questi due limiti, bisogna considerare i casi $a > 0$, $a = 0$ e $a < 0$; non cosa succede ad $x$).
 \end{document}
