@@ -65,9 +65,17 @@
 61. Dimostra che se il limite per $x \to 0^-$ di una funzione pari è uguale a $l$, allora anche il limite per $x \to 0^+$ è uguale a $l$.
 62. Dimostra che se il limite per $x \to 0^-$ di una funzione dispari è uguale a $l$, allora il limite per $x \to 0^+$ è uguale a $-l$. Aggiungi anche gli ulteriori casi con $\pm \infty$
 63. Come sono definiti $m_1$, $m_2$, $n_1$ e $n_2$? Dimostra che relazione esiste tra di essi in presenza di funzioni pari e dispari.
-64. Dimostra perché $\lim_{x \to +\infty} \left(1 + \frac{1}{x}\right)^x = e$ e $\lim_{x \to -\infty} \left(1 + \frac{1}{x}\right)^x = e$.
-65. Dimostra che $\lim_{n \to +\infty} \left(1 + \frac{x}{n}\right)^n = e^x$ considerando i vari casi al variare del valore di $x$.
-66. Dimostra che $\lim_{x \to +\infty} \left(1 + \frac{a}{x}\right)^x = e^a$ e $\lim_{x \to -\infty} \left(1 + \frac{a}{x}\right)^x = e^a$ considerando i vari casi al variare del valore di $a$.
+64. Dimostra che $f(x) = x^n$ è pari $\iff n \ pari$.
+65. Dimostra che $f(x) = x^n$ è dispari $\iff n \ dispari$.
+66. Dimostra che se $f, g$ sono pari, allora $f \pm g$ e $f \cdot g$ sono pari.
+67. Dimostra che se $f, g$ sono dispari, allora $f \pm g$ sono dispari, mentre $f \cdot g$ è pari.
+68. Dimostra che se $f$ è pari e $g$ è dispari, allora $f \cdot g$ è dispari. Che tipo di simmetrie otteniamo nel caso di $f \pm g$?
+69. Dimostra che se $f, g$ sono pari, allora il rapporto è una funzione pari.
+70. Dimostra che se $f, g$ sono dispari, allora il rapporto è una funzione pari.
+71. Dimostra che se $f$ è pari e $g$ è dispari, allora il rapporto è una funzione dispari.
+72. Dimostra che $0 < \sin(x) < x < \tan(x)$ e che $|\sin(x)| < |x| \quad \forall x \in \mathbb{R}$
+73. Dimostra che $\lim_{x \to x_0} \sin(x) = \sin(x_0)$, $\lim_{x \to x_0} \cos(x) = \cos(x_0)$, $\lim_{x \to x_0} \tan(x) = \tan(x_0)$ se $x_0 \neq \frac{\pi}{2} + k\pi : k \in \mathbb{Z}$ e $\lim_{x \to x_0} \cot(x) = \cot(x_0)$ se $x_0 \neq \pi + k\pi : k \in \mathbb{Z}$.
+74. Quando una funzione è continua? Mostra perché funzioni costanti, potenza, polinomiali, esponenziali, logaritmiche e trigonometriche sono funzioni continue.
 
 ## Dimostrazioni
 

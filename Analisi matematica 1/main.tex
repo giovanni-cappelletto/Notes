@@ -2160,14 +2160,14 @@ Sia:
 \end{equation*}
 
 \noindent Innanzitutto, notiamo che $f(0) = -1$, che $|f(x)| = 1 \quad \forall x \in \mathbb{R}$, che $\lim_{x \to x_0} |f(x)| = 1$ e, infine, che $\nexists \lim_{x \to x_0} f(x)$.\\
-Supponiamo però che $\lim_{x \to x_0} f(x) = l$. Se $l = -1, \forall \varepsilon > 0$ varrebbe la definizione di limite. Fissiamo allora $\varepsilon = \frac{1}{2}$, allora $\exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - (-1)| < \frac{1}{2} \qquad \forall x \in U_0 - \{0\}$. Ma ciò è falso perché $-\frac{3}{2} < f(x) < -\frac{1}{2} \qquad \forall x \in U_0 - \{x_0\}$, ma in ogni intorno bucato di $x_0$, sono presenti infiniti razionali e irrazionali e il valore ottenuto da razionali mappati nella funzione $f(x)$ ($-1$) è diverso da quello ottenuto mappando irrazionali ($1$). Dato quindi che si arriva ad una contraddizione, $l = -1$ non è il valore di $\lim_{x \to 0} f(x)$.\\
-Analogamente, se $l = 1$, allora $|f(x) - 1| < \frac{1}{2} \implies \frac{1}{2} < f(x) < \frac{3}{2} \qquad \forall x \in U_0 - \{0\}$ e, anche qui, ciò non vale per tutti quegli infiniti numeri razionali che si sono in un intorno bucato di $0$. In altre parole, $l = -1$ non è il valore di $\lim_{x \to 0} f(x)$.\\
+Supponiamo però che $\lim_{x \to x_0} f(x) = l$. Se $l = -1, \forall \varepsilon > 0$ varrebbe la definizione di limite. Fissiamo allora $\varepsilon = \frac{1}{2}$, allora $\exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - (-1)| < \frac{1}{2} \qquad \forall x \in U_{x_0} - \{x_0\}$. Ma ciò è falso perché $-\frac{3}{2} < f(x) < -\frac{1}{2} \qquad \forall x \in U_{x_0} - \{x_0\}$, ma in ogni intorno bucato di $x_0$, sono presenti infiniti razionali e irrazionali e il valore ottenuto da razionali mappati nella funzione $f(x)$ ($-1$) è diverso da quello ottenuto mappando irrazionali ($1$). Dato quindi che si arriva ad una contraddizione, $l = -1$ non è il valore di $\lim_{x \to x_0} f(x)$.\\
+Analogamente, se $l = 1$, allora $|f(x) - 1| < \frac{1}{2} \implies \frac{1}{2} < f(x) < \frac{3}{2} \qquad \forall x \in U_{x_0} - \{x_0\}$ e, anche qui, ciò non vale per tutti quegli infiniti numeri razionali che si sono in un intorno bucato di $x_0$. In altre parole, $l = 1$ non è il valore di $\lim_{x \to x_0} f(x)$.\\
 Se invece:
 
 \begin{itemize}
     \item $l > 1$, ma $l - \frac{1}{2} > 1$ (cioè l'estremo inferiore di $V_l$ è più grande di $1$);
     \item $l < -1$, ma $l + \frac{1}{2} < -1$ (cioè l'estremo superiore di $V_l$ è più piccolo di $-1$);
-    \item $0 < l < 1$, ma $l - \frac{1}{2} > - 1$ e $l + \frac{1}{2} < 1$.
+    \item $-1 < l < 1$, ma $l - \frac{1}{2} > - 1$ e $l + \frac{1}{2} < 1$.
 \end{itemize}
 
 \noindent allora per il teorema della limitatezza locale, esiste un intorno di $x_0$ tale che $\{f(x) : x \in U_{x_0} \cap A\}$ è limitato. In altre parole, imponendo tali vincoli si costruisce un insieme di valori $f(x) > 1$ o $f(x) < -1$ oppure ancora $-1 < f(x) < 1$. \\
@@ -2891,6 +2891,10 @@ Si ha quindi che $\sin(a_n) = 1 \qquad \forall n \in \mathbb{N}$ e $\sin(b_n) = 
     \lim_{x \to -\infty} \left(1 + \frac{a}{x}\right)^x = e^a \qquad con \ a \in \mathbb{R}
     \label{eq:limnot11}
 \end{equation}
+\begin{equation}
+    \lim_{x \to 0} \frac{\tan(x)}{x} = 1
+    \label{eq:limnot12}
+\end{equation}
 
 \subsubsection{Dimostrazioni sui limiti notevoli}
 \noindent Dimostriamo il quarto limite notevole (\ref{eq:limnot4}). Quando $x \neq 0$ e $1 + x > 0 \implies x > -1$ (ovvero il dominio $D$ equivale a $D = (-1, 0) \cup (0, +\infty)$, cioè $x_0 = 0$ è punto di accumulazione per $D$), possiamo scrivere:
@@ -3366,5 +3370,400 @@ Partiamo calcolando i limiti per $x \to +\infty$. Consideriamo quindi $x > 1$, a
     = \left[\lim_{t \to -\infty} \left(1 + \frac{1}{t + 1}\right)^t\right]^x = \left[\lim_{t \to -\infty} \frac{\left(1 + \frac{1}{t + 1}\right)^{t + 1}}{\left(1 + \frac{1}{t + 1}\right)^t}\right]^x = e^x
 \end{equation*}
 
-\noindent Effettuando gli stessi passaggi e le stesse sostituzioni, è possibile dimostrare anche il decimo (\ref{eq:limnot10}) e l'undicesimo (\ref{eq:limnot11}) limite notevole (ovviamente in questi due limiti, bisogna considerare i casi $a > 0$, $a = 0$ e $a < 0$; non cosa succede ad $x$).
+\noindent Effettuando gli stessi passaggi e le stesse sostituzioni, è possibile dimostrare anche il decimo (\ref{eq:limnot10}) e l'undicesimo (\ref{eq:limnot11}) limite notevole (ovviamente in questi due limiti, bisogna considerare i casi $a > 0$, $a = 0$ e $a < 0$; non cosa succede ad $x$).\\
+
+\noindent Dimostriamo ora il terzo limite notevole (\ref{eq:limnot3}). Sia $x > 0$, allora applichiamo la sostituzione $t = \frac{1}{x}$. Quindi se $x \to 0^+$, abbiamo che:
+\begin{equation*}
+    \lim_{x \to 0^+} (1 + x)^\frac{1}{x} = \lim_{t \to +\infty} \left(1 + \frac{1}{t}\right)^t = e
+\end{equation*}
+
+\noindent mentre se $x \to 0^-$, abbiamo che
+\begin{equation*}
+    \lim_{x \to 0^-} (1 + x)^\frac{1}{x} = \lim_{t \to -\infty} \left(1 + \frac{1}{t}\right)^t = e
+\end{equation*}
+
+\noindent Dimostriamo ora il settimo limite notevole (\ref{eq:limnot7}). Innanzitutto, calcoliamo il dominio: 
+\begin{equation*}
+    D_f = 
+    \begin{cases}
+        (1 + x)^a \iff x > -1 \\
+        x \neq 0
+    \end{cases}
+    \implies (-1, 0) \cup (0, +\infty)
+\end{equation*}
+
+\noindent La prima condizione è dovuta al fatto che la base di un esponenziale deve essere maggiore di $0$. Notiamo inoltre dal dominio che $x_0 = 0$ è punto di accumulazione per esso. Ora:
+\begin{itemize}
+    \item se $a = 0$, dato che $(1 + x)^a \vcentcolon = e^{a\log(1 + x)} = 1 \qquad \forall x \in \mathbb{R}$, allora il numeratore è pari a $0$ e quindi: $$\lim_{x \to 0} \frac{(1 + x)^a - 1}{x} = \lim_{x \to 0} 0 = 0 = a$$
+    \item se $a \neq 0$ e $x > -1$, allora sappiamo che $\lim_{x \to 0} \log(1 + x) = 0 \implies (1 + x)^a = e^{a\log(1 + x)} = 1$. Mentre prima il numeratore era pari a $0$, qui tende a $0$, come il denominatore. Ci troviamo quindi in un caso di indeterminazione. Poniamo allora $(1 + x)^a - 1 = t \iff (t + 1) = (1 + x)^a \implies a\log(1 + x) = \log(t + 1)$. Quindi: $$\lim_{x \to 0} \frac{(1 + x)^a - 1}{x} = \lim_{x \to 0} \frac{(1 + x)^a - 1}{\log(1 + x)} \cdot \frac{\log(1 + x)}{x} = \lim_{t \to 0} \frac{t}{\frac{1}{a} \log(1 + t)} = a\lim_{t \to 0}\frac{t}{\log(1 + t)} = a$$
+\end{itemize}
+
+\subsection{Esercizi su limiti e simmetrie}
+\subsubsection{Esercizio 14}
+Sia $f(x) \in [0, |x|] \qquad \forall x \neq 0, \ con \ x \in D_f$. Allora dimostriamo che $\lim_{x \to 0} f(x) = 0$.\\
+È possibile risolvere l'esercizio utilizzando due metodologie differenti. Sapendo che:
+\begin{equation*}
+    0 \leq f(x) \leq |x|
+\end{equation*}
+
+\noindent Ora dato che $\lim_{x \to 0} 0 = 0$ e che $\lim_{x \to 0} |x| = 0$, allora per il teorema dei carabinieri $\lim_{x \to 0} f(x) = 0$.\\
+Altrimenti è possibile applicare la definizione di limite. Sia quindi $x \neq 0$ e sia $\varepsilon > 0$. Consideriamo allora $|f(x) - 0| = |f(x)|$. Dato che $f(x) \geq 0$ per ipotesi, allora $|f(x)| = f(x)$. Sempre per ipotesi sappiamo che $f(x) \leq |x| = |x - 0|$. Poniamo ora $\delta_\varepsilon = \varepsilon$ e consideriamo $0 < |x| < \delta_\varepsilon$. Quindi:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists \delta_\varepsilon > 0 \ (\delta_\varepsilon = \varepsilon) \ tale \ che \ |f(x) - 0| < \delta_\varepsilon \qquad \forall x \in D_f, \ 0 < |x| < \delta_\varepsilon \implies \lim_{x \to 0} f(x) = 0
+\end{equation*}
+
+\subsubsection{Esercizio 15}
+Mostrare che $f(x) \vcentcolon = x^n$ è pari $\iff n$ è pari e che $f(x) \vcentcolon = x^n$ è dispari $\iff n$ è dispari. \\
+
+\noindent Mostriamo, innanzitutto, l'implicazione ($\Rightarrow$). Sia $x \neq 0$, dato che $f(-x) = (-x)^n = (-1)^n (x)^n$ e $f(x) = x^n$, allora, se $f(x)$ è pari si ha che:
+\begin{equation*}
+    (-1)^n (x)^n = (x)^n \implies (-1)^n = 1 \implies n \ pari
+\end{equation*}
+
+\noindent Dimostriamo ora la controimplicazione ($\Leftarrow$). Se $n$ è pari, allora possiamo riscriverlo come $n = 2k$ e quindi:
+\begin{equation*}
+    f(-x) = (-x)^{2k} = (-1)^{2k} (x)^{2k} = x^{2k} = f(x) \implies f(x) \ pari
+\end{equation*}
+
+\noindent Mostriamo, innanzitutto, l'implicazione ($\Rightarrow$). Sia $x \neq 0$, dato che $f(-x) = (-x)^n = (-1)^n (x)^n$ e $-f(x) = -(x^n)$, allora, se $f(x)$ è dispari si ha che:
+\begin{equation*}
+    (-1)^n (x)^n = -(x)^n \implies (-1)^n = -1 \implies n \ dispari
+\end{equation*}
+
+\noindent Dimostriamo ora la controimplicazione ($\Leftarrow$). Se $n$ è dispari, allora possiamo riscriverlo come $n = 2k + 1$ e quindi:
+\begin{equation*}
+    f(-x) = (-x)^{2k + 1} = (-1)^{2k + 1} (x)^{2k + 1} = -x^{2k + 1} = -f(x) \implies f(x) \ dispari
+\end{equation*}
+
+\subsubsection{Esercizio 16}
+\textbf{Punto 1.} Siano $f, g$ pari, allora mostrare che $f + g$, $f - g$ e $f \cdot g$ sono anch'esse pari.
+\begin{equation*}
+    (f \pm g)(-x) = f(-x) \pm g(-x) = f(x) \pm g(x) = (f \pm g)(x)
+\end{equation*}
+\begin{equation*}
+    (f \cdot g)(-x) = f(-x) \cdot g(-x) = f(x) \cdot g(x) = (f \cdot g)(x)
+\end{equation*}
+
+\noindent\textbf{Punto 2.} Siano $f, g$ dispari, allora mostrare che $f + g$ e $f - g$ sono dispari, mentre $f \cdot g$ è pari.
+\begin{equation*}
+    (f \pm g)(-x) = f(-x) \pm g(-x) = -f(x) \mp g(x) = -(f(x) \pm g(x)) = - (f \pm g)(x)
+\end{equation*}
+\begin{equation*}
+    (f \cdot g)(-x) = f(-x) \cdot g(-x) = -f(x) \cdot (-g(x)) = (f \cdot g)(x)
+\end{equation*}
+
+\noindent\textbf{Punto 3.} Sia $f$ pari e $g$ dispari, allora mostrare che $f \cdot g$ è dispari.
+\begin{equation*}
+    (f \cdot g)(-x) = f(-x) \cdot g(-x) = f(x) \cdot (-g(x)) = - (f \cdot g)(x)
+\end{equation*}
+
+\noindent\textbf{NB!} Non abbiamo calcolato le simmetrie di $(f \pm g)(x)$ perché quando $f$ è pari e $g$ è dispari, o viceversa, in queste funzioni può accadere di tutto. Ad esempio, siano $f(x) = x^2$ (è una funzione pari) e $g(x) = x$ (è una funzione dispari). Sia quindi $h(x) = (f + g)(x) = x^2 + x = x(x + 1)$. Notiamo come $h(x)$ si annulli in $-1$ ($h(-1) = 0$), ma $h(1) \neq 0$ (per la precisione, $h(1) = 2$). Quindi $h(x)$ non è né pari, né dispari. Otteniamo lo stesso identico risultato (ma invertito), se consideriamo $h(x) = (f - g)(x)$.\\
+
+\noindent\textbf{Punto 4.} Siano $f, g$ pari, allora mostrare che $\frac{f}{g}$ è pari. \\
+\noindent\textbf{Punto 5.} Siano $f, g$ dispari, allora mostrare che $\frac{f}{g}$ è pari.\\
+\noindent\textbf{Punto 6.} Sia $f$ pari e $g$ dispari, allora mostrare che $\frac{f}{g}$ è dispari.\\
+In generale, per risolvere questi punti basta osservare che se $g(x) \neq 0 \qquad \forall x \in \mathbb{R}$, allora:
+\begin{itemize}
+    \item se $g$ è pari $\implies h = \frac{1}{g}$ è pari, dato che: $$h(-x) = \frac{1}{g(-x)} = \frac{1}{g(x)} = h(x)$$
+    \item se $g$ è dispari $\implies h = \frac{1}{g}$ è dispari, dato: che $$h(-x) = \frac{1}{g(-x)} = -\frac{1}{g(x)} = -h(x)$$
+\end{itemize}
+
+\noindent Successivamente, si procede utilizzando le considerazioni fatte nelle applicazioni prodotto dei punti precedenti.
+
+\subsubsection{Esercizio 17}
+Determinare $a \in \mathbb{R}$ tale che:
+\begin{equation*}
+    \lim_{x \to +\infty} \left(\frac{x^3 + ax^2 + x}{x^2 - ax + 1} - (x + 2)\right) = 0
+\end{equation*}
+
+\noindent Innanzitutto, determiniamo il dominio. Dobbiamo stare attenti a quando il denominatore si annulla, ovvero quando $x^2 - ax + 1 = 0$. Ciò avviene quando:
+\begin{equation*}
+    x = x_1 = \frac{a + \sqrt{a^2 - 4}}{2} \quad oppure \quad x = x_2 = \frac{a - \sqrt{a^2 - 4}}{2}
+\end{equation*}
+
+\noindent e vale solo quando l'argomento della radice è maggiore o uguale a zero ($a^2 - 4 \geq 0$). \\
+Quindi per $a \in (-2, 2)$ il denominatore non si annulla e quindi $D_f = \mathbb{R}$. Se invece $a = 2$, allora al denominatore avremmo che $x^2 - 2x + 1 = (x - 1)^2$ e quindi esso si annulla per $x_{1, 2} = 1$. Ciò significa che in questo caso $D_f = \mathbb{R} - \{1\}$. Allo stesso modo, se $a = -2$, allora al denominatore avremmo che $x^2 + 2x + 1 = (x + 1)^2$ e quindi esso si annulla per $x_{1, 2} = -1$. Ciò significa che in questo caso $D_f = \mathbb{R} - \{-1\}$. Infine, se $a \in (-\infty, -2) \cup (2, +\infty)$, allora il denominatore si annulla in $x_1$ e $x_2$ scritti qui sopra, quindi $D_f = \mathbb{R} - \{x_1, x_2\}$.\\
+In ogni caso, notiamo che $+\infty$ è punto di accumulazione per $D_f \ \forall a \in \mathbb{R}$. Possiamo quindi procedere a risolvere il limite. Innanzitutto, concentriamoci sul suo argomento e svolgiamo il denominatore comune:
+\begin{align*}
+    \frac{x^3 + ax^2 + x}{x^2 - ax + 1} - (x + 2) &= \frac{x^3 + ax^2 + x - (x + 2)(x^2 - ax + 1)}{x^2 - ax + 1} \\
+    &= \frac{x^3 + ax^2 + x - x^3 + ax^2 - x - 2x^2 + 2ax - 2}{x^2 - ax + 1} \\
+    &= \frac{2x^2(a - 1) + 2ax - 2}{x^2 - ax + 1}
+\end{align*}
+
+\noindent Riscriviamo ora il limite, raccogliendo $x^2$ sia nel numeratore che nel denominatore. Notiamo poi che molti dei termini presenti tendono a $0$ quando $x \to +\infty$:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{2x^2(a - 1) + 2ax - 2}{x^2 - ax + 1} = \lim_{x \to +\infty} \frac{x^2\left(2(a - 1) + \frac{2a}{x} - \frac{2}{x^2}\right)}{x^2\left(1 - \frac{a}{x} + \frac{1}{x^2}\right)} = 2(a - 1) = 2a - 2
+\end{equation*}
+
+\noindent Dato che l'esercizio chiedeva di trovare il valore di $a$ per cui il limite fosse uguale a $0$, non ci resta che risolvere $2a - 2 = 0$, che è chiaramente $a = 1$.
+
+\subsubsection{Esercizio 18}
+Sia $f(x) = \lfloor x \rfloor \sin(\frac{1}{x^2})$, esiste $\lim_{x \to 0} f(x)$?\\
+
+\noindent Dividiamo il caso "limite destro" dal caso "limite sinistro". Se $x \in (0, 1)$, allora $\lfloor x \rfloor = 0$ e quindi $f(x) = 0$. Ciò significa che $\lim_{x \to 0^+} f(x) = 0$.\\
+Se invece $x \in (-1, 0)$, si ha che $\lfloor x \rfloor = 1$, quindi la funzione diventa $f(x) = -\sin(\frac{1}{x^2})$. Utilizziamo ora il teorema ponte. Prendiamo quindi:
+\begin{equation*}
+    a_n = - \frac{1}{\sqrt{\frac{\pi}{2} + 2\pi n}} \ con \ n \in \mathbb{N}, n \geq 1 \implies \frac{1}{a_n^2} = \frac{\pi}{2} + 2\pi n
+\end{equation*}
+\begin{equation*}
+    b_n = - \frac{1}{\sqrt{-\frac{\pi}{2} + 2\pi n}} \ con \ n \in \mathbb{N}, n \geq 1 \implies \frac{1}{b_n^2} = - \frac{\pi}{2} + 2\pi n
+\end{equation*}
+
+\noindent (non stiamo commettendo un errore nel denominatore di $b_n$ perché $2 \pi n$ è sicuramente maggiore di $\frac{\pi}{2}$, per cui la loro differenza non è negativa). Dato che $\lim_{n \to +\infty} a_n = \lim_{n \to +\infty} b_n = 0 = x_0$, allora se effettivamente esistesse il limite di $-\sin(\frac{1}{x^2})$, si avrebbe che $\lim_{n \to +\infty} -\sin(a_n) = \lim_{n \to +\infty} -\sin(b_n) = \lim_{x \to 0} -\sin(\frac{1}{x^2})$. Dato però che:
+\begin{equation*}
+    \sin\left(\frac{1}{a_n^2}\right) = \sin\left(\frac{\pi}{2} + 2\pi n\right) = 1 \qquad \sin\left(\frac{1}{b_n^2}\right) = \sin\left(-\frac{\pi}{2} + 2\pi n\right) = -1
+\end{equation*}
+
+\noindent Allora il limite non esiste, perché se esistesse dovrebbe avere lo stesso valore in tutte le successioni.
+
+\subsubsection{Esercizio 19}
+Sia $f: \mathbb{R} \xrightarrow{} \mathbb{R}$. Dimostriamo che $f$ è una funzione affine $\iff f(x + y) = f(x) + (f(1) - f(0))y \qquad \forall x, y \in \mathbb{R}$.\\
+
+\noindent\textbf{NB!} Una funzione si dice \textbf{affine} quando è del tipo $f(x) = ax + b \qquad \forall a, b \in \mathbb{R}$.\\
+
+\noindent Dimostriamo, innanzitutto, l'implicazione ($\Leftarrow$). Per definizione sappiamo che $f(x) = ax + b$, quindi $f(1) = a + b$, $f(0) = b$ e $f(1) - f(0) = a$. Ora è facile notare che:
+\begin{equation*}
+    f(x + y) = a(x + y) = b = ax + b + ay = f(x) + (f(1) - f(0))y
+\end{equation*}
+
+\noindent Dimostriamo ora la controimplicazione ($\Rightarrow$). Consideriamo il caso $x = t$ e $y = 1$, allora per ipotesi:
+\begin{equation*}
+    f(t + 1) = f(t) + (f(1) - f(0))
+\end{equation*}
+
+\noindent Consideriamo ora il caso $x = 1$ e $y = t$, allora per ipotesi:
+\begin{equation*}
+    f(1 + t) = f(1) + (f(1) - f(0))t
+\end{equation*}
+
+\noindent Notiamo però che i due casi descrivono la stessa funzione per cui:
+\begin{equation*}
+    f(t) + (f(1) - f(0)) = f(1) + (f(1) - f(0))t \implies f(t) = (f(1) - f(0))t + f(0)
+\end{equation*}
+
+\noindent Sia ora $a = f(1) - f(0)$ e $b = f(0)$, allora si ottiene che $f(t) = at + b$.
+
+\subsubsection{Esercizio 20}
+Sia $f: \mathbb{R} \xrightarrow{} \mathbb{R}$ una funzione affine.\\
+$\forall y \in \mathbb{R}$, sia:
+\begin{equation*}
+    g(y) \vcentcolon = \lim_{x \to y} \frac{f(x) - f(y)}{x - y}
+\end{equation*}
+
+\noindent allora $g(y)$ è una funzione costante.\\
+
+\noindent Dato che $f$ affine significa che $\exists a, b \in \mathbb{R} : f(x) = ax + b \qquad \forall x \in \mathbb{R} \ con \ a \neq 0$. Allora, fissato $y \in \mathbb{R}$, per $x \neq y$ si ha che:
+\begin{equation*}
+    \frac{f(x) - f(y)}{x - y} = \frac{ax + b - ay - b}{x - y} = \frac{a(x - y)}{x - y} = a \qquad \forall y \in \mathbb{R}, \forall x \neq y
+\end{equation*}
+
+\noindent Pertanto si ottiene una funzione costante: 
+\begin{equation*}
+    \lim_{x \to y} \frac{f(x) - f(y)}{x - y} = a \qquad \forall y \in \mathbb{R}
+\end{equation*}
+
+\subsubsection{Esercizio 21}
+Sia $f: \mathbb{R} \xrightarrow{} \mathbb{R}$ una funzione quadratica $f(x) = ax^2 + bx + c$ con $a, b, c \in \mathbb{R}$.\\
+$\forall y \in \mathbb{R}$, sia:
+\begin{equation*}
+    g(y) \vcentcolon = \lim_{x \to y} \frac{f(x) - f(y)}{x - y}
+\end{equation*}
+
+\noindent allora $g(y)$ è una funzione affine.\\
+
+\noindent La dimostrazione è abbastanza semplice:
+\begin{align*}
+    \lim_{x \to y} \frac{f(x) - f(y)}{x - y} &= \lim_{x \to y} \frac{ax^2 + bx + c - ay^2 - by - c}{x - y} \\
+    &= \lim_{x \to y} \frac{a(x^2 - y^2) + b(x - y)}{x - y} \\
+    &= \lim_{x \to y} \frac{(x - y)[a(x + y) + b]}{x - y} \\
+    &= \lim_{x \to y} (ax + ay + b) = 2ay + b
+\end{align*}
+
+\noindent\textbf{Proposizione:} Sia $x \in (0, \frac{\pi}{2})$. Allora $0 < \sin(x) < x < \tan(x)$. Inoltre, si ha che $|\sin(x)| \leq |x| \qquad \forall x \in \mathbb{R}$.\\
+
+\noindent Partiamo dimostrando che se $x \in (0, \frac{\pi}{2})$ allora $0 < \sin(x) < x < \tan(x)$. Aiutiamoci con un disegno a capire i conti che svolgeremo.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth]{./images/proposition.pdf}
+\end{wrapfigure}
+
+\noindent Chiamiamo quindi $\overline{AC} = \sin(x)$, $\overline{BD} = \tan(x)$ e $S$ il settore circolare. Notiamo subito che il settore circolare $S$ contiene il triangolo $OCB$, in simboli: $T_{OCB} \subsetneq S$.\\
+Sappiamo poi che $Area(T_{OCB}) = \frac{\sin(x) \cdot \overline{OB}}{2} = \frac{\sin(x)}{2}$, essendo che $\overline{OB} = 1$, dato che il cerchio che stiamo considerando ha raggio $1$. Mentre, sapendo che l'area di un settore circolare è pari a $A = \frac{r^2 \beta}{2}$, ma qui $r = 1$ e $\beta = x$, allora $Area(S) = \frac{x}{2}$. Dato che prima abbiamo detto che il settore circolare contiene il triangolo $\overline{OCB}$, allora abbiamo che:
+\begin{equation*}
+    Area(T_{OBC}) < Area(S) \implies \sin(x) < x
+\end{equation*}
+
+\noindent Inoltre, per $x > 0$ si ha che $\sin(x) > 0$.\\
+Sia ora $U_{OBD}$ il triangolo $OBD$. Notiamo subito che $U_{OBD}$ contiene il settore circolare $S$, in simboli: $S \subsetneq U_{OBD}$. Inoltre, sappiamo che $Area(U_{OBD}) = \frac{\overline{OB} \cdot \tan(x)}{2} = \frac{\tan(x)}{2}$. Per cui abbiamo che $\frac{x}{2} = Area(S) < area(U) = \frac{\tan(x)}{2} \implies x < \tan(x)$. Scrivendo tutte le disuguaglianze ottenute in unica catena, si ha che:
+\begin{equation*}
+    0 < \sin(x) < x < \tan(x) \qquad \forall x \in \left(0, \frac{\pi}{2}\right)
+\end{equation*}
+
+\noindent Mostriamo ora la seconda parte di proposizione, ovvero che $|\sin(x)| \leq |x| \qquad \forall x \in \mathbb{R}$. Sia $x \in (0, \frac{\pi}{2})$, allora, per la parte di proposizione precedentemente dimostrata, sappiamo che $0 < \sin(x) < x$. Sappiamo inoltre che se $x > 0$, allora $-x < 0$. Quindi possiamo estendere la nostra catena di disuguaglianze in: $-x < 0 < \sin(x) < x$, che significa $\sin(x) < |x| \qquad \forall x \in \mathbb{R}$.\\
+Sia ora $x \geq \frac{\pi}{2} \implies -x \leq -\frac{\pi}{2}$. Possiamo quindi dire che $x \geq \frac{\pi}{2} > 1 \geq \sin(x)$. Allo stesso modo: $\sin(x) \geq -1 > -\frac{\pi}{2} \geq -x$. Quindi per $x \geq \frac{\pi}{2}$ si ha che: $-x < \sin(x) < x$, cioè $|\sin(x)| < |x|$.\\
+Sia ora $x = 0$, allora $\sin(0) = 0 = x$. Per cui possiamo estendere quanto detto prima a $|\sin(x)| \leq |x| \qquad \forall x \leq 0$.\\
+Sia infine $x < 0$, allora $x = -|x|$ (infatti se $x < 0 \implies |x| = -x \iff x = -|x|$) e $\sin(x) = \sin(-|x|)$. Essendo però la funzione seno una funzione dispari, si ha che: $\sin(-|x|) = -\sin(|x|)$.\\
+Per quanto dimostrato precedentemente, se $|x| > 0$, allora abbiamo che $-|x| < \sin(x) < |x|$. Ora moltiplichiamo tutto per $-1$ ed otteniamo: $|x| > -\sin(|x|) > -|x| \implies |x| > \sin(-|x|) > -|x|$. Allora se $-|x| = x \implies -|x| < \sin(x) < |x| \qquad \forall x < 0$.\\
+In conclusione, si ha che: $|\sin(x)| \leq |x| \qquad \forall x \in \mathbb{R}$.\\
+
+\noindent\textbf{Proposizione:} Sia $x_0 \in \mathbb{R}$. Allora si ha che:
+\begin{itemize}
+    \item $\lim_{x \to x_0} \sin(x) = \sin(x_0)$;
+    \item $\lim_{x \to x_0} \cos(x) = \cos(x_0)$;
+    \item se $x_0 \neq \frac{\pi}{2} + k\pi : k \in \mathbb{Z}$, si ha che $\lim_{x \to x_0} \tan(x) = \tan(x_0)$;
+    \item se $x_0 \neq \pi + k\pi : k \in \mathbb{Z}$ si ha che $\lim_{x \to x_0} \cot(x) = \cot(x_0)$;
+\end{itemize}
+
+\noindent Dimostriamo, innanzitutto, il primo punto. Sappiamo che $0 \leq |\sin(x) - \sin(x_0)|$. Per prostaferesi scriviamo:
+\begin{equation*}
+    0 \leq |\sin(x) - \sin(x_0)| = 2\left|\cos\left(\frac{x + x_0}{2}\right)\sin\left(\frac{x - x_0}{2}\right)\right| = 2\left|\cos\left(\frac{x + x_0}{2}\right)\right|\left|\sin\left(\frac{x - x_0}{2}\right)\right|
+\end{equation*}
+
+\noindent Ora sappiamo che $|\cos(\frac{x + x_0}{2})|$ è sicuramente minore o uguale a $1$, mentre dalla precedente proposizione sappiamo che $|\sin(\frac{x - x_0}{2})| \leq |\frac{x - x_0}{2}|$. Possiamo quindi scrivere:
+\begin{equation*}
+    0 \leq 2 \left|\cos\left(\frac{x + x_0}{2}\right)\right|\left|\sin\left(\frac{x - x_0}{2}\right)\right| \leq 2 \left|\frac{x - x_0}{2}\right| = |x - x_0|
+\end{equation*}
+
+\noindent Dato che $\lim_{x \to 0} 0 = 0$ e che $\lim_{x \to x_0} |x - x_0| = 0$, allora per il teorema dei carabinieri si ha che: $\lim_{x \to x_0} \sin(x) = \sin(x_0)$.\\
+
+\noindent Allo stesso modo, dimostriamo il secondo punto. Sappiamo che $0 \leq |\cos(x) - \cos(x_0)|$. Per prostaferesi scriviamo:
+\begin{equation*}
+    0 \leq |\cos(x) - \cos(x_0)| = 2 \left|\sin\left(\frac{x + x_0}{2}\right)\sin\left(\frac{x - x_0}{2}\right)\right| = 2\left|\sin\left(\frac{x + x_0}{2}\right)\right|\left|\sin\left(\frac{x - x_0}{2}\right)\right|
+\end{equation*}
+
+\noindent Ora sappiamo che $|\sin(\frac{x + x_0}{2})|$ è sicuramente minore o uguale a $1$, mentre dalla precedente proposizione sappiamo che $|\sin(\frac{x - x_0}{2})| \leq |\frac{x - x_0}{2}|$. Possiamo quindi scrivere:
+\begin{equation*}
+    0 \leq 2\left|\sin\left(\frac{x + x_0}{2}\right)\right|\left|\sin\left(\frac{x - x_0}{2}\right)\right| \leq 2 \left|\frac{x - x_0}{2}\right| = |x - x_0|
+\end{equation*}
+
+\noindent Dato che $\lim_{x \to 0} 0 = 0$ e che $\lim_{x \to x_0} |x - x_0| = 0$, allora per il teorema dei carabinieri si ha che: $\lim_{x \to x_0} \cos(x) = \cos(x_0)$.\\
+
+\noindent Il terzo e il quarto punto, invece, seguono dai primi attraverso l'utilizzo del teorema del rapporto dei limiti.\\
+
+\noindent Dimostriamo ora il sesto limite notevole (\ref{eq:limnot6}). Notiamo subito che $D_f = \mathbb{R} - \{0\}$. Inoltre sappiamo che $f(x) = \sin(x)$ è una funzione dispari e che $g(x) = x$ è anch'essa dispari. Proprio per questo motivo, sappiamo che il loro rapporto sarà una funzione pari (\textit{Esercizio 16}), ovvero $\frac{\sin(x)}{x}$ è una funzione pari. Ci basta quindi studiare il $\lim_{x \to 0^+} \frac{\sin(x)}{x}$, dato che studiando $\lim_{x \to 0^-}$ otterremmo lo stesso risultato.\\
+Prendiamo ora l'intorno $(0, \frac{\pi}{2})$. Se $x$ appartiene a questo intorno, abbiamo dimostrato precedentemente che:
+\begin{equation*}
+    0 < \sin(x) < x < \tan(x) = \frac{\sin(x)}{\cos(x)}
+\end{equation*}
+
+\noindent Dato che in questo intorno, la funzione seno assume sempre valori positivi, allora dividiamo tutto per $\sin(x)$:
+\begin{equation*}
+    0 < 1 < \frac{x}{\sin(x)} < \frac{1}{\cos(x)}
+\end{equation*}
+
+\noindent Osserviamo ora che $\lim_{x \to 0^+} 1 = 1$ e che $\lim_{x \to 0^+} \frac{1}{\cos(x)} = 1$, per cui $\lim_{x \to 0^+} \frac{x}{\sin(x)} = 1$ per il teorema dei carabinieri. Se chiamiamo ora $l = \lim_{x \to 0^+} \frac{x}{\sin(x)} = 1$, allora usando il teorema del rapporto abbiamo che: $\lim_{x \to 0^+} \frac{\sin(x)}{x} = \frac{1}{l} = \frac{1}{1} = 1$. Infine, per la spiegazione data poco fa, abbiamo che: $\lim_{x \to 0^+} \frac{\sin(x)}{x} = 1 \implies \lim_{x \to 0} \frac{\sin(x)}{x} = 1$.\\
+
+\noindent Dimostriamo ora l'ottavo limite notevole (\ref{eq:limnot8}). Sia $x \in (-\pi, \pi) - \{0\}$, allora:
+\begin{equation*}
+    \frac{1 - \cos(x)}{x^2} = \frac{1 - \cos(x)}{1 + \cos(x)} \cdot \frac{1 + \cos(x)}{x^2} = \frac{1 - \cos^2(x)}{x^2} \cdot \frac{1}{1 + \cos(x)}
+\end{equation*}
+
+\noindent (si noti che nell'intorno scelto, $1 + \cos(x) \neq 0$ perché $\pi$ e $-\pi$ non fanno parte dell'intorno stesso). Sapendo che $\sin^2(x) = 1 - \cos^2(x)$, si ha che:
+\begin{equation*}
+    \frac{1 - \cos^2(x)}{x^2} = \frac{\sin^2(x)}{x^2} = \left(\frac{\sin(x)}{x}\right)^2
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+    \lim_{x \to 0} \frac{1 - \cos^2(x)}{x^2} \cdot \frac{1}{1 + \cos(x)} = \lim_{x \to 0} \left(\frac{\sin(x)}{x}\right)^2 \cdot \frac{1}{1 + \cos(x)} = 1 \cdot \frac{1}{2} = \frac{1}{2}
+\end{equation*}
+
+\noindent\textbf{ES.} Risolvere il seguente limite: $\lim_{x \to 0} \frac{1 - \cos(\sin(x))}{x^3}$.
+\begin{equation*}
+    \lim_{x \to 0} \frac{1 - \cos(\sin(x))}{x^3} = \lim_{x \to 0} \frac{1 - \cos(\sin(x))}{(\sin(x))^2} \cdot \frac{(\sin(x))^2}{x^3} = \lim_{x \to 0} \frac{1}{x} \implies \nexists
+\end{equation*}
+
+\noindent Il limite qui sopra non esiste perché si ha che: $+\infty 
+ = \lim_{x \to 0^+} \frac{1}{x} \neq \lim_{x \to 0^-} \frac{1}{x} = -\infty$.\\
+
+\noindent Dimostriamo ora il dodicesimo limite notevole (\ref{eq:limnot12}):
+\begin{equation*}
+    \lim_{x \to 0} \frac{\tan(x)}{x} = \lim_{x \to 0} \frac{\sin(x)}{\cos(x)} \cdot \frac{1}{x} = 1
+\end{equation*}
+
+\subsubsection{Esercizio 22}
+Calcolare $\lim_{x \to 0^+} \frac{\log(1 - 5x)(e^{3x} - 1)}{(\tan(x))^\alpha(2 + \cos(x)} = l$ al variare di $\alpha \in \mathbb{R}$.\\
+
+\noindent\textbf{NB!} L'esercizio è stato costruito correttamente nel chiederci solo il limite unilatero destro. Nel caso in cui ci avesse chiesto di calcolare un limite bilatero, ci sarebbe stato qualche problema perché avremmo avuto $\tan(x) < 0$ e quindi $(\tan(x))^\alpha$, che non è calcolabile.\\
+
+\noindent Partiamo calcolando il valore del limite con $\alpha > 0$. In generale, cerchiamo di ricondurci a limiti notevoli, aggiungendo e togliendo lo stesso valore oppure moltiplicando e dividendo per lo stesso valore. Per risolvere questo limite basterà moltiplicare e dividere per $x^\alpha$, $3x$ e $-5x$:
+\begin{equation*}
+    l = \lim_{x \to 0^+} \frac{x^\alpha}{(\tan(x))^\alpha} \cdot \frac{3x}{x^\alpha} \cdot \frac{e^{3x} - 1}{3x} \cdot \frac{\log(1 - 5x)}{-5x} \cdot \frac{1}{(2 + \cos(x))} \cdot (-5x)
+\end{equation*}
+
+\noindent Notiamo subito quindi che per $x \to 0$, si ha che:
+\begin{equation*}
+    \frac{x^\alpha}{(\tan(x))^\alpha} \to 1 \qquad \frac{e^{3x} - 1}{3x} \to 1 \qquad \frac{\log(1 - 5x)}{-5x} \to 1 \qquad \frac{1}{(2 + \cos(x))} \to \frac{1}{3}
+\end{equation*}
+
+\noindent Quindi a livello di numeri, ci resta solo il $-5$ (perché il $3$ lo semplifichiamo con $\frac{1}{3}$), mentre a livello di variabili abbiamo $x \cdot \frac{x}{x^\alpha} = x^{2 - \alpha}$. Studiamo ora i vari casi:
+\begin{equation*}
+    \lim_{x \to 0^+} x^{2 - \alpha} \implies
+    \begin{cases}
+        0 \qquad \qquad se \ 0 < \alpha < 2 \\
+        1 \qquad \qquad se \ \alpha = 2 \\
+        +\infty \qquad \quad se \ \alpha > 2
+    \end{cases}
+\end{equation*}
+
+\noindent Moltiplichiamo ora tutto per $-5$ (l'unico numero rimanente) ed otteniamo:
+\begin{equation*}
+    l =
+    \begin{cases}
+        0 \qquad \qquad \ \ \ se \ 0 < \alpha < 2 \\
+        -5 \qquad \qquad \ se \ \alpha = 2 \\
+        -\infty \qquad \qquad se \ \alpha > 2
+    \end{cases}
+\end{equation*}
+
+\noindent Studiamo ora il caso in cui $\alpha = 0$. Allora si ha che:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\log(1 - 5x)}{2 + \cos(x)} \cdot (e^{3x} - 1) = 0 = l
+\end{equation*}
+
+\noindent Mentre nel caso $\alpha < 0$, abbiamo che: 
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\log(1 - 5x)}{2 + \cos(x)} \cdot (e^{3x} - 1) \cdot \tan^{-\alpha}(x) = 0 = l
+\end{equation*}
+
+\section{Funzioni continue}
+\textbf{Def:} Sia $A \subset \mathbb{R}$ e $f: A \xrightarrow{} \mathbb{R}$ con $x_0 \in A$. Allora:
+\begin{enumerate}
+    \item se $x_0$ è punto isolato per $A$, diremo che $f$ è continua in $x_0$;
+    \item se $x_0$ è di accumulazione per $A$, diremo che $f$ è continua in $x_0$ se e solo se $\lim_{x \to x_0} f(x) = f(x_0)$;
+    \item diremo che $f$ è continua in $B \subset A$ se e solo se $f$ è continua in $x \quad \forall x \in B$.
+\end{enumerate}
+
+\subsection{Esempi di funzioni continue}
+\subsubsection{Funzioni costanti}
+Sia $f(x) = c \qquad \forall x \in \mathbb{R}$, allora $f(x)$ è continua in $\mathbb{R}$ perché $\lim_{x \to x_0} c = c \qquad \forall x_0 \in \mathbb{R}$
+
+\subsubsection{Funzioni potenza}
+Dimostriamo per induzione che le funzioni potenza sono continue. Sia $f(x) = x^n$ con $n \in \mathbb{N}$ e $x \in \mathbb{R}$. Allora se $n = 0 \implies f(x) = x^0 = 1$, che essendo costante abbiamo già dimostrato essere continua in $\mathbb{R}$ (passo base verificato).\\
+Prendiamo ora l'ipotesi $x^{n - 1}$ è continua in $\mathbb{R}$ con $n \geq 2$ e verifichiamo la tesi $x^n$ è continua in $\mathbb{R}$. \\
+Sia $x_0 \in \mathbb{R}$, allora:
+\begin{align*}
+    \lim_{x \to x_0} (x^n - x_0^n) &= \lim_{x \to x_0} [(x - x_0)(x^{n-1} + x_0^{n-1}) + x_0x^{n - 1} - xx_0^{n - 1}]\\
+    &= \lim_{x \to x_0} (x - x_0)(x^{n - 1} + x_0^{n - 1}) + \lim_{x \to x_0} (x_0x^{n - 1} - xx_0^{n - 1})
+\end{align*}
+
+\noindent Notiamo ora che, per $x \to x_0$, $(x - x_0) \to 0$, $(x^{n - 1} + x_0^{n - 1}) \to 2x_0^{n - 1}$, $x_0x^{n - 1} \to x_0^n$ e $xx_0^{n - 1} \to x_0^n$. Quindi abbiamo che: 
+\begin{equation*}
+    \lim_{x \to x_0} (x^n - x_0^n) = 0 \iff \lim_{x \to x_0} x^n = x^n_0 \qquad \forall x_0 \in \mathbb{R}
+\end{equation*}
+
+\noindent Per questo motivo, per il principio di induzione, $x^n$ è continua in $\mathbb{R}$, $\forall n \in \mathbb{N}$.
+
+\subsubsection{Funzioni polinomiali}
+Dimostriamo ora che $p(x) = \sum_{i = 0}^n a_i x^i$ con $a_i \in \mathbb{R}$, $x \in \mathbb{R}$ e $n \in \mathbb{N}$ sono funzioni continue in $\mathbb{R}$:
+\begin{equation*}
+    \lim_{x \to x_0} p(x) = \sum_{i = 0}^n \lim_{x \to x_0} (a_i x^i) = \sum_{i = 0}^n a_i \lim_{x \to x_0} x^i = \sum_{i = 0}^n a_i x_0^i = p(x_0)
+\end{equation*}
+
+\subsubsection{Funzioni esponenziali e logaritmiche}
+Come abbiamo visto nella \textit{Proposizione 5}, $a^x$ è una funzione continua in $\mathbb{R}$ perché $\lim_{x \to x_0} a^x = a^{x_0} \qquad \forall x \in \mathbb{R}$. \\
+Allo stesso modo, per la \textit{Proposizione 6}, $\log_a(x)$ è continua per ogni $x_0 > 0, a > 0, a \neq 1$.
+
+\subsubsection{Funzioni trigonometriche}
+Come abbiamo visto nella \textit{Proposizione} a pagina 82, le funzioni $\sin(x)$ e $\cos(x)$ sono funzioni continue in $\mathbb{R}$, mentre $\tan(x)$ è continua in $\mathbb{R} - \{\frac{\pi}{2} + k\pi : k \in \mathbb{Z}\}$ e $\cot(x)$ è continua in $\mathbb{R} - \{\pi + k\pi : k \in \mathbb{Z}\}$.
 \end{document}
