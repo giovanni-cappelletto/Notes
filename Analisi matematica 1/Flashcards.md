@@ -76,6 +76,15 @@
 72. Dimostra che $0 < \sin(x) < x < \tan(x)$ e che $|\sin(x)| < |x| \quad \forall x \in \mathbb{R}$
 73. Dimostra che $\lim_{x \to x_0} \sin(x) = \sin(x_0)$, $\lim_{x \to x_0} \cos(x) = \cos(x_0)$, $\lim_{x \to x_0} \tan(x) = \tan(x_0)$ se $x_0 \neq \frac{\pi}{2} + k\pi : k \in \mathbb{Z}$ e $\lim_{x \to x_0} \cot(x) = \cot(x_0)$ se $x_0 \neq \pi + k\pi : k \in \mathbb{Z}$.
 74. Quando una funzione è continua? Mostra perché funzioni costanti, potenza, polinomiali, esponenziali, logaritmiche e trigonometriche sono funzioni continue.
+75. Quando una funzione è continua solo da sinistra o solo da destra?
+76. Come si possono classificare le discontinuità?
+77. Cos'è e a cosa serve il prolungamento continuo di una funzione?
+78. Enuncia il teorema sulla continuità.
+79. Enuncia il teorema sulla contninuità composta.
+80. Enuncia il teorema sulla continuità dell'inversa.
+81. Quando una funzione è derivabile?
+82. Quando un punto viene detto interno ad un intervallo?
+83. Enuncia e dimostra il teorema che lega derivabilità a continuità.
 
 ## Dimostrazioni
 

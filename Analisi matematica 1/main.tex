@@ -3726,6 +3726,9 @@ Calcolare $\lim_{x \to 0^+} \frac{\log(1 - 5x)(e^{3x} - 1)}{(\tan(x))^\alpha(2 +
     \lim_{x \to 0^+} \frac{\log(1 - 5x)}{2 + \cos(x)} \cdot (e^{3x} - 1) \cdot \tan^{-\alpha}(x) = 0 = l
 \end{equation*}
 
+\newpage
+
+\part{Continuità e derivabilità}
 \section{Funzioni continue}
 \textbf{Def:} Sia $A \subset \mathbb{R}$ e $f: A \xrightarrow{} \mathbb{R}$ con $x_0 \in A$. Allora:
 \begin{enumerate}
@@ -3766,4 +3769,233 @@ Allo stesso modo, per la \textit{Proposizione 6}, $\log_a(x)$ è continua per og
 
 \subsubsection{Funzioni trigonometriche}
 Come abbiamo visto nella \textit{Proposizione} a pagina 82, le funzioni $\sin(x)$ e $\cos(x)$ sono funzioni continue in $\mathbb{R}$, mentre $\tan(x)$ è continua in $\mathbb{R} - \{\frac{\pi}{2} + k\pi : k \in \mathbb{Z}\}$ e $\cot(x)$ è continua in $\mathbb{R} - \{\pi + k\pi : k \in \mathbb{Z}\}$.
+
+\subsection{Esercizio 23}
+Sia
+\begin{equation*}
+    f(x) = \begin{cases}
+        \sin\left(\frac{1}{x}\right) \qquad se \ x \neq 0\\
+        0 \qquad \qquad \ \ se \ x = 0
+    \end{cases}
+\end{equation*}
+
+\noindent è continua in $0$? In altre parole, esiste $\lim_{x \to 0} f(x)$ e $f(0) = \lim_{x \to 0} f(x)$?\\
+
+\noindent Innanzitutto, notiamo che $D_f = \mathbb{R}$ e che $f(0) = 0$. Sia ora $a_n \in \mathbb{N}$, con $a_n \to 0$, una successione tale che $\sin(\frac{1}{a_n}) = 1 \qquad \forall n \in \mathbb{N}$ e sia $b_n \in \mathbb{N}$, con $b_n \to 0$, una successione tale che $\sin(\frac{1}{b_n}) = -1 \qquad \forall n \in \mathbb{N}$. Ad esempio:
+\begin{equation*}
+    \frac{1}{a_n} = \frac{\pi}{2} + 2n\pi : n \in \mathbb{N} \implies \lim_{n \to +\infty} a_n = \frac{1}{\frac{\pi}{2} + 2\pi n} = 0
+\end{equation*}
+\begin{equation*}
+    \frac{1}{b_n} = \frac{3\pi}{2} + 2n\pi : n \in \mathbb{N} \implies \lim_{n \to +\infty} b_n = \frac{1}{\frac{3\pi}{2} + 2\pi n} = 0
+\end{equation*}
+
+\noindent Ora sappiamo per il teorema ponte, che se esistesse il $\lim_{x \to 0} f(x) = l$ allora: $\exists \lim_{n \to +\infty} f(a_n) = l = \lim_{n \to +\infty} f(b_n)$, ma abbiamo preso apposta le successioni $a_n$ e $b_n$ per far in modo che $f(a_n)$ e $f(b_n)$ tendano a due valori diversi per $n \to +\infty$. Proprio per questo motivo, possiamo affermare che $\nexists \lim_{x \to x_0} f(x)$, ovvero che $f(x)$ non è continua in $0$.\\
+
+\noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in A$ un punto di accumulazione per $A$ da destra (da sinistra). Diremo che $f$ è \textbf{continua in $x_0$ da destra} (da sinistra) se e solo se:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to x_0^-)}{x \to x_0^+}} f(x) = f(x_0)
+\end{equation*}
+
+\noindent\textbf{Osservazione:} Se $f$ è continua in $x_0 \in A$ e $x_0$ è punto di accumulazione per $A$, allora $f$ è continua sia da destra che da sinistra.\\
+
+\noindent\textbf{NB!} È quindi possibile avere continuità solo da destra o solo da sinistra.\\
+
+\noindent\textbf{ES.} Sia $f(x) = \lfloor x \rfloor$, il cui dominio è $D_f = \mathbb{R}$. Prendiamo ora $x_0 = m \in \mathbb{Z}$ con $m$ punto di accumulazione per $\mathbb{R}$. Allora:
+\begin{equation*}
+    \lim_{x \to m^+} f(x) = \lim_{x \to m^+} \lfloor x \rfloor = \lim_{x \to m^+} m = m = f(m)
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to m^-} f(x) = \lim_{x \to m^-} \lfloor x \rfloor = \lim_{x \to m^-} m - 1 = m - 1 \neq f(m)
+\end{equation*}
+
+\noindent Ciò è dovuto al fatto che $\lfloor x \rfloor = m \qquad \forall x \in (m, m + 1)$ e $\lfloor x \rfloor = m - 1 \qquad \forall x \in (m - 1, m)$. Capiamo quindi che $\lfloor x \rfloor$ non è continua in ogni $m \in \mathbb{Z}$, ma è continua solo da destra. Inoltre, se $x_0 \in \mathbb{R} - \mathbb{Z} : f(x_0) = m = \lfloor x_0 \rfloor$, ma sappiamo che $\forall x \in (m, m + 1)$ abbiamo che $f(x) = m = f(x_0) = \lfloor x_0 \rfloor$ e quindi:
+\begin{equation*}
+    \lim_{x \to x_0} f(x) = m = \lfloor x_0 \rfloor \implies f(x) = \lfloor x \rfloor \ continua \ in \ \mathbb{R} - \mathbb{Z}
+\end{equation*}
+
+\subsection{Classificazione della discontinuità}
+Sia $A \subset \mathbb{R}$ e $f: A \xrightarrow{} \mathbb{R}$ con $x_0 \in A$ punto di accumulazione per $A$. Allora:
+\begin{enumerate}
+    \item se $\lim_{x \to x_0^+} = l_1 \in \mathbb{R}$, $\lim_{x \to x_0^-} = l_2 \in \mathbb{R}$ e $l_1 = l_2$, ma $f(x_0) \neq l_1$, diciamo che $x_0$ è \textbf{discontinuità eliminabile} di $f$ (perché ipoteticamente possiamo definire una nuova funzione in cui nel punto $x_0$ sia uguale al valore a cui tende la funzione quando $x \to x_0$);
+    \item se $\lim_{x \to x_0^+} = l_1 \in \mathbb{R}$, $\lim_{x \to x_0^-} = l_2 \in \mathbb{R}$ e $l_1 \neq l_2$, diciamo che $x_0$ è \textbf{discontinuità di prima specie} (è anche chiamata con salto perché c'è appunto un salto tra $l_1$ e $l_2$);
+    \item ogni altro possibile caso in cui $f$ è discontinua in $x_0$ viene detto di \textbf{seconda specie}.
+\end{enumerate}
+
+\noindent Di seguito, un esempio grafico per ogni discontinuità qui sopra enunciata.
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=5cm]{./images/discontinuity3.pdf}\hfill
+    \includegraphics[width=5cm]{./images/discontinuity1.pdf}\hfill
+    \includegraphics[width=5cm]{./images/discontinuity2.pdf}
+\end{figure}
+
+\subsubsection{Esercizio 24}
+$f(x) = \frac{\sin(x)}{x}$, $f(x)$ è continua in $0$? \\
+
+\noindent Dato che $D_f: \mathbb{R} - \{0\}$, allora sicuramente $f$ non è continua in $0$ (perché appunto non è definita in quel punto).\\
+Cerchiamo quindi di definire una funzione simile a $f(x)$, ma che renda continua $f(x)$:
+\begin{equation*}
+    g_a(x) = 
+    \begin{cases}
+        \frac{\sin(x)}{x} \qquad se \ x \neq 0\\
+        a \qquad \ \ se x = 0
+    \end{cases}
+\end{equation*}
+
+\noindent Ora quindi possiamo calcolare quanto vale la funzione in $0$: $g_a(0) = a$. Dato poi che $\lim_{x \to 0} g_a(x) = 1$, allora l'unico caso in cui $g_a(x)$ è continua in $0$ è quando si ha $g_1(x)$, ovvero quando $a = 1$.\\
+
+\noindent\textbf{NB!} La funzione $g_1(x)$ viene detta \textbf{prolungamento continuo di $f$ in $0$}. Se esiste un prolungamento continuo di un'altra funzione, allora esso è unico. \\
+
+\noindent\textbf{ES.} Sia $f(x) = \frac{1}{|x|}$, siccome $\lim_{x \to 0} \frac{1}{|x|} = +\infty$, allora $f$ non ha prolungamento continuo in $0$ (perché la funzione calcolata in $0$ non può dare di certo come risultato $+\infty$).\\
+
+\noindent\textbf{NB!} Per avere un prolungamento continuo dobbiamo avere una discontinuità eliminabile.
+
+\subsection{Operazioni con funzioni continue}
+\subsubsection{Teorema sulla continuità}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in A$ un punto di accumulazione per $A$. Siano inoltre $f, g$ continue in $x_0$. Allora: $f + g$ e $f \cdot g$ sono continue in $x_0$. Inoltre, se $g(x_0) \neq 0$, allora $\frac{f}{g}$ è continua in $x_0$.\\
+
+\noindent Per dimostrare il precedente teorema basta utilizzare i teoremi della somma, del prodotto, del rapporto insieme alla definizione di continuità.
+
+\subsubsection{Teorema sulla continuità composta}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$ con $x_0$ punto di accumulazione per $A$ e $f$ continua in $x_0$.\\
+Sia $g: B \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $t_0 \in B$ con $t_0$ punto di accumulazione per $B$ e $g$ continua in $t_0$.\\
+Inoltre, $g(t_0) = x_0$ (ovvero $\lim_{t \to t_0} g(t) = x_0$ dato che $g$ è continua), allora:
+\begin{equation*}
+    f \circ g: B \subset \mathbb{R} \xrightarrow{} \mathbb{R} \qquad t \longmapsto f(g(t)) \ continua \ in \ t_0
+\end{equation*}
+
+\noindent Per la dimostrazione basta utilizzare il teorema sui limiti per sostituzione. Si noti, inoltre, che dire che $f$ continua in $x_0$ e $g$ continua in $t_0$ è analogo all'\textit{Ipotesi 2.} del teorema sui limiti per sostituzione (perché significa che possiamo calcolare $f(x_0) = \lim_{x \to x_0} f(x)$ e $g(t_0) = \lim_{t \to t_0} g(t)$). \\
+
+\noindent\textbf{ES.} Sia $f(x) = \log|x|$, allora $f(x)$ è continua? \\
+\noindent Notiamo subito che $f(x)$ è una funzione composta da $|x|$ (che è continua in $\mathbb{R}$) e $\log(x)$ (che è continua in $(0, +\infty)$. Ciò significa che $\log|x|$ è continua $\forall x \in \mathbb{R} : |x| > 0$, ovvero quando $x \neq 0$.\\
+
+\noindent\textbf{ES.} Sia $f(x) = \sin(e^x)$, allora $f(x)$ è continua?\\
+\noindent Notiamo subito che $f(x)$ è una funzione composta da $e^x$ (che abbiamo già verificato essere una funzione continua in $\mathbb{R}$ nella \textit{Proposizione 5}) e $\sin(x)$, che è continua nell'intervallo in cui è definita. Ciò significa che $\sin(e^x)$ è continua $\forall x \in \mathbb{R}$.
+
+\subsubsection{Esercizio 25}
+Sia:
+\begin{equation*}
+    f(x) = \begin{cases}
+        \frac{\sin(x)}{x} \qquad \qquad \ \ se \ x > 0 \\
+        a \qquad \qquad \qquad \ se \ x = 0 \ con \ a \in \mathbb{R} \\
+        \log(1 + |x|) \qquad se \ x < 0
+    \end{cases}
+\end{equation*}
+
+\noindent Esiste $a \in \mathbb{R}$ tale che $f$ è continua in $\mathbb{R}$?\\
+
+\noindent Sia $x > 0$, allora $f(x) = \frac{\sin(x)}{x}$ è continua $\forall a \in \mathbb{R}$ perché ci troviamo di fronte ad un rapporto di funzioni continue. \\
+\noindent Sia $x < 0$, allora $f(x) = \log(1 + |x|)$. Abbiamo quindi $|x|$ (che è continua), $1 + |x|$ (anch'essa continua) e $\log(x)$ (che è continua in $(0, +\infty)$). Dato che $1 + |x| \geq 1 Z 0$, allora $\log(1 + |x|)$ è continua $\forall x < 0, \forall a \in \mathbb{R}$.\\
+\noindent Sia $x = 0$, allora abbiamo che $f(0) = a$. Per la continuità in $0$, $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^-} = f(0)$, ma:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1 \qquad \lim_{x \to 0^-} \log(1 + |x|) = 0
+\end{equation*}
+
+\noindent $\implies \nexists \lim_{x \to 0} f(x) \implies f$ non è continua in $0$, $\forall a \in \mathbb{R}$ perché qualunque $a$ scelga, $0 \neq 1$. Si tratta quindi di una discontinuità di prima specie.
+
+\subsubsection{Esercizio 26}
+Sia:
+\begin{equation*}
+    g(x) = \begin{cases}
+        \frac{\sin(x)}{x} \qquad \qquad \ \ se \ x > 0 \\
+        a \qquad \qquad \qquad \ se \ x = 0 \ con \ a \in \mathbb{R} \\
+        \log(b + |x|) \qquad se \ x < 0
+    \end{cases}
+\end{equation*}
+
+\noindent Per quali valori di $a, b \in \mathbb{R}$, se ne esistono, si ha che $g(x)$ è continua in $\mathbb{R}$?\\
+
+\noindent Per $x \neq 0$ è analogo all'\textit{Esercizio 25}. \\
+\noindent Per $x = 0$, allora $g(0) = a$, $\lim_{x \to 0^+} g(x) = 1$ e $\lim_{x \to 0^-} g(x) = \log(b)$. Quindi:
+\begin{equation*}
+    \exists \lim_{x \to 0} g(x) \iff \begin{cases}
+        \log(b) = 1 \ (\lim_{x \to 0^-} g(x) = \lim_{x \to 0^+} g(x)) \\
+        b > 0 \ (condizione \ di \ esistenza \ di \ \log(b))
+    \end{cases}
+    \implies b = e \qquad \forall a \in \mathbb{R}
+\end{equation*}
+
+\noindent Allora $f$ è continua in $0$ se e solo se:
+\begin{equation*}
+    \begin{cases}
+        a = \log(b) \ (g(0) = \lim_{x \to 0} g(x)) \\ 
+        \log(b) = 1 \\
+        b > 0
+    \end{cases}
+    \implies
+    \begin{cases}
+        a = 1 \\
+        b = e
+    \end{cases}
+\end{equation*}
+
+\subsection{Teorema della continuità dell'inversa}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $I$ intervallo e $f$ strettamente monotona in $I$. Allora $f^{-1}: Imm(f) \xrightarrow{} \mathbb{R}$ è continua su $Imm(f)$.\\
+
+\noindent\textbf{NB!} Non c'è scritto da nessuna parte che $f$ deve essere continua. In altre parole, possono esistere inverse continue di funzioni non continue. \\
+
+\noindent\textbf{NB!} Questo teorema serve per dire che le funzioni trigonometriche inverse sono continue.\\
+
+\noindent\textbf{ES.} Sia:
+
+\begin{equation*}
+    f(x) = \begin{cases}
+        x - 1 \qquad se \ x \in [0, 1] \\
+        x + 1 \qquad se \ x \in (1, 2]
+    \end{cases}
+    \implies I = [0, 2]
+\end{equation*}
+
+\noindent Notiamo che $f(1) = 0$, $\lim_{x \to 1^-} f(x) = 0$ e $\lim_{x \to 1^+} f(x) = 2$ e quindi $f(x)$ non è continua in $1$ perché in $1$ ha una discontinuità di prima specie.\\
+\noindent Dimostriamo ora che la funzione è strettamente crescente. Se $x_1 \in [0, 1]$ e $x_2 \in [0, 1]$ con $x_1 < x_2$, allora $f(x_1) = x_1 - 1 < x_2 - 1 = f(x_2)$. Ad esempio, se prendiamo $x_1 = 0$ e $x_2 = 1$, allora si ha che $-1 < 0$.\\
+Se invece $x_1 \in (1, 2]$ e $x_2 \in (1, 2]$ con $x_1 < x_2$, allora $f(x_1) = x_1 + 1 < x_2 + 1 = f(x_2)$. Ad esempio, se prendiamo $x_1 = \frac{3}{2}$ e $x_2 = 2$, allora si ha che $\frac{5}{2} < 3$.\\
+Infine, se $x_1 \in [0, 1]$ e $x_2 \in (1, 2]$ con $x_1 < x_2$, allora $f(x_1) = x_1 - 1 < x_2 + 1 \implies x_1 - 2 < x_2$. Ad esempio, se prendiamo $x_1 = 0$ e $x_2 = 2$, allora si ha che $-1 < 3$.\\
+Consideriamo ora l'immagine della funzione $Imm(f) = [-1, 0] \cup (2, 3]$. Ciò significa che:
+\begin{equation*}
+    f^{-1}(y) = \begin{cases}
+        y + 1 \qquad se \ y \in [-1, 0]\\
+        y - 1 \qquad se \ y \in (2, 3]
+    \end{cases}
+\end{equation*}
+
+\noindent Notiamo quindi come la continuità di $f^{-1}(y)$ dipende dalla continuità dei "rami" ($[-1, 0]$ e $(2, 3]$). Essendo però che sia $y + 1$, che $y - 1$ sono continue, allora anche $f^{-1}(y)$ è continua.\\
+In altre parole, la discontinuità della funzione si è tradotta in intervalli disgiunti in cui $f^{-1}(y)$ ha comportamenti differenti a seconda dell'intervallo in cui si trova.
+
+\section{Derivabilità}
+\textbf{Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in I$ con $I$ intervallo. Sia $x_0$ \textbf{interno} ad $I$. Sia inoltre $x \in I$ con $x \neq x_0$. Diciamo \textbf{rapporto incrementale di $f$ in $x_0$} la quantità:
+\begin{equation*}
+    \frac{f(x) - f(x_0)}{x - x_0}
+\end{equation*}
+
+\noindent\textbf{NB!} Un punto $x_0$ è interno ad $I$ $\underset{def}{\iff} \exists U_{x_0} \ intorno \ di \ x_0 \ | \ U_{x_0} \subset I$.\\
+
+\noindent\textbf{Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$. Diremo che $f$ è \textbf{derivabile} in $x_0$ se e solo se: 
+\begin{equation*}
+    \frac{f(x) - f(x_0)}{x - x_0} = l \in \mathbb{R}
+\end{equation*}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\includegraphics[width=0.9\linewidth]{./images/derivative.pdf}
+\end{wrapfigure}
+
+\noindent Si noti che avendo i punti $(x_0, f(x_0))$ e $(x, f(x))$, allora è possibile calcolare il coefficiente della retta, che è proprio pari al rapporto incrementale:
+\begin{equation*}
+    m = \frac{\Delta y}{\Delta x} = \frac{f(x) - f(x_0)}{x - x_0}
+\end{equation*}
+
+\noindent e quindi la retta equivale a $y - f(x_0) = m(x - x_0)$.\\
+\noindent In particolare, se facciamo tendere $x$ a $x_0$, allora l'angolo tra la retta $y = f(x_0)$ e la retta $y - f(x_0) = m(x - x_0)$ diminuisce. In altre parole, quando $\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = l \in \mathbb{R}$ vuol dire che $l$ è il coefficiente angolare della retta tangente in $(x_0, f(x_0))$, ovvero la retta può essere scritta come $y - f(x_0) = l(x - x_0)$.\\
+Se invece $l = +\infty \ (- \infty)$, allora la retta è tangente, ovvero $x = x_0$ (si ha una retta verticale). \\
+
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo e $x_0 \in I$ con $x_0$ interno ad $I$. Quindi se $f$ è derivabile in $x_0$, allora $f$ è continua in $x_0$.\\
+
+\noindent\textbf{NB!} Il teorema qui sopra \textbf{non} vale al contrario, ovvero \textbf{non} è vero che se $f$ è continua, allora $f$ è derivabile.\\
+
+\noindent Dimostriamo il teorema qui sopra:
+\begin{equation*}
+    \lim_{x \to x_0} (f(x) - f(x_0)) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \cdot (x - x_0) = 0
+\end{equation*}
+
+\noindent dato che $(x - x_0) \to 0$ e, per ipotesi, $\frac{f(x) - f(x_0)}{x - x_0} = f'(x_0) \in \mathbb{R}$.
 \end{document}

@@ -6,7 +6,7 @@ Questa è la repository in cui carico il codice $\LaTeX$ dei miei appunti. Se do
 
 - [Perché Github](#why-github)
 - [Visualizzare il pdf](#viewing-pdf)
-- [Aggiornare il pdf](#updating-pdf)
+- [Personalizzare il pdf](#customize-pdf)
 - [Flashcards](#flashcards)
 
 <a id="why-github"></a>
@@ -17,13 +17,21 @@ Ho deciso di utilizzare Github e Git perché così non devo seguire una procedur
 
 Uso poi Github anche per fare un backup del codice: non si sa mai che, per qualche strano motivo, Overleaf non dovesse funzionare in futuro 🤷‍♂️
 
-L'unico problema di utilizzare Github senza caricare anche i pdf, è che di volta in volta devi generartelo tu (nulla di complicato). Pensala magari così: anziché avere sempre gli appunti pronti qui, devi impegnarti a creare i tuoi e, solo nel caso tu non capisca qualcosa, allora segui la procedura qui sotto. Ovviamente, essendo uno studente anch'io, non garantisco che le spiegazioni nei miei appunti siano sempre chiare!
-
 <a id="viewing-pdf"></a>
 
 ## Visualizzare il pdf
 
-Per non aver problemi in futuro con il limite della grandezza dei file caricabili su Github, ho deciso di caricare solamente codice ed immagini.
+Non è più necessario dover clonare di volta in volta la repository o copiare e incollare tutto il codice, controllando se sono state aggiunte nuove immagini.
+
+Ora infatti dopo poco minuti dall'aggiunta di una nuova versione del codice o di nuove immagini, il pdf viene automaticamente creato ed inserito su Github. Lo trovi cliccando il link in basso a destra della repository, nella sezione `Releases` oppure a questo link: [Releases](https://github.com/giovanni-cappelletto/Notes/releases/tag/latest). Successivamente, clicca `main.pdf` e avrai la tua copia di appunti! 🥳
+
+<a id="customize-pdf"></a>
+
+## Personalizzare il pdf
+
+### Come modificare il codice a proprio piacimento
+
+Visto che in questa repository è presente tutto il codice per generare il pdf, nessuno ti vieta di incollarlo su un editor $\TeX$ e personalizzare il pdf come preferisci, inserendo altre immagini o scrivendo parte degli appunti a modo tuo.
 
 Dato il codice e le immagine ci sono diversi modi per generare il file pdf. Io ti guiderò in quello più semplice:
 
@@ -70,35 +78,13 @@ Ricapitolando, quindi, la struttura finale del tuo progetto dovrebbe essere la s
 |--main.tex
 ```
 
-Se hai fatto tutto correttamente, dopo aver cliccato nuovamente il tasto "Recompile", dovresti riuscire a visualizzare il mio stesso pdf. Non ti basta ora che scaricarlo (c'è il tasto vicino alla scritta "Recompile") e studiarlo 🥲
+Se hai fatto tutto correttamente, dopo aver cliccato nuovamente il tasto "Recompile", dovresti riuscire a visualizzare il mio stesso pdf. Ora sei pronto a personalizzare il pdf! 💪
 
-<a id="updating-pdf"></a>
+### Come aggiornare il codice all'ultima versione
 
-## Aggiornare il file pdf
+Sfortunatamente, se hai già modificato il mio codice precedentemente, l'unico modo che hai di aggiornare il pdf all'ultima versione senza perdere le tue modifiche è copiare le righe aggiunte dall'ultima versione che avevi scaricato all'ultima da me aggiunta. Per fare questo, Github ti aiuta: ti permette, infatti, di vedere che righe sono state aggiunte tra un commit ("versione di codice") e l'altro ([Github Commits](https://github.com/giovanni-cappelletto/Notes/commits?author=giovanni-cappelletto)). Anche qui però c'è un problema: se nel corso delle nuove versioni, ho corretto errrori scritti precedentemente, potresti non accorgertene.
 
-Cercherò di aggiornare periodicamente il file e quindi di caricare qui nuove versioni del codice.
-
-Se hai già seguito la procedura qui sopra e vuoi semplicemente aggiornare il file:
-
-1. Apri il progetto su [Overleaf](https://www.overleaf.com/project).
-
-2. Visualizza il codice $\LaTeX$ su Github e copialo sempre utilizzando il tasto in alto a destra.
-
-3. Seleziona tutto il codice $\LaTeX$ presente sull'editor Overleaf con il comando:
-
-```
-  Windows/Linux: Ctrl+A
-  MacOS: Cmd+A
-```
-
-4. Incolla il nuovo codice con:
-
-```
-  Windows/Linux: Ctrl+V
-  MacOS: Cmd+V
-```
-
-5. Controlla che non siano state inserite nuove immagini sulla cartella `images` di Github. In caso, segui la procedura dal punto 6. al punto 8. di [Visualizzare il pdf](#viewing-pdf).
+Quando aggiorni manualmente il pdf, ricordati di controllare se sono state aggiunte nuove immagine nella cartella `images`.
 
 <a id="flashcards"></a>
 
