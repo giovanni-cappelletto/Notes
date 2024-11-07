@@ -35,4 +35,4 @@ jobs:
           tag: latest
           name: "Latest PDF Release"
           artifacts: "Analisi matematica 1/main.pdf"
-          replace: true
+          allowUpdates: true
