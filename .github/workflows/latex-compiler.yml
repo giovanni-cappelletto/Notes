@@ -27,3 +27,11 @@ jobs:
         with:
           name: compiled-pdf
           path: "Analisi matematica 1/main.pdf"
+
+      - name: Upload PDF to release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: latest
+          name: "Latest PDF Release"
+          artifacts: "Analisi matematica 1/main.pdf"
