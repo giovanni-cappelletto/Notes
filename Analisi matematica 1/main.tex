@@ -3362,15 +3362,12 @@ Partiamo calcolando i limiti per $x \to +\infty$. Consideriamo quindi $x > 1$, a
     \lim_{n \to +\infty} \left(1 + \frac{x}{n}\right)^n = \lim_{t \to +\infty} \left(1 + \frac{1}{t}\right)^{tx} = \left[\lim_{t \to +\infty} \left(1 + \frac{1}{t}\right)^t\right]^x = e^x
 \end{equation*}
 
-\noindent (abbiamo spostato la "$x$" al di fuori dal limite, tanto il suo valore non dipende dal limite stesso). Consideriamo ora il caso $x < 0$ e anche qui applichiamo la sostituzione $t = -\frac{n}{x}$ (dato che è presente un "-", se $n \to +\infty$, allora $t \to -\infty$. Non importa che sia $+\infty$, tanto considerando la sostituzione fatta, non ci troviamo più nei naturali, ma nei reali. Per cui anche $-\infty$ è un punto di accumulazione):
+\noindent (abbiamo spostato la "$x$" al di fuori dal limite, tanto il suo valore non dipende dal limite stesso). Consideriamo ora il caso $x < 0$ e anche qui applichiamo la sostituzione $t = -\frac{n}{x}$, perché prendiamo $x$ direttamente con il segno (dato che è presente un "-", se $n \to +\infty$, allora $t \to -\infty$. Non importa che sia $+\infty$, tanto considerando la sostituzione fatta, non ci troviamo più nei naturali, ma nei reali. Per cui anche $-\infty$ è un punto di accumulazione):
 \begin{equation*}
-    \lim_{n \to +\infty} \left(1 - \frac{x}{n}\right)^n = \lim_{t \to -\infty} \left(1 + \frac{1}{t}\right)^{-tx} = \left[\lim_{t \to -\infty} \left(\frac{t + 1}{t}\right)^{-t}\right]^x = \left[\lim_{t \to -\infty} \left(\frac{t}{t + 1}\right)^t\right]^x
-\end{equation*}
-\begin{equation*}
-    = \left[\lim_{t \to -\infty} \left(1 + \frac{1}{t + 1}\right)^t\right]^x = \left[\lim_{t \to -\infty} \frac{\left(1 + \frac{1}{t + 1}\right)^{t + 1}}{\left(1 + \frac{1}{t + 1}\right)^t}\right]^x = e^x
+    \lim_{n \to +\infty} \left(1 - \frac{x}{n}\right)^n = \lim_{t \to -\infty} \left(1 + \frac{1}{t}\right)^{-tx} = \left[\lim_{t \to -\infty} \left(1 + \frac{1}{t}\right)^t\right]^{-x} = e^{-x}
 \end{equation*}
 
-\noindent Effettuando gli stessi passaggi e le stesse sostituzioni, è possibile dimostrare anche il decimo (\ref{eq:limnot10}) e l'undicesimo (\ref{eq:limnot11}) limite notevole (ovviamente in questi due limiti, bisogna considerare i casi $a > 0$, $a = 0$ e $a < 0$; non cosa succede ad $x$).\\
+\noindent (è giusto che esca $-x$ perché abbiamo preso $x$ con il segno. Se invece avessimo effettuato tutti i conti considerando semplicemente $x < 0$, allora sarebbe uscito $e^x$). Effettuando gli stessi passaggi e le stesse sostituzioni, è possibile dimostrare anche il decimo (\ref{eq:limnot10}) e l'undicesimo (\ref{eq:limnot11}) limite notevole (ovviamente in questi due limiti, bisogna considerare i casi $a > 0$, $a = 0$ e $a < 0$; non cosa succede ad $x$).\\
 
 \noindent Dimostriamo ora il terzo limite notevole (\ref{eq:limnot3}). Sia $x > 0$, allora applichiamo la sostituzione $t = \frac{1}{x}$. Quindi se $x \to 0^+$, abbiamo che:
 \begin{equation*}
@@ -3986,7 +3983,15 @@ In altre parole, la discontinuità della funzione si è tradotta in intervalli d
 
 \noindent e quindi la retta equivale a $y - f(x_0) = m(x - x_0)$.\\
 \noindent In particolare, se facciamo tendere $x$ a $x_0$, allora l'angolo tra la retta $y = f(x_0)$ e la retta $y - f(x_0) = m(x - x_0)$ diminuisce. In altre parole, quando $\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = l \in \mathbb{R}$ vuol dire che $l$ è il coefficiente angolare della retta tangente in $(x_0, f(x_0))$, ovvero la retta può essere scritta come $y - f(x_0) = l(x - x_0)$.\\
-Se invece $l = +\infty \ (- \infty)$, allora la retta è tangente, ovvero $x = x_0$ (si ha una retta verticale). \\
+Se invece $l = +\infty \ (- \infty)$, allora la retta è tangente, ovvero $x = x_0$ (si ha una retta verticale).
+
+\subsubsection{Notazione delle derivate}
+Come le successioni, anche le derivate possono essere scritte secondo diverse notazioni:
+\begin{equation*}
+    f'(x_0) = l \qquad \frac{d}{dx} f(x_0) \qquad \frac{df}{dx} (x_0)
+\end{equation*}
+
+\noindent\textbf{NB!} Le ultime due notazioni \textbf{non} sono frazioni!\\
 
 \noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo e $x_0 \in I$ con $x_0$ interno ad $I$. Quindi se $f$ è derivabile in $x_0$, allora $f$ è continua in $x_0$.\\
 
@@ -3997,5 +4002,202 @@ Se invece $l = +\infty \ (- \infty)$, allora la retta è tangente, ovvero $x = x
     \lim_{x \to x_0} (f(x) - f(x_0)) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} \cdot (x - x_0) = 0
 \end{equation*}
 
-\noindent dato che $(x - x_0) \to 0$ e, per ipotesi, $\frac{f(x) - f(x_0)}{x - x_0} = f'(x_0) \in \mathbb{R}$.
+\noindent dato che $(x - x_0) \to 0$ e, per ipotesi, $\frac{f(x) - f(x_0)}{x - x_0} = f'(x_0) \in \mathbb{R}$.\\
+
+\noindent Come detto precedentemente, il viceversa non vale. Infatti, sia $f(x) = |x|$. Sappiamo che $f(x)$ è continua in $0$ perché $f(0) = \lim_{x \to 0} f(x) = 0$, ma:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0^+} \frac{|x|}{x} = \lim_{x \to 0^+} \frac{x}{x} = 1
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to 0^-} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0^-} \frac{|x|}{x} = \lim_{x \to 0^-} \frac{-x}{x} = -1
+\end{equation*}
+
+\noindent (nel primo caso, essendo $x > 0$, si ha che $|x| = x$; mentre nel secondo, $x < 0$ e quindi $|x| = -x$). La funzione quindi non è derivabile in $0$ (perché i due limiti sono diversi), ma è continua.
+
+\subsection{Punti di non derivabilità}
+\textbf{Def:} Sia $f: I \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$ e $x_0$ interno ad $I$. Allora:
+\begin{enumerate}
+    \item se $\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} = l_1 \in \mathbb{R}$, $\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} = l_2 \in \mathbb{R}$ e $l_1 \neq l_2$, allora $x_0$ è detto \textbf{punto angoloso}.
+    \item se uno tra $\lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0}$ e $\lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0}$ è $+\infty \ (-\infty)$, allora $x_0$ è detto \textbf{punto cuspidale}
+\end{enumerate}
+
+\noindent\textbf{ES.} $0$ è punto angoloso per $|x|$.\\
+
+\noindent\textbf{ES.} Sia 
+\begin{equation*}
+    g(x) = \sqrt{|x|} = \begin{cases}
+        \sqrt{x} \qquad \ \ se \ x \geq 0\\
+        \sqrt{-x} \qquad se \ x < 0
+    \end{cases}
+\end{equation*}
+
+\noindent Calcoliamo ora il rapporto incrementale:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{g(x) - g(0)}{x - 0} = \lim_{x \to 0^+} \frac{\sqrt{x}}{x} = \lim_{x \to 0^+} \frac{1}{\sqrt{x}} = +\infty
+\end{equation*}
+
+\noindent Basterebbe questo per dire che $0$ è punto cuspidale per $g(x)$, ma calcoliamo anche il limite sinistro:
+\begin{equation*}
+    \lim_{x \to 0^-} \frac{g(x) - g(x_0)}{x - 0} = \lim_{x \to 0^-} \frac{\sqrt{-x}}{-x} = \lim_{x \to 0^-} -\left(\frac{\sqrt{-x}}{-x}\right) = - \lim_{x \to 0^-} \frac{1}{\sqrt{-x}} = -\infty
+\end{equation*}
+
+\noindent\textbf{NB!} Abbiamo dovuto "inserire" un "-" perché per semplificare l'espressione dobbiamo avere una quantità positiva e quindi $x < 0 \implies -x > 0$.
+
+\subsection{Insieme di continuità/derivabilità}
+\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$. Chiamiamo ora il dominio di continuità di $f$ $D(f)^{CONT} = \{x \in A \ | \ f \ continua \ in \ x \}$ e il dominio di derivabilità di $f$ $D(f)^{DER} = \{x \in A \ | \ f \ derivabile \ in \ x \}$.\\
+Chiaramente, si ha che $D(f)^{DER} \subsetneq D(f)^{CONT} \subset A$ (sempre per il fatto che una funzione derivabile è sicuramente continua, ma non vale il viceversa).\\
+
+\noindent\textbf{Funzione derivata prima - Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ derivabile in $i$ (ovvero $D(f)^{DER} = I$).\\
+Definiamo la funzione derivata prima di $f$: 
+\begin{equation*}
+    g: D(f)^{DER} \xrightarrow{} \mathbb{R} \qquad x \longmapsto f'(x)
+\end{equation*}
+
+\noindent dove $x$ è un punto di derivabilità di $f$ (ovvero esiste $f'(x)$). Usualmente scriviamo che $g = f'$ (possiamo anche scrivere $f^{(1)} = f'$ oppure che $f^{(0)} = f$).
+
+\subsection{Derivabilità delle funzioni fondamentali}
+\subsubsection{Funzioni costanti}
+Sia $f(x) = c \qquad \forall x \in \mathbb{R}, c \in \mathbb{R}$, allora $f(x)$ è derivabile in $\mathbb{R}$ e $f'(x) = 0 \qquad \forall x \in \mathbb{R}$.\\
+È molto semplice da dimostrare: prendiamo un punto $x$ fissato del dominio, allora:
+\begin{equation*}
+    \lim_{t \to x} \frac{f(t) - f(x)}{t - x} = \lim_{t \to x} \frac{c - c}{t - x} = 0
+\end{equation*}
+
+\noindent (dato che $c - c = 0$, mentre $t - x \in \mathbb{R}$ e $t - x \neq 0$ perché stiamo lavorando in intorni bucati di $x$, cioè l'espressione vale $\forall t \neq x$.
+
+\subsubsection{Funzioni potenza con esponente naturale}
+Sia $f(x) = x^n \qquad n \in \mathbb{N} - \{0\}$. Allora $f'(x) = nx^{n - 1} \qquad \forall x \in \mathbb{R}, \forall n \geq 1$.\\
+
+\noindent Dimostriamo ora il significato della formula di derivazione. Se $n = 1$, allora $f(x) = x$ e si ha che:
+\begin{equation*}
+    \lim_{t \to x} \frac{f(t) - f(x)}{t - x} = \lim_{t \to x} \frac{t - x}{t - x} = 1 \qquad \forall x \in \mathbb{R}
+\end{equation*}
+
+\noindent Prendiamo ora il caso $n \geq 2$ e poniamo la sostituzione $t = x + h$, allora:
+\begin{equation*}
+    \lim_{t \to x} \frac{f(t) - f(x)}{t - x} = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{(x + h)^n - x^n}{h} = \lim_{h \to 0} \frac{x^n\left[\left(\dfrac{x + h}{x}\right)^n - 1\right]}{h} =
+\end{equation*}
+\begin{equation*}
+    = \lim_{h \to 0} \frac{x^n\left[\left(1 + \dfrac{h}{x}\right)^n - 1\right]}{h} \overset{x \neq 0}{\implies} x^n \lim_{h \to 0} \frac{\left[\left(1 + \dfrac{h}{x}\right)^n - 1\right]}{\frac{h}{x}} \cdot \frac{1}{x} = x^{n - 1} \lim_{h \to 0} \frac{\left[\left(1 + \dfrac{h}{x}\right)^n - 1\right]}{\frac{h}{x}}
+\end{equation*}
+
+\noindent Effettuiamo la sostituzione $s = \frac{h}{x}$ e otteniamo:
+\begin{equation*}
+    x^{n - 1} \lim_{s \to 0} \frac{(1 + s)^n - 1}{s} = nx^{n - 1} \ con \ x \neq 0
+\end{equation*}
+
+\noindent Se invece $x = 0$ e $n \geq 2$, allora:
+\begin{equation*}
+    \lim_{h \to 0} \frac{f(0 + h) - f(0)}{h} = \lim_{h \to 0} \frac{h^n - 0}{h} = \lim_{h \to 0} h^{n - 1} = 0
+\end{equation*}
+
+\noindent ($\lim_{h \to 0} h^{n - 1} = 0$ perché $n - 1 \geq 1$). Abbiamo quindi dimostrato che $(x^n)' = nx^{n - 1} \qquad \forall x \in \mathbb{R}, \forall n \geq 1$.
+
+\subsubsection{Funzioni potenza con esponente reale}
+Sia $x > 0$, $u \in \mathbb{R}$, allora se abbiamo $f(x) \vcentcolon = e^{u\log(x)} \implies f'(x) = ux^{u - 1} \qquad \forall x > 0, \forall u \in \mathbb{R}$.\\
+
+\noindent Per dimostrarlo, utilizziamo gli stessi passaggi svolti precedentemente:
+\begin{align*}
+    \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} &= \lim_{h \to 0} \frac{(x + h)^u - x^u}{h} = \lim_{h \to 0} \frac{x^u\left[\left(1 + \dfrac{h}{x}\right)^u - 1\right]}{h} = x^u \lim_{h \to 0} \frac{\left(1 + \dfrac{h}{x}\right)^u - 1}{\frac{h}{x}} \cdot \frac{1}{x} \\
+    &= x^{u - 1} \lim_{v \to 0} \frac{(1 + v)^u - 1}{v} = ux^{u - 1}
+\end{align*}
+
+\subsubsection{Funzioni esponenziali}
+Sia $f(x) = a^x$, allora $f'(x) = a^x\log(a) \qquad \forall x \in \mathbb{R}, a > 0$.\\
+
+\noindent Dimostrazione:
+\begin{equation*}
+    \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} = \lim_{h \to 0} \frac{a^{x + h} - a^x}{h} = a^x \lim_{h \to 0} \frac{a^h - 1}{h} = a^x\log(a)
+\end{equation*}
+
+\noindent\textbf{NB!} Un caso particolare di queste funzioni è quando $a = e$, per cui si ha che: $f(x) = e^x \implies f'(x) = e^x \qquad \forall x \in \mathbb{R}$.
+
+\subsubsection{Funzioni seno e coseno}
+Sia $f(x) = \sin(x)$, allora $f'(x) = \cos(x) \qquad \forall x \in \mathbb{R}$. \\
+
+\noindent Dimostriamo la precedente regola di derivazione sfruttando la prostaferesi:
+\begin{align*}
+    \lim_{h \to 0} \frac{\sin(x + h) - \sin(x)}{h} &= \lim_{h \to 0}\frac{2\cos\left(\dfrac{x + h + x}{2}\right)\sin\left(\dfrac{x + h - x}{2}\right)}{h} = \lim_{h \to 0} \frac{2\cos\left(x + \dfrac{h}{2}\right)\sin\left(\dfrac{h}{2}\right)}{h}\\
+    &= \lim_{h \to 0} \frac{\sin\left(\dfrac{h}{2}\right)}{\frac{h}{2}}\cos\left(x + \frac{h}{2}\right) = \cos(x)
+\end{align*}
+
+\noindent Sia $f(x) = \cos(x)$, allora $f'(x) = -\sin(x) \qquad \forall x \in \mathbb{R}$. \\
+
+\noindent Dimostriamo la precedente regola di derivazione sfruttando la prostaferesi:
+\begin{align*}
+    \lim_{h \to 0} \frac{\cos(x + h) - \cos(x)}{h} &= \lim_{h \to 0}\frac{-2\sin\left(\dfrac{x + h + x}{2}\right)\sin\left(\dfrac{x + h - x}{2}\right)}{h} = \lim_{h \to 0} \frac{-2\sin\left(x + \dfrac{h}{2}\right)\sin\left(\dfrac{h}{2}\right)}{h}\\
+    &= \lim_{h \to 0} - \frac{\sin\left(\dfrac{h}{2}\right)}{\frac{h}{2}}\sin\left(x + \frac{h}{2}\right) = -\sin(x)
+\end{align*}
+
+\noindent\textbf{Link:} \href{https://www.youmath.it/formulari/65-formulari-di-trigonometria-logaritmi-esponenziali/1048-formule-di-prostaferesi.html}{Formule di prostaferesi}.
+
+\subsubsection{Funzioni logaritmiche}
+Sia $x > 0$, $a > 0$ con $a \neq 1$ e $f(x) = \log_a(x)$, allora $f'(x) = \frac{1}{x} \log_a(e) \qquad \forall x > 0$.\\
+
+\noindent Dimostriamo ora la precedente regola di derivazione. Riscriviamo il rapporto incrementale, ponendo $x + h = x(1 + \frac{h}{x})$, dato che $x$ è positivo:
+\begin{align*}
+    \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} &= \lim_{h \to 0} \frac{\log_a(x + h) - \log_a(x)}{h} = \lim_{h \to 0} \frac{\log_a\left(x\left(1 + \dfrac{h}{x}\right)\right) - \log_a(x)}{h}\\
+    &= \lim_{h \to 0} \frac{\log_a(x) + \log_a\left(1 + \dfrac{h}{x}\right) - \log_a(x)}{h} = \lim_{h \to 0} \frac{\log_a\left(1 + \dfrac{h}{x}\right)}{\frac{h}{x}} \cdot \frac{1}{x} \\
+    &= \frac{1}{x} \lim_{t \to 0}\frac{\log_a(1 + t)}{t} = \frac{1}{x} \log_a(e)
+\end{align*}
+
+\noindent\textbf{NB!} Abbiamo potuto compiere operazioni su $x + h$ solo perché abbiamo posto che $h > -x$, altrimenti il logaritmo non sarebbe stato definito.
+
+\noindent\textbf{Osservazione:} $(log(e))' = \frac{1}{x} \qquad \forall x > 0$.\\
+
+\noindent\textbf{Osservazione:} $(\log|x|)' = \frac{1}{x} \qquad \forall x \neq 0$ (e non $\frac{1}{|x|}$).\\
+Innanzitutto, sappiamo che $D_f: \mathbb{R} - \{0\}$ e riscriviamo la funzione:
+\begin{equation*}
+    \log|x| = \begin{cases}
+        \log(x) \qquad \ \ se \ x > 0 \\
+        \log(-x) \qquad se \ x < 0
+    \end{cases}
+\end{equation*}
+
+\noindent Sia ora $x < 0$ e $(h + x) < 0$, allora:
+\begin{equation*}
+    \lim_{h \to 0} \frac{\log(-(x + h)) - \log(-x)}{h} = \lim_{h \to 0} \frac{\log(-x - h) - \log(-x)}{h}
+\end{equation*}
+
+\noindent Raccogliamo ora $-x$ ed otteniamo che $-x - h = -x(1 + \frac{h}{x})$ che è sicuramente positivo dato che $1 + \frac{h}{x} = \frac{x + h}{x}$, che è il rapporto tra due quantità negative. Possiamo quindi calcolare il logaritmo senza problemi:
+\begin{equation*}
+    = \lim_{h \to 0} \frac{\log(-x) + \log\left(1 + \dfrac{h}{x}\right) - \log(-x)}{h} = \lim_{h \to 0} \frac{\log\left(1 + \dfrac{h}{x}\right)}{\frac{h}{x}} \cdot \frac{1}{x} 
+\end{equation*}
+
+\noindent e quindi per $x < 0$ risulta:
+\begin{equation*}
+    \lim_{h \to 0} \frac{\log|x + h| - \log|x|}{h} = \frac{1}{x} \lim_{h \to 0} \frac{\log\left(1 + \dfrac{h}{x}\right)}{\frac{h}{x}} = \frac{1}{x} \qquad \forall x \in \mathbb{R} \implies (\log|x|)' = \frac{1}{x} \qquad \forall x \neq 0
+\end{equation*}
+
+\noindent\textbf{Teorema:} Siano $f, g: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$ e $f, g$ derivabili in $x_0$. Allora $f + g$ e $f \cdot g$ sono derivabili in $x_0$ e, se $g(x_0) \neq 0$, allora $\frac{f}{g}$ è derivabile in $x_0$. Inolte:
+\begin{enumerate}
+    \item $(f + g)'(x_0) = f'(x_0) + g'(x_0)$;
+    \item $(f \cdot g)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0)$;
+    \item $\left(\dfrac{f}{g}\right)'(x_0) = \dfrac{f'(x_0)g(x_0) - f(x_0)g'(x_0)}{(g(x_0))^2}$.
+\end{enumerate}
+
+\noindent Dimostriamo ora il punto 2, aggiungendo e togliendo $f(x_0)g(x)$:
+\begin{align*}
+    \lim_{x \to x_0} \frac{(f \cdot g)(x) - (f \cdot g)(x_0)}{x - x_0} &= \lim_{x \to x_0} \frac{f(x)g(x) - f(x_0)g(x_0) - f(x_0)g(x) + f(x_0)g(x)}{x - x_0}\\
+    &= \lim_{x \to x_0} \left(\frac{f(x) - f(x_0)}{x - x_0} \cdot g(x)\right) + \lim_{x \to x_0} \left(\frac{g(x) - g(x_0)}{x - x_0}\right) f(x_0)
+\end{align*}
+
+\noindent Ora dato che $g(x)$ è derivabile, allora è continua e quindi possiamo scrivere che $\lim_{x \to x_0} g(x) = g(x_0)$. Pertanto si ha che:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{(f \cdot g)(x) - (f \cdot g)(x_0)}{x - x_0} = f'(x_0)g(x_0) + f(x_0)g'(x_0)
+\end{equation*}
+
+\noindent\textbf{ES.} Derivata di una funzione moltiplicata per una costante: $(cf)'(x_0) = cf'(x_0) + 0 \cdot f(x_0) = cf'(x_0) \qquad \forall x_0 \in D(f)^{DER}$.\\
+
+\noindent\textbf{ES.} Derivata della somma di due funzioni moltiplicate per una costante: $(af + bg)'(x_0) = af'(x_0) + bg'(x_0) \qquad \forall a, b \in \mathbb{R}, \forall x_0 \in (D(f)^{DER} \cap D(g)^{DER})$. Infatti, basterebbe calcolare $(af)'(x_0)$ e $(bf)'(x_0)$.\\
+
+\noindent\textbf{ES.} Derivata di un polinomio. Si noti che il passaggio dalla prima sommatoria alla seconda altro non è che dire che la derivata del polinomio è uguale alla somma delle singole derivate dei monomi. Nel terzo passaggio viene portata fuori $a_k$ essendo una costante che non influisce nel calcolo della derivata.
+\begin{equation*}
+    (p(x))' = \left(\sum_{k = 0}^n a_k x^k\right)' = \sum_{k = 0}^n(a_kx^k)' = \sum_{k = 0}^n a_k(x^k)' = \sum_{k = 0}^n a_k k x^{k - 1} \qquad \forall x \in \mathbb{R}, \forall a_k \in \mathbb{R}
+\end{equation*}
+
+\noindent Abbiamo ottenuto un polinomio di grado massimo $n - 1$. Ora dato che quando $k = 0$, l'argomento della sommatoria vale $0$, possiamo scrivere direttamente:
+\begin{equation*}
+    (p(x))' = \sum_{k =1}^n a_k k x^{k - 1} \qquad \forall x \in \mathbb{R}, \forall a_k \in \mathbb{R}
+\end{equation*}
 \end{document}

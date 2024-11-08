@@ -80,7 +80,7 @@
 76. Come si possono classificare le discontinuità?
 77. Cos'è e a cosa serve il prolungamento continuo di una funzione?
 78. Enuncia il teorema sulla continuità.
-79. Enuncia il teorema sulla contninuità composta.
+79. Enuncia il teorema sulla continuità composta.
 80. Enuncia il teorema sulla continuità dell'inversa.
 81. Quando una funzione è derivabile?
 82. Quando un punto viene detto interno ad un intervallo?
