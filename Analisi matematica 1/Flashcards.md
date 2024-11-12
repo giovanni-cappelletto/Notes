@@ -85,6 +85,15 @@
 81. Quando una funzione è derivabile?
 82. Quando un punto viene detto interno ad un intervallo?
 83. Enuncia e dimostra il teorema che lega derivabilità a continuità.
+84. Classifica i punti di non derivabilità.
+85. Cos'è la funzione derivata prima?
+86. Enuncia e dimostra le regole di derivazione di funzioni costanti, funzioni potenza (con esponente naturale e reale), funzioni esponenziali, funzioni seno e coseno, funzioni logaritmiche.
+87. Perché $(\log|x|)' = \frac{1}{x}$ e non $\frac{1}{|x|}$?
+88. Quali sono le regole di derivazione della somma, del prodotto e del rapporto di due funzioni derivabili? Dimostra come si ottiene la regola di derivazione del prodotto.
+89. Enuncia e dimostra il teorema del differenziale di Lagrange.
+90. Enuncia e dimostra il teorema opposto al teorema del differenziale di Lagrange.
+91. Dimostra il teorema della derivata di funzioni composte.
+92. Enuncia il teorema della derivata dell'inversa. Dimostra il perché del valore ottenuto derivando $\arcsin(x)$ e $\arccos(x)$.
 
 ## Dimostrazioni
 

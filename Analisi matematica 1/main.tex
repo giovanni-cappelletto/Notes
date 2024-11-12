@@ -3835,8 +3835,8 @@ Cerchiamo quindi di definire una funzione simile a $f(x)$, ma che renda continua
 \begin{equation*}
     g_a(x) = 
     \begin{cases}
-        \frac{\sin(x)}{x} \qquad se \ x \neq 0\\
-        a \qquad \ \ se x = 0
+        \frac{\sin(x)}{x} \qquad \ se \ x \neq 0\\
+        a \qquad \qquad se \ x = 0
     \end{cases}
 \end{equation*}
 
@@ -4047,7 +4047,7 @@ Come le successioni, anche le derivate possono essere scritte secondo diverse no
 \textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$. Chiamiamo ora il dominio di continuità di $f$ $D(f)^{CONT} = \{x \in A \ | \ f \ continua \ in \ x \}$ e il dominio di derivabilità di $f$ $D(f)^{DER} = \{x \in A \ | \ f \ derivabile \ in \ x \}$.\\
 Chiaramente, si ha che $D(f)^{DER} \subsetneq D(f)^{CONT} \subset A$ (sempre per il fatto che una funzione derivabile è sicuramente continua, ma non vale il viceversa).\\
 
-\noindent\textbf{Funzione derivata prima - Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ derivabile in $i$ (ovvero $D(f)^{DER} = I$).\\
+\noindent\textbf{Funzione derivata prima - Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ derivabile in $I$ (ovvero $D(f)^{DER} = I$).\\
 Definiamo la funzione derivata prima di $f$: 
 \begin{equation*}
     g: D(f)^{DER} \xrightarrow{} \mathbb{R} \qquad x \longmapsto f'(x)
@@ -4141,7 +4141,7 @@ Sia $x > 0$, $a > 0$ con $a \neq 1$ e $f(x) = \log_a(x)$, allora $f'(x) = \frac{
     &= \frac{1}{x} \lim_{t \to 0}\frac{\log_a(1 + t)}{t} = \frac{1}{x} \log_a(e)
 \end{align*}
 
-\noindent\textbf{NB!} Abbiamo potuto compiere operazioni su $x + h$ solo perché abbiamo posto che $h > -x$, altrimenti il logaritmo non sarebbe stato definito.
+\noindent\textbf{NB!} Abbiamo potuto compiere operazioni su $x + h$ solo perché abbiamo posto che $h > -x$, altrimenti il logaritmo non sarebbe stato definito.\\
 
 \noindent\textbf{Osservazione:} $(log(e))' = \frac{1}{x} \qquad \forall x > 0$.\\
 
@@ -4199,5 +4199,140 @@ Innanzitutto, sappiamo che $D_f: \mathbb{R} - \{0\}$ e riscriviamo la funzione:
 \noindent Abbiamo ottenuto un polinomio di grado massimo $n - 1$. Ora dato che quando $k = 0$, l'argomento della sommatoria vale $0$, possiamo scrivere direttamente:
 \begin{equation*}
     (p(x))' = \sum_{k =1}^n a_k k x^{k - 1} \qquad \forall x \in \mathbb{R}, \forall a_k \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{ES.} Derivata di una potenza negativa. Sia $x \neq 0$ e $n \geq 1, n \in \mathbb{N}$, allora se $f(x) = x^{-n}$, si ha che:
+\begin{equation*}
+    (f(x))' = \left(\frac{1}{x^n}\right)' = \frac{(1)'x^n - 1 \cdot nx^{n - 1}}{x^{2n}} = -n \cdot \frac{x^{n - 1}}{x^{2n}} = - \frac{n}{x^{n + 1}} = -nx^{-n - 1} \qquad (x \neq 0)
+\end{equation*} 
+
+\subsection{Teorema del differenziale di Lagrange}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$ e $x_0$ interno ad $I$, $f$ derivabile in $x_0$. Allora $\exists \omega: I \xrightarrow{} \mathbb{R}$ tale che $\omega$ è continua in $x_0$, $\omega(x_0) = 0$ e:
+\begin{equation*}
+    f(x) = f(x_0) + f'(x_0)(x - x_0) + \omega(x)(x - x_0)
+\end{equation*}
+
+\noindent\textbf{NB!} La prima parte della tesi qui sopra ($f(x_0) + f'(x_0)(x - x_0)$) è un polinomio di primo grado, che rappresenta l'equazione della retta tangente a $(x_0, f(x_0))$, mentre la seconda parte ($\omega(x)(x - x_0)$) è un altro polinomio moltiplicato ad un qualcosa che tende a $0$ ($x - x_0)$ più velocemente rispetto alla prima parte della tesi. In altre parole, la tesi "approssima" $f(x)$ (prima parte) con un "errore" che tende a $0$ più velocemente di $x - x_0$ (seconda parte), infatti:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{\omega(x)(x - x_0)}{x - x_0} = \lim_{x \to x_0} \omega(x) = \omega(x_0) = 0
+\end{equation*}
+
+\subsubsection{Dimostrazione del teorema del differenziale di Lagrange}
+Sia:
+\begin{equation*}
+    \omega(x) \vcentcolon = \begin{cases}
+        \dfrac{f(x) - f(x_0)}{x - x_0} - f'(x_0) \qquad se \ x \neq x_0\\
+        0 \qquad \qquad \qquad \qquad \qquad \quad \ se \ x = x_0
+    \end{cases}
+\end{equation*}
+
+\noindent Verifichiamo che la funzione sia continua:
+\begin{equation*}
+    \lim_{x \to x_0} \omega(x) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} - f'(x_0) = f'(x_0) - f'(x_0) = 0 = \omega(x_0)
+\end{equation*}
+
+\noindent Sia ora $x \neq x_0$:
+\begin{equation*}
+    \omega(x) = \frac{f(x) - f(x_0)}{x - x_0} - f'(x_0) \iff \omega(x) + f'(x_0) = \frac{f(x) - f(x_0)}{x - x_0}
+\end{equation*}
+\begin{equation*}
+    (\omega(x) + f'(x_0))(x - x_0) = f(x) - f(x_0) \implies f(x) = f(x_0) + f'(x_0)(x - x_0) + \omega(x)(x - x_0)
+\end{equation*}
+
+\noindent Abbiamo quindi ottenuto la stessa formula della tesi, ma al momento vale solo $\forall x \in I, x \neq x_0$. Consideriamo ora il caso $x = x_0$, allora si ha che:
+\begin{equation*}
+    f(x_0) = f(x_0) + f'(x_0)(x_0 - x_0) + \omega(x_0)(x_0 - x_0) \implies f(x_0) = f(x_0)
+\end{equation*}
+
+\noindent Perciò, il teorema del differenziale di Lagrange vale $\forall x \in I$.
+
+\subsubsection{Teorema (opposto del teorema del differenziale di Lagrange)}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0$ interno ad $I$. Sia $a \in \mathbb{R}$ e $\omega: I \xrightarrow{} \mathbb{R}$ tali che $\omega(x_0) = 0$, $\omega$ è continua in $x_0$ e si ha che:
+\begin{equation*}
+    f(x) = f(x_0) + a(x - x_0) + \omega(x)(x - x_0) \qquad \forall x \in I
+\end{equation*}
+
+\noindent Allora $f$ è derivabile in $x_0$ e $f'(x_0) = a$.\\
+
+\noindent Dimostriamo ora il precedente teorema. Sia $x \neq x_0$, $x \in I$, allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{x \to x_0} \frac{a(x - x_0) + \omega(x)(x - x_0)}{x - x_0} = \lim_{x \to x_0} (a + \omega(x)) = a + \omega(x_0) = a
+\end{equation*}
+
+\noindent Quindi $f$ è derivabile in $x_0$ e $f'(x_0) = a$.
+
+\subsection{Teorema della derivata delle funzioni composte}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $t_0 \in I$, $t_0$ interno ad $I$, $f$ derivabile in $t_0$.\\
+Sia $g: J \subset \mathbb{R} \xrightarrow{} I$, $J$ intervallo, $x_0 \in J$, $x_0$ interno a $J$, $g$ derivabile in $x_0$ e $g(x_0) = t_0$. Allora $f \circ g: J \xrightarrow{} \mathbb{R}$ è derivabile in $x_0$ e:
+\begin{equation*}
+    (f \circ g)'(x_0) = f'(t_0)g'(x_0) \qquad [= f'(g(x))g'(x)]
+\end{equation*}
+
+\subsubsection{Dimostrazione del teorema della derivata delle funzioni composte}
+Per il teorema del differenziale su $f$: $\exists \omega$ continua in $t_0$, $\omega(t_0) = 0$ tale che:
+\begin{equation*}
+    f(t) = f(t_0) + f'(t_0)(t - t_0) + \omega(t)(t - t_0) \qquad \forall t \in I
+\end{equation*}
+
+\noindent Sia $t \in Imm(g) \subset I$ (cioè $\exists x \in J \ | \ g(x) = t$). Ricordiamo, inoltre, che $g(x_0) = t_0$, allora:
+\begin{equation*}
+    f(g(x)) = f(g(x_0)) + f'(g(x_0))(g(x) - g(x_0)) + \omega(g(x))(g(x) - g(x_0)) \qquad \forall x \in J
+\end{equation*}
+
+\noindent Quindi:
+\begin{align*}
+    \lim_{x \to x_0} \frac{f(g(x)) - f(g(x_0))}{x - x_0} &= \lim_{x \to x_0} \frac{f'(g(x_0))(g(x) - g(x_0)) + \omega(g(x))(g(x) - g(x_0))}{x - x_0}\\
+    &= f'(g(x_0)) \lim_{x \to x_0} \frac{g(x) - g(x_0)}{x - x_0} + \lim_{x \to x_0} \omega(g(x)) \cdot \frac{g(x) - g(x_0)}{x - x_0}
+\end{align*}
+
+\noindent Dato che $\lim_{x \to x_0} \frac{g(x) - g(x_0)}{x - x_0} = g'(x_0)$ e che $\lim_{x \to x_0} \omega(g(x)) = \omega(g(x_0)) = \omega(t_0) = 0$, allora:
+\begin{equation*}
+    f'(g(x_0)) \lim_{x \to x_0} \frac{g(x) - g(x_0)}{x - x_0} + \lim_{x \to x_0} \omega(g(x)) \cdot \frac{g(x) - g(x_0)}{x - x_0} = f'(g(x_0))g'(x_0) \in \mathbb{R}
+\end{equation*}
+
+\noindent Possiamo quindi concludere che $f \circ g$ è derivabile in $x_0$ e $(f \circ g)'(x_0) = f'(g(x))g'(x_0)$.\\
+
+\noindent\textbf{ES.} $f(x) = \sin(e^{2x} + 2)$ con $x \in \mathbb{R}$. \\
+Sappiamo che $e^x$ è derivabile e lo stesso vale per $2x$, per cui $e^{2x}$ è derivabile per composizione di funzioni derivabili.\\
+$e^{2x} + 2$ rimane poi comunque derivabile perché stiamo sommando due funzioni derivabili. \\
+Infine, $f(x)$ è anch'essa derivabile nel suo dominio perché si tratta di una composizione di funzioni derivabili.\\
+Partiamo quindi dalla funzione più esterna per calcolare la derivata. Sia $h(g(x)) = \sin(e^{2x} + 2)$, allora:
+\begin{equation*}
+    (h(g(x)))' = h'(g(x))g'(x) = \cos(g(x)) g'(x)
+\end{equation*}
+
+\noindent Sia ora $g(x) = e^{2x} + 2 = l(m(x))$ dove $l(u) = e^u + 2$ e $m(x) = 2x$, allora:
+\begin{equation*}
+    g'(x) = l'(m(x)) m'(x) = e^{(m(x))}m'(x) = e^{2x} \cdot 2 = 2e^{2x}
+\end{equation*}
+
+\noindent Unendo tutti i risultati, otteniamo quindi:
+\begin{equation*}
+    \implies (\sin(e^{2x} + 2))' = 2\cos(e^{2x} + 2)e^{2x}
+\end{equation*}
+
+\noindent\textbf{NB!} Quando si effettua l'analisi della derivabilità, si parte sempre dalla funzione più interna; quando si effettua il calcolo della derivata di una funzione composta, si parte sempre dalla funzione più esterna.
+
+\subsection{Teorema della derivata dell'inversa}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$, $f$ derivabile in $x_0$. Sia $f'(x_0) \neq 0$ e $f$ strettamente monotona in $I$. Allora $f^{-1}: Imm(f) \xrightarrow{} I$ è derivabile in $y_0 = f(x_0)$ e si ha che:
+\begin{equation*}
+   (f^{-1})(y_0) = \frac{1}{f'(x_0)}
+\end{equation*}
+
+\noindent\textbf{ES.} Derivata dell'inversa del seno. Sia $f(t) = \sin(t)$, $f: [-\frac{\pi}{2}, \frac{\pi}{2}] \xrightarrow{} [-1, 1] \implies g(x) = \arcsin(x)$, $g: [-1, 1] \xrightarrow{} [-\frac{\pi}{2}, \frac{\pi}{2}]$.\\
+Per ipotesi $f(t)$ è derivabile e $f'(t) \neq 0$. Dato che $f'(t) = (\sin(t))' = \cos(t) \neq 0 \implies t \in (-\frac{\pi}{2}, \frac{\pi}{2})$. Per il teorema della derivata inversa, $g$ è derivabile nell'intervallo $(- 1, 1)$. Inoltre, si ha che:
+\begin{equation*}
+    (\arcsin(x))' = \frac{1}{\cos(\arccos(x))} \qquad con \ x \in (-1, 1)
+\end{equation*}
+
+\noindent Ora, dato che $x \in (-1, 1)$, allora $\arcsin(x) \in (-\frac{\pi}{2}, \frac{\pi}{2})$, il che significa che $\cos(\arcsin(x)) > 0$. \\
+Visto che $\sqrt{y^2} = |y|$ e che $|y| = y$ se $y > 0$, allora possiamo dire che:
+\begin{equation*}
+    \cos(\arcsin(x)) = \sqrt{(\cos(\arcsin(x))^2}
+\end{equation*}
+
+\noindent Per il teorema di Pitagora ($\cos^2(x) + \sin^2(x) = 1$), otteniamo che:
+\begin{equation*}
+    \sqrt{(\cos(\arcsin(x))^2} = \sqrt{1 - (\sin(\arcsin(x))^2} = \sqrt{1 - x^2} \implies (\arcsin(x))' = \frac{1}{\sqrt{1 - x^2}} \qquad con \ x \in (-1, 1)
 \end{equation*}
 \end{document}
