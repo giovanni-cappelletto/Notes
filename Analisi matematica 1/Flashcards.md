@@ -93,7 +93,14 @@
 89. Enuncia e dimostra il teorema del differenziale di Lagrange.
 90. Enuncia e dimostra il teorema opposto al teorema del differenziale di Lagrange.
 91. Dimostra il teorema della derivata di funzioni composte.
-92. Enuncia il teorema della derivata dell'inversa. Dimostra il perché del valore ottenuto derivando $\arcsin(x)$ e $\arccos(x)$.
+92. Enuncia il teorema della derivata dell'inversa. Dimostra il perché del valore ottenuto derivando $\arcsin(x)$, $\arccos(x)$ e $\arctan(x)$.
+93. Enuncia il teorema di Bernoulli - De L'Hôpital in tutti i casi visti in classe.
+94. Quando possiamo affermare con certezza che $\lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = l \in \mathbb{R}$?
+95. Cos'è una funzione infinitesima? Definisci le varie casistiche che si possono ottenere nel confronto tra infinitesimi.
+96. Cos'è e come funziona la notazione o-piccolo di Landau?
+97. Come può essere riscritta la tesi del calcolo differenziale secondo la notazione o-piccolo?
+98. Quando è possibile dire che una funzione $f$ è asintotica ad un'altra funzione $g$ per $x \to x_0$?
+99. Com'è definito l'infinitesimo fondamentale?
 
 ## Dimostrazioni
 

@@ -1090,7 +1090,7 @@ Infatti, quando arrivano infiniti nuovi ospiti basta spostare ogni ospite nella 
 
 \noindent\textbf{NB!} Viene anche detto \textbf{intorno circolare}.\\
 
-\noindent\textbf{Intorno di $+\infty$ - Def:}  Ogni intervallo del tipo $(a, + \infty)$ per $a \in \mathbb{R}$:
+\noindent\textbf{Intorno di $+\infty$ - Def:} Ogni intervallo del tipo $(a, + \infty)$ per $a \in \mathbb{R}$:
 
 \begin{equation*}
     \{x\in\mathbb{R} \ | \ x > a\}
@@ -4319,10 +4319,12 @@ Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \i
    (f^{-1})(y_0) = \frac{1}{f'(x_0)}
 \end{equation*}
 
-\noindent\textbf{ES.} Derivata dell'inversa del seno. Sia $f(t) = \sin(t)$, $f: [-\frac{\pi}{2}, \frac{\pi}{2}] \xrightarrow{} [-1, 1] \implies g(x) = \arcsin(x)$, $g: [-1, 1] \xrightarrow{} [-\frac{\pi}{2}, \frac{\pi}{2}]$.\\
+\subsubsection{Esempi di derivate dell'inversa}
+\textbf{Derivata dell'inversa del seno}\\
+Sia $f(t) = \sin(t)$, $f: [-\frac{\pi}{2}, \frac{\pi}{2}] \xrightarrow{} [-1, 1] \implies g(x) = \arcsin(x)$, $g: [-1, 1] \xrightarrow{} [-\frac{\pi}{2}, \frac{\pi}{2}]$.\\
 Per ipotesi $f(t)$ è derivabile e $f'(t) \neq 0$. Dato che $f'(t) = (\sin(t))' = \cos(t) \neq 0 \implies t \in (-\frac{\pi}{2}, \frac{\pi}{2})$. Per il teorema della derivata inversa, $g$ è derivabile nell'intervallo $(- 1, 1)$. Inoltre, si ha che:
 \begin{equation*}
-    (\arcsin(x))' = \frac{1}{\cos(\arccos(x))} \qquad con \ x \in (-1, 1)
+    (\arcsin(x))' = \frac{1}{\cos(\arcsin(x))} \qquad con \ x \in (-1, 1)
 \end{equation*}
 
 \noindent Ora, dato che $x \in (-1, 1)$, allora $\arcsin(x) \in (-\frac{\pi}{2}, \frac{\pi}{2})$, il che significa che $\cos(\arcsin(x)) > 0$. \\
@@ -4335,4 +4337,342 @@ Visto che $\sqrt{y^2} = |y|$ e che $|y| = y$ se $y > 0$, allora possiamo dire ch
 \begin{equation*}
     \sqrt{(\cos(\arcsin(x))^2} = \sqrt{1 - (\sin(\arcsin(x))^2} = \sqrt{1 - x^2} \implies (\arcsin(x))' = \frac{1}{\sqrt{1 - x^2}} \qquad con \ x \in (-1, 1)
 \end{equation*}
-\end{document}
+
+\noindent\textbf{Derivata dell'inversa del coseno}\\
+Sia $f(t) = \cos(t)$, $f: [0, \pi] \xrightarrow{} [-1, 1] \implies g(x) = \arccos(x)$, $g: [-1, 1] \xrightarrow{} [0, \pi]$.\\
+Per ipotesi $f(t)$ è derivabile e $f'(t) \neq 0$. Dato che $f'(t) = (\cos(t))' = -\sin(t) \neq 0 \implies t \in (0, \pi)$. Per il teorema della derivata inversa, $g$ è derivabile nell'intervallo $(- 1, 1)$. Inoltre, si ha che:
+\begin{equation*}
+    (\arccos(x))' = -\frac{1}{\sin(\arccos(x))} \qquad con \ x \in (-1, 1)
+\end{equation*}
+
+\noindent Ora, dato che $x \in (-1, 1)$, allora $\arccos(x) \in (0, \pi)$, il che significa che $\sin(\arccos(x)) > 0$. \\
+Visto che $\sqrt{y^2} = |y|$ e che $|y| = y$ se $y > 0$, allora possiamo dire che:
+\begin{equation*}
+    \sin(\arccos(x)) = \sqrt{(\sin(\arccos(x))^2}
+\end{equation*}
+
+\noindent Per il teorema di Pitagora ($\cos^2(x) + \sin^2(x) = 1$), otteniamo che:
+\begin{equation*}
+    \sqrt{(\sin(\arccos(x))^2} = \sqrt{1 - (\cos(\arccos(x))^2} = \sqrt{1 - x^2} \implies (\arccos(x))' = -\frac{1}{\sqrt{1 - x^2}} \qquad con \ x \in (-1, 1)
+\end{equation*}
+
+\noindent\textbf{Derivata dell'inversa della tangente}\\
+Sia $f(t) = \tan(t)$, $f: (-\frac{\pi}{2}, \frac{\pi}{2}) \xrightarrow{} \mathbb{R} \implies g(x) = \arctan(x)$, $g: \mathbb{R} \xrightarrow{} (-\frac{\pi}{2}, \frac{\pi}{2})$ (di per sé, la tangente non sarebbe invertibile, ma l'abbiamo resa tale restringendo il dominio).\\
+Per ipotesi $f(t)$ è derivabile e $f'(t) \neq 0$. Dato che $f'(t) = (\tan(t))' = \left(\frac{\sin(t)}{\cos(t)}\right)'= \frac{\cos^2(t) + \sin^2(t)}{\cos^2(t)} = \frac{1}{\cos^2(t)} = 1 + \tan^2(t) \geq 1 > 0 \implies t \in (-\frac{\pi}{2}, \frac{\pi}{2})$. Per il teorema della derivata inversa, $g$ è derivabile in $\mathbb{R}$ e si ha che:
+\begin{equation*}
+    (\arctan(x))' = \frac{1}{1 + (\tan(\arctan(x))^2} = \frac{1}{1 + x^2} \qquad con \ x \in (-1, 1)
+\end{equation*}
+
+\noindent\textbf{Ricavare la derivata del $\log(x)$}\\
+Sia $g(x) = \log(x)$ con $x > 0$. Come sappiamo, il logaritmo è la funzione inversa dell'esponenziale $f(t) = e^t$, per cui vale $f'(t) = e^t$. Non avendo delle restrizioni sulla derivabilità della funzione inversa, possiamo utilizzare il teorema della derivata dell'inversa:
+\begin{equation*}
+    g'(x) = \frac{1}{e^{\log(x)}} = \frac{1}{x} \qquad con \ x > 0
+\end{equation*}
+
+\noindent\textbf{Ricavare la derivata di una radice}\\
+Sia $g: I \xrightarrow{} I$, che associa $x \longmapsto x^{\frac{1}{n}}$, con $I$ che può quindi essere $I = [0, +\infty)$ se $n$ è pari oppure $I = \mathbb{R}$ se $n$ è dispari. Capiamo quindi che $g$ è l'inversa di $f: I \xrightarrow{} I$, che associa $t \longmapsto t^n$.\\
+Dato che $f$ è derivabile in $I$ e $f'(t) = nt^{n - 1} \neq 0 \qquad \forall t \neq 0$, allora $g$ è derivabile per $x \in I$ tale che $x = t^n$, $f'(t) \neq 0$, cioè $g$ è derivabile per $x \in I - \{0\}$. Inoltre, si ha che:
+\begin{equation*}
+    g'(x) =(x^{\frac{1}{n}})' = \frac{1}{f'(x^{\frac{1}{n}})} = \frac{1}{n(x^{\frac{1}{n}})^{n-1}} = \frac{1}{nx^{1 - \frac{1}{n}}} = \frac{1}{n} x^{\frac{1}{n} - 1} \qquad per \ x \in I, x \neq 0
+\end{equation*}
+
+\noindent\textbf{Ricavare la derivata di un esponenziale}\\
+Sia $g: (0, +\infty) \xrightarrow{} (0, +\infty)$ e $g(x) = x^\alpha$ con $\alpha \in \mathbb{R}$. Osservando che $x^\alpha = e^{\alpha\log(x)}$, si ha che:
+\begin{equation*}
+    (x^\alpha)' = (e^{\alpha\log(x)})' = e^{\alpha\log(x)} \frac{\alpha}{x} = \frac{\alpha}{x} x^\alpha = \alpha x^{\alpha - 1} \qquad \forall x \in (0, +\infty), \alpha \in \mathbb{R}
+\end{equation*}
+
+\noindent Prendiamo ora la stessa funzione, comprendendo però anche lo $0$: $g: [0, +\infty) \xrightarrow{} [0, +\infty)$. Imponiamo inoltre che $g(0) = 0$. Dallo studio fatto precedentemente, sappiamo che $g$ è derivabile in $(0, +\infty)$, studiamo quindi cosa succede a $x_0 = 0$ da destra:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{g(x) - g(0)}{x - x_0} = \lim_{x \to 0^+} \frac{x^\alpha}{x} = \lim_{x \to 0^+} x^{\alpha - 1} = \begin{cases}
+        +\infty \qquad se \ 0 < \alpha < 1\\
+        1 \qquad \quad \ se \ \alpha = 1\\
+        0 \qquad \quad \ se \ \alpha > 1
+    \end{cases}
+\end{equation*}
+
+\noindent Quindi $g$ è derivabile in $x_0 = 0 \iff \alpha \geq 1$. In particolare, $(x^\alpha)'(0) = 0 \qquad \forall \alpha > 1$.\\
+
+\noindent\textbf{ES.} Sia $g: \mathbb{R} \xrightarrow{} [0, +\infty)$, $g(x) = |x|^\frac{1}{2}$, $g$ derivabile in $\mathbb{R} - \{0\}$ e $x_0 = 0$ è punto cuspidale. Mostrare che $x_0 = 0$ è punto cuspidale anche per $|x|^\frac{1}{n}$ con $n \geq 2$.\\
+Innanzitutto, vediamo che $g(x) = |x|^\frac{1}{n}$ è continua, dato che: $\lim_{x \to 0} |x|^\frac{1}{n} = 0 \ (= g(0))$. Inoltre, sappiamo che è derivabile e, in particolare, che:
+\begin{equation*}
+    g'(x) = \frac{1}{n} \cdot \frac{1}{|x|^\frac{1}{n}} \neq 0 \iff x \neq 0
+\end{equation*}
+
+\noindent Calcoliamo ora il limite della derivata:
+\begin{equation*}
+    \lim_{x \to 0} \frac{1}{n} \cdot \frac{1}{|x|^\frac{1}{n}} = + \infty
+\end{equation*}
+
+\noindent il che significa che $x_0 = 0$ è un punto cuspidale per $g(x)$.
+
+\subsection{Teorema di Bernoulli - De L'Hôpital}
+\subsubsection{Limite al finito della forma indeterminata $\frac{0}{0}$}
+Siano $a, b \in \mathbb{R}$ e $f, g: (a, b) \xrightarrow{} \mathbb{R}$ con $f, g$ derivabili in $(a, b)$. Inoltre, sia $g'(x) \neq 0 \qquad \forall x \in (a, b)$. Siano poi $\lim_{x \to a^+} f(x) = \lim_{x \to a^+} g(x) = 0$, allora:
+\begin{equation*}
+    \lim_{x \to a^+} \frac{f'(x)}{g'(x)} = l \in \widetilde{\mathbb{R}} \implies \lim_{x \to a^+} \frac{f(x)}{g(x)} = l
+\end{equation*}
+
+\noindent\textbf{NB!} Il teorema vale anche per $x \to b^-$ oppure, quando $D_f = D_g = (a, b) - \{x_0\}$, con $x \to x_0$, $x \to x_0^+$ e $x \to x_0^-$.\\
+
+\noindent\textbf{NB!} Negli esercizi, è fondamentale verificare le ipotesi (compresa l'esistenza del limite delle derivate), prima di poter applicare il teorema. Altrimenti, non ha senso uguagliare $\lim_{x \to a^+} \frac{f(x)}{g(x)}$ con $\lim_{x \to a^+} \frac{f'(x)}{g'(x)}$.\\
+
+\noindent\textbf{NB!} Non è possibile calcolare il risultato del limite notevole $\lim_{x \to 0} \frac{\sin(x)}{x}$ con questo teorema. Infatti, potremmo, una volta verificate le ipotesi, applicare il teorema e avere che $\lim_{x \to 0} \frac{\sin(x)}{x} = \lim_{x \to 0} \cos(x)$, ma il fatto che $\lim_{x \to 0} \cos(x) = 1$ è stato dimostrato proprio con il limite notevole, quindi non si può concludere nulla senza quest'ultimo.\\
+
+\noindent\textbf{ES.} Calcolare il $\lim_{x \to 0^+} \frac{x - \sin(x)}{x^3}$.\\
+Innanzitutto, vediamo che sia $f$, che $g$ sono funzioni continue e derivabili in $\mathbb{R}$ dato che:
+\begin{equation*}
+    \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} x - \sin(x) = 0 \ (= f(0)) \qquad f'(x) = 1 - \cos(x) \quad \forall x \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to 0^+} g(x) = \lim_{x \to 0^+} x^3 = 0 \ (= g(0)) \qquad g'(x) = 3x^2 \neq 0 \iff x \neq 0
+\end{equation*}
+
+\noindent Verifichiamo ora che esista il limite del rapporto tra le due funzioni derivate:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{f'(x)}{g'(x)} = \lim_{x \to 0^+} \frac{1 - \cos(x)}{3x^2} = \frac{1}{6} = l
+\end{equation*}
+
+\noindent Allora, grazie al teorema di Bernoulli - De L'Hôpital, si ha che: $\lim_{x \to 0^+} \frac{x - \sin(x)}{x^3} = \frac{1}{6}$.\\
+
+\noindent\textbf{ES.} Sia $f(x) = x^2\sin(\frac{1}{x})$ e $g(x) = 2x + \sin(x)$, calcolare $\lim_{x \to 0^+} \frac{f(x)}{g(x)}$.\\
+Notiamo, innanzitutto, che $D_f = \mathbb{R} - \{0\}$ e che:
+\begin{equation*}
+    \lim_{x \to 0^+} f(x) = \lim_{x \to 0^+} x^2\sin\left(\frac{1}{x}\right) = 0 \qquad \lim_{x \to 0^+} g(x) = \lim_{x \to 0^+} 2x + \sin(x) = 0 \ (= g(0))
+\end{equation*}
+
+\noindent Il primo limite qui sopra calcolato risulta tale per il teorema dei carabinieri (vedi \textit{ES.} a pagina 48 di questo pdf), mentre dal secondo capiamo che $g$ è continua. Calcoliamo ora le derivate:
+\begin{equation*}
+    f'(x) = 2x\sin\left(\frac{1}{x}\right) + x^2\cos\left(\frac{1}{x}\right)\left(-\frac{1}{x^2}\right) = 2x\sin\left(\frac{1}{x}\right)-\cos\left(\frac{1}{x}\right) \qquad g'(x) = 2 + \cos(x)
+\end{equation*}
+
+\noindent Calcoliamo ora il limite del rapporto tra le due funzioni derivate:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{f'(x)}{g'(x)} = \lim_{x \to 0^+} \frac{2x\sin\left(\frac{1}{x}\right)-\cos\left(\frac{1}{x}\right)}{2 + \cos(x)}
+\end{equation*}
+
+\noindent Ora è facile notare che il denominatore tende a $3$, mentre il numeratore non esiste, dato che prese due successioni:
+\begin{equation*}
+    a_n \ | \ \cos\left(\frac{1}{a_n}\right) \longrightarrow a_n = \frac{1}{2\pi n} \qquad b_n \ | \ \cos\left(\frac{1}{b_n}\right) \longrightarrow b _n = \frac{1}{\pi + 2\pi n}
+\end{equation*}
+\begin{equation*}
+    \lim_{n \to +\infty} \cos\left(\frac{1}{a_n}\right) = 1 \qquad \lim_{n \to +\infty} \cos\left(\frac{1}{b_n}\right) = -1
+\end{equation*}
+
+\noindent Ciò non significa però che $\lim_{x \to 0^+} \frac{f(x)}{g(x)}$ non esiste; significa solamente che non è possibile applicare teorema di Bernoulli - De L'Hôpital. Infatti:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{x^2 \sin\left(\frac{1}{x}\right)}{2x + \sin(x)} = \lim_{x \to 0^+} \frac{x^2 \sin\left(\frac{1}{x}\right)}{x\left(2 + \frac{\sin(x)}{x}\right)} = \lim_{x \to 0^+} \frac{x \sin\left(\frac{1}{x}\right)}{2 + \frac{\sin(x)}{x}} = 0
+\end{equation*}
+
+\noindent (dato che $\lim_{x \to 0^+} x \sin(\frac{1}{x}) = 0$ e $\lim_{x \to 0^+} 2 + \frac{\sin(x)}{x} = 3$).\\
+
+\noindent\textbf{ES.} Calcolare il valore di $\lim_{x \to 0} \frac{e^x - 1 - x}{x^2}$.\\
+Notiamo subito che $\lim_{x \to 0} f(x) = \lim_{x \to 0} e^x - 1 - x = 0 \ (= f(0))$ e che $\lim_{x \to 0} g(x) = \lim_{x \to 0} x^2 = 0 \ (= g(0))$, ovvero $f, g$ sono continue. Inoltre, si ha che:
+\begin{equation*}
+    f'(x) = e^x - 1 \qquad g'(x) = \lim_{x \to 0} 2x \neq 0 \iff x \neq 0
+\end{equation*}
+
+\noindent ovvero le due funzioni sono derivabili. Calcoliamo ora il limite del rapporto tra le due funzioni derivate:
+\begin{equation*}
+    \lim_{x \to 0} \frac{f'(x)}{g'(x)} = \lim_{x \to 0} \frac{e^x - 1}{2x} = \frac{1}{2}
+\end{equation*}
+
+\noindent Allora per il teorema di Bernoulli - De L'Hôpital, si ha che:
+\begin{equation*}
+    \lim_{x \to 0} \frac{e^x - 1 - x}{x^2} = \frac{1}{2}
+\end{equation*}
+
+\noindent\textbf{ES.} Studiare come cambia il valore di $\lim_{x \to 0} \frac{e^x - 1 - x - \frac{x^2}{2}}{x^\alpha}$ con $\alpha > 0$, al variare di $\alpha$. Determinare, inoltre, per quale valore di $\alpha$ il limite esiste ed è diverso da $0$.\\
+Notiamo subito che $f, g$ sono continue:
+\begin{equation*}
+    \lim_{x \to 0} f(x) = \lim_{x \to 0} e^x - 1- x - \frac{x^2}{2} = 0 \ (= f(0)) \qquad \lim_{x \to 0} g(x) = \lim_{x \to 0} x^\alpha = 0 \ (= g(0))
+\end{equation*}
+
+\noindent $f, g$ sono anche derivabili e si ha che:
+\begin{equation*}
+    f'(x) = e^x - 1 - x \qquad g'(x) = \alpha x^{\alpha - 1} \neq 0 \iff x \neq 0
+\end{equation*}
+
+\noindent Calcoliamo ora il rapporto tra le derivate delle due funzioni finché non otteniamo un valore $l \in \widetilde{\mathbb{R}}$:
+\begin{equation*}
+    \lim_{x \to 0} \frac{e^x - 1 - x}{\alpha x^{\alpha - 1}} \implies \lim_{x \to 0} \frac{e^x - 1}{\alpha(\alpha - 1) x^{\alpha - 2}} \implies \lim_{x \to 0} \frac{e^x}{\alpha(\alpha - 1)(\alpha - 2) x^{\alpha -3}}
+\end{equation*}
+
+\noindent Ora studiamo come si comporta quel limite al variare di $\alpha$:
+\begin{equation*}
+    \frac{1}{\alpha(\alpha - 1)(\alpha - 2)}\lim_{x \to 0} \frac{e^x}{x^{\alpha -3}} = \begin{cases}
+        0 \qquad \qquad se \ 0 < \alpha < 3 \\
+        \frac{1}{6} \qquad \quad \ \ \ se \ \alpha = 3\\
+        +\infty \qquad \ \ \ se \ \alpha > 3
+    \end{cases}
+\end{equation*}
+
+\noindent\textbf{Corollario:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$, $f$ continua in $x_0$, $f$ derivabile in $I - \{x_0\}$. Inoltre, sia $\lim_{x \to x_0} f'(x) = l \in \widetilde{\mathbb{R}}$, allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = l
+\end{equation*}
+
+\noindent In altre parole, stiamo dicendo che se $F(x) = f(x) - f(x_0)$ e $G(x) = x - x_0 \implies \lim_{x \to x_0} \frac{F'(x)}{G'(x)} = \lim_{x \to x_0} \frac{f'(x)}{1} = \lim_{x \to x_0} f'(x)$.\\
+
+\noindent\textbf{NB!} Se $l \in \mathbb{R}$ (e non $l \in \widetilde{\mathbb{R}}$), allora la tesi può essere riscritta come "$f$ derivabile in $x_0$ e $f'(x_0) = l$".\\
+
+\noindent\textbf{NB!} Il corollario vale anche per $x \to x_0^+$ e $x \to x_0^-$.\\
+
+\subsubsection{Limite all'infinito della forma indeterminata $\frac{0}{0}$}
+Sia $a \in \mathbb{R}$ e siano $f, g: (a, +\infty) \xrightarrow{} \mathbb{R}$ (oppure $f, g: (-\infty, a) \xrightarrow{} \mathbb{R}$) e $g'(x) \neq 0 \qquad \forall x \in (a, +\infty)$ (oppure $\forall x \in (-\infty, a)$). Inoltre, siano $\lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} f(x) = 0 = \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} g(x)$ e $\lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} \frac{f'(x)}{g'(x)} = l \in \widetilde{\mathbb{R}}$, allora:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} \frac{f(x)}{g(x)} = l
+\end{equation*}
+
+\subsubsection{Limite al finito della forma indeterminata $\frac{\infty}{\infty}$}
+Siano $a, b \in \mathbb{R}$ e siano $f, g: (a ,b) \xrightarrow{} \mathbb{R}$, $f, g$ derivabili in $(a, b)$, $g'(x) \neq 0 \qquad \forall x \in (a, b)$. Inoltre, siano $\lim_{x \to a^+} g(x) = +\infty \ (- \infty)$ e $\lim_{x \to a^+} \frac{f'(x)}{g'(x)} = l \in \widetilde{\mathbb{R}}$. Allora:
+\begin{equation*}
+    \lim_{x \to a^+} \frac{f(x)}{g(x)} = l
+\end{equation*}
+
+\noindent\textbf{NB!} Il teorema vale anche per $x \to b^-$ oppure, quando $D_f = D_g = (a, b) - \{x_0\}$, con $x \to x_0$, $x \to x_0^+$ e $x \to x_0^-$.\\
+
+\noindent\textbf{NB!} In ipotesi non serve che $\lim_{x \to a^+} f(x) = +\infty \ (-\infty)$ perché se il denominatore tende a $+\infty \ (-\infty)$, allora per poter applicare il teorema si deve avere:
+\begin{equation*}
+    \lim_{x \to a^+} |f(x)| = +\infty \qquad oppure \qquad \begin{cases}
+        f \ non \ limitata \\
+        \nexists \lim_{x \to a^+} f(x)
+    \end{cases}
+\end{equation*}
+
+\subsubsection{Limite all'infinito della forma indeterminata $\frac{\infty}{\infty}$}
+Sia $a \in \mathbb{R}$ e siano $f, g: (a, +\infty) \xrightarrow{} \mathbb{R}$, $f, g$ derivabili in $(a, +\infty)$, $g'(x) \neq 0 \qquad \forall x \in (a, +\infty)$. Inoltre, siano $\lim_{x \to +\infty} g(x) = +\infty \ (-\infty)$ e $\lim_{x \to +\infty} \frac{f'(x)}{g'(x)} = l \in \widetilde{\mathbb{R}}$. Allora si ha che:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{f(x)}{g(x)} = l
+\end{equation*}
+
+\noindent\textbf{NB!} Vale un enunciato analogo per $(-\infty, a)$ e $x \to -\infty$.\\
+
+\noindent\textbf{NB!} Come per il \textit{Limite al finito della forma indeterminata $\frac{\infty}{\infty}$}, anche qui non è specificata alcuna ipotesi sull'esistenza del limite della funzione per $x \to +\infty \ (-\infty)$.\\
+
+\noindent\textbf{ES.} Sia $\varepsilon > 0$, allora mostrare che $\lim_{x \to 0^+} x^\varepsilon\log(x) = 0$. \\
+Notiamo, innanzitutto, che $\lim_{x \to 0^+} x^\varepsilon = 0^+$ e $\lim_{x \to 0^+} \log(x) = -\infty$. Dato che $x^\varepsilon = \frac{1}{\frac{1}{x^\varepsilon}}$, allora:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\log(x)}{\frac{1}{x^\varepsilon}}
+\end{equation*}
+
+\noindent Ci troviamo quindi nella forma indeterminata $\frac{\infty}{\infty}$. Se consideriamo ora $f(x) = \log(x)$ e $g(x) = \frac{1}{x^\varepsilon} = x^{-\varepsilon}$, allora si ha che:
+\begin{equation*}
+    f'(x) = \frac{1}{x} \qquad g'(x) = -\varepsilon x^{-\varepsilon - 1}
+\end{equation*}
+
+\noindent e quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{f'(x)}{g'(x)} = \lim_{x \to 0^+} \frac{\frac{1}{x}}{-\varepsilon x^{-\varepsilon - 1}} = \lim_{x \to 0^+} -\frac{1}{\varepsilon} \frac{x^{\varepsilon + 1}}{x} = -\frac{1}{\varepsilon} \lim_{x \to 0^+} x^\varepsilon = 0^-
+\end{equation*}
+
+\noindent\textbf{ES.} Mostrare che $\lim_{x \to +\infty} \frac{e^x}{x^2} = +\infty$.\\
+Notiamo subito che ci troviamo nella forma indeterminata $\frac{\infty}{\infty}$. Sappiamo inoltre che sia $f$, che $g$ sono derivabili, infatti:
+\begin{equation*}
+    f'(x) = (e^x)' = e^x \qquad g'(x) = (x^2)' = 2x \neq 0 \iff x \neq 0
+\end{equation*}
+
+\noindent Calcolando però $\lim_{x \to +\infty} \frac{e^x}{2x}$, otteniamo ancora la forma indeterminata $\frac{\infty}{\infty}$. Proviamo quindi a derivare nuovamente, essendo $f'$ e $g'$ a loro volta derivabili:
+\begin{equation*}
+    f''(x) = (f'(x))' = (e^x)' = e^x \qquad g''(x) = (g'(x))' = (2x)' = 2
+\end{equation*}
+
+\noindent A questo punto, non si ha più una forma indeterminata e si può calcolare semplicemente il limite:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{e^x}{2} = +\infty \implies \lim_{x \to +\infty} \frac{e^x}{2x} = +\infty \implies \lim_{x \to +\infty} \frac{e^x}{x^2} = +\infty
+\end{equation*}
+
+\noindent\textbf{ES.} Dimostrare che $\lim_{x \to +\infty} \frac{e^x}{x^\alpha} = +\infty \qquad \forall \alpha > 0$.\\
+Prendendo il denominatore e derivandolo un po' di volte, notiamo che è presente una sorta di "pattern":
+\begin{equation*}
+    (x^\alpha)' = \alpha x^{\alpha-1} \implies (\alpha x^{\alpha-1})' = \alpha(\alpha - 1) x^{\alpha-2} 
+\end{equation*}
+
+\noindent Consideriamo ora $K = \lfloor \alpha \rfloor + 1$ e deriviamo il denominatore $K$ volte, otteniamo quindi:
+\begin{align*}
+    \implies [\alpha(\alpha - 1)...(\alpha - \lfloor\alpha\rfloor + 1)x^{\alpha - \lfloor\alpha\rfloor}]' &= \alpha(\alpha - 1)...(\alpha - \lfloor\alpha\rfloor)x^{\alpha - \lfloor\alpha\rfloor - 1}\\
+    &= \alpha(\alpha - 1)...(\alpha - \lfloor\alpha\rfloor)x^{\alpha - K}
+\end{align*}
+
+\noindent Per la proprietà della parte intera, abbiamo che $K = \lfloor \alpha\rfloor + 1 > \alpha$ e quindi $\alpha - K < 0$, per cui:
+\begin{equation*}
+    \lim_{x \to +\infty} x^{\alpha - (\lfloor\alpha\rfloor + 1)} = \lim_{x \to +\infty} \frac{1}{x^{\lfloor\alpha\rfloor + 1 - \alpha}} = 0^+
+\end{equation*}
+
+\noindent Ciò significa che se quel termine si trova al denominatore, esso tenderà a $+\infty$, infatti:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{e^x}{x^{\alpha - \lfloor\alpha\rfloor-1}} = \lim_{x \to +\infty} \frac{1}{x^{\alpha - \lfloor\alpha\rfloor-1}} \cdot e^x = +\infty
+\end{equation*}
+
+\noindent Applicando quindi il teorema di Bernoulli - De L'Hôpital $K$ volte, si ottiene: $\lim_{x \to +\infty} \frac{e^x}{x^\alpha} = +\infty \qquad \forall \alpha > 0$.
+
+\subsection{Funzioni infinitesime e infinite}
+\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $f$ non sia la funzione costantemente nulla, $x_0$ punto di accumulazione per $A$ con $x_0 \in \widetilde{\mathbb{R}}$. \\
+Allora se:
+\begin{equation*}
+    \lim_{\underset{\underset{\scriptstyle (x \to x_0^-)}{\scriptstyle (x \to x_0^+)}}{x \to x_0}} f(x) = 0 \implies f \ infinitesima \ per \ x \to x_0 \ (o \ x \to x_0^+ \ o \ x \to x_0^-)
+\end{equation*}
+
+\noindent\textbf{Confronto di infinitesimi - Def:} Sia $A \neq \varnothing$ e siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ con $f, g$ infinitesime per $x \to x_0$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$.\\
+Supponiamo che $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora diremo che:
+\begin{itemize}
+    \item $f$ è \textbf{infinitesimo di ordine superiore a $g$ per $x \to x_0$} se e solo se: $\lim_{x \to x_0} \frac{f(x)}{g(x)} = 0$;
+    \item $f$ è \textbf{infinitesimo di ordine inferiore a $g$ per $x \to x_0$} se e solo se: $\lim_{x \to x_0} \left|\frac{f(x)}{g(x)}\right| = +\infty$;
+    \item $f$ è \textbf{infinitesimo dello stesso ordine di $g$ per $x \to x_0$} se e solo se: $\lim_{x \to x_0} \frac{f(x)}{g(x)} = l \in \mathbb{R} - \{0\}$.
+\end{itemize}
+
+\noindent\textbf{NB!} Due funzioni con lo stesso ordine di infinitesimo non sono due funzioni uguali!\\
+
+\noindent\textbf{ES.} $x^3$ è infinitesimo di ordine superiore a $x^2$ per $x \to 0$; $x^2$ è infinitesimo di ordine inferiore a $x^3$ per $x \to 0$; $\sin(x)$ è infinitesimo dello stesso ordine di $x$ per $x \to 0$ (lo sappiamo tramite il limite notevole $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$).
+
+\subsubsection{Notazione o-piccolo di Landau}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Diremo che "$f$ è o-piccolo di $g$ per $x \to x_0$" e scriveremo "$f(x) = o(g(x))$ per $x \to x_0$" se e solo se $\exists \omega: A \xrightarrow{} \mathbb{R}$ tale che $\omega$ è infinitesimo per $x \to x_0$ ed esiste un intorno $U_{x_0}$ di $x_0$ tale che $f(x) = \omega(x)g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.\\
+Inoltre, se $g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$ si ha che: $f(x) = o(g(x))$ per $x \to x_0 \iff \lim_{x \to x_0} \frac{f(x)}{g(x)} = 0$.\\
+
+\noindent\textbf{NB!} Tramite questa notazione può quindi essere riscritta la tesi del teorema del calcolo differenziale:
+\begin{equation*}
+    f(x) = f(x_0) + f'(x_0)(x - x_0) + \omega(x)(x - x_0)
+\end{equation*}
+
+\noindent Prendiamo infatti $h(x) = f(x) - f(x_0) - f'(x_0)(x - x_0)$, allora si ha che $h(x) = \omega(x)(x - x_0)$, cioè $h(x) = o(x - x_0)$ per $x \to x_0$. Infatti, se $x \neq x_0$, allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{h(x)}{x - x_0} = \lim_{x \to x_0} \omega(x) = 0
+\end{equation*}
+
+\noindent ossia $h(x)$ è infinitesimo di ordine superiore a $x - x_0$ per $x \to x_0$. Quindi possiamo riscrivere la tesi del teorema del differenziale come:
+\begin{equation*}
+    f(x) = f(x_0) + f'(x_0)(x - x_0) + o(x -x_0) \qquad per \ x \to x_0
+\end{equation*}
+
+\noindent\textbf{Def:} Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Supponiamo inoltre che $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Diremo che $f$ è \textbf{asintotica a $g$ per $x \to x_0$} se e solo se:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x)}{g(x)} = 1
+\end{equation*}
+
+\noindent\textbf{NB!} Ciò significa che $f(x) = g(x) + o(g(x))$ per $x \to x_0$, infatti:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \frac{g(x) + o(g(x))}{g(x)} = \lim_{x \to x_0} 1 + \frac{o(g(x))}{g(x)} = 1
+\end{equation*}
+
+\noindent\textbf{ES.} Dai limiti notevoli, si ha che: $\sin(x) = x + o(x)$ per $x \to 0$; $1 - \cos(x) = \frac{x^2}{2} + o(x^2)$ per $x \to 0$; $\log(1 + x) = x + o(x)$ per $x \to 0$. \\
+
+\noindent\textbf{ES.} $1 - \cos(x) = o(x^\frac{3}{2})$ per $x \to 0^+$, infatti:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{1 - \cos(x)}{x^\frac{3}{2}} = \lim_{x \to 0^+} \frac{1 - \cos(x)}{x} \cdot \frac{x}{x^\frac{3}{2}} = 0
+\end{equation*}
+
+\noindent\textbf{ES.} $\log(1 + x) = o(x^\frac{1}{2})$ per $x \to 0^+$, infatti:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\log(1 + x)}{x^\frac{1}{2}} = \lim_{x \to 0^+} \frac{\log(1 + x)}{x} \cdot \frac{x}{x^\frac{1}{2}} = 0
+\end{equation*}
+
+\noindent\textbf{Infinitesimi fondamentali (limiti bilaterali) - Def:} Sia $x_0 \in \widetilde{\mathbb{R}}$, $\alpha > 0$, $x \to x_0$. Chiamo infinitesimo fondamentale in $x_0$:
+\begin{equation*}
+    P_\alpha(x; x_0) = \begin{cases}
+        |x - x_0|^\alpha \qquad se \ x_0 \in \mathbb{R}\\
+        \dfrac{1}{|x|^\alpha} \qquad \quad \ \ \ se \ x_0 = +\infty \ o \ x_0 = -\infty
+    \end{cases}
+\end{equation*}
+
+\noindent\textbf{NB!} Vale la definizione analoga per $x \to x_0^+$ e $x \to x_0^-$.
+\end{document} 
