@@ -101,6 +101,11 @@
 97. Come può essere riscritta la tesi del calcolo differenziale secondo la notazione o-piccolo?
 98. Quando è possibile dire che una funzione $f$ è asintotica ad un'altra funzione $g$ per $x \to x_0$?
 99. Com'è definito l'infinitesimo fondamentale?
+100. Definisci l'ordine di infinitesimo.
+101. Quando $f \cdot g$ è infinitesimo di ordine superiore sia a $f$ che $g$? Dimostra questo teorema.
+102. Quando $f + g$ viene detta asintotica a $g$? Quando $f + g$ ha ordine di infinitesimo superiore o uguale a $f$? Dimostra questi enunciati.
+103. Enuncia e dimostra il teorema della sostituzione degli infinitesimi di ordine superiore.
+104. Dati $f, g$ infinitesimi di ordine $\alpha, \beta > 0$. Di che ordine è $f \cdot g$? E $f + g$ che ordine assume al variare di $\alpha < \beta$ e $\alpha = \beta$? Dimostra la prima parte della proposizione.
 
 ## Dimostrazioni
 

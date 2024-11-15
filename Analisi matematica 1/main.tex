@@ -4335,7 +4335,7 @@ Visto che $\sqrt{y^2} = |y|$ e che $|y| = y$ se $y > 0$, allora possiamo dire ch
 
 \noindent Per il teorema di Pitagora ($\cos^2(x) + \sin^2(x) = 1$), otteniamo che:
 \begin{equation*}
-    \sqrt{(\cos(\arcsin(x))^2} = \sqrt{1 - (\sin(\arcsin(x))^2} = \sqrt{1 - x^2} \implies (\arcsin(x))' = \frac{1}{\sqrt{1 - x^2}} \qquad con \ x \in (-1, 1)
+    \sqrt{(\cos(\arcsin(x))^2} = \sqrt{1 - (\sin(\arcsin(x))^2} = \sqrt{1 - x^2} \implies (\arcsin(x))' = \frac{1}{\sqrt{1 - x^2}} \quad con \ x \in (-1, 1)
 \end{equation*}
 
 \noindent\textbf{Derivata dell'inversa del coseno}\\
@@ -4674,5 +4674,172 @@ Inoltre, se $g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$ si ha 
     \end{cases}
 \end{equation*}
 
-\noindent\textbf{NB!} Vale la definizione analoga per $x \to x_0^+$ e $x \to x_0^-$.
+\noindent\textbf{NB!} Vale la definizione analoga per $x \to x_0^+$ e $x \to x_0^-$.\\
+
+\noindent\textbf{Ordine di infinitesimo (limiti bilateri) - Def:} Sia $\alpha > 0$, $x_0 \in \widetilde{\mathbb{R}}$, $f$ infinitesima in $x_0$. Diremo che $f$ ha ordine infinitesimo $\alpha$ per $x \to x_0$ se e solo se $|f|$ ha lo stesso ordine di infinitesimo di $P_\alpha(x; x_0)$, ossia:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{|f(x)|}{P_\alpha(x; x_0)} = l \in \mathbb{R} - \{0\}
+\end{equation*}
+
+\noindent\textbf{NB!} Vale la definizione analoga per $x \to x_0^+$, $x \to x_0^-$, $x \to +\infty$ e $x \to -\infty$.\\
+
+\noindent\textbf{ES.} $|\log(x)|$ ha ordine di infinitesimo $1$ per $x \to 1$ perché, se si applica la sostituzione $u = x - 1$, si ha che:
+\begin{equation*}
+    \lim_{x \to 1} \frac{|\log(x)|}{|x - 1|^\alpha} = \lim_{u \to 0} \frac{|\log(1 + u)|}{|u|} \cdot \frac{|u|}{|u|^\alpha} = \begin{cases}
+        1 \qquad \quad \ se \ \alpha = 1\\
+        0 \qquad \quad \ se \ 0 < \alpha < 1\\
+        +\infty \qquad se \ \alpha > 1
+    \end{cases}
+\end{equation*}
+
+\noindent\textbf{ES.} $\sin(x)$ per $x \to 0$ ha infinitesimo $1$ perché:
+\begin{equation*}
+    \lim_{x \to 0} \frac{|\sin(x)|}{|x|^\alpha} = \begin{cases}
+        1 \qquad \quad \ se \ \alpha = 1\\
+        0 \qquad \quad \ se \ 0 < \alpha < 1\\
+        +\infty \qquad se \ \alpha > 1
+    \end{cases}
+\end{equation*}
+
+\noindent\textbf{ES.} $1 - \cos(x)$ per $x \to 0$ ha ordine di infinitesimo $2$.\\
+
+\noindent\textbf{ES.} Sia $f(x) = \frac{1}{\log(x)}$. Sappiamo che per $x \to 0^+$, $f(x) \to 0^-$. Determinare se:
+\begin{equation*}
+    \exists \alpha > 0 : \lim_{x \to 0^+} \frac{|f(x)|}{|x|^\alpha} = \lim_{x \to 0^+} \frac{|f(x)|}{x^\alpha} > 0
+\end{equation*}
+
+\noindent Dato che:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{|\frac{1}{\log(x)}|}{x^\alpha} = \lim_{x \to 0^+} \frac{1}{x^\alpha\log(x)} = +\infty
+\end{equation*}
+
+\noindent allora $f(x)$ non ha ordine di infinitesimo per $x \to 0^+$ (sappiamo che il limite tende ad infinito, perché il denominatore tende a $0^+$. Quest'ultimo risultato è stato calcolato nel primo \textit{ES.} a pagina 103 di questo pdf tramite il teorema di Bernoulli - De L'Hôpital). Inoltre, $\frac{1}{\log(x)}$ è infinitesimo di ordine inferiore a $x^\alpha$ per ogni $\alpha > 0$.\\
+
+\noindent\textbf{ES.} Sia $f(x) = e^{-x}$ e siano inoltre $x \to +\infty$ e $\alpha > 0$, allora:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{e^{-x}}{\frac{1}{x^\alpha}} = \lim_{x \to +\infty} \frac{x^\alpha}{e^x} = 0 \qquad \forall \alpha > 0
+\end{equation*}
+
+\noindent Cioè $e^{-x}$ non ha ordine di infinitesimo per $x \to +\infty$. Inoltre, $e^{-x}$ è infinitesimo di ordine superiore per $x \to +\infty$ ad ogni $\frac{1}{x^\alpha}$, $\alpha > 0$.\\
+
+\noindent\textbf{Teorema:} Siano $f, g$ infinitesime per $x \to x_0$ e supponiamo che $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \neq 0, g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora $f \cdot g$ è infinitesimo per $x \to x_0$ di ordine superiore a $f$ e di ordine superiore a $g$. \\
+È facile dimostrare questo teorema:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x)g(x)}{f(x)} = \lim_{x \to x_0} g(x) = 0 \qquad \lim_{x \to x_0} \frac{f(x)g(x)}{g(x)} = \lim_{x \to x_0} f(x) = 0 
+\end{equation*}
+
+\noindent\textbf{Teorema:} Siano $f, g$ infinitesime per $x \to x_0$. Allora:
+\begin{enumerate}
+    \item se $f$ è di ordine superiore a $g$ per $x \to x_0$ (cioè $g$ è più grande di $f$), allora $f + g$ è asintotica a $g$ per $x \to x_0$;
+    \item se $f$ e $g$ hanno lo stesso ordine di infinitesimo per $x \to x_0$, allora $f + g$ ha ordine di infinitesimo superiore o uguale a $f$.
+\end{enumerate}
+
+\noindent Dimostriamo ora i due punti di questo teorema. Partiamo dal primo:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) + g(x)}{g(x)} = \lim_{x \to x_0} \left(\frac{f(x)}{g(x)} + 1\right) = 1
+\end{equation*}
+
+\noindent (dato che $\lim_{x \to x_0} \frac{f(x)}{g(x)} = 0$, essendo $g$ di ordine inferiore a $f$). Ciò significa che $f + g$ è asintotica a $g$ per $x \to x_0$.\\
+Allo stesso modo, per dimostrare il punto 2:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) + g(x)}{f(x)} = \lim_{x \to x_0} \left(\frac{g(x)}{f(x)} + 1\right) = l + 1
+\end{equation*}
+
+\noindent (dato che $\lim_{x \to x_0} \frac{g(x)}{f(x)} = l \in \mathbb{R} - \{0\}$ perché $f$ e $g$ hanno lo stesso ordine di infinitesimo). Ora:
+\begin{itemize}
+    \item se $l + 1 \neq 0 \implies f + g$ ha lo stesso ordine di infinitesimo di $g$ per $x \to x_0$ (e anche di $f$);
+    \item se $l + 1 = 0 \implies f + g$ è infinitesimo di ordine superiore a $f$ per $x \to x_0$ (e anche di $g$).
+\end{itemize}
+
+\noindent\textbf{ES.} Dal limite $\lim_{x \to 0} \frac{x - \sin(x)}{x^3} = \frac{1}{6}$ (dimostrato nel primo \textit{ES.} a pagina 100 di questo pdf), capiamo che $x - \sin(x)$ ha ordine superiore a $\sin(x)$ (perché sono rispettivamente di $x^3$ e $x$ ordine), ovvero, in questo caso, la differenza di due funzioni con stesso ordine dà come risultato un ordine di infinitesimo superiore.\\
+
+\noindent\textbf{ES.} Mostrare che $\lim_{x \to 0} \frac{1 - \cos(x) - \frac{x^2}{2}}{x^4} = -\frac{1}{24}$ e determinare l'ordine di infinitesimo.\\
+Dato che sia il numeratore che il denominatore sono derivabili, verifichiamo l'esistenza del limite del rapporto delle derivate:
+\begin{equation*}
+    \lim_{x \to 0} \frac{\sin(x) - x}{4x^3}
+\end{equation*}
+
+\noindent Ancora una volta proviamo a vedere se esiste il rapporto delle funzioni derivate una seconda volta:
+\begin{equation*}
+    \lim_{x \to 0} \frac{\cos(x) - 1}{12x^2} = -\frac{1}{24} \implies \lim_{x \to 0} \frac{\sin(x) - x}{4x^3} = -\frac{1}{24} \implies \lim_{x \to 0} \frac{1 - \cos(x) - \frac{x^2}{2}}{x^4} = -\frac{1}{24}
+\end{equation*}
+
+\noindent Capiamo quindi che $1 - \cos(x) - \frac{x^2}{2}$ è infinitesimo di ordine $4$ ed è dato dalla differenza di due infinitesimi di ordine $2$ (per cui abbiamo appunto ottenuto un infinitesimo di ordine superiore).
+
+\subsubsection{Teorema della sostituzione degli infinitesimi di ordine superiore}
+Siano $f, g, f_1, g_1: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0$ punto di accumulazione per $A$. $f, g, f_1, g_1$ infinitesime per $x \to x_0$. Inoltre, $f_1$ sia di ordine superiore a $f$ per $x \to x_0$, $g_1$ sia di ordine superiore a $g$ per $x \to x_0$ e $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \neq 0, g(x) \neq 0, g_1(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} \ esiste \iff \lim_{x \to x_0} \frac{f(x)}{g(x)} \ esiste
+\end{equation*}
+
+\noindent Inoltre, in tal caso tali limiti sono tra loro uguali.\\
+
+\noindent Procediamo con la dimostrazione del precedente teorema:
+\begin{equation}
+    \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} = \lim_{x \to x_0} \frac{f(x)\left(1 + \frac{f_1(x)}{f(x)}\right)}{g(x)\left(1 + \frac{g_1(x)}{g(x)}\right)} = \lim_{x \to x_0} \frac{f(x)}{g(x)} \cdot \frac{\left(1 + \frac{f_1(x)}{f(x)}\right)}{\left(1 + \frac{g_1(x)}{g(x)}\right)} = \lim_{x \to x_0} \frac{f(x)}{g(x)} \cdot h(x)
+    \label{eq:14}
+\end{equation} 
+
+\noindent Dato che $f_1$ è infinitesimo di ordine superiore a $f$ e $g_1$ è infinitesimo di ordine superiore a $g$, allora: $\lim_{x \to x_0} h(x) = 1$ (in altre parole, $\frac{f_1(x)}{f(x)}$ e $\frac{g_1(x)}{g(x)}$ tendono a $0$ per $x \to x_0$). Per cui, dimostrando la controimplicazione ($\Leftarrow$):
+\begin{equation*}
+    se \ \exists \lim_{x \to x_0} \frac{f(x)}{g(x)} = l \in \widetilde{\mathbb{R}} \implies \exists \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} = l
+\end{equation*}
+
+\noindent Per dimostrare invece l'implicazione ($\Rightarrow$), dalla (\ref{eq:14}) segue che:
+\begin{equation*}
+    \frac{f(x)}{g(x)} \cdot \frac{h(x)}{h(x)} = \frac{1}{h(x)} \cdot \frac{f(x) + f_1(x)}{g(x) + g_1(x)} \implies \frac{f(x)}{g(x)} = \frac{1}{h(x)} \cdot \frac{f(x) + f_1(x)}{g(x) + g_1(x)}
+\end{equation*}
+
+\noindent ma $\lim_{x \to x_0} \frac{1}{h(x)} = 1$. Quindi:
+\begin{equation*}
+    se \ \exists \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} = l \in \widetilde{\mathbb{R}} \implies \exists \lim_{x \to x_0} \frac{f(x)}{g(x)} = l
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare il valore di $\lim_{x \to 0} \frac{1 - \cos(x) + \sin(x)}{x^2 + \sin(x)}$.\\
+Dato che sappiamo che $1 - \cos(x)$ tende a $0$ di ordine $2$ e $\sin(x)$ tende a $0$ di ordine $1$, allora il comportamento del numeratore è determinato dal $\sin(x)$ per il principio degli infinitesimi di ordine superiore. Allo stesso modo, nel denominatore $x^2$ tende a $0$ di ordine $2$ e $\sin(x)$ tende a $0$ di ordine $1$. Quindi anche qui il comportamento è determinato da $\sin(x)$, per cui:
+\begin{equation*}
+    \lim_{x \to 0} \frac{1 - \cos(x) + \sin(x)}{x^2 + \sin(x)} = \lim_{x \to 0} \frac{\sin(x)}{\sin(x)} = 1
+\end{equation*}
+
+\noindent\textbf{Proposizione:} Siano $f, g$ infinitesimi di ordine rispettivamente $\alpha, \beta > 0$. Allora:
+\begin{enumerate}
+    \item $f \cdot g$ è infinitesimo di ordine $\alpha + \beta$ per $x \to x_0$;
+    \item se $\alpha < \beta$, $f + g$ è infinitesimo di ordine $\alpha$ per $x \to x_0$;
+    \item se $\alpha = \beta$, $f + g$ è infinitesimo di ordine superiore o uguale a $\alpha$ per $x \to x_0$.
+\end{enumerate}
+
+\noindent Dimostriamo ora il primo punto di questa proposizione. Innanzitutto, notiamo che $P_{\alpha + \beta}(x; x_0) = P_\alpha(x;x_0) \cdot P_\beta(x;x_0)$ perché:
+\begin{equation*}
+    \begin{cases}
+        |x - x_0|^\alpha \cdot |x - x_0|^\beta = |x - x_0|^{\alpha + \beta} \qquad se \ x_0 \in \mathbb{R} \\
+        \dfrac{1}{|x|^\alpha} \cdot \dfrac{1}{|x|^\beta} = \dfrac{1}{|x|^{\alpha + \beta}} \qquad \qquad \qquad \quad \ \ \ se \ x_0 = + \infty \ (-\infty)
+    \end{cases}
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+\lim_{x \to x_0} \frac{|f(x)g(x)|}{P_{\alpha + \beta}(x;x_0)} = \lim_{x \to x_0} \frac{|f(x)|}{P_\alpha(x; x_0)} \cdot \frac{|g(x)|}{P_\beta(x; x_0)} = l_1 \cdot l_2 \in \mathbb{R} - \{0\}
+\end{equation*}
+
+\noindent (le due frazioni tendono ad un valore reale non nullo perché entrambi numeratori e denominatori hanno lo stesso ordine di infinitesimo ($\alpha$ e $\beta$).\\
+
+\noindent\textbf{ES.} Siano $f(x) = x^\frac{1}{2} + x\log(x)$ e $g(x) = - x^\frac{1}{2}$ per $x \to 0^+$. Determinare, se esiste, l'ordine di infinitesimo di $x\log(x)$. Calcolare poi $\lim_{x \to 0^+} \frac{f(x)}{g(x)}$.\\
+Consideriamo i seguenti limiti:
+\begin{equation*}
+    \lim_{x \to 0^+} \left|\frac{x\log(x)}{x}\right| = \lim_{x \to 0^+} |\log(x)| = +\infty
+\end{equation*}
+\begin{equation*}
+    \lim_{x \to 0^+} \left|\frac{x\log(x)}{x^\alpha}\right| = \lim_{x \to 0^+} |x^{1 - \alpha}\log(x)| = 0 \qquad \forall \alpha \in (0, 1)
+\end{equation*}
+
+\noindent (nel secondo limite $1 - \alpha > 0$ perché $\alpha \in (0, 1)$; il secondo limite è stato risolto mediante il teorema di Bernoulli - De L'Hôpital nel primo \textit{ES.} di pagina 103 di questo pdf). Notiamo quindi che nel primo limite $x\log(x)$ ha ordine di infinitesimo inferiore a $1$ per $x \to 0^+$, mentre nel secondo ha ordine di infinitesimo superiore ad ogni $\alpha \in (0, 1)$. Per cui di per sé $x\log(x)$ non ha ordine di infinitesimo, ma è solo infinitesimo superiore ad $x^\alpha$ con $\alpha \in (0, 1)$ e infinitesimo inferiore a $x$ per $x \to 0^+$.\\
+Proprio per questo motivo quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \left|\frac{x\log(x)}{x^\frac{1}{2}}\right| = 0
+\end{equation*}
+
+\noindent ovvero $x\log(x) = o(x^\frac{1}{2})$ per $x \to 0^+$. Quindi per il principio di sostituzione degli infinitesimi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{x^\frac{1}{2} + x\log(x)}{-x^\frac{1}{2}} = \lim_{x \to 0^+} \frac{x^\frac{1}{2}}{-x^\frac{1}{2}} = -1
+\end{equation*}
 \end{document} 
