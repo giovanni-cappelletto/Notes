@@ -102,10 +102,12 @@
 98. Quando è possibile dire che una funzione $f$ è asintotica ad un'altra funzione $g$ per $x \to x_0$?
 99. Com'è definito l'infinitesimo fondamentale?
 100. Definisci l'ordine di infinitesimo.
-101. Quando $f \cdot g$ è infinitesimo di ordine superiore sia a $f$ che $g$? Dimostra questo teorema.
-102. Quando $f + g$ viene detta asintotica a $g$? Quando $f + g$ ha ordine di infinitesimo superiore o uguale a $f$? Dimostra questi enunciati.
-103. Enuncia e dimostra il teorema della sostituzione degli infinitesimi di ordine superiore.
-104. Dati $f, g$ infinitesimi di ordine $\alpha, \beta > 0$. Di che ordine è $f \cdot g$? E $f + g$ che ordine assume al variare di $\alpha < \beta$ e $\alpha = \beta$? Dimostra la prima parte della proposizione.
+101. Quando $f + g$ viene detta asintotica a $g$? Quando $f + g$ ha ordine di infinitesimo superiore o uguale a $f$? Dimostra questi enunciati.
+102. Enuncia e dimostra il teorema della sostituzione degli infinitesimi di ordine superiore.
+103. Dati $f, g$ infinitesimi di ordine $\alpha, \beta > 0$. Di che ordine è $f \cdot g$? E $f + g$ che ordine assume al variare di $\alpha < \beta$ e $\alpha = \beta$? Dimostra la prima parte della proposizione.
+104. Enuncia e dimostra tutte le proprietà dell'algebra degli o-piccolo.
+105. Cos'è la notazione O-grande di Landau.
+106. Enuncia e dimostra tutte le proprietà dell'algebra degli O-grande.
 
 ## Dimostrazioni
 

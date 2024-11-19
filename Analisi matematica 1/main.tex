@@ -3883,7 +3883,7 @@ Sia:
 \noindent Esiste $a \in \mathbb{R}$ tale che $f$ è continua in $\mathbb{R}$?\\
 
 \noindent Sia $x > 0$, allora $f(x) = \frac{\sin(x)}{x}$ è continua $\forall a \in \mathbb{R}$ perché ci troviamo di fronte ad un rapporto di funzioni continue. \\
-\noindent Sia $x < 0$, allora $f(x) = \log(1 + |x|)$. Abbiamo quindi $|x|$ (che è continua), $1 + |x|$ (anch'essa continua) e $\log(x)$ (che è continua in $(0, +\infty)$). Dato che $1 + |x| \geq 1 Z 0$, allora $\log(1 + |x|)$ è continua $\forall x < 0, \forall a \in \mathbb{R}$.\\
+\noindent Sia $x < 0$, allora $f(x) = \log(1 + |x|)$. Abbiamo quindi $|x|$ (che è continua), $1 + |x|$ (anch'essa continua) e $\log(x)$ (che è continua in $(0, +\infty)$). Dato che $1 + |x| \geq 1$, allora $\log(1 + |x|)$ è continua $\forall x < 0, \forall a \in \mathbb{R}$.\\
 \noindent Sia $x = 0$, allora abbiamo che $f(0) = a$. Per la continuità in $0$, $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^-} = f(0)$, ma:
 \begin{equation*}
     \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1 \qquad \lim_{x \to 0^-} \log(1 + |x|) = 0
@@ -4658,7 +4658,7 @@ Inoltre, se $g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$ si ha 
 
 \noindent\textbf{ES.} $1 - \cos(x) = o(x^\frac{3}{2})$ per $x \to 0^+$, infatti:
 \begin{equation*}
-    \lim_{x \to 0^+} \frac{1 - \cos(x)}{x^\frac{3}{2}} = \lim_{x \to 0^+} \frac{1 - \cos(x)}{x} \cdot \frac{x}{x^\frac{3}{2}} = 0
+    \lim_{x \to 0^+} \frac{1 - \cos(x)}{x^\frac{3}{2}} = \lim_{x \to 0^+} \frac{1 - \cos(x)}{x^2} \cdot \frac{x^2}{x^\frac{3}{2}} = 0
 \end{equation*}
 
 \noindent\textbf{ES.} $\log(1 + x) = o(x^\frac{1}{2})$ per $x \to 0^+$, infatti:
@@ -4821,7 +4821,7 @@ Dato che sappiamo che $1 - \cos(x)$ tende a $0$ di ordine $2$ e $\sin(x)$ tende 
 \lim_{x \to x_0} \frac{|f(x)g(x)|}{P_{\alpha + \beta}(x;x_0)} = \lim_{x \to x_0} \frac{|f(x)|}{P_\alpha(x; x_0)} \cdot \frac{|g(x)|}{P_\beta(x; x_0)} = l_1 \cdot l_2 \in \mathbb{R} - \{0\}
 \end{equation*}
 
-\noindent (le due frazioni tendono ad un valore reale non nullo perché entrambi numeratori e denominatori hanno lo stesso ordine di infinitesimo ($\alpha$ e $\beta$).\\
+\noindent (le due frazioni tendono ad un valore reale non nullo perché entrambi numeratori e denominatori hanno lo stesso ordine di infinitesimo ($\alpha$ e $\beta$)).\\
 
 \noindent\textbf{ES.} Siano $f(x) = x^\frac{1}{2} + x\log(x)$ e $g(x) = - x^\frac{1}{2}$ per $x \to 0^+$. Determinare, se esiste, l'ordine di infinitesimo di $x\log(x)$. Calcolare poi $\lim_{x \to 0^+} \frac{f(x)}{g(x)}$.\\
 Consideriamo i seguenti limiti:
@@ -4842,4 +4842,179 @@ Proprio per questo motivo quindi:
 \begin{equation*}
     \lim_{x \to 0^+} \frac{x^\frac{1}{2} + x\log(x)}{-x^\frac{1}{2}} = \lim_{x \to 0^+} \frac{x^\frac{1}{2}}{-x^\frac{1}{2}} = -1
 \end{equation*}
-\end{document} 
+
+\subsubsection{Algebra degli o-piccolo}
+\textbf{Proposizione:} Siano $f, g, h: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Supponiamo inoltre che $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ f, g, h \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Allora per $x \to x_0$ si ha che:
+\begin{enumerate}
+    \item $c \cdot o(f(x)) = o(c \cdot f(x)) = o(f(x)) \qquad \forall x \in \mathbb{R} - \{0\}$, dove $c$ è una costante non nulla;
+    \item se $\exists V_{x_0}$ intorno di $x_0$, tale che $g$ è limitata in $A \cap V_{x_0}$, allora $o(g(x) \cdot f(x)) = o(f(x))$;
+\end{enumerate}
+
+\noindent Supponiamo d'ora in avanti che $x_0 \in \mathbb{R}$ e $a, b > 0$. Allora si ha che:
+\begin{enumerate}
+    \setcounter{enumi}{2}
+    \item $o(|x - x_0|^a) \pm o(|x - x_0|^b) = o(|x - x_0|^q)$ dove $q = min(a, b)$;
+    \item $o(|x - x_0|^a) \cdot o(|x - x_0|^b) = o(|x - x_0|^{a + b})$;
+    \item $|x - x_0|^a \cdot o(|x - x_0|^b) = o(|x - x_0|^{a + b})$;
+    \item $(o(|x - x_0|^a))^b = o(|x - x_0|^{ab})$;
+    \item $o(o(|x - x_0|^a)) = o(|x - x_0|^a)$;
+    \item se $h(x) = o(|x - x_0|^a) \implies h(x) = o(|x - x_0|^b) \qquad \forall 0 \leq b < a$.
+\end{enumerate}
+
+\noindent Dimostriamo ora tutte le proprietà qui sopra. Partiamo dal \textit{primo punto}. Supponiamo che $\exists$ un intorno bucato di $x_0$ in cui i limiti non si annullano. Sia ora $f_1(x) \ | \ \lim_{x \to x_0} \frac{f_1(x)}{f(x)} = 0$ (ovvero $f_1(x)$ è o-piccolo di $f(x)$). Allora preso $c \neq 0$, si ha che:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{c \cdot f_1(x)}{c \cdot f(x)} = 0 \implies c\cdot o(f(x)) = o(c \cdot f(x))
+\end{equation*}
+
+\noindent (questo perché $c \cdot f_1(x)$ può essere riscritta come $c \cdot o(f(x))$, essendo $f_1(x)$ o-piccolo di $f(x)$ per $x \to x_0$. Ora dato che, per $x \to x_0$, il limite del rapporto tra $c \cdot f_1(x)$ e $c \cdot f(x)$ dà come risultato $0$, significa che $c \cdot f_1(x) = c \cdot o(f(x))$ è a sua volta o-piccolo di $c \cdot f(x)$ per $x \to x_0$).\\
+Sia ora:
+\begin{equation*}
+    f_2(x) \neq 0 \ | \ \lim_{x \to x_0} \frac{f_2(x)}{c \cdot f(x)} = 0 
+\end{equation*}
+
+\noindent ovvero $f_2(x)$ è o-piccolo di $c \cdot f(x)$ per $x \to x_0$. Quindi:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f_2(x)}{f(x)} = \lim_{x \to x_0} \frac{f_2(x)}{f(x)} \cdot \frac{c}{c} = c \cdot \lim_{x \to x_0} \frac{f_2(x)}{c \cdot f(x)} = 0
+\end{equation*}
+
+\noindent Otteniamo quindi che $o(c \cdot f(x)) = o(f(x))$ per $x \to x_0$.\\
+Dimostriamo ora il \textit{punto 2}. Se $g$ è localmente limitata e $g(x) \neq 0$, sia $f_1(x)$ tale che $\lim_{x \to x_0} \frac{f_1(x)}{g(x) \cdot f(x)} = 0$ (ovvero $f_1(x) = o(g(x) \cdot f(x))$ per $x \to x_0$), allora:
+\begin{equation*}
+    0 \leq \left|\frac{f_1(x)}{f(x)}\right| = \left|\frac{f_1(x)}{g(x) \cdot f(x)} \cdot g(x)\right| = \left|\frac{f_1(x)}{g(x) \cdot f(x)}\right| \cdot |g(x)| \leq M \cdot \left|\frac{f_1(x)}{g(x) \cdot f(x)}\right|
+\end{equation*}
+
+\noindent (abbiamo moltiplicato e diviso per $g(x)$ per ottenere il limite $\lim_{x \to x_0} \frac{f_1(x)}{g(x) \cdot f(x)} = 0$. Poi abbiamo sfruttato la limitatezza locale di $g$, sostituendo quest'ultima ad un numero $M$, che rappresenta un maggiorante di $g$). Ora dato che:
+\begin{equation*}
+    \lim_{x \to x_0} 0 = 0 \qquad \qquad \lim_{x \to x_0} \left(M \cdot \left|\frac{f_1(x)}{g(x) \cdot f(x)}\right|\right) = 0
+\end{equation*}
+
+\noindent Allora per il teorema dei carabinieri anche $\lim_{x \to x_0} \left|\frac{f_1(x)}{f(x)}\right| = 0$, ovvero $f_1(x) = o(g(x) \cdot f(x)) = o(f(x))$.
+Consideriamo d'ora in avanti $x_0 \in \mathbb{R}$. Dimostriamo ora il \textit{punto 3}. Siano $f_1, g_1 \neq 0$ tali che:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f_1(x)}{|x - x_0|^a} = 0 \qquad \lim_{x \to x_0} \frac{g_1(x)}{|x - x_0|^b} = 0
+\end{equation*}
+
+\noindent Allora si ha che:
+\begin{equation*}
+    0 \leq \frac{|f_1(x) \pm g(x)|}{|x - x_0|^q} \leq \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q}
+\end{equation*}
+
+\noindent (tra la seconda e la terza espressione abbiamo sfruttato la seguente disuguaglianza triangolare: $|\alpha + \beta| \leq |\alpha| +|\beta|$ e $|\alpha - \beta| \leq |\alpha| + |-\beta| = |\alpha + \beta|$; $q = min(a, b)$). Come prima si ha che:
+\begin{equation*}
+    \lim_{x \to x_0} 0 = 0 \qquad \lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q} = 0
+\end{equation*}
+
+\noindent per cui, per il teorema dei carabinieri, anche $\lim_{x \to x_0} \frac{|f_1(x) \pm g(x)|}{|x - x_0|^q} = 0$.\\
+Dimostriamo ora il \textit{punto 4}. Con le stesse $f_1(x)$ e $g_1(x)$ prese nel \textit{punto 3}, abbiamo che:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{|f_1(x) \cdot g_1(x)|}{|x - x_0|^{a + b}} = \lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^a} \cdot \frac{|g_1(x)|}{|x - x_0|^b} = 0
+\end{equation*}
+
+\noindent Dimostriamo ora il \textit{punto 5}, utilizzando la stessa $g_1(x)$ del \textit{punto 3}, per cui:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{|x - x_0|^a \cdot |g_1(x)|}{|x - x_0|^{a + b}} = \lim_{x \to x_0} \frac{|g_1(x)|}{|x - x_0|^b} = 0
+\end{equation*}
+
+\noindent Dimostriamo ora il \textit{punto 6}, utilizzando la stessa $f_1(x)$ del \textit{punto 3}, per cui:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{|f_1(x)|^b}{|x - x_0|^{ab}} = \lim_{x \to x_0} \left(\frac{|f_1(x)|}{|x - x_0|^a}\right)^b = 0
+\end{equation*}
+
+\noindent Dimostriamo ora il \textit{punto 7}, utilizzando la stessa $f_1(x)$ del \textit{punto 3} e prendendo $g_2(x) \neq 0$ tale che $\lim_{x \to x_0} \left|\frac{g_2(x)}{f_1(x)}\right| = 0$ (ovvero $g_2(x) = o(f_1(x))$). Allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{|g_2(x)|}{|x - x_0|^a} = \lim_{x \to x_0} \frac{|g_2(x)|}{|f_1(x)|} \cdot \frac{|f_1(x)|}{|x - x_0|} = 0
+\end{equation*}
+
+\noindent Dimostriamo ora il \textit{punto 8}. Se $b > 0$ e $a - b > 0$, allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{|h(x)|}{|x - x_0|^b} = \lim_{x \to x_0} \frac{|h(x)|}{|x - x_0|^a} \cdot |x - x_0|^{a - b} = 0
+\end{equation*}
+
+\noindent Se invece $b = 0$, allora $\lim_{x \to x_0} h(x) = 0$.\\
+
+\noindent\textbf{NB!} Un risultato analogo al precedente è valido anche per $x \to x_0^+$ e $x \to x_0^-$.\\
+
+\noindent\textbf{NB!} Dire $f(x) = o(1)$ per $x \to x_0$ equivale a dire che $\lim_{x \to x_0} f(x) = 0$ (ossia $f$ è infinitesima per $x \to x_0$) perché:
+\begin{equation*}
+    \lim_{x \to x_0} \left|\frac{f(x)}{1}\right| \iff \lim_{x \to x_0} |f(x)| = 0
+\end{equation*}
+
+\subsubsection{Notazione O-grande di Landau}
+\textbf{Def:} Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Diremo che "$f$ è O-grande di $g$ per $x \to x_0$" se e solo se $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ costante implicita tale che:
+\begin{equation*}
+    |f(x)| \leq C \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent\textbf{NB!} Se $x_0 = +\infty$ o $x_0 = -\infty$, allora "$(U_{x_0} \cap A) - \{x_0\}$" è da sostituire con "$(U_{x_0} \cap A)$".\\
+
+\noindent Dalla definizione di O-grande è immediato notare che: 
+\begin{equation*}
+    f(x) = O(g(x)) \ per \ x \to x_0 \iff \exists U_{x_0} \ intorno \ di \ x_0, \exists C > 0 : -C \cdot |g(x)| \leq f(x) \leq C \cdot |f(x)|
+\end{equation*}
+
+\noindent\textbf{ES.} $f(x) = x\sin(\frac{1}{x}) = O(x)$ per $x \to 0$, infatti:
+\begin{equation*}
+    |f(x)| = \left|x\sin\left(\frac{1}{x}\right)\right| = |x| \cdot \left|\sin\left(\frac{1}{x}\right)\right| \leq 1 \cdot |x| \qquad \forall x \in \mathbb{R} - \{0\}
+\end{equation*}
+
+\subsubsection{Proprietà della notazione O-grande}
+Siano $f, g, h, k: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0$ punto di accumulazione per $A$, $x_0 \in \widetilde{\mathbb{R}}$. Allora si ha che:
+\begin{enumerate}
+    \item $f(x) = O(1)$ per $x \to x_0$ equivale a dire che $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ \{f(x) : x \in (U_{x_0} \cap A)\}$ è limitato (ovvero l'insieme immagine è limitato). È la proprietà introdotta qui sopra, dove $g(x)$ è sostituito con $1$;
+    \item se $f(x) = O(g(x))$ per $x \to x_0$, allora $|f(x)|^\alpha = O(|g(x)|^\alpha)$ per $x \to x_0$ e $\forall \alpha > 0$;
+    \item se $f(x) = O(g(x))$ per $x \to x_0$ e $h(x) = O(g(x))$ per $x \to x_0$, allora $\forall a, b \in \mathbb{R}$ si ha che: $a \cdot f(x) + b \cdot h(x) = O(g(x))$ per $x \to x_0$;
+    \item se $f(x) = O(g(x))$ per $x \to x_0$ e $h(x) = O(k(x))$ per $x \to x_0$, allora $f(x) \cdot h(x) = O(g(x) \cdot k(x))$ per $x \to x_0$;
+    \item se $f(x) = O(g(x))$ per $x \to x_0$ e $g(x) = O(h(x))$ per $x \to x_0$, allora $f(x) = O(h(x))$ per $x \to x_0$;
+    \item se $f(x) = O(g(x))$ per $x \to x_0$ e $h(x)$ è limitata in $V_{x_0}$ intorno di $x_0$, allora $f(x) \cdot h(x) = O(g(x))$ per $x \to x_0$;
+    \item se $f(x) = O(g(x))$ per $x \to x_0$, allora $f(x) \cdot h(x) = O(g(x) \cdot h(x)) \qquad \forall h: A \xrightarrow{} \mathbb{R}$.
+\end{enumerate}
+
+\noindent Dimostriamo ora il \textit{punto 1}. Per definizione $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ tale che $|f(x)| \leq C \cdot 1 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Nel primo punto però non si parla di intorno bucato (l'insieme immagine viene preso con $x \in (U_{x_0} \cap A)$), per cui sfruttiamo il teorema della limitatezza locale prendendo come massimo il punto $b = max(C, |f(x_0|)$.\\
+Dimostriamo ora il \textit{punto 2}. Per ipotesi: $\exists U_{x_0}$ intorno di $x_0$, $\exists C > 0$ tale che:
+\begin{equation*}
+    |f(x)| \leq C \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Ora sfruttiamo la stretta crescenza ed otteniamo che $(|f(x)|)^\alpha \leq C^\alpha \cdot (|g(x)|)^\alpha$.\\
+Per dimostrare il \textit{punto 3}, basta osservare che:
+\begin{equation*}
+    |a \cdot f(x) + b \cdot h(x)| \leq |a \cdot f(x)| + |b \cdot h(x)| = |a| \cdot |f(x)| + |b| \cdot |h(x)|
+\end{equation*}
+
+\noindent (tra il primo e il secondo passaggio abbiamo sfruttato la solita disuguaglianza triangolare) e usare che $\exists U_{x_0}$ intorno di $x_0$, $\exists C_1, C_2 > 0$ per cui:
+\begin{equation*}
+    |f(x)| \leq C_1 \cdot |g(x)| \qquad |h(x)| \leq C_2 \cdot |g(x)| \implies |a| \cdot |f(x)| + |b| \cdot |h(x)| \leq (|a| \cdot C_1 + |b| \cdot C_2) \cdot |g(x)|
+\end{equation*}
+
+\noindent Ora chiamiamo $K = |a| \cdot C_1 + |b| \cdot C_2$, per cui: $|a \cdot f(x) + b \cdot h(x)| = K \cdot |g(x)|$.\\
+Per dimostrare il \textit{punto 4}, basta osservare che:
+\begin{align*}
+    |f(x) \cdot h(x)| &= |f(x)| \cdot |h(x)|\\
+    &\leq C_1 \cdot |g(x)| \cdot |h(x)| \\
+    &\leq C_1 \cdot |g(x)| \cdot C_2 \cdot |k(x)| = C_1 \cdot C_2 \cdot |g(x)| \cdot |h(x)|
+\end{align*}
+
+\noindent Per dimostrare il \textit{punto 5}, basta osservare che:
+\begin{equation*}
+    |f(x)| \leq C_1 \cdot |g(x)| \leq C_1 \cdot C_2 \cdot |h(x)|
+\end{equation*}
+
+\noindent Usando il fatto che $\exists U_{x_0}$ intorno di $x_0$, $\exists C_1, C_2 > 0$ per cui $|f(x)| \leq C_1 \cdot |g(x)|$ e $|g(x)| \leq C_2 \cdot |h(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.\\
+Dimostriamo ora il \textit{punto 6}. Osserviamo che:
+\begin{equation*}
+    |f(x) \cdot h(x)| = |f(x)| \cdot |h(x)| \leq M \cdot |f(x)| \leq C \cdot M \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap V_{x_0}) \cap A - \{x_0\}
+\end{equation*}
+
+\noindent (dal secondo al terzo passaggio abbiamo usato il fatto che $|h(x)|$ è limitata), usando il fatto che $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ tale che $|f(x)| \leq C \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.\\
+Dimostriamo ora il \textit{punto 7}. Sappiamo che $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ tale che:
+\begin{equation*}
+    |f(x)| \leq C \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
+\end{equation*}
+
+\noindent Moltiplicando ora per $|h(x)|$ si ha che:
+\begin{equation*}
+    |f(x) \cdot h(x)| = |f(x)| \cdot |h(x)| \leq C \cdot |g(x)| \cdot |h(x)| = C \cdot |g(x) \cdot h(x)|
+\end{equation*}
+
+\noindent per gli stessi valori di $x$ scritti precedentemente.
+\end{document}
