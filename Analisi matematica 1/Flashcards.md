@@ -108,6 +108,13 @@
 104. Enuncia e dimostra tutte le proprietà dell'algebra degli o-piccolo.
 105. Cos'è la notazione O-grande di Landau.
 106. Enuncia e dimostra tutte le proprietà dell'algebra degli O-grande.
+107. Cos'è una funzione infinita? Definisci le varie casistiche che si possono ottenere nel confronto tra infiniti.
+108. Enuncia e dimostra il teorema della sostituzione degli infiniti di ordine inferiore.
+109. Com'è definito l'infinitesimo fondamentale?
+110. Come funziona la gerarchia degli infiniti? Come cambia nel caso delle successioni?
+111. Enuncia la formula di Stirling.
+112. Definisci il concetto di derivata seconda.
+113. Enuncia la formula di Taylor.
 
 ## Dimostrazioni
 

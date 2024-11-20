@@ -4861,7 +4861,7 @@ Proprio per questo motivo quindi:
     \item se $h(x) = o(|x - x_0|^a) \implies h(x) = o(|x - x_0|^b) \qquad \forall 0 \leq b < a$.
 \end{enumerate}
 
-\noindent Dimostriamo ora tutte le proprietà qui sopra. Partiamo dal \textit{primo punto}. Supponiamo che $\exists$ un intorno bucato di $x_0$ in cui i limiti non si annullano. Sia ora $f_1(x) \ | \ \lim_{x \to x_0} \frac{f_1(x)}{f(x)} = 0$ (ovvero $f_1(x)$ è o-piccolo di $f(x)$). Allora preso $c \neq 0$, si ha che:
+\noindent Dimostriamo ora tutte le proprietà qui sopra. Partiamo dal \textit{punto 1}. Supponiamo che $\exists$ un intorno bucato di $x_0$ in cui i limiti non si annullano. Sia ora $f_1(x) \ | \ \lim_{x \to x_0} \frac{f_1(x)}{f(x)} = 0$ (ovvero $f_1(x)$ è o-piccolo di $f(x)$). Allora preso $c \neq 0$, si ha che:
 \begin{equation*}
     \lim_{x \to x_0} \frac{c \cdot f_1(x)}{c \cdot f(x)} = 0 \implies c\cdot o(f(x)) = o(c \cdot f(x))
 \end{equation*}
@@ -4904,7 +4904,7 @@ Consideriamo d'ora in avanti $x_0 \in \mathbb{R}$. Dimostriamo ora il \textit{pu
     \lim_{x \to x_0} 0 = 0 \qquad \lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q} = 0
 \end{equation*}
 
-\noindent per cui, per il teorema dei carabinieri, anche $\lim_{x \to x_0} \frac{|f_1(x) \pm g(x)|}{|x - x_0|^q} = 0$.\\
+\noindent (sappiamo che $\lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q} = 0$ perché, supponendo che $q = b$, ovvero $b < a$, allora $\lim_{x \to x_0} \frac{g(x)}{|x - x_0|^b} = 0$, mentre $f(x)$ può essere riscritta come $|x - x_0|^a$ e quindi si ha che $\lim_{x \to x_0} \frac{f(x)}{|x - x_0|^b} = \lim_{x \to x_0} \frac{|x - x_0|^a}{|x - x_0|^b} = \lim_{x \to x_0} |x - x_0|^{a - b} = 0$) per cui, per il teorema dei carabinieri, anche $\lim_{x \to x_0} \frac{|f_1(x) \pm g(x)|}{|x - x_0|^q} = 0$.\\
 Dimostriamo ora il \textit{punto 4}. Con le stesse $f_1(x)$ e $g_1(x)$ prese nel \textit{punto 3}, abbiamo che:
 \begin{equation*}
     \lim_{x \to x_0} \frac{|f_1(x) \cdot g_1(x)|}{|x - x_0|^{a + b}} = \lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^a} \cdot \frac{|g_1(x)|}{|x - x_0|^b} = 0
@@ -4922,7 +4922,7 @@ Dimostriamo ora il \textit{punto 4}. Con le stesse $f_1(x)$ e $g_1(x)$ prese nel
 
 \noindent Dimostriamo ora il \textit{punto 7}, utilizzando la stessa $f_1(x)$ del \textit{punto 3} e prendendo $g_2(x) \neq 0$ tale che $\lim_{x \to x_0} \left|\frac{g_2(x)}{f_1(x)}\right| = 0$ (ovvero $g_2(x) = o(f_1(x))$). Allora:
 \begin{equation*}
-    \lim_{x \to x_0} \frac{|g_2(x)|}{|x - x_0|^a} = \lim_{x \to x_0} \frac{|g_2(x)|}{|f_1(x)|} \cdot \frac{|f_1(x)|}{|x - x_0|} = 0
+    \lim_{x \to x_0} \frac{|g_2(x)|}{|x - x_0|^a} = \lim_{x \to x_0} \frac{|g_2(x)|}{|f_1(x)|} \cdot \frac{|f_1(x)|}{|x - x_0|^a} = 0
 \end{equation*}
 
 \noindent Dimostriamo ora il \textit{punto 8}. Se $b > 0$ e $a - b > 0$, allora:
@@ -5016,5 +5016,159 @@ Dimostriamo ora il \textit{punto 7}. Sappiamo che $\exists U_{x_0}$ intorno di $
     |f(x) \cdot h(x)| = |f(x)| \cdot |h(x)| \leq C \cdot |g(x)| \cdot |h(x)| = C \cdot |g(x) \cdot h(x)|
 \end{equation*}
 
-\noindent per gli stessi valori di $x$ scritti precedentemente.
+\noindent per gli stessi valori di $x$ scritti precedentemente.\\
+
+\noindent\textbf{NB!} Dire $f(x) = g(x) + o(h(x))$ per $x \to x_0$ significa dire che $f(x) - g(x) = o(h(x))$ per $x \to x_0$. Allo stesso modo, dire che  $f(x) = g(x) + O(h(x))$ per $x \to x_0$ significa dire che $f(x) - g(x) = O(h(x))$ per $x \to x_0$. \\
+
+\noindent\textbf{Funzioni infinite - Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ e $x_0$ punto di accumulazione per $A$. Diremo che $f$ è \textbf{infinita} per $x \to x_0$ se e solo se $\lim_{x \to x_0} f(x) = l \in \{-\infty, +\infty\}$.\\
+
+\noindent\textbf{Confronto di infiniti - Def:} Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ e $x_0$ punto di accumulazione per $A$. Siano inoltre $f, g$ due funzioni infinite. Allora:
+\begin{itemize}
+    \item $f$ è \textbf{infinito di ordine superiore a $g$ per $x \to x_0$} se e solo se $\lim_{x \to x_0} \left|\frac{f(x)}{g(x)}\right| = +\infty$;
+    \item $f$ è \textbf{infinito di ordine inferiore a $g$ per $x \to x_0$} se e solo se $\lim_{x \to x_0} \frac{f(x)}{g(x)} = 0$ (in altre parole, significa che $f(x) = o(g(x))$ per $x \to x_0$);
+    \item $f$ e $g$ sono \textbf{infiniti dello stesso ordine per $x \to x_0$} se e solo se $\lim_{x \to x_0} \frac{f(x)}{g(x)} = l \in \mathbb{R} - \{0\}$.
+\end{itemize}
+
+\noindent\textbf{NB!} Quest'ultimo punto equivale a dire che $f(x) = l \cdot g(x) + o(g(x))$ per $x \to x_0$, infatti:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x)}{g(x)} = \lim_{x \to x_0} \frac{l \cdot g(x) + o(g(x))}{g(x)} = \lim_{x \to x_0} l + \frac{o(g(x))}{g(x)} = l
+\end{equation*}
+
+\subsubsection{Teorema della sostituzione degli infiniti di ordine inferiore}
+Siano $f, g, f_1, g_1$ infiniti per $x \to x_0$. Sia, inoltre, $f_1$ infinito di ordine inferiore a $f$ per $x \to x_0$ e $g_1$ infinito di ordine superiore a $g$ per $x \to x_0$. Allora:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} \ esiste \iff \lim_{x \to x_0} \frac{f(x)}{g(x)} \ esiste
+\end{equation*}
+
+\noindent Inoltre, in tal caso tali limiti sono tra loro uguali.\\
+
+\noindent La dimostrazione è analoga a quella del \textit{Teorema della sostituzione degli infinitesimi di ordine superiore}:
+\begin{equation}
+    \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} = \lim_{x \to x_0} \frac{f(x) \left(1 + \frac{f_1(x)}{f(x)}\right)}{g(x) \left(1 + \frac{g_1(x)}{g(x)}\right)} = \lim_{x \to x_0} \frac{f(x)}{g(x)} \cdot h(x)
+    \label{eq:15}
+\end{equation}
+
+\noindent Dato che $f_1$ è infinito di ordine inferiore a $f$ e $g_1$ è infinito di ordine inferiore a $g$, allora: $\lim_{x \to x_0} h(x) = 1$. Per cui, dimostrando la controimplicazione ($\Leftarrow$):
+\begin{equation*}
+    se \ \exists \lim_{x \to x_0} = l \in \widetilde{\mathbb{R}} \implies \exists \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} = l
+\end{equation*}
+
+\noindent Per dimostrare invece l'implicazione ($\Rightarrow$), dalla (\ref{eq:15}) segue che:
+\begin{equation*}
+    \frac{f(x)}{g(x)} \cdot \frac{h(x)}{h(x)} = \frac{1}{h(x)} \cdot \frac{f(x) + f_1(x)}{g(x) + g_1(x)} \implies \frac{f(x)}{g(x)} = \frac{1}{h(x)} \cdot \frac{f(x) + f_1(x)}{g(x) + g_1(x)}
+\end{equation*}
+
+\noindent ma $\lim_{x \to x_0} \frac{1}{h(x)} = 1$. Quindi: 
+\begin{equation*}
+    se \ \exists \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} = l \in \widetilde{\mathbb{R}} \implies \exists \lim_{x \to x_0} \frac{f(x)}{g(x)} = l
+\end{equation*}
+
+\noindent\textbf{Infinito fondamentale - Def:} Sia $x_0 \in \widetilde{\mathbb{R}}$ e $\alpha > 0$, allora:
+\begin{equation*}
+     Q_\alpha(x; x_0) = \begin{cases}
+        |x|^\alpha \qquad \qquad \ se \ x_0 = +\infty \ o \ x_0 = -\infty\\
+        \dfrac{1}{|x - x_0|^\alpha} \qquad se \ x_0 \in \mathbb{R}
+    \end{cases}
+\end{equation*}
+
+\noindent\textbf{NB!} $Q_\alpha(x; x_0) = \frac{1}{P_\alpha(x; x_0)}$.\\
+
+\noindent\textbf{NB!} Dal \textit{NB!} qui sopra segue che essendo $x^2$ infinitesimo di ordine $2$ per $x \to 0$, allora $\frac{1}{x^2}$ è infinito di ordine $2$ per $x \to 0$. In generale, per definizione $f$ è infinitesima di $\alpha$ in $x_0$ se e solo se:
+\begin{equation*}
+    \lim_{x \to x_0} \left|\frac{f(x)}{P_\alpha(x; x_0)}\right| = l \in \mathbb{R} - \{0\}
+\end{equation*}
+
+\noindent ma si ha che:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{\frac{1}{f(x)}}{Q_\alpha(x; x_0)} = \lim_{x \to x_0} \frac{\frac{1}{f(x)}}{\frac{1}{P_\alpha(x; x_0)}} = \lim_{x \to x_0} \frac{P_\alpha(x; x_0)}{f(x)} = \frac{1}{l} \in \mathbb{R}
+\end{equation*}
+
+\noindent ossia $\frac{1}{f(x)}$ è infinito di ordine $\alpha$ per $x \to x_0$.\\
+
+\noindent\textbf{NB!} Analoghe definizioni di infinito e di ordine di infinito si ottengono con $x \to x_0^+$, $x \to x_0^-$, $x \to +\infty$ e $x \to -\infty$.\\
+
+\noindent\textbf{ES.} Calcolare l'ordine di infinito di $f(x) = \log(x)$ con $x \to +\infty$. Sia $\alpha > 0$:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{\log(x)}{x^\alpha}
+\end{equation*}
+
+\noindent (abbiamo tolto il valore assoluto dal denominatore perché essendo $x_0 = +\infty$, supponiamo che $x$ sia positivo). Effettuiamo la sostituzione $x^\alpha = e^t \iff t = \log(x^\alpha) \iff t = \alpha \log(x)$:
+\begin{equation*}
+    \lim_{x \to +\infty} \frac{\log(x)}{x^\alpha} = \lim_{t \to +\infty} \frac{\frac{t}{\alpha}}{e^t} = \frac{1}{\alpha} \lim_{t \to +\infty} \frac{t}{e^t} = 0 \qquad \forall \alpha > 0
+\end{equation*}
+
+\noindent Ciò significa che $\log(x) = o(x^\alpha)$ per $x \to +\infty \qquad \forall \alpha > 0$.
+
+\subsubsection{Gerarchia degli infiniti}
+Siano:
+\begin{equation*}
+    A = \{|\log_a(x)|^\beta, a > 1, \beta > 0\} \quad B = \{|x|^\gamma, \gamma > 0\} \quad C = \{b^x, b> 1\}
+\end{equation*}
+
+\noindent dove $A, B, C$ contengono funzioni infinite per $x \to +\infty$.\\
+Si ha che \textbf{ogni} funzione di $A$ è infinito di ordine inferiore ad \textbf{ogni} funzione di $B$ per $x \to +\infty$.\\
+Si ha che \textbf{ogni} funzione di $B$ è infinito di ordine inferiore ad \textbf{ogni} funzione di $C$ per $x \to +\infty$.\\
+
+\noindent\textbf{NB!} Non si può applicare la gerarchia a funzioni composte. Ad esempio, è \textbf{falso} dire che $x^2$ è infinito di ordine inferiore a $e^{\log(x)}$ per $x \to +\infty$.\\
+
+\noindent\textbf{NB!} Esiste anche la gerarchia degli infinitesimi che funziona allo stesso modo, ma con i reciproci delle quantità prese qui.\\
+
+\noindent\textbf{NB!} Per le successioni, la gerarchia equivale a:
+\begin{equation*}
+    |\log_a(n)|^\beta \ (a > 1, \beta > 0) \qquad n^\gamma \ (\gamma > 0) \qquad b^n \ (b > 1) \qquad n!
+\end{equation*}
+
+\noindent dove ogni elemento dell'insieme più a sinistra è infinito di ordine inferiore per $n \to +\infty$ rispetto ad ogni elemento degli insiemi più a destra.
+
+\subsection{Formula di Stirling}
+\begin{equation*}
+    \lim_{n \to +\infty} \frac{\sqrt{2\pi n} \cdot n^n \cdot e^{-n}}{n!} = 1
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare il risultato del seguente limite:
+\begin{equation*}
+    \lim_{n \to +\infty} \frac{(n!) + \sqrt{n}}{e^n}
+\end{equation*}
+
+\noindent Innanzitutto, utilizziamo il principio di sostituzione degli infiniti di ordine inferiore e cerchiamo di ricondurci alla formula di Stirling: 
+\begin{align*}
+    \lim_{n \to +\infty} \frac{(n!) + \sqrt{n}}{e^n} &= \lim_{n \to +\infty} \frac{n!}{\sqrt{2\pi n} \cdot n^n \cdot e^{-n}} \cdot \frac{\sqrt{2\pi n} \cdot n^n \cdot e^{-n}}{e^n}\\
+    &= \lim_{n \to +\infty} \frac{\sqrt{2\pi n} \cdot n^n \cdot e^{-n}}{e^n} = \lim_{n \to +\infty} \sqrt{2\pi n} \cdot \frac{n^n}{e^{2n}}
+\end{align*}
+
+\noindent Ora sappiamo che $\lim_{n \to +\infty} \sqrt{2\pi n} = +\infty$, ma a cosa è uguale $\lim_{n \to +\infty} \frac{n^n}{e^{2n}}$? 
+\begin{equation*}
+    \lim_{n \to +\infty} \frac{n^n}{e^{2n}} = \lim_{n \to +\infty} n^n \cdot e^{-2n} = \lim_{n \to +\infty} e^{n\log(n)} \cdot e^{-2n} = \lim_{n \to +\infty} e^{n(\log(n) - 2)} = +\infty
+\end{equation*}
+
+\noindent Quindi $\lim_{n \to +\infty} \sqrt{2\pi n} \cdot \frac{n^n}{e^{2n}} = +\infty$, per cui $\lim_{n \to +\infty} \frac{(n!) + \sqrt{n}}{e^n} = +\infty$, ossia $n! + \sqrt{n}$ è infinito di ordine superiore a $e^n$ per $n \to +\infty$.
+
+\subsection{Derivate successive}
+Supponiamo che $f$ sia derivabile in $U_{x_0}$, $x_0 \in I$, allora esiste la funzione:
+\begin{equation*}
+    f': U_{x_0} \xrightarrow{} \mathbb{R} \qquad x \longmapsto f'(x)
+\end{equation*}
+
+\noindent\textbf{Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in I$, $x_0$ interno ad $I$. Supponiamo, inoltre, che $\exists U_{x_0}$ intorno di $x_0$ e $f$ sia derivabile in $U_{x_0}$. Diremo che $f$ è derivabile due volte in $x_0$ se e solo se la funzione $f'(x)$ è derivabile in $x_0$.\\
+Inoltre, indicheremo con $f''(x_0)$ il valore:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f'(x) - f'(x_0)}{x - x_0} = l \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{NB!} Notazione: $f^{(2)}(x_0) = f''(x_0)$; $f^{(1)}(x_0) = f'(x_0)$; $f^{(0)}(x_0) = f(x_0)$. Analogamente possiamo definire $f^{(3)}(x_0)$, $f^{(4)}(x_0)$, $f^{(n)}(x_0)$.
+
+\subsection{Formula di Taylor (con resto di Peano)}
+Sia $n \in \mathbb{N}, n \geq 1$, sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. Supponiamo che $f$ sia derivabile $n - 1$ volte in $I$ e tali funzioni derivate siano continue in $I$. Sia inoltre $x_0 \in I$, $x_0$ interno ad $I$ ed $\exists f^{(n)}(x_0)$.\\
+Allora esiste $\omega: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ tale che $\omega$ è continua in $x_0$, $\omega(x_0) = 0$ ed inoltre:
+\begin{equation*}
+    f(x) = \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + \omega(x)(x - x_0)^n \qquad \forall x \in I
+\end{equation*}
+
+\noindent\textbf{NB!} $\sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k$ viene detto \textbf{polinomio di Taylor di grado $n$, centrato in $x_0$, per la funzione $f$}; $\omega(x)$ è infinitesimo di ordine superiore al grado $n$.\\
+
+\noindent\textbf{NB!} Nel teorema del differenziale di Lagrange approssimo la funzione con una retta tangente; qui invece facciamo lo stesso, ma con un'espressione polinomiale più precisa. Proprio per questo motivo, sostituendo $n$ con $1$ nella formula di Taylor, otteniamo la tesi del teorema del differenziale di Lagrange:
+\begin{align*}
+    f(x) &= \left(\frac{f(x_0)}{0!} \cdot 1 + \frac{f^{(1)}(x_0)}{1!} \cdot (x - x_0)\right) + \omega(x)(x - x_0)^1\\
+    &= f(x_0) + f'(x_0)(x - x_0) + \omega(x)(x - x_0)
+\end{align*}
 \end{document}
