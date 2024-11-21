@@ -114,7 +114,8 @@
 110. Come funziona la gerarchia degli infiniti? Come cambia nel caso delle successioni?
 111. Enuncia la formula di Stirling.
 112. Definisci il concetto di derivata seconda.
-113. Enuncia la formula di Taylor.
+113. Enuncia la formula di Taylor. Cos'è la formula di Maclaurin?
+114. Enuncia il teorema "opposto" della formula di Taylor.
 
 ## Dimostrazioni
 

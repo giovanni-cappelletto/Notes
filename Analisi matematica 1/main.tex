@@ -5164,11 +5164,176 @@ Allora esiste $\omega: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ tale che 
     f(x) = \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + \omega(x)(x - x_0)^n \qquad \forall x \in I
 \end{equation*}
 
-\noindent\textbf{NB!} $\sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k$ viene detto \textbf{polinomio di Taylor di grado $n$, centrato in $x_0$, per la funzione $f$}; $\omega(x)$ è infinitesimo di ordine superiore al grado $n$.\\
+\noindent\textbf{NB!} $\omega(x)$ è infinitesimo di ordine superiore al grado $n$.\\
 
 \noindent\textbf{NB!} Nel teorema del differenziale di Lagrange approssimo la funzione con una retta tangente; qui invece facciamo lo stesso, ma con un'espressione polinomiale più precisa. Proprio per questo motivo, sostituendo $n$ con $1$ nella formula di Taylor, otteniamo la tesi del teorema del differenziale di Lagrange:
 \begin{align*}
     f(x) &= \left(\frac{f(x_0)}{0!} \cdot 1 + \frac{f^{(1)}(x_0)}{1!} \cdot (x - x_0)\right) + \omega(x)(x - x_0)^1\\
     &= f(x_0) + f'(x_0)(x - x_0) + \omega(x)(x - x_0)
 \end{align*}
+
+\subsubsection{Notazione}
+\begin{itemize}
+    \item $T_{f,n,x_0}(x) \vcentcolon= \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k$ è detto polinomio di Taylor, centrato in $x_0$, di grado $n$ associato a $f$;
+    \item $R_{f, n, x_0}(x) \vcentcolon = \omega(x)(x - x_0)^n$ è detto resto di Peano di ordine $n$ in $x_0$;
+    \item $f(x) = T_{f,n,x_0}(x) + R_{f, n, x_0}(x)$ è detta formula di Taylor con resto di Peano associato ad $f$, di ordine $n$, centrato in $x_0$.
+\end{itemize}
+
+\noindent\textbf{NB!} Se $x_0 = 0$, la formula di Taylor è anche detta \textbf{formula di Maclaurin}.\\
+
+\noindent\textbf{Def:} Sia $m \in \mathbb{N}, m \geq 1$, $I$ intervallo. Indicheremo i seguenti insiemi di funzioni:
+\begin{equation*}
+    C^0(I) = \{f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R} \ | \ f \ continua \ in \ I\}
+\end{equation*}
+\begin{equation*}
+    C^m(I) = \{f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R} \ | \ f \ derivabile \ in \ I \ e \ tali \ derivate \ sono \ continue \ in \ I\}
+\end{equation*}
+
+\noindent\textbf{NB!} Nell'ipotesi di Taylor, quindi, $f \in C^{n - 1}(I)$.
+
+\subsubsection{Teorema (opposto della formula di Taylor)}
+Sia $n \in \mathbb{N}, n \geq 1$. Sia $f \in C^{n - 1}(I)$, dove $I \subset \mathbb{R}$ intervallo, $x_0 \in I$ e $x_0$ interno ad $I$. Supponiamo, inoltre, che esista $f^{(n)}(x_0)$.\\
+Sia $p_n(x)$ un polinomio a coefficienti reali di grado $n$ tale che esista una funzione $\eta: I \xrightarrow{} \mathbb{R}$, $\eta(x)$ continua in $x_0$, $\eta(x_0) = 0$, per cui:
+\begin{equation*}
+    f(x) = p_n(x) + \eta(x) \quad \forall x \in I \qquad \eta(x) = o((x - x_0)^n) \ per \ x \to x_0 
+\end{equation*}
+
+\noindent Allora: $p_n(x) = T_{f, n, x_0}(x) \qquad \forall x \in I$.\\
+
+\noindent\textbf{NB!} Il polinomio di Taylor è la \textbf{migliore approssimazione possibile} (a meno di infinitesimo di ordine superiore a $n$) per $x \to x_0$.\\
+
+\noindent\textbf{ES.} $f(x) = e^x$ con $I \in \mathbb{R}, x_0 = 0$.\\
+Dato che la funzione esponenziale ha come derivata se stessa, si ha che:
+\begin{equation*}
+    f \in C^\infty(\mathbb{R}) \vcentcolon = \overset{+\infty}{\underset{n = 0}{\cap}} C^n(\mathbb{R})
+\end{equation*}
+
+\noindent ovvero ammette derivate continue per ogni ordine. In altre parole:
+\begin{equation*}
+    f^{(k)}(x) = e^x \qquad \forall k \geq 0; f^{(k)}(0) = 1 \qquad \forall k \in \mathbb{N}
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+    T_{e^x, n, 0} \vcentcolon = \sum_{k = 0}^n \frac{f^{(k)}(0)}{k!} \cdot (x - 0)^k = \sum_{k = 0}^n \frac{x^k}{k!}
+\end{equation*}
+
+\noindent Inoltre:
+\begin{equation*}
+    e^x = \sum_{k = 0}^n \frac{x^k}{k!} + o(x^n) \ per \ x \to 0 \qquad \forall x \in \mathbb{R}, \forall n \in \mathbb{N}
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare il seguente limite:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{e^x - 1 - x - \frac{x^2}{2}}{x^3}
+\end{equation*}
+
+\noindent La consegna ci sta praticamente dicendo che dobbiamo capire qual è l'ordine di infinitesimo del numeratore: è superiore, inferiore o uguale a $3$ (ordine di infinitesimo del denominatore)?\\
+Proviamo a sviluppare fino a $e^x$ fino a $n = 3$, utilizzando la formula di Taylor:
+\begin{equation*}
+    e^x = \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + o(x^3) \ per \ x \to 0 \implies e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3) \ per \ x \to 0
+\end{equation*}
+
+\noindent\textbf{NB!} Stiamo sviluppando $e^x$ fino al terzo ordine perché, sviluppando al secondo ordine, avremmo che: $e^x = 1 + x + \frac{x^2}{2} + o(x^2) \ per \ x \to 0$. Ora sostituendo $e^x$ nel numeratore otterremmo: $\lim_{x \to 0^+} \frac{o(x^2)}{x^3}$, che non ci permette di concludere nulla, dato che $o(x^2)$ potrebbe essere di ordine inferiore, superiore o uguale a $3$.\\
+
+\noindent Otteniamo quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{1 + x + \frac{x^2}{2} + \frac{x^3}{6} - 1 - x - \frac{x^2}{2} + o(x^3)}{x^3} = \lim_{x \to 0^+} \frac{\frac{x^3}{6} + o(x^3)}{x^3}
+\end{equation*}
+
+\noindent Dato che sia $\frac{x^3}{6}$, che $x^3$ sono ordine $3$; mentre $o(x^3)$ è di ordine superiore a $3$, utilizziamo il teorema della sostituzione degli infinitesimi di ordine superiore, prendendo gli infinitesimi di ordine inferiore:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{e^x - 1 - x - \frac{x^2}{2}}{x^3} = \lim_{x \to 0^+} \frac{x^3}{6x^3} = \frac{1}{6}
+\end{equation*}
+
+\noindent\textbf{ES.} Determinare la formula di Taylor-Peano in $x_0 = 0$ per $f(x) = e^{x^2}$.\\
+Osserviamo, innanzitutto, che:
+\begin{align*}
+    & f(x) = e^{x^2} && f(0) = 1 \\
+    & f'(x) = 2xe^{x^2} && f'(0) = 0 \\
+    & f''(x) = 2e^{x^2} + 4x^2e^{x^2} && f''(0) = 2 \\
+    & f'''(x) = 4xe^{x^2} + 8xe^{x^2} + 8x^3e^{x^2} && f'''(0) = 0
+\end{align*}
+
+\noindent Non riusciamo quindi ad individuare un "pattern". Notiamo però che $e^{x^2}$ è il risultato di una composizione di due funzioni: $e^x$ e $x^2$. Inoltre, di $e^x$ conosciamo già la formula di Taylor, mentre $x^2$ si tratta proprio di un polinomio. Utilizziamo intanto la formula di Taylor per $e^t$:
+\begin{equation*}
+    e^t = \sum_{k = 0}^n \frac{t^k}{k!} + o(t^n) \ per \ t \to 0
+\end{equation*}
+
+\noindent Procediamo ora con la sostituzione $t = x^2$ (possiamo farlo perché se $t \to 0$, anche $x^2 \to 0$):
+\begin{equation*}
+    e^{x^2} = \sum_{k = 0}^n \frac{x^{2k}}{k!} + o(x^{2n}) \ per \ x \to 0
+\end{equation*}
+
+\noindent Ora, grazie al "viceversa" della formula di Taylor, possiamo dire che $p(x) = \sum_{k = 0}^n \frac{x^{2k}}{k!}$ è il polinomio di Taylor di grado $2n$, centrato in $0$, associato a $f(x) = e^{x^2}$, cioè:
+\begin{equation}
+    T_{e^{x^2}, 2n, 0} = \sum_{k = 0}^n \frac{x^{2k}}{k!}
+    \label{eq:16}
+\end{equation}
+
+\noindent\textbf{NB!} Senza questo teorema non potremmo dire che la quantità trovato equivale al polinomio di Taylor perché non l'abbiamo calcolata attraverso le derivate. Per trovare il polinomio attraverso la formula di Taylor, infatti, avremmo dovuto usare:
+\begin{equation}
+    \sum_{m = 0}^{2n} \frac{f^{(m)}(0)}{m!} \cdot x^m
+    \label{eq:17}
+\end{equation}
+
+\noindent Dal polinomio di Taylor calcolato sopra riusciamo a trovare il valore delle derivate calcolate in $0$:
+\begin{equation*}
+    f^{(2l + 1)}(0) = 0 \qquad \qquad \frac{f^{(2l)}(0)}{(2l)!} = \frac{1}{l!} \implies f^{(2l)}(0) = \frac{(2l)!}{l!}
+\end{equation*}
+
+\noindent Per la prima parte: dato che in (\ref{eq:16}) abbiamo $x^{2k}$, significa che nel polinomio effettivo saranno presenti solo $x$ elevati ad un esponente pari e mai dispari. In altre parole, è come se "ci fossero delle $x$ con esponente dispari, ma il loro coefficiente fosse $0$, ovvero $\frac{1}{k!} = 0$. Ora uguagliando (\ref{eq:16}) e (\ref{eq:17}), possiamo dire che $f^{(2l + 1)}(0) = 0$. \\
+La seconda parte, quella riguardante il valore delle derivate pari calcolate in $0$, è ottenuta confrontando il coefficiente di (\ref{eq:16}) con quello di (\ref{eq:17}). In particolare, in (\ref{eq:16}) abbiamo sostituito $k$ ad $l$ per cui otteniamo $\frac{1}{l!}$, mentre in (\ref{eq:17}) abbiamo sostituito $m$ a $2l$.
+
+\subsubsection{Formule di Maclaurin (Taylor-Peano in $x_0 = 0$)}
+\textbf{Formula 1:}\\
+\noindent Sia $f(x) = \log|x + 1|$. Sappiamo che $D_f = \mathbb{R} - \{-1\}$, quindi $x_0 = 0$ è interno a $D_f$. Proviamo ora a calcolare un po' di derivate:
+\begin{align*}
+    & f'(x) = \frac{1}{1 + x} = (1 + x)^{-1} && f'(0) = 1 \\
+    & f''(x) = -(1 + x)^{-2} && f''(0) = -1 \\
+    & f'''(x) = 2(1 + x)^{-3} && f'''(0) = 2 \\
+    & f^{(4)}(x) = -6(1 + x)^{-4} && f^{(4)}(0) = -6
+\end{align*}
+
+\noindent Possiamo notare, quindi, che i valori delle derivate in $0$ corrispondono ai valori del fattoriale, se presi tutti con il segno positivo. Contemporaneamente, i valori positivi sono prodotti dalle derivate dispari, mentre i valori negativi sono il risultato delle derivate pari calcolate in $0$. Infatti, per induzione si può dimostrare che:
+\begin{equation*}
+    f^{(k)}(x) = (-1)^{k - 1}(k - 1)!(1 + x)^{-k} \qquad x \neq 1, \forall k \geq 1 \implies f^{(k)}(0) = (-1)^{k - 1}(k - 1)!
+\end{equation*}
+
+\noindent Pertanto:
+\begin{align*}
+    \log|1 + x| &= \sum_{k = 1}^n \frac{(-1)^{k - 1}(k - 1)!}{k!} \cdot x^k + o(x^n) \\
+    &= \sum_{k = 1}^n \frac{(-1)^{k - 1} \cdot x^k}{k} + o(x^n) \ per \ x \to 0
+\end{align*}
+
+\noindent\textbf{ES.} Calcolare il seguente limite al variare di $\alpha > 0$:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\log(1 + x) - x}{x^\alpha}
+\end{equation*}
+
+\noindent Dato che $\log(1 + x)$ ha ordine $1$ e $x$ ha anch'esso ordine $1$, allora il numeratore (essendo una differenza tra due funzioni dello stesso ordine) avrà un ordine superiore o uguale a $1$. Perciò se $\alpha \in (0, 1)$, allora sappiamo sicuramente che la funzione tende a $0$ per $x \to 0^+$. \\
+Prendiamo ora la formula di Taylor e fermiamoci a $n = 1$:
+\begin{equation*}
+    \sum_{k = 1}^n \frac{(-1)^{k - 1} \cdot x^k}{k} = \frac{(-1)^0 \cdot x^1}{1} = x \implies \log|1 + x| = x + o(x) \ per \ x \to 0
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{x + o(x) - x}{x^\alpha} = \lim_{x \to 0^+} \frac{o(x)}{x^\alpha} = \begin{cases}
+        0 \qquad se \ 0 < \alpha < 1 \\
+        0 \qquad se \ \alpha = 1 \\
+        ? \qquad se \ \alpha > 1
+    \end{cases}
+\end{equation*}
+
+\noindent (sappiamo che se $\alpha = 1$, allora la funzione tende a $0$ per $x \to 0^+$ perché per definizione $o(x)$ è di ordine superiore a $x$). Proviamo allora ad usare Maclaurin di ordine $2$: $\log(1 + x) = x - \frac{x^2}{2} + o(x^2) \ per \ x \to 0$. Quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{x - \frac{x^2}{2} - x + o(x^2)}{x^\alpha}  = \lim_{x \to 0^+} -\frac{1}{2} \cdot x^{2 - \alpha} = \begin{cases}
+        - \frac{1}{2} \qquad se \ \alpha = 2 \\ 
+        0^- \qquad \ se \ 0 < \alpha < 2 \\
+        - \infty \quad \ \ se \ \alpha > 2
+    \end{cases}
+\end{equation*}
+
+\noindent (tra il primo e il secondo passaggio abbiamo utilizzato il teorema di sostituzione degli infinitesimi di ordine superiore).
 \end{document}
