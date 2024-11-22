@@ -116,6 +116,8 @@
 112. Definisci il concetto di derivata seconda.
 113. Enuncia la formula di Taylor. Cos'è la formula di Maclaurin?
 114. Enuncia il teorema "opposto" della formula di Taylor.
+115. Cos'è un punto di massimo (minimo) locale? E uno globale? Cos'è un punto estremale globale?
+116. Che differenza c'è tra un massimo/minimo locale e un punto di massimo/minimo locale?
 
 ## Dimostrazioni
 

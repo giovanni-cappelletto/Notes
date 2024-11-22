@@ -815,7 +815,7 @@ $\forall n \in \mathbb{N}, n \geq 1$ e $a, b \in \mathbb{R}$ si ha che:
 \noindent\textbf{Passo induttivo:} 
 
 \begin{equation*}
-    se \ (a + b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}, \ allora \ (a+b)^{n+1} = \sum_{k=0}^{n+1} a^{k}b^{n+1-k}
+    se \ (a + b)^n = \sum_{k=0}^n \binom{n}{k} a^k b^{n-k}, \ allora \ (a+b)^{n+1} = \sum_{k=0}^{n+1} \binom{n + 1}{k} a^{k}b^{n+1-k}
 \end{equation*}
 
 \noindent Partiamo quindi dalla tesi:
@@ -4606,7 +4606,7 @@ Prendendo il denominatore e derivandolo un po' di volte, notiamo che è presente
 
 \noindent Applicando quindi il teorema di Bernoulli - De L'Hôpital $K$ volte, si ottiene: $\lim_{x \to +\infty} \frac{e^x}{x^\alpha} = +\infty \qquad \forall \alpha > 0$.
 
-\subsection{Funzioni infinitesime e infinite}
+\section{Funzioni infinitesime e infinite}
 \textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e $f$ non sia la funzione costantemente nulla, $x_0$ punto di accumulazione per $A$ con $x_0 \in \widetilde{\mathbb{R}}$. \\
 Allora se:
 \begin{equation*}
@@ -4625,7 +4625,7 @@ Supponiamo che $\exists U_{x_0} \ intorno \ di \ x_0 \ | \ g(x) \neq 0 \qquad \f
 
 \noindent\textbf{ES.} $x^3$ è infinitesimo di ordine superiore a $x^2$ per $x \to 0$; $x^2$ è infinitesimo di ordine inferiore a $x^3$ per $x \to 0$; $\sin(x)$ è infinitesimo dello stesso ordine di $x$ per $x \to 0$ (lo sappiamo tramite il limite notevole $\lim_{x \to 0} \frac{\sin(x)}{x} = 1$).
 
-\subsubsection{Notazione o-piccolo di Landau}
+\subsection{Notazione o-piccolo di Landau}
 Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Diremo che "$f$ è o-piccolo di $g$ per $x \to x_0$" e scriveremo "$f(x) = o(g(x))$ per $x \to x_0$" se e solo se $\exists \omega: A \xrightarrow{} \mathbb{R}$ tale che $\omega$ è infinitesimo per $x \to x_0$ ed esiste un intorno $U_{x_0}$ di $x_0$ tale che $f(x) = \omega(x)g(x) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.\\
 Inoltre, se $g(x) \neq 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$ si ha che: $f(x) = o(g(x))$ per $x \to x_0 \iff \lim_{x \to x_0} \frac{f(x)}{g(x)} = 0$.\\
 
@@ -4939,7 +4939,7 @@ Dimostriamo ora il \textit{punto 4}. Con le stesse $f_1(x)$ e $g_1(x)$ prese nel
     \lim_{x \to x_0} \left|\frac{f(x)}{1}\right| \iff \lim_{x \to x_0} |f(x)| = 0
 \end{equation*}
 
-\subsubsection{Notazione O-grande di Landau}
+\subsection{Notazione O-grande di Landau}
 \textbf{Def:} Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. Diremo che "$f$ è O-grande di $g$ per $x \to x_0$" se e solo se $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ costante implicita tale che:
 \begin{equation*}
     |f(x)| \leq C \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
@@ -5157,7 +5157,7 @@ Inoltre, indicheremo con $f''(x_0)$ il valore:
 
 \noindent\textbf{NB!} Notazione: $f^{(2)}(x_0) = f''(x_0)$; $f^{(1)}(x_0) = f'(x_0)$; $f^{(0)}(x_0) = f(x_0)$. Analogamente possiamo definire $f^{(3)}(x_0)$, $f^{(4)}(x_0)$, $f^{(n)}(x_0)$.
 
-\subsection{Formula di Taylor (con resto di Peano)}
+\section{Formula di Taylor (con resto di Peano)}
 Sia $n \in \mathbb{N}, n \geq 1$, sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. Supponiamo che $f$ sia derivabile $n - 1$ volte in $I$ e tali funzioni derivate siano continue in $I$. Sia inoltre $x_0 \in I$, $x_0$ interno ad $I$ ed $\exists f^{(n)}(x_0)$.\\
 Allora esiste $\omega: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ tale che $\omega$ è continua in $x_0$, $\omega(x_0) = 0$ ed inoltre:
 \begin{equation*}
@@ -5172,11 +5172,11 @@ Allora esiste $\omega: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ tale che 
     &= f(x_0) + f'(x_0)(x - x_0) + \omega(x)(x - x_0)
 \end{align*}
 
-\subsubsection{Notazione}
+\subsection{Notazione}
 \begin{itemize}
     \item $T_{f,n,x_0}(x) \vcentcolon= \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k$ è detto polinomio di Taylor, centrato in $x_0$, di grado $n$ associato a $f$;
     \item $R_{f, n, x_0}(x) \vcentcolon = \omega(x)(x - x_0)^n$ è detto resto di Peano di ordine $n$ in $x_0$;
-    \item $f(x) = T_{f,n,x_0}(x) + R_{f, n, x_0}(x)$ è detta formula di Taylor con resto di Peano associato ad $f$, di ordine $n$, centrato in $x_0$.
+    \item $f(x) = T_{f,n,x_0}(x) + R_{f, n, x_0}(x)$ è detta formula di Taylor con resto di Peano, associata ad $f$, di ordine $n$, centrata in $x_0$.
 \end{itemize}
 
 \noindent\textbf{NB!} Se $x_0 = 0$, la formula di Taylor è anche detta \textbf{formula di Maclaurin}.\\
@@ -5191,7 +5191,7 @@ Allora esiste $\omega: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ tale che 
 
 \noindent\textbf{NB!} Nell'ipotesi di Taylor, quindi, $f \in C^{n - 1}(I)$.
 
-\subsubsection{Teorema (opposto della formula di Taylor)}
+\subsection{Teorema (opposto della formula di Taylor)}
 Sia $n \in \mathbb{N}, n \geq 1$. Sia $f \in C^{n - 1}(I)$, dove $I \subset \mathbb{R}$ intervallo, $x_0 \in I$ e $x_0$ interno ad $I$. Supponiamo, inoltre, che esista $f^{(n)}(x_0)$.\\
 Sia $p_n(x)$ un polinomio a coefficienti reali di grado $n$ tale che esista una funzione $\eta: I \xrightarrow{} \mathbb{R}$, $\eta(x)$ continua in $x_0$, $\eta(x_0) = 0$, per cui:
 \begin{equation*}
@@ -5199,6 +5199,8 @@ Sia $p_n(x)$ un polinomio a coefficienti reali di grado $n$ tale che esista una 
 \end{equation*}
 
 \noindent Allora: $p_n(x) = T_{f, n, x_0}(x) \qquad \forall x \in I$.\\
+
+\noindent\textbf{NB!} Il teorema precedente è molto utile quando si conosce la formula di Taylor di $f(x)$ per $x \to x_0$ e sia chiesta quella di $f(g(t))$ per $t \to t_0$, $g(t_0) = x_0$.\\
 
 \noindent\textbf{NB!} Il polinomio di Taylor è la \textbf{migliore approssimazione possibile} (a meno di infinitesimo di ordine superiore a $n$) per $x \to x_0$.\\
 
@@ -5271,7 +5273,7 @@ Osserviamo, innanzitutto, che:
     \label{eq:16}
 \end{equation}
 
-\noindent\textbf{NB!} Senza questo teorema non potremmo dire che la quantità trovato equivale al polinomio di Taylor perché non l'abbiamo calcolata attraverso le derivate. Per trovare il polinomio attraverso la formula di Taylor, infatti, avremmo dovuto usare:
+\noindent\textbf{NB!} Senza questo teorema non potremmo dire che la quantità trovata equivale al polinomio di Taylor perché non l'abbiamo calcolata attraverso le derivate. Per trovare il polinomio attraverso la formula di Taylor, infatti, avremmo dovuto usare:
 \begin{equation}
     \sum_{m = 0}^{2n} \frac{f^{(m)}(0)}{m!} \cdot x^m
     \label{eq:17}
@@ -5285,9 +5287,9 @@ Osserviamo, innanzitutto, che:
 \noindent Per la prima parte: dato che in (\ref{eq:16}) abbiamo $x^{2k}$, significa che nel polinomio effettivo saranno presenti solo $x$ elevati ad un esponente pari e mai dispari. In altre parole, è come se "ci fossero delle $x$ con esponente dispari, ma il loro coefficiente fosse $0$, ovvero $\frac{1}{k!} = 0$. Ora uguagliando (\ref{eq:16}) e (\ref{eq:17}), possiamo dire che $f^{(2l + 1)}(0) = 0$. \\
 La seconda parte, quella riguardante il valore delle derivate pari calcolate in $0$, è ottenuta confrontando il coefficiente di (\ref{eq:16}) con quello di (\ref{eq:17}). In particolare, in (\ref{eq:16}) abbiamo sostituito $k$ ad $l$ per cui otteniamo $\frac{1}{l!}$, mentre in (\ref{eq:17}) abbiamo sostituito $m$ a $2l$.
 
-\subsubsection{Formule di Maclaurin (Taylor-Peano in $x_0 = 0$)}
-\textbf{Formula 1:}\\
-\noindent Sia $f(x) = \log|x + 1|$. Sappiamo che $D_f = \mathbb{R} - \{-1\}$, quindi $x_0 = 0$ è interno a $D_f$. Proviamo ora a calcolare un po' di derivate:
+\subsection{Formule di Maclaurin (Taylor-Peano in $x_0 = 0$)}
+\subsubsection{Formula di $\log|x + 1|$}
+Sia $f(x) = \log|x + 1|$. Sappiamo che $D_f = \mathbb{R} - \{-1\}$, quindi $x_0 = 0$ è interno a $D_f$. Proviamo ora a calcolare un po' di derivate:
 \begin{align*}
     & f'(x) = \frac{1}{1 + x} = (1 + x)^{-1} && f'(0) = 1 \\
     & f''(x) = -(1 + x)^{-2} && f''(0) = -1 \\
@@ -5336,4 +5338,167 @@ Prendiamo ora la formula di Taylor e fermiamoci a $n = 1$:
 \end{equation*}
 
 \noindent (tra il primo e il secondo passaggio abbiamo utilizzato il teorema di sostituzione degli infinitesimi di ordine superiore).
+
+\subsubsection{Formula di $(1 + x)^\alpha$}
+Sia $f(x) = (1 + x)^\alpha$ con $\alpha \in \mathbb{R} - \{0\}$ e $x > -1$. Proviamo a calcolare un po' di derivate:
+\begin{align*}
+    & f'(x) = \alpha(1 + x)^{\alpha - 1} \\
+    & f''(x) = \alpha(\alpha - 1)(1 + x)^{\alpha - 2} \\
+    & f'''(x) = \alpha(\alpha - 1)(\alpha - 2)(1 + x)^{\alpha - 3} \\
+    & f^{(4)}(x) = \alpha(\alpha - 1)(\alpha - 2)(\alpha - 3)(1 + x)^{\alpha - 4}
+\end{align*}
+
+\noindent In generale, si può dimostrare per induzione che:
+\begin{equation*}
+    f^{(k)}(x) = \alpha(\alpha - 1)...(\alpha - k + 1)(1 + x)^{\alpha - k} \qquad \forall k \geq 1
+\end{equation*}
+
+\noindent allora si ha che: $f^{(k)}(0) = \alpha(\alpha - 1)...(\alpha - k + 1)$ e $f(0) = 1$. Quindi:
+\begin{equation}
+    (1 + x)^\alpha = 1 + \sum_{k = 1}^n \frac{\alpha(\alpha - 1)...(\alpha - k + 1)}{k!} \cdot x^k + o(x^n) \ per \ x \to 0
+    \label{eq:18}
+\end{equation}
+
+\noindent\textbf{Caso speciale: } Quando $\alpha = m \in \mathbb{N}$ con $m \geq k$, il coefficiente $\frac{\alpha(\alpha - 1)...(\alpha - k + 1)}{k!}$ diventa:
+\begin{equation*}
+    \frac{m(m - 1)...(m - k + 1)}{k!} = \binom{m}k{}
+\end{equation*}
+
+\noindent\textbf{Def:} Con $\alpha \in \mathbb{R} - \{0\}$ è possibile definire il \textbf{binomio generalizzato} come:
+\begin{equation*}
+    \binom{\alpha}{k} \vcentcolon = \frac{\alpha(\alpha - 1)...(\alpha - k + 1)}{k} \ per \ k \geq 1 \qquad \binom{\alpha}{0} = 1
+\end{equation*}
+
+\noindent Quindi possiamo riscrivere la formula (\ref{eq:18}) come:
+\begin{equation*}
+    (1 + x)^\alpha = \sum_{k = 0}^n \binom{\alpha}{k} x^k + o(x^n) \ per \ x \to 0
+\end{equation*}
+
+\noindent (viene anche detta generalizzazione del binomio di Newton).\\
+
+\noindent Altri casi speciali come $\alpha = -1 \implies f(x) = \frac{1}{1 + x}$, $\alpha = \frac{1}{2} \implies f(x) = \sqrt{1 + x}$ e $\alpha = -\frac{1}{2} \implies f(x) = \frac{1}{\sqrt{1 + x}}$ li vedremo in seguito.
+
+\subsubsection{Formula di $\tan(x)$}
+Sia $f(x) = \tan(x)$ definita in $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$. Calcoliamo un po' di derivate:
+\begin{align*}
+    & f'(x) = 1 + \tan^2(x) && f'(0) = 1 \\
+    & f''(x) = 2\tan(x)(1 + \tan^2(x)) && f''(0) = 0 \\
+    & f'''(x) = 2(1 + \tan^2(x)) + 4\tan^2(x)(1 + \tan^2(x)) && f'''(0) = 2 \\
+\end{align*}
+
+\noindent Il calcolo però continua ad essere sempre più complicato e non sembra esserci un "pattern". Oltre alle derivate, quindi, possiamo anche utilizzare la formula:
+\begin{equation*}
+    \tan(x) = x + \frac{x^3}{3} + \frac{2}{15}x^5 + \frac{17}{315}x^7 + \frac{62}{2835}x^9 + o(x^{10}) \ per \ x \to 0
+\end{equation*}
+
+\subsubsection{Formula di $\tanh(x)$}
+Sia $\tanh(x) \vcentcolon = \frac{\sin(x)}{\cos(x)}$ con $x \in \mathbb{R}$. In maniera simile alla tangente, ma con il segno alternato abbiamo che:
+\begin{equation*}
+    \tanh(x) = x - \frac{x^3}{3} + \frac{2}{15}x^5 - \frac{17}{315}x^7 + \frac{62}{2835}x^9 + o(x^{10}) \ per \ x \to 0
+\end{equation*}
+
+\subsubsection{Formula di $\sin(x)$}
+Sia $f(x) = \sin(x)$. Sappiamo che $\sin(0) = 0$, ora calcoliamo un po' di derivate:
+\begin{align*}
+    & f'(x) = \cos(x) && f'(0) = 1 \\
+    & f''(x) = -\sin(x) && f''(0) = 0 \\
+    & f'''(x) = -\cos(x) && f'''(0) = -1 \\
+    & f'''(x) = \sin(x) && f'''(0) = 0
+\end{align*}
+
+\noindent Notiamo che la derivata quarta della funzione originaria è proprio la funzione originaria. Quindi la derivata quinta della funzione originaria sarà uguale alla derivata prima, la derivata sesta della funzione originaria sarà uguale alla derivata seconda e così via. In altre parole, i valori ottenuti calcolando le derivate in $0$ continuano a ripetersi. Allora si ha che:
+\begin{align*}
+    \sin(x) &= 0 + 1 \cdot \frac{x}{1!} + 0 \cdot \frac{(x - 0)^2}{2!} - 1 \cdot \frac{(x - 0)^3}{3!} + 0 \cdot \frac{(x - 0)^4}{4!} + 1 \cdot \frac{(x - 0)^5}{5!} + \ ... \ + \ o(...) \ per \ x \to 0 \\
+    &= 1 + x - \frac{x^3}{6} + \frac{x^5}{5!} - \frac{x^7}{7!} + \ ... \ + \ o(...) \ per \ x \to 0 \\
+    &= \sum_{k = 0}^n (-1)^k \frac{x^{2k + 1}}{(2k + 1)!} + o(x^{2n + 1}) \ per \ x \to 0
+\end{align*}
+
+\noindent Notiamo quindi che tutti i termini di posto pari hanno coefficiente $0$, mentre quelli dispari alternano continuamente il segno. Inoltre, dato appunto che i termini di grado pari hanno coefficiente uguale a $0$, possiamo aumentare la precisione del nostro errore a $o(x^{2n + 2}) \ per \ x \to 0$. Quindi riscrivendo la formula, si ha che:
+\begin{equation*}
+    \sin(x) = \sum_{k = 0}^n (-1)^k \frac{x^{2k + 1}}{(2k + 1)!} + o(x^{2n + 2}) \ per \ x \to 0
+\end{equation*}
+
+\subsubsection{Formula di $\cos(x)$}
+Sia $f(x) = \cos(x)$. Sappiamo che $\cos(0) = 1$, ora calcoliamo un po' di derivate:
+\begin{align*}
+    & f'(x) = -\sin(x) && f'(0) = 0 \\
+    & f''(x) = -\cos(x) && f''(0) = -1 \\
+    & f'''(x) = \sin(x) && f'''(0) = 0 \\
+    & f'''(x) = \cos(x) && f'''(0) = 1
+\end{align*}
+
+\noindent Anche qui, come per il seno, i valori si ripetono a blocchi di quattro. Inoltre, i coefficienti di posto dispari sono nulli, mentre quelli di posto pari alternano continuamente il segno. Otteniamo quindi:
+\begin{align*}
+    \cos(x) &= 1 + 0 \cdot \frac{x}{1!} - 1 \cdot \frac{(x - 0)^2}{2!} + 0 \cdot \frac{(x - 0)^3}{3!} + 1 \cdot \frac{(x - 0)^4}{4!} + 0 \cdot \frac{(x - 0)^5}{5!} + \ ... \ + \ o(...) \ per \ x \to 0 \\
+    &= 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ ... \ + \ o(...) \ per \ x \to 0 \\
+    &= \sum_{k = 0}^n (-1)^k \frac{x^{2k}}{(2k)!} + o(x^{2n}) \ per \ x \to 0
+\end{align*}
+
+\noindent Anche qui, come per il seno, possiamo aumentare la precisione del nostro errore a $o(x^{2n + 1}) \ per \ x \to 0$ perché il successivo termine della sommatoria è dispari e ha coefficiente nullo. Scriviamo quindi:
+\begin{equation*}
+    \cos(x) = \sum_{k = 0}^n (-1)^k \frac{x^{2k}}{(2k)!} + o(x^{2n + 1}) \ per \ x \to 0
+\end{equation*}
+
+\noindent\textbf{ES.} Per i limiti notevoli sappiamo che $\lim_{x \to 0} \frac{\cos(x) - 1}{x^2} = - \frac{1}{2}$. Proviamo a verificare tale valore con la formula di Taylor. \\
+Innanzitutto, vediamo che il denominatore ha grado $2$ per cui dobbiamo sviluppare il coseno al secondo ordine per avere un rapporto tra due funzioni dello stesso ordine di infinitesimo (e quindi ottenere un valore reale non nullo):
+\begin{equation*}
+    \lim_{x \to 0} \frac{1 - \frac{x^2}{2} + o(x^3) - 1}{x^2} = \lim_{x \to 0} - \frac{x^2}{2x^2} = -\frac{1}{2}
+\end{equation*}
+
+\noindent (tra il primo e il secondo limite abbiamo applicato il principio di sostituzione degli infinitesimi di ordine superiore). In pratica, il limite notevole da calcolare ci diceva qual era il coefficiente di $x^2$ nello sviluppo di $\cos(x)$.\\
+
+\noindent\textbf{ES.} Calcolare la formula di Taylor di $f(x) = e^{2x + 3}$ in $x_0 = 0$.\\
+Per risolvere l'esercizio possiamo procedere in due modi: utilizzare la definizione, calcolando le derivate; oppure possiamo applicare una sostituzione di $g(t) = e^t$ in $t_0 = 0$. Procediamo in questo secondo modo:
+\begin{equation*}
+    e^t = g(t) = \sum_{k = 0}^n \frac{t^k}{k!} + o(t^n) \ per \ t \to 0
+\end{equation*}
+
+\noindent Ipoteticamente, ci verrebbe da sostituire $t$ a $2x + 3$ ma è \textbf{sbagliato} perché quando ci avviciniamo a $x_0 = 0$, l'argomento dell'esponenziale si avvicina a $3$ ($2x + 3 = 3 \ per \ x \to 0$), non a $0$. Ci serve quindi il comportamento di $e^t$ quando $t \to 3 \ (= t_0)$, in questo modo $x \to 0$ (perché $t = 2x + 3 \iff 2x = t - 3$, se $t \to 3 \implies 2x \to 0 \iff x \to 0$). \\
+Dato che $g(t)$ è un esponenziale, sappiamo che esso è uguale a tutte le sue derivate. In simboli:
+\begin{equation*}
+    g(t) = g^{(k)}(t) = e^t \qquad \qquad g(t_0) = g'(t_0) = e^3
+\end{equation*}
+
+\noindent Quindi:
+\begin{align*}
+    e^t &= \sum_{k = 0}^n \frac{g^{(k)}(3)}{k!} \cdot (t - 3)^k + o((t - 3)^n) \ per \ t \to 3 \\
+    &= e^3 \sum_{k = 0}^n \frac{(t - 3)^k}{k!} + o((t - 3)^n) \ per \ t \to 3
+\end{align*}
+
+\noindent Possiamo quindi finalmente applicare la sostituzione:
+\begin{align*}
+    e^{2x + 3} &= e^3 \sum_{k = 0}^n \frac{(2x + 3 - 3)^k}{k!} + o((2x + 3 - 3)^n) \ per \ x \to 0\\
+    &= e^3 \sum_{k = 0}^n \frac{(2x)^k}{k!} + o ((2x)^n) \ per \ x \to 0
+\end{align*}
+
+\noindent dove, per il teorema "viceversa" di Taylor, $e^3\sum_{k = 0}^n \frac{(2x)^k}{k!}$ è il polinomio di Taylor di $f(x) = e^{2x + 3}$ centrato in $x_0 = 0$, di ordine $n$.\\
+
+\noindent In maniera più semplice, potevamo risolvere anche l'esercizio notando che $e^{2x + 3} = e^{2x} e^3$ e quindi bastava applicare la formula di Taylor per $e^{2x}$ e moltiplicarla a $e^3$.
+
+\section{Punti estremali di una funzione di una variabile}
+\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$. Diremo che $x_0$ è un \textbf{punto di massimo (minimo) locale per $f$} se e solo se:
+\begin{equation*}
+    \exists U_{x_0} \ intorno \ di \ x_0 \ | \ f(x) \leq f(x_0) \quad [f(x) \geq f(x_0)] \qquad \qquad \forall x \in (U_{x_0} \cap A)  
+\end{equation*}
+
+\noindent Diremo che $x_0$ è \textbf{punto di massimo (minimo) globale per $f$} se e solo se $f(x) \leq f(x_0) \quad [f(x) \geq f(x_0)] \qquad \qquad \forall x \in A$ (in altre parole, globale significa che è massimo (minimo) rispetto a tutto il dominio della funzione (e non ad un intervallo, come nel caso di un punto di massimo (minimo) locale)). \\
+
+\noindent Se $x_0$ è \textbf{punto estremale globale} (ossia punto di massimo globale o punto di minimo globale), allora:
+\begin{align*}
+    & f(x_0) = max(Imm(f)) \quad con \ x_0 \ punto \ di \ massimo \ globale \\
+    & f(x_0) = min(Imm(f)) \quad con \ x_0 \ punto \ di \ minimo \ globale \\
+\end{align*}
+
+\noindent\textbf{NB!} Il massimo globale e il minimo globale sono unici, se esistono, perché sono il massimo e il minimo dell'immagine. Quello che può non essere unico è il \textbf{punto} di massimo (minimo) locale. Ad esempio, in $f(x) = \sin(x)$ troviamo diversi punti di massimo ($x = \frac{\pi}{2} + 2k\pi$) e minimo locale ($x = -\frac{\pi}{2} + 2k\pi$).\\
+
+\noindent\textbf{NB!} Se $x_0$ è un punto di massimo/minimo globale allora è anche un punto di massimo/minimo locale. Il viceversa è falso. Ad esempio, prendendo $f(x) = x + 8\sin(x)$, troviamo diversi punti di massimo e minimo locali, ma nessun punto di massimo o minimo globale. Anche $f(x) = x^3 - 6x = x(x^2 - 6)$ ne è un altro esempio. Infatti, è possibile calcolare che il punto di minimo locale è in $-\sqrt{2}$, mentre quello di massimo locale è in $\sqrt{2}$. Non avendo però un'immagine limitata non ha né massimo, né minimo globale.\\
+
+\noindent\textbf{Def:} Diremo \textbf{[valore] massimo (minimo) locale} il valore $f(x_0)$ dove $x_0$ è punto di massimo (minimo) locale. Allo stesso modo, diremo \textbf{[valore] massimo (minimo) globale} il valore $max(Imm(f)) \quad [min(Imm(f))]$, se esiste.\\
+
+\noindent\textbf{ES.} Sia $f(x) = \arctan(x)$. Sappiamo che $Imm(f) = (-\frac{\pi}{2}, \frac{\pi}{2})$, per cui:
+\begin{equation*}
+    sup(Imm(f)) = \frac{\pi}{2} \qquad \qquad inf(Imm(f)) = -\frac{\pi}{2}
+\end{equation*}
+
+\noindent Dato che $\frac{\pi}{2}$ non è il massimo perché non esiste alcun punto reale in cui $\arctan(x)$ valga $\frac{\pi}{2}$, così come $-\frac{\pi}{2}$ non è il minimo, allora $\arctan(x)$ non ha né massimo globale, né minimo globale.
 \end{document}
