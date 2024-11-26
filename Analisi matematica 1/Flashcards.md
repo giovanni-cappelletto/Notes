@@ -118,6 +118,11 @@
 114. Enuncia il teorema "opposto" della formula di Taylor.
 115. Cos'è un punto di massimo (minimo) locale? E uno globale? Cos'è un punto estremale globale?
 116. Che differenza c'è tra un massimo/minimo locale e un punto di massimo/minimo locale?
+117. Com'è definito il bifattoriale?
+118. Quando una successione viene definita massimizzante/minimizzante?
+119. Com'è definita una sottosuccessione (o successione estratta)?
+120. Qual è il requisito per far in modo che $\lim_{n \to +\infty} a_n = l \in \widetilde{\mathbb{R}}$ (dove ${a_n}$ è una successione)?
+121. Che proprietà ha una successione strettamente crescente ${a_n}$?
 
 ## Dimostrazioni
 

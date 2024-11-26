@@ -4969,7 +4969,7 @@ Siano $f, g, h, k: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0$ punto 
     \item se $f(x) = O(g(x))$ per $x \to x_0$, allora $f(x) \cdot h(x) = O(g(x) \cdot h(x)) \qquad \forall h: A \xrightarrow{} \mathbb{R}$.
 \end{enumerate}
 
-\noindent Dimostriamo ora il \textit{punto 1}. Per definizione $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ tale che $|f(x)| \leq C \cdot 1 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Nel primo punto però non si parla di intorno bucato (l'insieme immagine viene preso con $x \in (U_{x_0} \cap A)$), per cui sfruttiamo il teorema della limitatezza locale prendendo come massimo il punto $b = max(C, |f(x_0|)$.\\
+\noindent Dimostriamo ora il \textit{punto 1}. Per definizione $\exists U_{x_0}$ intorno di $x_0$ e $\exists C > 0$ tale che $|f(x)| \leq C \cdot 1 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Nel primo punto però non si parla di intorno bucato (l'insieme immagine viene preso con $x \in (U_{x_0} \cap A)$), per cui sfruttiamo il teorema della limitatezza locale prendendo come massimo il punto $b = max(C, |f(x_0)|)$.\\
 Dimostriamo ora il \textit{punto 2}. Per ipotesi: $\exists U_{x_0}$ intorno di $x_0$, $\exists C > 0$ tale che:
 \begin{equation*}
     |f(x)| \leq C \cdot |g(x)| \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
@@ -5473,7 +5473,138 @@ Dato che $g(t)$ è un esponenziale, sappiamo che esso è uguale a tutte le sue d
 
 \noindent dove, per il teorema "viceversa" di Taylor, $e^3\sum_{k = 0}^n \frac{(2x)^k}{k!}$ è il polinomio di Taylor di $f(x) = e^{2x + 3}$ centrato in $x_0 = 0$, di ordine $n$.\\
 
-\noindent In maniera più semplice, potevamo risolvere anche l'esercizio notando che $e^{2x + 3} = e^{2x} e^3$ e quindi bastava applicare la formula di Taylor per $e^{2x}$ e moltiplicarla a $e^3$.
+\noindent In maniera più semplice, potevamo risolvere anche l'esercizio notando che $e^{2x + 3} = e^{2x} e^3$ e quindi bastava applicare la formula di Taylor per $e^{2x}$ e moltiplicarla a $e^3$.\\
+
+\noindent\textbf{ES.} Calcolare il valore di $\lim_{x \to 0} \frac{\tan(2x) + 5x^3}{\sin(6x) + x^2}$.\\
+Al numeratore abbiamo $\tan(2x)$, che ha ordine di infinitesimo $1$, e $5x^3$, che ha ordine di infinitesimo $3$. Mentre al denominatore, abbiamo $\sin(6x)$, che ha ordine di infinitesimo $1$, e $x^2$, che ha ordine di infinitesimo $2$. Per questo motivo, possiamo applicare il principio di sostituzione degli infinitesimi di ordine superiore:
+\begin{equation*}
+    \lim_{x \to 0} \frac{\tan(2x) + 5x^3}{\sin(6x) + x^2} = \lim_{x \to 0} \frac{\tan(2x)}{\sin(6x)} = \lim_{x \to 0} \frac{\tan(2x)}{2x} \cdot \frac{2x}{6x} \cdot \frac{6x}{\sin(6x)} = \frac{1}{3}
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare il valore di $\lim_{x \to 0^+} \frac{1 - x - \cos(x)}{(\sin(x))^2 + \sqrt{x}}$.\\
+Al denominatore, abbiamo $(\sin(x))^2$, che ha ordine di infinitesimo $2$, e $\sqrt{x}$, che ha ordine di infinitesimo $\frac{1}{2}$. Al numeratore, invece, non sappiamo quale sia l'ordine di infinitesimo. Sviluppiamo quindi il coseno: $\cos(x) = 1 - \frac{x^2}{2} + o(x^3) \ per \ x \to 0$. Otteniamo quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{1 - x - \cos(x)}{(\sin(x))^2 + \sqrt{x}} = \lim_{x \to 0^+} \frac{1 - x - 1 + \frac{x^2}{2} + o(x^3)}{(\sin(x))^2 + \sqrt{x}} = \lim_{x \to 0^+} \frac{-x}{\sqrt{x}} = 0
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare il valore di $\lim_{x \to 0} \frac{\log(1 + x) - \sin(x)}{x^2 + x^5}$.\\
+Al numeratore abbiamo una differenza tra due funzioni di ordine infinitesimo $1$. Sappiamo quindi solo che la differenza avrà un ordine di infinitesimo superiore o uguale a $1$. Mentre al denominatore abbiamo $x^2$, che ha ordine di infinitesimo $2$, e $x^5$, che ha ordine di infinitesimo $5$. Sviluppiamo quindi il logaritmo e il seno:
+$\log(1 + x) = x - \frac{x^2}{2} + o(x^2) \ per \ x \to 0$ e $\sin(x) = x - \frac{x^3}{6} + o(x^4) \ per \ x \to 0$. Quindi:
+\begin{align*}
+    \log(1 + x) - \sin(x) &= x - \frac{x^2}{2} + o(x^2) - \left(x - \frac{x^3}{6} + o(x^4)\right) \\
+    &= -\frac{x^2}{2} + o(x^2) + \frac{x^3}{6} + o(x^4) = -\frac{x^2}{2} + o(x^2)
+\end{align*}
+
+\noindent (tra un passaggio e l'altro $o(x^4)$ rimane positivo perché, per l'algebra degli o-piccolo, si ha che: $-o(x) = o(-x) = o(x)$; alla fine abbiamo preso solo $-\frac{x^2}{2} + o(x^2)$ perché sappiamo che $\frac{x^3}{6}$ è $o(x^2)$). Allora:
+\begin{equation*}
+    \lim_{x \to 0} \frac{\log(1 + x) - \sin(x)}{x^2 + x^5} = \lim_{x \to 0} \frac{-\frac{x^2}{2} + o(x^2)}{x^2} = -\frac{1}{2}
+\end{equation*}
+
+\noindent\textbf{NB!} Si può osservare che:
+\begin{equation*}
+    T_{f', n, x_0}(x) = (T_{f, n + 1, x_0}(x))'
+\end{equation*}
+
+\noindent Prendiamo, ad esempio, $f(x) = \sin(x)$. Si ha che:
+\begin{equation*}
+    T_{\sin(x), 4, x_0}(x) = x - \frac{x^3}{6} + o(x^4) \ per \ x \to 0
+\end{equation*}
+\begin{equation*}
+    \implies T_{\cos(x), 3, x_0}(x) = \left(x - \frac{x^3}{6} + o(x^4)\right)' = 1 - \frac{x^2}{2} + o(x^3) \ per \ x \to 0
+\end{equation*}
+
+\subsubsection{Formula di $\frac{1}{1 + x}$}
+Utilizziamo ora il teorema per trovare la formula di Taylor di $\frac{1}{1 + x} = (\log|x + 1|)'$ (cioè $T_{\frac{1}{1 + x}, n, 0}(x) = (T_{\log|1 + x|, n + 1, 0}(x))'$).\\
+Pertanto:
+\begin{align*}
+    \frac{1}{1 + x} &= \left[\sum_{k = 1}^{n + 1} (-1)^{k - 1} \frac{x^k}{k!}\right]' + o(x^n) \ per \ x \to 0 \\
+    &= \sum_{k = 1}^{n + 1} (-1)^{k - 1} \frac{kx^{k-1}}{k} + o(x^n)  \ per \ x \to 0 \\
+    &= \sum_{j = 0}^{n} (-1)^j x^j + o(x^n)  \ per \ x \to 0 \\
+\end{align*}
+
+\noindent (nell'ultimo passaggio abbiamo applicato la seguente sostituzione $j = k - 1$). \\
+
+\noindent\textbf{NB!} Si fa lo stesso usando $(1 + x)^\alpha$ con $\alpha = -1$, infatti:
+\begin{equation*}
+    \binom{-1}{k} = \frac{1}{k!}((-1)(-2)(-3)...(-1 - k + 1)) = \frac{1}{k!} (-1)^k k! = (-1)^k
+\end{equation*}
+
+\subsubsection{Formula di $\frac{1}{1 - x}$}
+Usando il teorema del "viceversa" di Taylor: 
+\begin{align*}
+    \frac{1}{1 - x} &= \sum_{j = 0}^n (-1)^j (-x)^j + o((-x)^n) \ per \ x \to 0 \\
+    &= \sum_{j = 0}^n (-1)^{2j}x^j + o(x^n) \ per \ x \to 0 \\
+    &= \sum_{j = 0}^n x^j + o(x^n) \ per \ x \to 0 \\
+\end{align*}
+
+\subsubsection{Formula di $\frac{1}{1 + x^2}$}
+Allo stesso modo, è possibile determinare la formula di $\frac{1}{1 + x^2}$:
+\begin{equation*}
+    \frac{1}{1 + x^2} = \sum_{j = 0}^n (-1)^j (x)^{2j} + o(x^{2n + 1}) \ per \ x \to 0
+\end{equation*}
+
+\subsubsection{Formula di $\sqrt{1 + x}$}
+Notiamo che $\sqrt{1 + x} = (1 + x)^\frac{1}{2}$, per cui dobbiamo utilizzare la formula di $(1 + x)^\alpha$:
+\begin{equation*}
+    \binom{\frac{1}{2}}{k} = \frac{1}{k!}\left[\left(\frac{1}{2}\right)\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)...\left(\frac{1}{2} - k + 1\right)\right]
+\end{equation*}
+
+\noindent L'ultimo termine può essere rimaneggiato: $\frac{1}{2} - k + 1 = \frac{3 - 2k}{2} = - \frac{2k - 3}{2}$, per cui:
+\begin{equation*}
+    \binom{\frac{1}{2}}{k} = \frac{1}{k!} \cdot \frac{1}{2^k} \cdot (-1)^{k - 1} \cdot (3 \cdot 5 \cdot 7 \cdot ... \cdot (2k - 3))
+\end{equation*}
+
+\noindent\textbf{Bifattoriale - Def:} 
+\begin{equation*}
+    n!! = \begin{cases}
+        1 \cdot 3 \cdot 5 \cdot 7 \cdot ... \cdot (n - 2)n \qquad se \ n \ dispari \\
+        2 \cdot 4 \cdot 6 \cdot 8 \cdot ... \cdot (n - 2)n \qquad se \ n \ pari \\
+    \end{cases}
+\end{equation*}
+
+\noindent Quindi: 
+\begin{equation*}
+    \sqrt{1 + x} = \sum_{k = 0}^n \frac{(-1)^{k - 1}(2k - 3)!!}{2^k \cdot k!} \cdot x^k + o(x^n) \ per \ x \to 0
+\end{equation*}
+
+\noindent Notando che $(2m)!! = 2^m \cdot m!$ e che $(2k - 3)!! = \frac{(2k - 2)!}{(2k - 2)!!}$ (ovvero che il bifattoriale di un numero dispari altro non è che il fattoriale del numero a cui vengono tolti i numeri pari), possiamo scrivere $2k - 2 = 2(k - 1)$ e quindi:
+\begin{equation*}
+    (2k - 3)!! = \frac{(2k - 2)!}{(2k - 2)!!} = \frac{(2k - 2)!}{2^{k - 1} \cdot (k - 1)!}
+\end{equation*}
+
+\noindent Pertanto:
+\begin{align*}
+    \sqrt{1 + x} &= \sum_{k = 0}^n \frac{(-1)^{k - 1} \cdot (2k - 2)!}{2^k \cdot 2^{k - 1} \cdot (k!) \cdot (k - 1)!} \cdot x^k + o(x^n)  \ per \ x \to 0 \\
+    &= \sum_{k = 0}^n (-1)^{k - 1} \cdot \frac{k}{(k!)^2} \cdot \frac{(2k - 2)!}{2^{2k - 1}} \cdot x^k + o(x^n) \ per \ x \to 0
+\end{align*}
+
+\subsubsection{Formula di $\frac{1}{\sqrt{1 + x}}$}
+Notiamo che $\frac{1}{\sqrt{1 + x}} = (1 + x)^{-\frac{1}{2}}$, per cui dobbiamo ancora una volta utilizzare la formula di $(1 + x)^\alpha$:
+\begin{equation*}
+    \binom{-\frac{1}{2}}{k} = \frac{1}{k!}\left[\left(-\frac{1}{2}\right)\left(-\frac{3}{2}\right)\left(-\frac{5}{2}\right)...\left(-\frac{1}{2} - k + 1\right)\right]
+\end{equation*}
+
+\noindent L'ultimo termine può essere rimaneggiato: $-\frac{1}{2} - k + 1 = \frac{-2k + 1}{2} = -\frac{1}{2}(2k - 1)$, per cui:
+\begin{equation*}
+    \binom{-\frac{1}{2}}{k} = \frac{(-1)^k}{2^k \cdot k!} \cdot (3 \cdot 5 \cdot 7 \cdot 9 \cdot ... \cdot (2k - 1)) = \frac{(-1)^k}{2^k \cdot k!} \cdot (2k - 1)!!
+\end{equation*}
+
+\noindent Quindi:
+\begin{align*}
+    \frac{1}{\sqrt{1 + x}} &= \sum_{k = 0}^n \frac{(-1)^k \cdot (2k - 1)!!}{2^k \cdot k!} \cdot x^k + o (x^n) \ per \ x \to 0 \\
+    &= \sum_{k = 0}^n \frac{(-1)^k \cdot (2k)!}{4^k \cdot (k!)^2} \cdot x^k + o(x^n) \ per \ x \to 0
+\end{align*}
+
+\noindent (tra la prima e la seconda sommatoria si è sfruttato il fatto che $(2k - 1)!! = \frac{(2k)!}{2^k \cdot k!}$).
+
+\subsubsection{Formula di $\frac{1}{\sqrt{1 - x^2}}$}
+Allo stesso modo, si ha che:
+\begin{align*}
+    \frac{1}{\sqrt{1 - x^2}} &= \sum_{k = 0}^n \frac{(-1)^k \cdot (2k - 1)!!}{2^k \cdot k!} \cdot (-x^2)^k + o(x^{2n + 1}) \ per \ x \to 0 \\
+    &= \sum_{k = 0}^n \frac{(2k - 1)!!}{2^k \cdot k!} \cdot x^{2k} + o(x^{2n + 1}) \ per \ x \to 0
+\end{align*}
+
+\noindent (come al solito, abbiamo aggiunto $1$ all'ordine di o-piccolo perché tanto il polinomio in questione non ha termini dispari). 
 
 \section{Punti estremali di una funzione di una variabile}
 \textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$. Diremo che $x_0$ è un \textbf{punto di massimo (minimo) locale per $f$} se e solo se:
@@ -5500,5 +5631,86 @@ Dato che $g(t)$ è un esponenziale, sappiamo che esso è uguale a tutte le sue d
     sup(Imm(f)) = \frac{\pi}{2} \qquad \qquad inf(Imm(f)) = -\frac{\pi}{2}
 \end{equation*}
 
-\noindent Dato che $\frac{\pi}{2}$ non è il massimo perché non esiste alcun punto reale in cui $\arctan(x)$ valga $\frac{\pi}{2}$, così come $-\frac{\pi}{2}$ non è il minimo, allora $\arctan(x)$ non ha né massimo globale, né minimo globale.
+\noindent Dato che $\frac{\pi}{2}$ non è il massimo perché non esiste alcun punto reale in cui $\arctan(x)$ valga $\frac{\pi}{2}$, così come $-\frac{\pi}{2}$ non è il minimo, allora $\arctan(x)$ non ha né massimo globale, né minimo globale.\\
+
+\noindent\textbf{Proposizione:} Sia $A \subset \mathbb{R}$, con $A \neq \varnothing$. Allora esiste $\{x_n\} \subset A \ | \ \lim_{n \to +\infty} x_n = supA$ ed esiste $\{y_n\} \subset A \ | \ \lim_{n \to +\infty} y_n = infA$, dove $x_n$ viene detta \textbf{successione massimizzante} e $y_n$ viene detta \textbf{successione minimizzante}.\\
+
+\noindent\textbf{Sottosuccessione o successione estratta - Def:} Sia $\{a_n\}$ una successione. La successione $\{b_k\}$ è sottosuccessione di $\{a_n\}$ se $b_k$ si ottiene come composizione di $a_n$ e di una funzione \textbf{strettamente crescente} $\varphi: \mathbb{N} \xrightarrow{} \mathbb{N}$. \\
+Quindi dobbiamo avere che: 
+\begin{align*}
+    \mathbb{N} & \xrightarrow{\mathrlap{a}\ } \mathbb{N} & \varphi: \mathbb{N} & \xrightarrow{} \mathbb{N} \\
+    n & \mapsto a_n & k & \mapsto \varphi(k)
+\end{align*}
+
+\noindent con $\varphi$ strettamente crescente. In un'unica riga:
+\begin{align*}
+    & \mathbb{N} \overset{\varphi}{\xrightarrow{}} \mathbb{N} \xrightarrow{\mathrlap{a}\ } \mathbb{R} \\
+    & k \longmapsto  \varphi(k) \longmapsto a_{\varphi(k)} \ (= a(\varphi(k))
+\end{align*}
+
+\noindent\textbf{ES.} Sia $\varphi: \mathbb{N} \xrightarrow{} \mathbb{N}$, che associa $k$ a $2k$. Prendiamo ora la seguente successione:
+\begin{equation*}
+    a_0 \quad a_1 \quad a_2 \quad a_3 \quad a_4 \quad a_5 \quad a_6 \quad a_7 \quad a_8
+\end{equation*}
+
+\noindent Dato che la funzione restituisce solo numeri pari, prendiamo solo gli elementi pari della successione $a_n$:
+\begin{align*}
+    & a_0 && a_2 && a_4 && a_6 && a_8 & \\
+    & a_{\varphi(0)} && a_{\varphi(1)} && a_{\varphi(2)} && a_{\varphi(3)} && a_{\varphi(4)} \\
+    & k = 0 && k = 1 && k = 2 && k = 3 && k = 4 \\
+    & b_0 = a_0  && b_1 = a_2 && b_2 = a_4 && b_3 = a_6 && b_4 = a_8
+\end{align*}
+
+\noindent Otteniamo quindi la sottosuccessione $\{a_{2k}\}$ di $\{a_n\}$.\\
+
+\noindent Analogamente, avremmo potuto prendere $\Psi: \mathbb{N} \xrightarrow{} \mathbb{N}$, che associa $k$ a $2k + 1$. In questo caso, avremmo quindi ottenuto la sottosuccessione $c_k = a_{2k + 1}$.\\
+
+\noindent\textbf{Notazione} Si denota $\varphi(k)$ come $n_k$. Quindi $b_k$ è denotato anche come $a_{n_k}$. In altre parole, scriviamo da quale successione stiamo andando a creare la sottosuccessione e aggiungiamo come pedice la legge di $\varphi$ (nell'esempio di prima, scriviamo $\{a_{2k}\}$).\\
+
+\noindent\textbf{Lemma:} $\{a_n\}$ è strettamente crescente, allora $n_k \geq k \qquad \forall k \in \mathbb{N}$.\\
+
+\noindent\textbf{Proposizione:} $\{a_n\}$ sia una successione. Sia inoltre $l \in \widetilde{\mathbb{R}}$. Allora:
+\begin{equation*}
+    \lim_{n \to +\infty} a_n = l \iff \forall \ sottosuccessione \ \{a_{n_k}\} \ di \ \{a_n\} \ si \ ha \ che \ \lim_{k \to +\infty} a_{n_k} = l
+\end{equation*}
+
+\noindent\textbf{NB!} Possiamo anche usare la precedente proposizione per mostrare che una successione non ammette limite (basta quindi mostrare che esistono due sottosuccessioni che hanno limite diverso). Di seguito si riporta un esempio di ciò. \\
+
+\noindent\textbf{ES.} Sia $a_n = (-1)^n$. Prendiamo allora $a_{2k} = (-1)^{2k} = 1$ e $a_{2k + 1} = (-1)^{2k + 1} = -1$. Queste due sottosuccesioni altro non sono che due funzioni costanti. Per questo motivo, ammettono due limiti diversi e si può concludere quindi che $a_n$ non ammette limite. \\
+
+\noindent\textbf{Corollario:} $\{a_n\}$ sia una successione. Sia inoltre $l \in \widetilde{\mathbb{R}}$. Allora:
+\begin{equation*}
+    \lim_{n \to +\infty} a_n = l \iff \begin{cases}
+        \lim_{k \to +\infty} a_{2k} = l \\
+        \lim_{k \to +\infty} a_{2k + 1} = l
+    \end{cases}
+\end{equation*}
+
+\noindent Dimostriamo ora il precedente corollario. L'implicazione ($\Rightarrow$) risulta immediata dalla proposizione vista precedentemente. Dimostriamo allora la controimplicazione ($\Leftarrow$) nel caso in cui $l \in \mathbb{R}$. Per ipotesi abbiamo che:
+\begin{equation*}
+    \exists K_1 : |a_{2k} - l| < \varepsilon \qquad per \ 2k > K_1
+\end{equation*}
+\begin{equation*}
+    \exists K_2 : |a_{2k + 1} - l| < \varepsilon \qquad per \ 2k + 1 > K_1
+\end{equation*}
+
+\noindent Prendiamo allora $k > max\left(\frac{K_1}{2}, \frac{(K_2 - 1)}{2}\right) \vcentcolon = K$. Per definizione quindi si ha che: $\forall n \geq K + 1$, $(a_n - l) < \varepsilon$.\\
+
+\noindent\textbf{ES.} Sia ora $\{a_n\}$ una successione e sia $l \in \widetilde{\mathbb{R}}$. Allora:
+\begin{equation*}
+    \lim_{n \to +\infty} a_n = l \iff \begin{cases}
+        \lim_{k \to +\infty} a_{3k} = l \\
+        \lim_{k \to +\infty} a_{3k + 1} = l \\
+        \lim_{k \to +\infty} a_{3k + 2} = l
+    \end{cases}
+\end{equation*}
+
+\noindent Come prima, il caso $\Rightarrow$ è dovuto alla proposizione vista precedentemente. Dimostriamo quindi solo la $\Leftarrow$ con $l \in \mathbb{R}$. Per ipotesi abbiamo che:
+\begin{align*}
+    & \exists K_1 : |a_{3k} - l| < \varepsilon \qquad \ \ \ \ per \ 3k > K_1 \\
+    & \exists K_2 : |a_{3k + 1} - l| < \varepsilon \qquad \ per \ 3k + 1 > K_2 \\
+    & \exists K_3 : |a_{3k + 2} - l| < \varepsilon \qquad \ per \ 3k + 2 > K_3
+\end{align*}
+
+\noindent Prendiamo allora $k > max\left(\frac{K_1}{2}, \frac{(K_2 - 1)}{2}, \frac{(K_3 - 2)}{2}\right) \vcentcolon = K$. Per definizione quindi si ha che: $\forall n \geq K + 1$, $(a_n - l) < \varepsilon$.
 \end{document}
