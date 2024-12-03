@@ -5517,7 +5517,7 @@ $\log(1 + x) = x - \frac{x^2}{2} + o(x^2) \ per \ x \to 0$ e $\sin(x) = x - \fra
 Utilizziamo ora il teorema per trovare la formula di Taylor di $\frac{1}{1 + x} = (\log|x + 1|)'$ (cioè $T_{\frac{1}{1 + x}, n, 0}(x) = (T_{\log|1 + x|, n + 1, 0}(x))'$).\\
 Pertanto:
 \begin{align*}
-    \frac{1}{1 + x} &= \left[\sum_{k = 1}^{n + 1} (-1)^{k - 1} \frac{x^k}{k!}\right]' + o(x^n) \ per \ x \to 0 \\
+    \frac{1}{1 + x} &= \left[\sum_{k = 1}^{n + 1} (-1)^{k - 1} \frac{x^k}{k}\right]' + o(x^n) \ per \ x \to 0 \\
     &= \sum_{k = 1}^{n + 1} (-1)^{k - 1} \frac{kx^{k-1}}{k} + o(x^n)  \ per \ x \to 0 \\
     &= \sum_{j = 0}^{n} (-1)^j x^j + o(x^n)  \ per \ x \to 0 \\
 \end{align*}
@@ -5713,4 +5713,127 @@ Quindi dobbiamo avere che:
 \end{align*}
 
 \noindent Prendiamo allora $k > max\left(\frac{K_1}{2}, \frac{(K_2 - 1)}{2}, \frac{(K_3 - 2)}{2}\right) \vcentcolon = K$. Per definizione quindi si ha che: $\forall n \geq K + 1$, $(a_n - l) < \varepsilon$.
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Teorema di Bolzano - Weierstrass}
+Sia $\{a_n\}$ una successione limitata. Allora $\exists \{a_{n_k}\}$ sottosuccessione di $a_n$ tale che $\lim_{k \to +\infty} a_{n_k} = l \in \mathbb{R}$.\\
+
+\noindent\textbf{ES.} Prendiamo:
+\begin{equation*}
+  a_n = \begin{cases}
+    0 \qquad se \ n \ pari \\
+    n \qquad se \ n \ dispari
+  \end{cases}
+\end{equation*}
+
+\noindent In questo caso, notiamo che la successione non è limitata (infatti $sup\{a_n\} = +\infty$), per cui non è possibile applicare il teorema di Bolzano - Weierstrass. Notiamo però che la sottosuccessione di posto pari $a_{2k} = 0 \qquad \forall k \in \mathbb{N}$, mentre la sottosuccessione dispari $a_{2k + 1} = 2k + 1 \implies \lim_{k \to +\infty} a_{2k + 1} = +\infty$. Ciò significa che non poter applicare il teorema di Bolzano - Weierstrass non implica che una sottosuccessione non possa convergere.\\
+
+\noindent\textbf{ES.} Sia $a_n = (-1)^n \implies |a_n| \leq 1 \qquad \forall n \in \mathbb{N}$. Per il teorema di Bolzano - Weierstrass, $\exists a_{n_k}$ sottosuccessione di $a_n$ tale per cui $\exists \lim_{k \to +\infty} a_{n_k} \in \mathbb{R}$.\\
+
+\noindent\textbf{Def:} Sia $\{c_n\}$ una successione. Diremo che:
+\begin{enumerate}
+  \item $c_n$ è \textbf{convergente a $l \in \mathbb{R}$} se e solo se $\lim_{n \to +\infty} c_n = l$;
+  \item $c_n$ è \textbf{positivamente (o negativamente) divergente} se e solo se $\lim_{n \to +\infty} c_n = +\infty \ (-\infty)$;
+  \item $c_n$ è \textbf{indeterminata} se e solo se $\nexists \lim_{n \to +\infty} c_n$.
+\end{enumerate}
+
+\noindent\textbf{NB!} Questa nomenclatura viene anche chiamata \textbf{carattere di convergenza}.
+
+\subsection{Teorema di Weierstrass}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ continua in $[a, b]$. Allora $f$ ha estremi globali (cioè significa che ha un minimo o un massimo globale, per tutti i valori dell'immagine della funzione).\\
+
+\noindent\textbf{NB!} Viene anche detto \textbf{condizione sufficiente di estremalità globale}.
+
+\subsubsection{Dimostrazione: esistenza del minimo globale}
+Sia $\lambda = inf(Imm(f)) = inf\{f(x) : x \in [a, b]\}$. Allora $\exists \{y_n\} \subset Imm(f)$ tale che $\lim_{n \to +\infty} y_n = \lambda$ (in altre parole, $y_n$ è la successione minimizzante).\\
+Siccome $y_n \in Imm(f) \implies \exists x_n \in [a, b] : f(x_n) = y_n$. Dato che $x_n \in [a, b]$, ovvero $a \leq x_n \leq b$, allora $x_n$ è una successione limitata. Per il teorema di Bolzano - Weierstrass, $\exists \{x_{n_k}\}$ sottosuccessione convergente di $x_n$, ossia $\lim_{k \to +\infty} x_{n_k} = l$.\\
+Dato che $a \leq x_n \leq b$, allora anche $a \leq x_{n_k} \leq b$ e, per il teorema del confronto, si ha che $l \in [a, b] = D_f$ (dato che $a \leq x_{n_k} \leq b$ è uguale ad $a \leq l \leq b$ per $k \to +\infty$).\\
+Consideriamo ora la sottosuccessione $\{f(x_{n_k}) : k \in \mathbb{N}\}$ di $\{f(x_n) : n \in \mathbb{N}\} = \{y_n\}$. Siccome $\lim_{n \to +\infty} y_n = \lambda = inf(Imm(f))$, si ha che $\lim_{k \to +\infty} f(x_{n_k}) = \lambda$ (ovvero una sottosuccessione di $y_n$ converge anch'essa a $\lambda$). \\
+Ricordando ora che $\lim_{k \to +\infty} x_{n_k} = l \in [a, b]$, abbiamo che $\lim_{k \to +\infty} f(x_{n_k}) = \lim_{x \to l} f(x) = f(l) \in Imm(f)$ per continuità di $f$.\\
+Per il teorema di unicità del limite, $f(l) = \lambda$ e quindi $\lambda = min(Imm(f))$ (dato che $\lambda$ era già l'estremo inferiore di $Imm(f)$, ma essendo uguale a $f(l)$ (un valore appartenente all'immagine stessa), concludiamo che $\lambda \in Imm(f)$), mentre $l$ è punto di minimo globale per $f$ in $[a, b]$.
+
+\subsubsection{Dimostrazione: esistenza del minimo globale}
+Sia $\Lambda = sup(Imm(f)) = sup\{f(x) : x \in [a, b]\}$. Allora $\exists \{x_n\} \subset Imm(f)$ tale che $\lim_{n \to +\infty} x_n = \Lambda$ (in altre parole, $x_n$ è la successione massimizzante).\\
+Siccome $x_n \in Imm(f) \implies \exists x_p \in [a, b] : f(x_p) = x_n$. Dato che $x_p \in [a, b]$, ovvero $a \leq x_p \leq b$, allora $x_p$ è una successione limitata. Per il teorema di Bolzano - Weierstrass, $\exists \{x_{p_k}\}$ sottosuccessione convergente di $x_{p}$, ossia $\lim_{k \to +\infty} x_{p_k} = l$.\\
+Dato che $a \leq x_p \leq b$, allora anche $a \leq x_{p_k} \leq b$ e, per il teorema del confronto, si ha che $l \in [a, b] = D_f$ (dato che $a \leq x_{p_k} \leq b$ è uguale a $a \leq l \leq b$ per $k \to +\infty$).\\
+Consideriamo ora la sottosuccessione $\{f(x_{p_k}) : k \in \mathbb{N}\}$ di $\{f(x_{p}) : p \in \mathbb{N}\} = \{x_n\}$. Siccome $\lim_{n \to +\infty} x_n = \Lambda = sup(Imm(f))$, si ha che $\lim_{k \to +\infty} f(x) x_{p_k} = \Lambda$ (ovvero una sottosuccessione di $x_n$ converge anch'essa a $\Lambda$).\\
+Ricordando ora che $\lim_{k \to +\infty} x_{p_k} = l \in [a, b]$, abbiamo che $\lim_{k \to +\infty} f(x_{p_k}) = \lim_{x \to l} f(x) = f(l) \in Imm(f)$ per continuità di $f$.\\
+Per il teorema di unicità del limite, $f(l) = \Lambda$ e quindi $\Lambda = max(Imm(f))$ (dato che $\Lambda$ era già l'estremo superiore di $Imm(f)$, ma essendo uguale a $f(l)$ (un valore appartenente all'immagine stessa), concludiamo che $\Lambda \in Imm(f)$), mentre $l$ è un punto di massimo globale per $f$ in $[a, b]$.
+
+\subsection{Teorema di Weierstrass generalizzato}
+Sia $f: \underset{(-\infty, b)}{(a, +\infty)} \xrightarrow{} \mathbb{R}$, $f$ continua in $\underset{(-\infty, b)}{(a, +\infty)}$. Se:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to b^-)}{x \to a^+}} = \underset{(-\infty)}{+\infty} = \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} f(x)
+\end{equation*}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\includegraphics[width=0.9\linewidth]{./images/weierstrassThm.pdf}
+\end{wrapfigure}
+
+\noindent Allora $f$ ammette minimo (massimo) globale. \\
+
+\noindent $\implies$ per il teorema di Weierstrass, $f$ è continua in $[a_1, b_1]$ e ammette minimo $\lambda$ in $(a, b)$ (perché al di fuori di $[a_1, b_1]$, $f > k$). In questo esempio però non possiamo dire nulla sul massimo dell'immagine.\\
+
+\noindent\textbf{NB!} Esistono altre varianti del teorema in $[a, b)$ o in $(a, b]$.
+
+\subsection{Teorema degli zeri}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ continua in $[a, b]$ e $f(a)f(b) < 0$. Allora $\exists \Bar{x} \in (a, b) : f(\Bar{x}) = 0$.
+
+\subsubsection{Dimostrazione - metodo dicotomico}
+Supponiamo che $f(a) < 0 < f(b)$. Sia ora $c = \frac{a + b}{2}$. Calcoliamo $f(c)$:
+\begin{enumerate}
+  \item se $f(c) = 0 \implies$ la tesi è vera con $\Bar{x} = c$;
+  \item se $f(c) < 0 \implies$ pongo $a_1 = c$, $b_1 = b$ e ho che $f(a_1) < 0 < f(b_1)$;
+  \item se $f(c) > 0 \implies$ pongo $a_1 = a$, $b_1 = c$ e ho che $f(a_1) < 0 < f(b_1)$.
+\end{enumerate}
+
+\noindent Nei casi \textit{2.} e \textit{3.}, possiamo ripetere il procedimento su $[a_1, b_1]$: calcoliamo nuovamente $c_1 = \frac{a_1 + b_1}{2}$ e valutiamo $f(c_1)$.\\
+Per induzione, definiamo $a_n, b_n$ con $a \leq a_n < b_n \leq b$ e $f(a_n) < 0 < f(b_n)$. Osserviamo che $b_1 - a_1 = \frac{b - a}{2}$; $b_2 - a_2 = \frac{b_1 - a_1}{2} = \frac{b - a}{4}$; $b_3 - a_3 = \frac{b_2 - a_2}{2} = \frac{b_1 - a_1}{4} = \frac{b - a}{8}$. In generale, $b_n - a_n = \frac{b - a}{2^n}$ con $n \geq 1$ (ovvero notiamo che viene ristretto sempre di più l'intervallo). Inoltre, per costruzione $a_n \leq a_{n + 1}$ (debolmente crescente) e $b_{n + 1} \leq b_n$ (debolmente decrescente).\\
+Per il teorema delle funzioni monotone si ha che:
+\begin{align*}
+  & \lim_{n \to +\infty} a_n = l \in [a, b] \\
+  & \lim_{n \to +\infty} b_n = m \in [a, b]
+\end{align*}
+
+\noindent (sia $l$ che $m$ appartengono a $[a, b]$ per il teorema del confronto dato che $a \leq a_n \leq b$ e $a \leq b_n \leq b$). Quindi $\lim_{n \to +\infty} (b_n - a_n) = m - l$. Ma sappiamo anche che $\lim_{n \to +\infty} (b_n - a_n) = \lim_{n \to +\infty} \frac{b - a}{2^n} = 0$. Ciò significa che $m = l$ per il teorema di unicità del limite.\\
+Ricordiamo ora che $f(a_n) < 0 < f(b_n)$, ma $\lim_{n \to +\infty} f(a_n) = \lim_{n \to +\infty} f(b_n) = f(l)$ perché $f$ è continua in $[a, b]$.\\
+D'altra parte, per il teorema del confronto, da $f(a_n) < 0$ segue che $\lim_{n \to +\infty} f(a_n) \leq 0 \implies f(l) \leq 0$ e, allo stesso modo, da $f(b_n) > 0$ segue che $\lim_{n \to +\infty} f(b_n) \geq 0 \implies f(l) \geq 0$. Pertanto $0 \leq f(l) \leq 0 \implies f(l) = 0$ e quindi, per la tesi, $\Bar{x} = l$.\\
+
+\begin{wrapfigure}{r}{0.3\textwidth}
+\includegraphics[width=0.9\linewidth]{./images/bolzanoThm.pdf}
+\end{wrapfigure}
+
+\noindent\textbf{NB!} Grazie alla monotonia di $a_n, b_n$, abbiamo che $l \in [a_n, b_n] \qquad \forall n \geq 1$. Quindi fissato un $\varepsilon > 0$ e scelto un $n \in \mathbb{N}$ tale per cui $\frac{b - a}{2^n} \ (= b_n - a_n) < \varepsilon$, possiamo approssimare il valore di $l$ a meno di $\varepsilon$.\\
+
+\noindent\textbf{NB!} Può accadere che $f$ abbia più di un punto di azzeramento: 
+
+\subsection{Teorema dei valori intermedi}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ continua in $I$. Allora $Imm(f)$ è un intervallo.\\
+
+\noindent\textbf{Osservazioni:}
+\begin{enumerate}
+  \item se $f$ è continua in $I$ con $I = [a, b]$, per il teorema di Weierstrass l'immagine ammette minimo e massimo: $min(Imm(f)) = \lambda \in \mathbb{R}$ e $max(Imm(f)) = \Lambda \in \mathbb{R}$. Contemporaneamente, per il teorema dei valori intermedi, $Imm(f)$ è invervallo. Si ha quindi che $Imm = [\lambda, \Lambda]$;
+  \item il teorema degli zeri segue dal teorema di Weierstrass e da quello dei valori intermedi: se $f$ è continua in $I = [a, b]$ e $f(a) < 0 < f(b)$, siccome $f(a), f(b) \in Imm(f)$ e $Imm(f)$ è un intervallo, allora $[f(a), f(b)] \subset Imm(f)$. \\
+  Dato che $f(a) < 0 < f(b) \implies 0 \in Imm(f) \implies \exists \Bar{x} \in [a, b] : f(\Bar{x}) = 0$;
+  \item il teorema dei valori intermedi vale solo su intervalli. Ad esempio, preso $D_f: [0, 1] \cup [\frac{3}{2}, 3]$ (che non è un intervallo!) e la funzione:
+  $$f(x) = \begin{cases}
+    x \qquad se \ x \in [0, 1] \\
+    2 \qquad se \ x \in [\frac{3}{2}, 3]
+  \end{cases}$$ 
+  notiamo che $f$ è continua in $D_f$ e $Imm(f) = [0, 1] \cup \{2\}$ che non è un intervallo!
+  \item il teorema di Weierstrass vale su un'unione di intervalli disgiunti con gli estremi compresi.
+\end{enumerate}
+
+\subsection{Condizione necessaria di estremalità locale interna}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$, $x_0$ interno ad $A$, $x_0$ punto di minimo (massimo) locale, $f$ derivabile in $x_0$. Allora $f'(x_0) = 0$.
 \end{document}

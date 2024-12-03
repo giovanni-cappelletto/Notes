@@ -123,6 +123,13 @@
 119. Com'è definita una sottosuccessione (o successione estratta)?
 120. Qual è il requisito per far in modo che $\lim_{n \to +\infty} a_n = l \in \widetilde{\mathbb{R}}$ (dove ${a_n}$ è una successione)?
 121. Che proprietà ha una successione strettamente crescente ${a_n}$?
+122. Enuncia il teorema di Bolzano - Weierstrass.
+123. Cosa significa che una successione converge o diverge? Quando una successione è indeterminata?
+124. Enuncia e dimostra il teorema di Weierstrass (condizione sufficiente di estremalità globale).
+125. Enuncia il teorema di Weierstrass generalizzato.
+126. Enuncia e dimostra il teorema sugli zeri.
+127. Enuncia il teorema dei valori intermedi.
+128. Enuncia e dimostra la condizione necessaria di estremalità locale interna.
 
 ## Dimostrazioni
 
