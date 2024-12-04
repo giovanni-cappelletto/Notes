@@ -5158,7 +5158,7 @@ Inoltre, indicheremo con $f''(x_0)$ il valore:
 \noindent\textbf{NB!} Notazione: $f^{(2)}(x_0) = f''(x_0)$; $f^{(1)}(x_0) = f'(x_0)$; $f^{(0)}(x_0) = f(x_0)$. Analogamente possiamo definire $f^{(3)}(x_0)$, $f^{(4)}(x_0)$, $f^{(n)}(x_0)$.
 
 \section{Formula di Taylor (con resto di Peano)}
-Sia $n \in \mathbb{N}, n \geq 1$, sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. Supponiamo che $f$ sia derivabile $n - 1$ volte in $I$ e tali funzioni derivate siano continue in $I$. Sia inoltre $x_0 \in I$, $x_0$ interno ad $I$ ed $\exists f^{(n)}(x_0)$.\\
+Sia $n \in \mathbb{N}, n \geq 1$, sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. Supponiamo che $f$ sia derivabile $n - 1$ volte in $I$ e tali funzioni derivate siano continue in $I$. Sia inoltre $x_0 \in I$, $x_0$ interno ad $I$ ed $\exists f^{(n)}(x_0)$.\\
 Allora esiste $\omega: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ tale che $\omega$ è continua in $x_0$, $\omega(x_0) = 0$ ed inoltre:
 \begin{equation*}
     f(x) = \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + \omega(x)(x - x_0)^n \qquad \forall x \in I
@@ -5714,17 +5714,6 @@ Quindi dobbiamo avere che:
 
 \noindent Prendiamo allora $k > max\left(\frac{K_1}{2}, \frac{(K_2 - 1)}{2}, \frac{(K_3 - 2)}{2}\right) \vcentcolon = K$. Per definizione quindi si ha che: $\forall n \geq K + 1$, $(a_n - l) < \varepsilon$.
 
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Teorema di Bolzano - Weierstrass}
 Sia $\{a_n\}$ una successione limitata. Allora $\exists \{a_{n_k}\}$ sottosuccessione di $a_n$ tale che $\lim_{k \to +\infty} a_{n_k} = l \in \mathbb{R}$.\\
 
@@ -5836,4 +5825,101 @@ Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ con
 
 \subsection{Condizione necessaria di estremalità locale interna}
 Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$, $x_0$ interno ad $A$, $x_0$ punto di minimo (massimo) locale, $f$ derivabile in $x_0$. Allora $f'(x_0) = 0$.
+
+\subsubsection{Dimostrazione della condizione necessaria di estremalità locale interna}
+Sia $x_0$ punto di minimo locale, ovvero $\exists \delta_1 > 0$ tale che $f(x_0) \leq f(x) \qquad \forall x \in (x_0 - \delta_1, x_0 + \delta_1) \cap A$. Sappiamo poi che $x_0$ è interno ad $A$ quindi $\exists \delta_2 > 0$ tale che $(x_0 - \delta_2, x_0 + \delta_2) \subset A$. Sia quindi $\delta = min(\delta_1, \delta_2)$. \\
+Consideriamo ora $x \in (x_0, x_0 + \delta)$ e abbiamo che:
+\begin{equation*}
+    f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} \geq 0
+\end{equation*}
+
+\noindent (dato che $f(x) - f(x_0) \geq 0$ per ipotesi, mentre $x - x_0 > 0$ perché $x \to x_0^+$).\\
+Consideriamo ora $x \in (x_0 - \delta, x_0)$ e abbiamo che:
+\begin{equation*}
+    f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} \leq 0
+\end{equation*}
+
+\noindent (dato che $f(x) - f(x_0) \geq 0$ per ipotesi, mentre $x - x_0 < 0$ perché $x \to x_0^-$).\\
+Pertanto $0 \leq f'(x_0) \leq 0 \implies f'(x_0) = 0$. \\
+
+\noindent\textbf{NB!} Il "viceversa" è falso, ovvero avere la derivata che si annulla in $x_0$ non implica essere in presenza di un punto di massimo/minimo. Ad esempio, prendiamo $f(x) = x^3$ e calcoliamo la derivata nel punto $x_0 = 0$: $f'(x) = 3x^2 \implies f'(x_0) = 0$. La derivata si annulla, ma $f(x)$ è strettamente crescente per cui non possiede in realtà né massimi, né minimi.\\
+
+\noindent\textbf{NB!} Esistono funzioni che non sono derivabili nei loro minimi: non si può quindi togliere la derivabilità dalle ipotesi del teorema. Ne è un esempio $f(x) = |x|$: $x_0 = 0$ è un punto di minimo globale, ma $\nexists f'(0)$.\\
+
+%\noindent\textbf{NB!} $x_0$ deve essere interno. Ad esempio, presa $f(x) = x$ con $x \in [0, 1]$. Notiamo che $0$ è punto di minimo globale, $1$ è punto di massimo globale e $f'(x) = 1 \qquad \forall x \in [0, 1]$. \\ % da rivedere
+
+\noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$, $x_0$ interno ad $A$ e $f$ sia derivabile in $x_0$. Diremo che $x_0$ è \textbf{punto stazionario (critico) per $f$} se e solo se $f'(x_0) = 0$.
+
+\subsection{Teorema di Rolle}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ continua in $[a, b]$, $f$ derivabile in $(a, b)$ e $f(a) = f(b)$. Allora $\exists \Bar{x} \in (a, b) : f'(\Bar{x}) = 0$.
+
+\subsubsection{Dimostrazione del teorema di Rolle}
+Per il teorema di Weierstrass: $f$ ha punti di minimo globale e punti di massimo globale in $[a, b]$, ovvero $\exists x_1, x_2 \in [a, b] : f(x_1) \leq f(x) \leq f(x_2) \qquad \forall x \in [a, b]$.\\
+Se $x_1 = a$ e $x_2 = b$ (o viceversa), dato che $f(a) = f(b)$ (dove $f(a)$ è il minimo globale e $f(b)$ è il massimo globale), allora $f(x) = f(a) \qquad \forall x \in [a, b] \implies f'(x) = 0 \qquad \forall x \in (a, b)$.\\
+Se almeno uno tra $x_1$ e $x_2$ non è in un estremo di $[a, b]$: sia, ad esempio, $x_1 \in (a, b)$. Allora $x_1$ è interno ad $[a, b]$. Per la condizione necessaria di estremalità locale, si ha che $f'(x_1) = 0$. Nel caso di $x_2 \in (a, b)$ si replica lo stesso ragionamento.
+
+\subsection{Teorema di Lagrange}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ continua in $[a, b]$, $f$ derivabile in $(a, b)$. Allora $\exists \Bar{x} \in (a, b) : f(b) - f(a) = f'(\Bar{x})(b - a)$.
+
+\subsubsection{Dimostrazione del teorema di Lagrange}
+Sia $\varphi(x) = (f(x) - f(a))(b - a) - (f(b) - f(a))(x - a)$: $\varphi$ è continua in $[a, b]$ per composizione di funzioni continue, $\varphi$ è derivabile in $(a, b)$ per composizione di funzioni derivabili. Calcoliamo ora i valori di $\varphi(x)$ agli estremi del dominio:
+\begin{equation*}
+    \varphi(a) = 0 - 0 = 0 \qquad \qquad \varphi(b) = 0 - 0 = 0
+\end{equation*}
+
+\noindent Per il teorema di Rolle: $\exists \Bar{x} \in [a, b] : \varphi'(\Bar{x}) = 0$. Calcoliamo quindi la derivata di $\varphi(x)$:
+\begin{equation*}
+    \varphi'(x) = f'(x)(b - a) - (f(b) - f(a)) \qquad \forall x \in (a, b)
+\end{equation*}
+
+\noindent Sappiamo però che $\varphi'(\Bar{x}) = 0$, quindi $f'(\Bar{x})(b - a) - (f(b) - f(a)) = 0 \iff f'(\Bar{x})(b - a) = f(b) - f(a) \qquad \forall x \in (a, b)$. A livello grafico, significa traslare la retta secante $f(b)$ e $f(a)$ (vedi il link qui sotto). \\
+
+\noindent\textbf{Link:} \href{https://www.geogebra.org/m/z9y24ehK}{Teorema di Lagrange - Interpretazione geometrica}.\\
+
+\noindent\textbf{Corollario 1:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ derivabile in $I$. Allora $f$ è costante in $I \iff f'(x) = 0 \qquad \forall x \in I$.\\
+
+\noindent Dimostriamo ora il corollario qui sopra. L'implicazione ($\Rightarrow$) è ovvia. Passiamo quindi direttamente alla controimplicazione ($\Leftarrow$). Sia $x_0 \in I$ e sia $x \in I$ con $x \neq x_0$. Supponiamo inoltre che $x > x_0$. Allora prendiamo l'intervallo $[x_0, x] \subset I$ ($I$ intervallo).\\
+Dato che $f$ è derivabile in $I$, allora significa che $f$ è continua in $I$ e in tutti i suoi sottoinsiemi, compreso $[x_0, x]$. Inoltre, $f$ è derivabile in $(x_0, x)$. Per il teorema di Lagrange: $\exists \Bar{x} \in [x_0, x] : f(x) - f(x_0) = f'(\Bar{x})(x - x_0) \qquad \forall x \in I \ (x > x_0)$. Ma $\Bar{x} \in (x_0, x) \subset I \implies f'(\Bar{x}) = 0$ per ipotesi. Ciò significa che $f(x) - f(x_0) = 0 \iff f(x) = f(x_0) \qquad \forall x \in I \ (x > x_0)$.\\
+Prendiamo ora $x \in I, x < x_0$, abbiamo quindi preso l'intervallo $[x, x_0]$. Per gli stessi motivi enunciati precedentemente, $f$ è continua in $[x, x_0]$ e derivabile in $(x, x_0)$. Possiamo quindi applicare il teorema di Lagrange: $\exists \Bar{x} \in [x, x_0] : f(x_0) - f(x) = f'(\Bar{x})(x_0 - x) \qquad \forall x \in I \ (x < x_0)$. Ma $\Bar{x} \in [x, x_0] \subset I \implies f'(\Bar{x}) = 0$ per ipotesi. Ciò significa che $f(x_0) - f(x) = 0 \iff f(x_0) = f(x) \qquad \forall x \in I \ (x < x_0)$.\\
+In conclusione, $f$ è costante in $I$.\\
+
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ derivabile in $I$. Allora $f$ è debolmente crescente (decrescente) in $I$ se e solo se $f'(x) \underset{(\leq)}{\geq} 0 \qquad \forall x \in I$.\\
+
+\noindent Dimostriamo il teorema qui sopra. Partiamo dall'implicazione ($\Rightarrow$). Sia $f$ debolmente crescente (decrescente) in $I$. Sia $x_0 \in I$, $x \in I$, $x > x_0$, allora $f(x) \underset{(\leq)}{\geq} f(x_0)$.\\
+Consideriamo ora $f'(x_0)$:
+\begin{equation*}
+    f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{x \to x_0^+} \frac{f(x) - f(x_0)}{x - x_0} \underset{(\leq)}{\geq} 0
+\end{equation*}
+
+\noindent (dato che $f(x) - f(x_0) \underset{(\leq)}{\geq} 0$, mentre $x - x_0 > 0$ perché $x \to x_0^+$).
+
+\noindent Allo stesso modo con $x_0 \in I, x_0 > x$ si ha che:
+\begin{equation*}
+    f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} = \lim_{x \to x_0^-} \frac{f(x) - f(x_0)}{x - x_0} \underset{(\leq)}{\geq} 0
+\end{equation*}
+
+\noindent (dato che $f(x) - f(x_0) \underset{(\geq)}{\leq} 0$, mentre $x - x_0 < 0$ perché $x \to x_0^-$).\\
+Dimostriamo ora la controimplicazione ($\Leftarrow$). Per ipotesi $f'(x) \underset{(\leq)}{\geq} 0 \qquad \forall x \in I$.\\
+Siano ora $x_1, x_2 \in I$ con $x_1 < x_2$. Dato che $f$ è derivabile in $I$, allora $f$ è continua in $I$ e in tutti i suoi sottoinsiemi, compreso $[x_1, x_2]$. Mentre $f$ è derivabile in $(x_1, x_2)$.\\
+Per il teorema di Lagrange, $\exists \Bar{x} \in (x_1, x_2) \subset I$ tale che $f(x_2) - f(x_1) = f'(\Bar{x})(x_2 - x_1) \underset{(\leq)}{\geq} 0$ (dato che $(x_2 - x_1) > 0$ e $f'(\Bar{x}) \underset{(\leq)}{\geq} 0$). Ossia $f(x_2) - f(x_1) \underset{(\leq)}{\geq} 0 \iff f(x_2) \underset{(\leq)}{\geq} f(x_1) \implies f$ è debolmente crescente (decrescente) in $I$.\\
+
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $f$ derivabile in $I$. Se $f'(x) \underset{(<)}{>} 0 \qquad \forall x \in I$ allora $f$ è strettamente crescente (decrescente).\\
+
+\noindent Dimostriamo il teorema qui sopra. Per ipotesi abbiamo che $f'(x) \underset{(<)}{>} 0 \qquad \forall x \in I$. Prendiamo ora $x_1, x_2 \in I$ con $x_1 < x_2 \implies [x_1, x_2] \subset I \implies f$ continua su $[x_1, x_2]$ e $f$ derivabile su $(x_1, x_2)$.\\
+Per il teorema di Lagrange, si ha che $\exists \Bar{x} \in [x_1, x_2] : f(x_2) - f(x_1) = f'(\Bar{x})(x_2 - x_1) \underset{(<)}{>} 0$ (dato che $(x_2 - x_1) > 0$ e $f'(\Bar{x}) \underset{(<)}{>} 0$). Quindi si ha che $f(x_2) \underset{(<)}{>} f(x_1)$.
+
+\subsection{Condizioni sufficienti di estremalità locale}
+Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$, $f$ continua in $I$, $f$ derivabile in $I - \{x_0\}$. Allora:
+\begin{enumerate}
+    \item se $\exists \delta > 0$ tale che $f'(x) \geq 0$ per $x \in (x_0 - \delta, x_0)$ e $f'(x) \leq 0$ per $x \in (x_0, x_0 + \delta)$, segue che $x_0$ è punto di massimo locale;
+    \item se $\exists \delta > 0$ tale che $f'(x) \leq 0$ per $x \in (x_0 - \delta, x_0)$ e $f'(x) \geq 0$ per $x \in (x_0, x_0 + \delta)$, segue che $x_0$ è punto di minimo locale;
+\end{enumerate}
+
+\noindent Dimostriamo ora il punto \textit{1.} qui sopra. Sia $x \in (x_0 - \delta, x_0) \subset I$. Consideriamo quindi $[x, x_0] \implies f$ è continua in $[x, x_0]$ e derivabile in $(x, x_0)$.\\
+Per il teorema di Lagrange, $\exists \Bar{x} \in [x, x_0] : f(x_0) - f(x) = f'(\Bar{x})(x_0 - x) \geq 0$ (dato che $f'(\Bar{x}) \geq 0$ per ipotesi e $(x_0 - x) > 0$). Quindi $f(x_0) \geq f(x) \qquad \forall x \in (x_0 - \delta, x_0)$.\\
+Sia ora $x \in (x_0, x_0 + \delta)$. Consideriamo quindi $[x_0, x] \implies f$ è continua in $[x_0, x]$ e derivabile in $(x_0, x)$. \\
+Per il teorema di Lagrange, $\exists \Bar{x} \in [x_0, x] : f(x) - f(x_0) = f'(\Bar{x})(x - x_0) \leq 0$ (dato che $f'(\Bar{x}) \leq 0$ per ipotesi e $(x - x_0) > 0$). Quindi $f(x_0) \leq f(x) \qquad \forall x \in (x_0, x_0 + \delta)$.\\
+In conclusione, $f(x) \leq f(x_0) \qquad \forall x \in (x_0 - \delta, x_0 + \delta)$.\\
+
+\noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$ è detto \textbf{punto di minimo (massimo) locale forte per $f$} se e solo se $\exists U_{x_0}$ intorno di $x_0$ tale che $f(x) \underset{(<)}{>} f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.
 \end{document}

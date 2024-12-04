@@ -130,6 +130,14 @@
 126. Enuncia e dimostra il teorema sugli zeri.
 127. Enuncia il teorema dei valori intermedi.
 128. Enuncia e dimostra la condizione necessaria di estremalità locale interna.
+129. Quando un punto $x_0$ è detto punto stazionario (o critico) per $f$?
+130. Enuncia e dimostra il teorema di Rolle.
+131. Enuncia e dimostra il teorema di Lagrange.
+132. Quando una funzione è costante in un intervallo? Dimostra questo corollario.
+133. Che valore assume la derivata se la funzione è debolmente crescente (o decrescente)? Dimostra questo teorema.
+134. Quando una funzione è strettamente crescente/decrescente? Dimostra questo teorema.
+135. Enuncia e dimostra la condizione sufficiente di estremalità locale.
+136. Quando un punto di minimo/massimo locale è detto forte?
 
 ## Dimostrazioni
 
