@@ -138,6 +138,12 @@
 134. Quando una funzione è strettamente crescente/decrescente? Dimostra questo teorema.
 135. Enuncia e dimostra la condizione sufficiente di estremalità locale.
 136. Quando un punto di minimo/massimo locale è detto forte?
+137. Enuncia e dimostra le condizioni estremalità del secondo ordine.
+138. Enuncia il teorema delle derivate successive.
+139. Quando una funzione è periodica? Che cos'è il minimo periodo? Una funzione costante ha minimo periodo? Se $f$ ha periodo $p$, qual è il periodo di $f(ux)$?
+140. Definisci gli asintoti verticali, orizzontali e obliqui.
+141. Quando una funzione è convessa e quando concava? Che relazione c'è tra convessità/concavità e derivata seconda?
+142. Cos'è un punto di flesso. Come si comporta la derivata seconda in un punto di flesso?
 
 ## Dimostrazioni
 

@@ -5665,7 +5665,7 @@ Quindi dobbiamo avere che:
 
 \noindent Analogamente, avremmo potuto prendere $\Psi: \mathbb{N} \xrightarrow{} \mathbb{N}$, che associa $k$ a $2k + 1$. In questo caso, avremmo quindi ottenuto la sottosuccessione $c_k = a_{2k + 1}$.\\
 
-\noindent\textbf{Notazione} Si denota $\varphi(k)$ come $n_k$. Quindi $b_k$ è denotato anche come $a_{n_k}$. In altre parole, scriviamo da quale successione stiamo andando a creare la sottosuccessione e aggiungiamo come pedice la legge di $\varphi$ (nell'esempio di prima, scriviamo $\{a_{2k}\}$).\\
+\noindent\textbf{Notazione:} Si denota $\varphi(k)$ come $n_k$. Quindi $b_k$ è denotato anche come $a_{n_k}$. In altre parole, scriviamo da quale successione stiamo andando a creare la sottosuccessione e aggiungiamo come pedice la legge di $\varphi$ (nell'esempio di prima, scriviamo $\{a_{2k}\}$).\\
 
 \noindent\textbf{Lemma:} $\{a_n\}$ è strettamente crescente, allora $n_k \geq k \qquad \forall k \in \mathbb{N}$.\\
 
@@ -5922,4 +5922,117 @@ Per il teorema di Lagrange, $\exists \Bar{x} \in [x_0, x] : f(x) - f(x_0) = f'(\
 In conclusione, $f(x) \leq f(x_0) \qquad \forall x \in (x_0 - \delta, x_0 + \delta)$.\\
 
 \noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$ è detto \textbf{punto di minimo (massimo) locale forte per $f$} se e solo se $\exists U_{x_0}$ intorno di $x_0$ tale che $f(x) \underset{(<)}{>} f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.
+
+\subsection{Condizioni di estremalità del secondo ordine}
+\textbf{Teorema: } Sia $I \subset \mathbb{R}$, $I$ intervallo, $f: I \xrightarrow{} \mathbb{R}$, $x_0 \in I$, $f$ derivabile in $I$ e $\exists f''(x_0)$. Allora:
+\begin{enumerate}[label=\alph*)]
+    \item se $f'(x_0) = 0$ e $f''(x_0) \underset{(<)}{>} 0$ si ha che $x_0$ è punto di minimo (massimo) locale forte (condizione sufficiente di estremalità);
+    \item se $x_0$ è punto di minimo (massimo) locale, con $x_0$ interno ad $I$, allora $f'(x_0) = 0$ e $f''(x_0) \underset{(\leq)}{\geq} 0$ (condizione necessaria di estremalità).
+\end{enumerate}
+
+\subsubsection{Dimostrazione della condizione sufficiente di estremalità del secondo ordine}
+Sia $f''(x_0) \underset{(<)}{>} 0$. Utilizziamo la formula di Taylor di ordine $2$, centrata in $x_0$, con resto di Peano:
+\begin{equation*}
+    f(x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2} \cdot (x - x_0)^2 + o((x - x_0)^2) \ per \ x \to x_0
+\end{equation*}
+
+\noindent $f'(x_0) = 0$ per ipotesi e, se $x \neq x_0$, abbiamo che:
+\begin{equation*}
+    \frac{f(x) - f(x_0)}{(x - x_0)^2} =  \frac{f''(x_0)}{2} + o(1) \ per \ x \to x_0
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+    \lim_{x \to x_0} \frac{f(x) - f(x_0)}{(x - x_0)^2} = \frac{f''(x_0)}{2} \underset{(<)}{>} 0
+\end{equation*}
+
+\noindent Per il teorema di permanenza del segno, $\exists U_{x_0}$ intorno di $x_0$ tale che $\frac{f(x) - f(x_0)}{(x - x_0)^2} \underset{(<)}{>} 0 \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. \\
+Dato che $(x - x_0)^2 > 0$ per $x \neq x_0$, allora $f(x) \underset{(<)}{>} f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, ovvero $x_0$ è punto di minimo (massimo) locale forte.
+
+\subsubsection{Dimostrazione della condizione necessaria di estremalità del secondo ordine}
+Per la condizione necessaria di estremalità locale del primo ordine si ha che $f'(x_0) = 0$. Sia ora $x_0$ punto di minimo locale. Se avessimo $f''(x_0) < 0$, allora potremmo applicare la condizione sufficiente di estremalità del secondo ordine (punto \textit{a)}). Per cui $x_0$ sarebbe punto di massimo locale forte, ovvero $\exists V_{x_0}$ intorno di $x_0 : f(x_0) \leq f(x) \qquad \forall x \in (V_{x_0} \cap A)$.\\
+Se prendiamo però $x \in (V_{x_0} \cap U_{x_0}) \cap A$, allora $f(x) < f(x_0) \leq f(x)$ il che è chiaramente falso. \\
+Dato che siamo giunti ad una contraddizione, significa che la supposizione di partenza $f''(x_0) < 0$ è falsa, ovvero in realtà si ha che $f''(x_0) > 0$.
+
+\subsection{Teorema delle derivate successive}
+Sia $n \in \mathbb{N}, n \geq 1, f \in C^{n - 1}(I), I$ intervallo, $x_0 \in I, x_0$ interno ad $I$ (sono le ipotesi necessarie per applicare Taylor). Supponiamo ora che $\exists f^{(n)}(x_0)$ e che $f^{(k)}(x_0) = 0$ per $k = 1, 2, ..., n - 1$ e che $f^{(n)}(x_0) \underset{(<)}{>} 0$. Allora:
+\begin{enumerate}
+    \item se $n$ è pari, si ha che $x_0$ è punto di minimo (massimo) locale forte a seconda che $f^{(n)}(x_0)$ sia positiva o negativa;
+    \item se $n$ è dispari, $x_0$ non è né punto di massimo locale, né punto di minimo locale.
+\end{enumerate}
+
+\subsection{Periodicità}
+\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e sia $T > 0$. Diremo che $T$ è un periodo per $f$ se e solo se $\forall x \in A$ si ha che $x + T \in A$ ed inoltre $f(x) = f(x + T)$.\\
+Sia $p = min\{T > 0 : T \ periodo \ per \ T\}$, se esiste. $p$ è detto \textbf{minimo periodo di $f$}. Se $f$ ha minimo periodo $p$ è detta \textbf{periodica di periodo $p$} (oppure ha periodo $p$).\\
+
+\noindent\textbf{Osservazioni:} 
+\begin{enumerate}
+    \item Le funzioni costanti ammettono $T$ reale positivo, ma non possiedono un minimo periodo (perché il minimo sarebbe $0$, ma i periodi sono esclusivamente positivi);
+    \item Se $f$ è periodica, allora $D_f$ è illimitato e $f$ non è iniettiva (al contrario, se $D_f$ è limitato, allora $f$ non è periodica);
+    \item Se $f$ ha periodo $p$, allora è sufficiente studiarla in $[x_0, x_0 + p] \cap D_f$, dove $x_0 \in D_f$.\\
+    Inoltre, $\mathcal{G}(f)$ si ottiene traslando da $\mathcal{G}(f/[x_0, x_0 + p])$ mediante traslazione (la scrittura $f/[x_0, x_0 + p]$ significa prendere $f$ e restringere il suo dominio a $[x_0, x_0 + p]$);
+    \item se $f$ ha periodo $p$, allora $f(ux)$ con $u \neq 0$ ha periodo $\frac{p}{|u|}$;
+    \item se $f, g$ hanno periodo $p$, allora $f + g$, $f \cdot g$, $\frac{f}{g}$ con $g \neq 0$ hanno periodo minore o uguale a $p$ (ad esempio, $\sin(x)$ ha periodo $2\pi$, $\cos(x)$ ha periodo $2\pi$, ma $\tan(x) = \frac{\sin(x)}{\cos(x)}$ ha periodo $\pi$);
+    \item se $f$ ha periodo $p$ e $g$ si può comporre con $f$, allora $g \circ f$ ha periodo minore o uguale a $p$.
+\end{enumerate}
+
+\subsection{Asintoti}
+\textbf{Asintoto verticale - Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in \mathbb{R}$ di accumulazione da destra (sinistra) per $A$. La retta di equazione $x = x_0$ è \textbf{asintoto verticale destro (sinistro) per $f$} se e solo se:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to x_0^-)}{x \to x_0^+}} f(x) = \begin{cases}
+        +\infty \\
+        -\infty
+    \end{cases}
+\end{equation*}
+
+\noindent Se $x = x_0$ è sia asintoto verticale destro che sinistro si dice asintoto verticale.\\
+
+\noindent\textbf{Asintoto orizzontale - Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e sia $+\infty \ (-\infty)$ punto di accumulazione per $A$. La retta di equazione $y = l$ è \textbf{asintoto orizzontale a $+\infty \ (-\infty)$ per $f$} se e solo se:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} f(x) = l \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{NB!} Una funzione continua su $\mathbb{R}$ che ammette asintoto orizzontale a $+\infty$ e a $-\infty$ è limitata.\\
+
+\noindent\textbf{Asintoto obliquo - Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e sia $+\infty \ (-\infty)$ un punto di accumulazione per $A$. Diremo che la retta di equazione $y = mx + n$, con $m, n \in \mathbb{R}$ e $m \neq 0$, è \textbf{asintoto obliquo a $+\infty \ (-\infty)$ per $f$} se e solo se:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} (f(x) - (mx + n)) = 0
+\end{equation*}
+
+\noindent (la scrittura precedente può anche essere scritta come $f(x) = mx + n + o(1) \ per \ x \to +\infty \ (-\infty)$). Dalla definizione precedente segue che:
+\begin{equation*}
+    0 = \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} \frac{f(x) - (mx + n)}{x} = \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} \left(\frac{f(x)}{x} - m - \frac{n}{x}\right) \implies \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} \frac{f(x)}{x} = m \in \mathbb{R} - \{0\}
+\end{equation*}
+
+\noindent Inoltre:
+\begin{equation*}
+    \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} (f(x) - mx) = \lim_{\underset{\scriptstyle (x \to -\infty)}{x \to +\infty}} (f(x) - (mx + n) + n) = n \in \mathbb{R}
+\end{equation*}
+
+\noindent (dato che $f(x) - (mx + n) \to 0$ per la definizione di asintoto obliquo).
+
+\subsection{Convessità}
+\textbf{Def:} Sia $I \subset \mathbb{R}$ un intervallo e siano $x_1, x_2 \in I$ con $x_1 < x_2$. Diremo \textbf{combinazione convessa di $x_1, x_2$} la quantità $x(t) = (1 - t)x_1 + tx_2$ al variare di $t \in [0, 1]$ (la precedente quantità è costruita in modo che la somma tra i coefficienti di $x_1$ ($(1 - t)$) e $x_2$ ($t$) dia come risultato $1$).\\
+
+\noindent\textbf{Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. $f$ è \textbf{convessa in $I$} se e solo se $\forall x_1, x_2 \in I$ con $x_1 < x_2$ e $\forall t \in [0, 1]$ si ha che: $f(x(t)) \leq (1 - t)f(x_1) + tf(x_2)$.\\
+Diremo che $f$ è \textbf{concava in $I$} se e solo se $(-f)$ è convessa.\\
+
+\begin{wrapfigure}{l}{0.4\textwidth}
+\includegraphics[width=0.9\linewidth]{./images/convexity.pdf}
+\end{wrapfigure}
+
+\noindent\textbf{Teorema:} Se $f$ è convessa in $I$ allora $f$ è continua nei punti interni a $I$. \\
+
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, derivabile in $I$, $I$ intervallo. Allora le seguenti sono condizioni equivalenti:
+\begin{enumerate}[label=\alph*)]
+    \item $f$ è convessa (concava in $I$); 
+    \item $\forall x_0, x \in I$ si ha che $f(x) \underset{(\leq)}{\geq} f(x_0) + f'(x_0)(x - x_0)$ (ovvero $f$ "sta sopra" alle rette tangenti);
+    \item $f'(x)$ è debolmente crescente (decrescente) in $I$.
+\end{enumerate}
+
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ derivabile due volte in $I$, $I$ intervallo. Allora $f$ è convessa (concava) in $I \iff f'(x) \underset{(\leq)}{\geq} 0 \qquad \forall x \in I$. \\
+
+\noindent\textbf{Punti di flesso - Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}, I$ intervallo. $x_0 \in I$ è \textbf{punto di flesso per $f$} se e solo se $\exists \delta > 0$ tale che $f$ sia convessa in $(x_0 - \delta, x_0)$ e $f$ sia concava in $(x_0, x_0 + \delta)$ o viceversa.\\
+
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. Sia $f$ derivabile due volte in $I$ e sia $x_0$ un punto di flesso interno ad $I$. Allora $f''(x_0) = 0$.
 \end{document}
