@@ -144,6 +144,17 @@
 140. Definisci gli asintoti verticali, orizzontali e obliqui.
 141. Quando una funzione è convessa e quando concava? Che relazione c'è tra convessità/concavità e derivata seconda?
 142. Cos'è un punto di flesso. Come si comporta la derivata seconda in un punto di flesso?
+143. Mostra il carattere di convergenza della serie di Mengoli, della serie alternante, della serie geomtrica di ragione q, della serie armonica generalizzata.
+144. Enuncia e dimostra la condizione necessaria di convergenza di una serie
+145. Qual è la caratteristica di una serie a termini non negativi? Dimostra questa proprietà.
+146. Enuncia e dimostra il criterio del confronto.
+147. Enuncia il teorema di condensazione di Cauchy.
+148. Enuncia il criterio integrale.
+149. Quando una serie viene detta assolutamente convergente?
+150. Enuncia il criterio della radice e il criterio del rapporto.
+151. Quando una funzione è primitiva di un'altra funzione?
+152. Dimostra perché se $F$ è primitiva di $f$, allora tutte le funzioni $F + c$ sono primitive di $f$.
+153. Enuncia e dimostra il teorema di integrazione per parti.
 
 ## Dimostrazioni
 

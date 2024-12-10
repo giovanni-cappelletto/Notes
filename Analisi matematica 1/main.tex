@@ -8,6 +8,7 @@
 \usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{wrapfig}
+\usepackage{array}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -5299,7 +5300,7 @@ Sia $f(x) = \log|x + 1|$. Sappiamo che $D_f = \mathbb{R} - \{-1\}$, quindi $x_0 
 
 \noindent Possiamo notare, quindi, che i valori delle derivate in $0$ corrispondono ai valori del fattoriale, se presi tutti con il segno positivo. Contemporaneamente, i valori positivi sono prodotti dalle derivate dispari, mentre i valori negativi sono il risultato delle derivate pari calcolate in $0$. Infatti, per induzione si può dimostrare che:
 \begin{equation*}
-    f^{(k)}(x) = (-1)^{k - 1}(k - 1)!(1 + x)^{-k} \qquad x \neq 1, \forall k \geq 1 \implies f^{(k)}(0) = (-1)^{k - 1}(k - 1)!
+    f^{(k)}(x) = (-1)^{k - 1}(k - 1)!(1 + x)^{-k} \qquad x \neq -1, \forall k \geq 1 \implies f^{(k)}(0) = (-1)^{k - 1}(k - 1)!
 \end{equation*}
 
 \noindent Pertanto:
@@ -5366,7 +5367,7 @@ Sia $f(x) = (1 + x)^\alpha$ con $\alpha \in \mathbb{R} - \{0\}$ e $x > -1$. Prov
 
 \noindent\textbf{Def:} Con $\alpha \in \mathbb{R} - \{0\}$ è possibile definire il \textbf{binomio generalizzato} come:
 \begin{equation*}
-    \binom{\alpha}{k} \vcentcolon = \frac{\alpha(\alpha - 1)...(\alpha - k + 1)}{k} \ per \ k \geq 1 \qquad \binom{\alpha}{0} = 1
+    \binom{\alpha}{k} \vcentcolon = \frac{\alpha(\alpha - 1)...(\alpha - k + 1)}{k!} \ per \ k \geq 1 \qquad \binom{\alpha}{0} = 1
 \end{equation*}
 
 \noindent Quindi possiamo riscrivere la formula (\ref{eq:18}) come:
@@ -5950,7 +5951,7 @@ Sia $f''(x_0) \underset{(<)}{>} 0$. Utilizziamo la formula di Taylor di ordine $
 Dato che $(x - x_0)^2 > 0$ per $x \neq x_0$, allora $f(x) \underset{(<)}{>} f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$, ovvero $x_0$ è punto di minimo (massimo) locale forte.
 
 \subsubsection{Dimostrazione della condizione necessaria di estremalità del secondo ordine}
-Per la condizione necessaria di estremalità locale del primo ordine si ha che $f'(x_0) = 0$. Sia ora $x_0$ punto di minimo locale. Se avessimo $f''(x_0) < 0$, allora potremmo applicare la condizione sufficiente di estremalità del secondo ordine (punto \textit{a)}). Per cui $x_0$ sarebbe punto di massimo locale forte, ovvero $\exists V_{x_0}$ intorno di $x_0 : f(x_0) \leq f(x) \qquad \forall x \in (V_{x_0} \cap A)$.\\
+Per la condizione necessaria di estremalità locale del primo ordine si ha che $f'(x_0) = 0$. Sia ora $x_0$ punto di minimo locale. Se avessimo $f''(x_0) < 0$, allora potremmo applicare la condizione sufficiente di estremalità del secondo ordine (punto \textit{a)}). Per cui $x_0$ sarebbe punto di massimo locale forte, ovvero $\exists U_{x_0}$ intorno di $x_0 : f(x) < f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Ma in ipotesi abbiamo che $x_0$ è punto di minimo locale, ovvero $\exists V_{x_0}$ intorno di $x_0 : f(x_0) \leq f(x) \qquad \forall x \in (V_{x_0} \cap A)$.\\
 Se prendiamo però $x \in (V_{x_0} \cap U_{x_0}) \cap A$, allora $f(x) < f(x_0) \leq f(x)$ il che è chiaramente falso. \\
 Dato che siamo giunti ad una contraddizione, significa che la supposizione di partenza $f''(x_0) < 0$ è falsa, ovvero in realtà si ha che $f''(x_0) > 0$.
 
@@ -6035,4 +6036,522 @@ Diremo che $f$ è \textbf{concava in $I$} se e solo se $(-f)$ è convessa.\\
 \noindent\textbf{Punti di flesso - Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}, I$ intervallo. $x_0 \in I$ è \textbf{punto di flesso per $f$} se e solo se $\exists \delta > 0$ tale che $f$ sia convessa in $(x_0 - \delta, x_0)$ e $f$ sia concava in $(x_0, x_0 + \delta)$ o viceversa.\\
 
 \noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo. Sia $f$ derivabile due volte in $I$ e sia $x_0$ un punto di flesso interno ad $I$. Allora $f''(x_0) = 0$.
+
+\newpage
+\part{Integrali}
+\section{Funzioni primitive}
+\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$. Diremo che $F: A \xrightarrow{} \mathbb{R}$ è una \textbf{primitiva} di $f$ in $A$ se e solo se $F$ è derivabile in $A$ e $F'(x) = f(x) \qquad \forall x \in A$.\\
+
+\noindent\textbf{Teorema:} Sia $F$ una primitiva di $f$ in $I$, $I \subset \mathbb{R}$, $I$ intervallo. Allora tutte e sole le primitive di $f$ in $I$ sono funzioni $(F + c)$ al variare di $c \in \mathbb{R}$.\\
+
+\noindent Dimostriamo ora il teorema qui sopra. Prendiamo $x \in I$ e consideriamo $(F + c)'(x) = F'(x) + 0 = f(x)$. Ciò significa che $F + c$ è una primitiva di $f$ in $I$.\\
+Supponiamo ora che ci sia un'altra primitiva e verifichiamo che abbia la stessa forma appena trovata. Sia $G$ una primitiva di $f$ in $I$. Consideriamo ora $G(x) - F(x)$ con $x \in I$. Dato che sia $G(x)$, che $F(x)$ sono due funzioni derivabili in $I$, allora $G(x) - F(x)$ è derivabile in $I$ (composizione di funzioni derivabili). Allora possiamo calcolare $(G - F)'(x)$:
+\begin{equation*}
+    (G - F)'(x) = G'(x) - F'(x) = f(x) - f(x) = 0 \qquad \forall x \in I
+\end{equation*}
+
+\noindent Quindi per il teorema di Lagrange: $\exists c \in \mathbb{R} : G(x) - F(x) = c \qquad \forall x \in I$, cioè $G(x) = F(x) + c \qquad \forall x \in I$.\\
+
+\noindent\textbf{ES.} Sia $f(x) = \frac{1}{x}$ con $x \neq 0$. Quindi $D_f: \mathbb{R} - \{0\}$.\\
+Dato che $(\log|x|)' = \frac{1}{x}$, allora $\log|x|$ è una primitiva in $\mathbb{R} - \{0\}$. Dal momento però che $\mathbb{R} - \{0\}$ non è un intervallo (infatti è un'unione di intervalli disgiunti: $(-\infty, 0) \cup (0, +\infty)$), allora non è vero che $\log|x| + c$, con $c \in \mathbb{R}$, sono tutte primitive di $\frac{1}{x}$.\\
+Prendiamo ad esempio: 
+\begin{equation*}
+    G(x) = \begin{cases}
+        \log(x) + 1 & \qquad se \ x > 0\\
+        \log(-x) - 3 & \qquad se \ x < 0\\
+    \end{cases}
+\end{equation*}
+
+\noindent Essendo composizioni di funzioni derivabili, possiamo calcolare $G'(x)$:
+\begin{equation*}
+    G'(x) = \begin{cases}
+        \frac{1}{x} & \qquad se \ x > 0\\
+        \frac{1}{x} & \qquad se \ x < 0\\
+    \end{cases}
+\end{equation*}
+
+\noindent Capiamo quindi che $G(x)$ è primitiva di $\frac{1}{x}$ in $\mathbb{R} - \{0\}$, ma è falso che esista un costante reale $c$ tale che $G(x) - F(x) = c$, infatti:
+\begin{equation*}
+    G(x) - F(x) = \begin{cases*}
+        1 & \qquad se x > 0 \\
+        -3 & \qquad se x < 0
+    \end{cases*}
+\end{equation*}
+
+\noindent ovvero su ogni sottointervallo $G(x) - F(x)$ è costante, ma le costanti tra i due intervalli possono essere diverse (si parla quindi di \textbf{funzione costante a tratti}). In generale, tutte e sole le primitive di $\frac{1}{x}$ in $\mathbb{R} - \{0\}$ sono:
+\begin{equation*}
+    H(x) = \begin{cases}
+        \log(x) + c_1 & \qquad se \ x > 0 \\
+        \log(-x) + c_2 & \qquad se \ x > 0 \\
+    \end{cases}
+\end{equation*}
+
+\noindent al variare di $c_1, c_2 \in \mathbb{R}$.\\
+
+\noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$. Denotiamo l'insieme di tutte le primitive di $f$ in $A$ come:
+\begin{equation*}
+    \int f(x) \ dx = \{F: A \xrightarrow{} \mathbb{R} \ | \ F \ primitiva \ di \ f \ in \ A\}
+\end{equation*}
+
+\noindent Se $A = I$ è un intervallo, allora se $F$ è primitiva di $f$ in $I$:
+\begin{equation*}
+    \int f(x) \ dx = \{F + c \ | \ c \in \mathbb{R}\} = F(x) + c \qquad con \ c \in \mathbb{R}
+\end{equation*}
+
+\noindent dove $c$ viene detta costante arbitraria.\\
+
+\noindent\textbf{NB!} Esistono funzioni le cui primitive non sono esprimibili con le funzioni elementari. Ad esempio:
+\begin{equation*}
+    e^{-x^2} \quad \frac{e^x}{x} \quad \frac{1}{\log x} \quad \frac{\sin x}{x} \quad \frac{\cos x}{x} \quad \cos(x^2) \quad \sin(x^2)
+\end{equation*}
+
+\subsection{Primitive immediate}
+\begin{table}[h]
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{5cm}|}
+    \hline
+    $f(x)$ & $F(x)$ \\ \hline
+    $x^\alpha, \alpha \neq 1$ & $\frac{x^{1 + \alpha}}{1 + \alpha}$ \\ \hline
+    $\frac{1}{x}$ & $\log|x|$ \\ \hline
+    $\frac{1}{1 + x^2}$ & $\arctan x$ \\ \hline
+    $\frac{1}{\sqrt{1 - x^2}}$ & $\arcsin x \quad x \in (-1, 1)$ \\ \hline
+    $-\frac{1}{\sqrt{1 - x^2}}$ & $\arccos x \quad x \in (-1, 1)$ \\ \hline
+    $\cos x$ & $\sin x$ \\ \hline
+    $\sin x$ & $-\cos x$ \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Proprietà delle primitive}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $a, b \in \mathbb{R}$. Se $F, G: A \xrightarrow{} \mathbb{R}$ sono rispettivamente primitive di $f$ e di $g$, allora $aF + bG$ è primitiva di $af + bg$ in $A$.\\
+
+\noindent Dimostriamo ora la proprietà qui sopra enunciata:
+\begin{equation*}
+    (aF + bG)' = aF' + bG' = af + bg
+\end{equation*}
+
+\noindent\textbf{Notazione:} Attraverso gli integrali possiamo scrivere:
+\begin{equation*}
+    \int (af + bg)(x) \ dx = a\int f(x) \ dx + b\int g(x) \ dx
+\end{equation*}
+
+\subsection{Tecniche di integrazione}
+\subsubsection{Integrazione di polinomi}
+Sia $p(x) = \sum_{k = 0}^{n} a_kx^k$, con $x \in \mathbb{R}$, allora:
+\begin{equation*}
+    \int p(x) \ dx = \sum_{k = 0}^n a_k \int x^k \ dx = \sum_{k = 0}^n a_k \left(\frac{x^{k + 1}}{k + 1} + c \right) \qquad \forall c \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare $\int \sin^2(x) \ dx$.\\
+Dato che $\cos(2x) = \cos^2(x) - \sin^2(x) = 1 -2\sin^2(x) \implies \sin^2(x) = \frac{1 - \cos(2x)}{2}$, allora
+\begin{align*}
+    \int \sin^2(x) \ dx &= \int \frac{1 - \cos(2x)}{2} \ dx = \frac{1}{2}\int 1 \ dx - \frac{1}{2} \int \cos(2x) \ dx = \frac{x}{2} - \frac{1}{4} \int 2\cos(2x) \ dx \\
+    &= \frac{x}{2} - \frac{\sin(2x)}{4} + c \qquad \forall c \in \mathbb{R}
+\end{align*}
+
+\noindent\textbf{ES.} Calcolare $\int \cos^2(x) \ dx$.\\
+\begin{align*}
+    \int \cos^2(x) \ dx &= \int 1 - \sin^2(x) \ dx = \int 1 \ dx - \int \sin^2(x) \ dx = x - \left(\frac{x}{2} - \frac{\sin(2x)}{4}\right) + c \\
+    &= \frac{x}{2} + \frac{\sin(2x)}{4} + c \qquad \forall c \in \mathbb{R}
+\end{align*}
+
+\subsubsection{Integrazione per parti}
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, derivabili in $A$. Sia $H$ una primitiva di $f \cdot g'$ in $A$. Allora $f'\cdot g$ ha primitiva in $A$ e una di esse è $f \cdot g - H$ in $A$.
+
+\noindent Dimostriamo ora il precedente teorema:
+\begin{equation*}
+    (f\cdot g - H)' = f'g + fg' - H = f'g + fg' - fg' = f'g
+\end{equation*}
+
+\noindent\textbf{Notazione:} Attraverso gli integrali possiamo scrivere:
+\begin{equation*}
+    \int f'(x)g(x) \ dx = f(x)g(x) - \int f(x)g'(x) \ dx
+\end{equation*}
+
+\noindent dove $f'(x)$ viene detto \textbf{fattore differenziale} e $g(x)$ \textbf{fattore finito}.\\
+
+\noindent\textbf{ES.} Calcolare $\int x^n e^x \ dx$.\\
+Scegliamo $f'(x) = e^x$ e $g(x) = x^n$ e applichiamo l'integrazione per parti:
+\begin{align*}
+    \int x^n e^x \ dx &= x^ne^x - n\int x^{n - 1}e^x \ dx = x^ne^x - n\left[x^{n-1} e^x - (n - 1)\int x^{n - 2} e^x \ dx \right]\\
+    &= x^ne^x - nx^{n - 1}e^x + n(n - 1)\int x^{n - 2} e^x \ dx
+\end{align*}
+
+\noindent Andiamo avanti in questo modo fino a che non ci rimane $\int e^x \ dx$, che sappiamo risolvere (ovvero applichiamo l'integrazione per parti $n$ volte).\\
+
+\noindent\textbf{ES.} Calcolare $\int x^n a^{\alpha x} \ dx$. \\
+Il concetto è lo stesso dell'esercizio precedente, solo che questa volta la derivata di $a^{\alpha x}$, con $\alpha \neq 0$ e $a \neq 1$, equivale a $\frac{1}{\alpha\log(a)}$:
+\begin{equation*}
+    \int x^n a^{\alpha x} \ dx = \frac{1}{\alpha\log(a)} \left(x^na^{\alpha x} - n \int x^{n - 1} a^{\alpha x} \ dx\right)
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare $\int x\cos(x) \ dx$.
+Scegliamo $f'(x) = \cos(x)$ e $g(x) = x$ e applichiamo l'integrazione per parti:
+\begin{equation*}
+    \int x\cos(x) \ dx = x\sin(x) - \int \sin(x) \ dx = x\sin(x) + \cos(x) + c \qquad \forall c \in \mathbb{R}, x \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{Osservazione:} Nel caso in cui si arrivi ad una situazione del tipo:
+\begin{equation*}
+    \int f(x) \ dx = L(x) + k \int f(x) \ dx
+\end{equation*}
+
+\noindent con $x \in I$, allora:
+\begin{equation*}
+    \overset{k \neq 1}{\iff} (1 - k) \int f(x) \ dx = L(x)  \implies \int f(x) \ dx = \frac{L(x)}{1 - k} + c \qquad \forall c \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare $\int e^x\sin(x) \ dx$.
+Scegliamo $f'(x) = e^x$ e $g(x) = \sin(x)$ e applichiamo l'integrazione per parti:
+\begin{align*}
+    \int e^x\sin(x) \ dx &= e^x\sin(x) - \int e^x\cos(x) \ dx = e^x \sin(x) - \left(e^x\cos(x) + \int e^x\sin(x) \ dx\right) \\
+    &= e^x\sin(x) - e^x\cos(x) - \int e^x\sin(x) \ dx
+\end{align*}
+\begin{equation*}
+    \implies 2 \int e^x\sin(x) = e^x\sin(x) - e^x\cos(x) + c\iff \int e^x\sin(x) = \frac{e^x\sin(x) - e^x\cos(x)}{2} + c \qquad \forall c \in \mathbb{R}
+\end{equation*}
+
+\newpage
+\part{Serie numeriche}
+Vogliamo dare significato a $\sum_{k = 0}^{+\infty} a_k$, dove $a_k$ è una successione, $a_k \in \mathbb{R}, k \in \mathbb{N}$. Chiamiamo \textbf{serie} la quantità $\sum_{k = 0}^{+\infty} a_k$ e $a_k$ è detto \textbf{termine generale della serie}. \\
+
+\noindent\textbf{Def:} $\forall n \in \mathbb{N}$ chiamiamo \textbf{somma parziale della serie} la quantità $s_n \vcentcolon = \sum_{k = 0}^n a_k$.\\
+Si noti che $s_n$ è una successione:
+\begin{align*}
+    s_n: \ & \mathbb{N} \xrightarrow{} \mathbb{R} \\
+    & n \longmapsto \sum_{k = 0}^n a_k
+\end{align*}
+
+\noindent\textbf{Def:} Sia $a_k$ una successione e $s_n$ la successione delle somme parziali. Se $\lim_{n \to +\infty} s_n = s \in \widetilde{\mathbb{R}}$, allora:
+\begin{enumerate}
+    \item $s \in \mathbb{R}$, diremo che la serie $\sum_{k = 0}^{+ \infty} a_k$ è convergente a $s \ (\sum_{k = 0}^{+\infty} a_k = s)$; tale valore $s$ è detto \textbf{somma delle serie};
+    \item $s \in \{+\infty, -\infty\}$, diremo che la serie $\sum_{k = 0}^{+\infty} a_k$ è divergente;
+    \item nel caso in cui $\nexists \lim_{n \to +\infty} s_n$, allora $\sum_{k = 0}^{+\infty} a_k$ è detta indeterminata.
+\end{enumerate}
+
+\noindent\textbf{NB!} Si chiama \textbf{carattere di convergenza di una serie} il suo essere convergente, divergente o indeterminata.
+
+\section{Esempi di serie}
+\subsection{Serie di Mengoli}
+\begin{equation*}
+    \sum_{k = 1}^{+\infty} \frac{1}{k(k + 1)}
+\end{equation*}
+
+\noindent Sia $n \geq 1$, allora:
+\begin{equation*}
+    s_n = \frac{1}{1 \cdot 2} + \frac{1}{2 \cdot 3} + \frac{1}{3 \cdot 4} + \ ... \ + \frac{1}{n(n + 1)}
+\end{equation*}
+
+\noindent Dato che $\frac{1}{k(k + 1)} = \frac{1}{k} - \frac{1}{k + 1}$, allora:
+\begin{equation*}
+    s_n = \left(1 - \frac{1}{2}\right) + \left(\frac{1}{2} - \frac{1}{3}\right) + \left(\frac{1}{3} - \frac{1}{4}\right) + \ ... \ + \left(\frac{1}{n} - \frac{1}{n + 1}\right) = 1 - \frac{1}{n + 1}
+\end{equation*}
+
+\noindent (dato che, a parte $1$ e $-\frac{1}{n + 1}$, tutti gli altri termini si semplificano) e quindi $\lim_{n \to +\infty} s_n = 1 \implies \sum_{k = 1}^{+\infty} \frac{1}{k(k + 1)} = 1$.
+
+\subsection{Serie alternante}
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} (-1)^k
+\end{equation*}
+
+\noindent ovvero:
+\begin{equation*}
+    a_k = (-1)^k = \begin{cases}
+        1 \qquad & se \ k \ pari \\
+        -1 \qquad & se \ k \ dispari
+    \end{cases} 
+\end{equation*}
+
+\noindent\textbf{NB!} In generale, $s_n = s_{n - 1} + a_n = \sum_{k = 0}^{n - 1} a_k + a_n$.\\
+
+\noindent Sia $s_n = \sum_{k = 0}^n a_k$, allora:
+\begin{align*}
+    & s_0 = (-1)^0 = 1 \\
+    & s_1 = s_0 + a_1 = 1 + (-1)^1 = 0 \\
+    & s_2 = s_1 + a_2 = 0 + (-1)^2 = 1 \\
+    & s_3 = s_2 + a_3 = 1 + (-1)^3 = 0
+\end{align*}
+
+\noindent Per induzione, si prova che $s_{2n} = 1$ e $s_{2n + 1} = 0 \qquad \forall n \in \mathbb{N}$. Pertanto, $\sum_{k = 0}^{+\infty} (-1)^k$ è indeterminata. 
+
+\subsection{Serie geometrica di ragione $q$}
+Sia $q \in \mathbb{R}$ (ragione della serie). Consideriamo ora:
+\begin{equation*}
+    s_n = \sum_{k = 0}^n q^k \vcentcolon = 1 + q + q^2 + \ ... \ + q^n
+\end{equation*}
+
+\noindent\textbf{Teorema:} $\sum_{k = 0}^{n} q_k$ converge $\iff |q| < 1$. In tal caso, $\sum_{k = 0}^{+\infty} q^k = \frac{1}{1 - q}$.\\
+
+\noindent Dimostriamo il teorema qui sopra. Sia $q = 1$, allora $s_n = n + 1 \qquad \forall n \in \mathbb{N}$ e $\lim_{n \to +\infty} s_n = +\infty \implies \sum_{k = 0}^{+\infty} q^k$ diverge. \\
+Se $q = 0$, allora $\sum_{k = 0}^n q^k = 1$ e quindi converge. \\
+Se $q \neq 1$, nella prima lezione, abbiamo provato che $s_n = \sum_{k = 0}^n q^k = \frac{1 - q^{n + 1}}{1 - q}$. Ora dato che il denominatore $1 - q$ non dipende da $n$, allora per capire a cosa tende il $\lim_{n \to +\infty} s_n$ bisogna capire a cosa tende il numeratore. Se $q > 0$ con $q \neq 1$, allora:
+\begin{equation*}
+    \lim_{m \to +\infty} q^m = \lim_{m \to +\infty} e^{m\log(q)} = \begin{cases}
+        +\infty \qquad & se \ q > 1 \\
+        0 \qquad & se \ 0 < q < 1
+    \end{cases}
+\end{equation*}
+
+\noindent e quindi $\sum_{k = 0}^{+\infty} q^k$ diverge se $q > 1$, mentre converge a $\frac{1}{1 - q}$ se $0 < q < 1$ (abbiamo ottenuto questo valore sostituendo $0$ a $q^{n + 1}$ nel numeratore).\\
+Se $q = -1$, $s_n$ è la serie alternante e quindi è indeterminata.\\
+Se $q < -1$, allora, dato che $q = -|q|$, si ha che:
+\begin{equation*}
+    \lim_{m \to +\infty} q^m = \lim_{m \to +\infty} (-1)^m \cdot |q|^m
+\end{equation*}
+
+\noindent Ora $\lim_{m \to +\infty} |q|^m = +\infty$, mentre $-1$ cambia segno a seconda che $m$ sia pari o dispari. Per questo motivo, il limite non esiste. Quindi $\sum_{k = 0}^{+\infty} q^k$ è indeterminata.\\
+Se $-1 < q < 0$, allora, per lo stesso motivo di prima, si ha che:
+\begin{equation*}
+    \lim_{m \to +\infty} q^m = \lim_{m \to +\infty} (-1)^m \cdot |q|^m = 0
+\end{equation*}
+
+\noindent (dato che $\lim_{m \to +\infty} |q|^m = 0$. Ciò significa che il numeratore tende a $1$, per cui si ha che: $\lim_{m \to +\infty} s_n = \frac{1}{1 - q}$.
+
+\subsection{Esercizio 27}
+Dimostrare che $0.\Bar{9} = 1$.\\
+Sappiamo che possiamo riscrivere $0.\Bar{9}$ come:
+\begin{equation*}
+    0.\Bar{9} = 0 + \frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \ ... \ + \frac{9}{10^k} + \ ...
+\end{equation*}
+
+\noindent Per cui:
+\begin{equation*}
+    a_k = \begin{cases}
+    0 \qquad & se \ k = 0 \\
+    \frac{9}{10^k} \qquad & se \ k \geq 1, k \in \mathbb{N}
+\end{cases}
+\end{equation*}
+
+\noindent Scriviamo ora la somma parziale della serie, cercando di ricondurci ad una serie nota (serie geometrica):
+\begin{align*}
+    s_n &= \sum_{k = 0}^n a_k = 0 + \frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \ ... \ + \frac{9}{10^n} \\
+    &= 9\left(\frac{1}{10} + \frac{1}{100} + \frac{1}{1000} + \ ... \ + \frac{1}{10^n} \right) \\
+    &= 9 \cdot \sum_{k = 1}^n \frac{1}{10^k} = 9 \left(\sum_{k = 0}^n \frac{1}{10^k} - 1\right)
+\end{align*}
+
+\noindent Dato che $\sum_{k = 0}^n \frac{1}{10^k}$ è una serie geometrica in cui la ragione $q = \frac{1}{10}$, allora per $n \to +\infty$, essa tende a $\frac{1}{1 - (\frac{1}{10})} = \frac{10}{9}$. Sottraendo $1$ e moltiplicando il tutto per $9$, otteniamo che $\sum_{k = 0}^{+\infty} \to 1$.\\
+
+\noindent\textbf{NB!} Se $|q| < 1$, allora $\sum_{k = m}^{+\infty} q^k = \frac{q^m}{1 - q}$. Infatti, con $n > m$, si ha che:
+\begin{equation*}
+    \sum_{k = m}^{n} q^k = \sum_{k = 0}^{n} q^k - \sum_{k = 0}^{m - 1} q^k = \frac{1 - q^{n + 1}}{1 - q} - \frac{1 - q^m}{1 - q} = \frac{q^m - q^{n + 1}}{1 - q} \overset{n \to +\infty}{\underset{|q| < 1}{\longrightarrow}} \frac{q^m}{1 - q}
+\end{equation*}
+
+\section{Alcune proprietà e teoremi delle serie}
+\begin{enumerate}
+    \item Se $\exists N \in \mathbb{N}$ tale che $a_k = b_k \qquad \forall k > N$, allora $\sum_{k = 0}^{+\infty} a_k$ e $\sum_{k = 0}^{+\infty} b_k$ hanno lo stesso carattere di convergenza;
+    \item Se $\sum_{k = 0}^{+\infty} a_k$ e $\sum_{k = 0}^{+\infty} b_k$ sono serie convergenti a $A \in \mathbb{R}$ e $B \in \mathbb{R}$, allora $\sum_{k = 0}^{+\infty} (a_k + b_k)$ converge ad $A + B$;
+    \item se $\sum_{k = 0}^{+\infty} a_k$ è convergente ad $A$ e $C \in \mathbb{R}$, allora $\sum_{k = 0}^{+\infty} (C \cdot a_k)$ converge a $C \cdot A$.
+\end{enumerate}
+
+\subsubsection{Dimostrazione del punto 2.}
+Sia $A_n = \sum_{k = 0}^n a_k$, $B_n = \sum_{k = 0}^n b_k$ e $C_n = \sum_{k = 0}^n (a_k + b_k)$. Allora per il teorema del limite della somma si ha che $C_n = A_n + B_n \qquad \forall n \in \mathbb{N}$.
+
+\subsubsection{Dimostrazione del punto 3.}
+Come nel punto \textit{2.}, sia $A_n = \sum_{k = 0}^n a_k$ e $C_n = \sum_{k = 0}^n (c \cdot a_k)$ con $c \in \mathbb{R}$. Allora per il teorema del limite del prodotto segue che $C_n = c A_n \qquad \forall n \in \mathbb{N}$.
+
+\subsection{Teorema - condizione necessaria di convergenza di una serie}
+Se $\sum_{k = 0}^{+\infty} a_k$ converge, allora $\lim_{k \to +\infty} a_k = 0$.
+
+\subsubsection{Dimostrazione della condizione necessaria di convergenza di una serie}
+Sia $A_n = \sum_{k = 0}^n a_k$ con $n \in \mathbb{N}$. Per ipotesi, sappiamo che $\exists A \in \mathbb{R} : \lim_{n \to +\infty} A_n = A$. Inoltre, si ha che:
+\begin{equation*}
+    A_n - A_{n - 1} = \sum_{k = 0}^n a_k - \sum_{k = 0}^{n - 1} a_k = a_n
+\end{equation*}
+
+\noindent Ma sappiamo anche che:
+\begin{equation*}
+    \lim_{n \to +\infty} (A_n - A_{n - 1}) = \lim_{n \to +\infty} A_n - \lim_{n \to +\infty} A_{n - 1} = A - A = 0
+\end{equation*}
+
+\noindent Allora $\lim_{n \to +\infty} a_n = 0$.\\
+
+\noindent\textbf{ES.} Prendiamo la \textbf{serie armonica} $\sum_{k = 1}^{+\infty} \frac{1}{k}$ e mostriamo che essa diverge.\\
+Per contraddizione, assumiamo che $\sum_{k = 1}^{+\infty} \frac{1}{k}$ converga. Allora $s_{2n} = \sum_{k = 1}^{2n} \frac{1}{k} \to s \in \mathbb{R}$ e $s_n = \sum_{k = 1}^n \frac{1}{k} \to s \in \mathbb{R}$ (perché $s_{2n}$ è sottosuccessione di $s_n$ e quindi se $s_n$ converge a $s$, allora anche $s_{2n}$ converge a $s$). Quindi $\lim_{n \to +\infty} (s_{2n} - s_n) = 0$, ma:
+\begin{equation*}
+    s_{2n} - s_n = \sum_{k = n + 1}^{2n} \frac{1}{k} = \frac{1}{n + 1} + \frac{1}{n + 2} + \ ... \ + \frac{1}{2n}
+\end{equation*}
+
+\noindent Ora dato che $\frac{1}{n + 1} \geq \frac{1}{2n}$, così come $\frac{1}{n + 2} \geq \frac{1}{2n}$ e così via, allora:
+\begin{equation*}
+    0 = s_{2n} - s_n = \sum_{k = n + 1}^{2n} \frac{1}{k} \geq \frac{1}{2n} \cdot n = \frac{1}{2}
+\end{equation*}
+
+\noindent Arriviamo quindi ad una contraddizione. Ciò significa che l'ipotesi assunta in partenza è falsa, ovvero $\sum_{k = 1}^{+\infty} \frac{1}{k}$ diverge o è indeterminata. Come vedremo nel prossimo teorema, essendo $\frac{1}{k} > 0 \qquad \forall k \geq 1 \implies \sum_{k = 1}^{+\infty} \frac{1}{k}$ diverge.
+
+\subsection{Serie a termini non negativi}
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} a_k \quad a_k \geq 0
+\end{equation*}
+
+\noindent\textbf{Teorema: } Se $a_k \geq 0 \qquad \forall k \in \mathbb{N} \implies \sum_{k = 0}^{+\infty} a_k$ converge o diverge.\\
+
+\noindent Dimostriamo ora il precedente teorema. Se $a_n \geq 0$ con $n \in \mathbb{N}$, allora:
+\begin{equation*}
+    s_{n + 1} = \sum_{k = 0}^{n + 1} a_k = \sum_{k = 0}^n a_k + a_{n + 1} \geq s_n
+\end{equation*}
+
+\noindent (dato che $\sum_{k = 0}^n a_k = s_n$, mentre $a_{n + 1} \geq 0$), ossia la successione delle somme parziali è debolmente crescente. Quindi per il teorema sui limiti delle funzioni monotone:
+\begin{equation*}
+    \lim_{n \to +\infty} s_n = sup\{s_n : n \in \mathbb{N}\} = \begin{cases}
+        l \in \mathbb{R} & \quad converge \\
+        +\infty & \quad diverge
+    \end{cases}
+\end{equation*}
+
+\subsection{Criterio del confronto}
+Siano $0 \leq a_k \leq b_k \qquad \forall k \in \mathbb{N}$. Allora:
+\begin{enumerate}
+    \item se $\sum_{k = 0}^{+\infty} a_k$ diverge $\implies \sum_{k = 0}^{+\infty} b_k$ diverge anch'essa;
+    \item se $\sum_{k = 0}^{+\infty} b_k$ converge $\implies \sum_{k = 0}^{+\infty} a_k$ converge anch'essa.
+\end{enumerate}
+
+\subsubsection{Dimostrazione del punto 1.}
+Notiamo che:
+\begin{equation*}
+    B_n \vcentcolon = \sum_{k = 0}^n b_k \geq \sum_{k = 0}^n a_k = \vcentcolon A_n \geq 0
+\end{equation*}
+
+\noindent Dato che per ipotesi $\lim_{n \to +\infty} A_n = +\infty$, allora per il teorema del confronto $\lim_{n \to +\infty} B_n = +\infty$, ovvero $B_n$ diverge. 
+
+\subsubsection{Dimostrazione del punto 2.}
+Supponiamo che $\lim_{n \to +\infty} B_n = B \in \mathbb{R}$. Quindi $\{B_n : n \in \mathbb{N}\}$ è superiormente limitato. Sappiamo poi che $0 \leq A_n \leq B_n \qquad \forall n \in \mathbb{N}$. Ciò significa che $\{A_n : n \in \mathbb{N}\}$ è anch'esso superiormente limitato. Siccome $a_k \geq 0$, allora $\lim_{n \to +\infty} A_n = sup\{A_n : n \in \mathbb{N}\} \in \mathbb{R}$ per il teorema sui limiti delle funzioni monotone. Quindi $\sum_{k = 0}^{+\infty} a_k$ converge anch'essa.
+
+\subsection{Criterio di condensazione (Cauchy)}
+Sia $0 \leq a_{k + 1} \leq a_k \qquad \forall k \in \mathbb{N}$. Allora $\sum_{k = 0}^{+\infty} a_k$ converge $\iff \sum_{m = 0}^{+\infty} 2^m a_{2^m}$ converge.
+
+\subsubsection{Corollario - Serie armonica generalizzata}
+\begin{equation*}
+    \sum_{n = 1}^{+\infty} \frac{1}{n^\alpha} \ converge \iff \alpha > 1 \qquad con \ \alpha \in \mathbb{R}
+\end{equation*}
+
+\noindent Dimostriamo ora questo corollario. Sia $a_n = \frac{1}{n^\alpha}$. Notiamo che $a_n \to 0$ se e solo se $\alpha > 0$. Inoltre, $a_{2^j} = 2^{-j\alpha}$ e quindi per il criterio di condensazione va studiata:
+\begin{equation*}
+    \sum_{j = 1}^{+\infty}2^j 2^{-j\alpha} = \sum_{j = 1}^{+\infty} 2^{j(1 - \alpha)}
+\end{equation*}
+
+\noindent Quest'ultima è una serie geometrica di ragione $0 < q = 2^{1 - \alpha}$ e, come sappiamo da prima, converge se e solo se $2^{1 - \alpha} < 1$, cioè se e solo se $\alpha > 1$.\\
+
+\noindent\textbf{Corollario:}
+\begin{equation*}
+    \sum_{k = 2}^{+\infty} \frac{1}{k(\log(k))^\gamma} \ converge \iff \gamma > 1
+\end{equation*}
+
+\noindent Dimostriamo il corollario qui sopra. Se $\gamma \leq 0$, allora potremmo riscrivere $a_k$ come $\frac{(\log(k))^\gamma}{k}$, che è sicuramente maggiore o uguale a $\frac{1}{k}$. Per cui, per il teorema del confronto, la serie diverge.\\
+Sia $\gamma > 0$, allora:
+\begin{equation*}
+    a_k = \frac{1}{k(\log(k))^\gamma} \implies a_{2^j} = \frac{1}{2^j(j\log2)^\gamma} \implies a_{2^j} = \frac{1}{j^\gamma2^j(\log2)^\gamma}
+\end{equation*}
+
+\noindent Inoltre, $2^j a_{2^j} = \frac{1}{j^\gamma(\log2)^\gamma}$. Ora dato che $(\log2)^\gamma$ è una costante, la convergenza/divergenza della serie dipende solo da $\frac{1}{j^\gamma}$, che è una serie armonica generalizzata, ovvero converge solo se $\gamma > 1$.
+
+\subsection{Criterio integrale}
+Sia $f: [1, +\infty) \xrightarrow{} \mathbb{R}, f(x) \geq 0 \qquad \forall x \in [1, +\infty)$. Sia $f$ debolmente decrescente in $[1, +\infty)$. Allora:
+\begin{equation*}
+    \sum_{k = 1}^{+\infty} f(k) \ converge \iff \int_1^{+\infty} f(x) \ dx \ \ converge
+\end{equation*}
+
+\subsection{Serie a termini di segno qualunque}
+\textbf{Def:} Sia $a_k \in \mathbb{R} \qquad \forall k \in \mathbb{N}$ una successione. Diremo che $\sum_{k = 0}^{+\infty} a_k$ è \textbf{assolutamente convergente} se e solo se $\sum_{k = 0}^{+\infty} |a_k|$ converge.\\
+
+\noindent\textbf{Teorema:} Sia $a_k \in \mathbb{R} \qquad \forall k \in \mathbb{N}$. Se $\sum_{k = 0}^{+\infty} a_k$ è assolutamente convergente, allora $\sum_{k = 0}^{+\infty} a_k$ è convergente.\\
+
+\noindent\textbf{NB!} $\sum_{k = 0}^{+\infty} \frac{(-1)^k}{k}$ è convergente (lo vederemo dopo), ma $\sum_{k = 0}^{+\infty} \frac{1}{k}$ diverge. Ciò significa che il viceversa del teorema non vale.
+
+\subsection{Criterio della radice (Cauchy)}
+Sia $a_k \in \mathbb{R} \qquad \forall k \in \mathbb{N}$. Se $\lim_{k \to +\infty} \sqrt[k]{|a_k|} = l < 1$, allora $\sum_{k = 0}^{+\infty} a_k$ è assolutamente convergente. Se $l > 1$, allora $\sum_{k = 0}^{+\infty} |a_k|$ è divergente.\\
+
+\noindent\textbf{NB!} Se $l = 1$ non si può concludere. Ad esempio, $\sum_{k = 0}^{+\infty} \frac{1}{k}$ diverge, $\sum_{k = 0}^{+\infty} \frac{1}{k^2}$ converge.
+
+\subsection{Criterio del rapporto (D'Alembert)}
+Sia $a_k \in \mathbb{R} - \{0\} \qquad \forall k \in \mathbb{N}$. Se $\lim_{k \to +\infty} |\frac{a_{k + 1}}{a_k}| = l < 1$ allora $\sum_{k = 0}^{+\infty} a_k$ è assolutamente convergente. Se $l > 1$, allora $\sum_{k = 0}^{+\infty} |a_k|$ è divergente.\\
+
+\noindent\textbf{NB!} Se $l = 1$ non si può concludere. Ad esempio, $\sum_{k = 0}^{+\infty} \frac{1}{k}$ diverge, $\sum_{k = 0}^{+\infty} \frac{1}{k^2}$ converge.
+
+\subsection{Esempi}
+\subsubsection{Esempio 1}
+Calcolare il carattere di convergenza della seguente serie: 
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} \frac{2^k}{k!}
+\end{equation*}
+
+\noindent Notiamo subito che $a_k = \frac{2^k}{k!} \geq 0$ e che $\lim_{n \to +\infty} \frac{2^k}{k!} = 0$ (vale quindi la condizione necessaria di convergenza delle serie, ovvero sappiamo che la serie non è indeterminata, ma non possiamo concludere se essa è convergente o divergente). Applichiamo quindi il criterio del rapporto:
+\begin{equation*}
+    \lim_{k \to +\infty} \left|\frac{a_{k + 1}}{a_k}\right| = \lim_{k \to +\infty} \frac{2^{k + 1}}{(k + 1)!} \cdot \frac{k!}{2^k} = \lim_{k \to +\infty} \frac{2}{k + 1} = 0
+\end{equation*}
+
+\noindent Per il criterio del rapporto quindi $\sum_{k = 0}^{+\infty} \frac{2^k}{k!}$ converge.
+
+\subsubsection{Esempio 2}
+Sia $x \in \mathbb{R}$, mostrare che la seguente serie converge:
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} \frac{x^k}{k!}
+\end{equation*}
+
+\noindent Notiamo subito che per $x = 0$:
+\begin{equation*}
+    \frac{x^k}{k!} = 0 \implies s_n \to 0 \quad per \ n \to +\infty \qquad \forall n \in \mathbb{N}
+\end{equation*}
+
+\noindent Per $x \neq 0$, applichiamo il criterio del rapporto:
+\begin{equation*}
+    \lim_{k \to +\infty} \left|\frac{a_{n + 1}(x)}{a_n(x)}\right| = \lim_{k \to +\infty} \left|\frac{x^{k + 1}}{(k + 1)!} \cdot \frac{k!}{x^k}\right| = \lim_{k \to +\infty} \frac{|x|}{k + 1} = 0 \qquad \forall x \in \mathbb{R} - \{0\}
+\end{equation*}
+
+\noindent Allora $\sum_{k = 0}^{+\infty} \frac{x^k}{k!}$ è assolutamente convergente $\forall x \in \mathbb{R}$.\\
+
+\noindent Ricordiamo inoltre che $\sum_{k = 0}^n \frac{x^k}{k!}$ è il $P_{e^x, n, 0}$, abbiamo che $e^x = \sum_{k = 0}^{+\infty} \frac{x^k}{k!}$ e $e = \sum_{k = 0}^{+\infty} \frac{1}{k!}$.
+
+\subsubsection{Esempio 3}
+Calcolare il carattere di convergenza della seguente serie:
+\begin{equation*}
+    \sum_{k = 1}^{+\infty} \frac{1}{(\log(k + 1))^k}
+\end{equation*}
+
+\noindent Utilizziamo il criterio della radice:
+\begin{equation*}
+    \lim_{k \to +\infty} \sqrt[k]{\frac{1}{|\log(k + 1)|^k}} = \lim_{k \to +\infty} \frac{1}{\log(k + 1)} = 0
+\end{equation*}
+
+\noindent Quindi $\sum_{k = 1}^{+\infty} \frac{1}{(\log(k + 1))^k}$ è assolutamente convergente.
+
+\subsubsection{Esempio 4}
+Calcolare il carattere di convergenza della seguente serie:
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} \frac{k}{k + 2} (\log(1 + x))^{2k} \qquad con \ x > -1
+\end{equation*}
+
+\noindent Per $x > -1, x \neq 0$, utilizziamo il criterio del rapporto:
+\begin{equation*}
+    \lim_{k \to +\infty} \left|\frac{\frac{k + 1}{k + 3} (\log(1 + x))^{2k + 2}}{\frac{k}{k + 2}(\log(1 + x))^{2k}}\right| = \lim_{k \to +\infty} \frac{(k + 1)(k + 2)}{k(k + 3)} (\log(1 + x))^2 = (\log(1 + x))^2
+\end{equation*}
+
+\noindent (dato che $\frac{(k + 1)(k + 2)}{k(k + 3)} \to 1$ per $k \to +\infty$). Per avere assoluta convergenza, imponiamo che $(\log(1 + x))^2 < 1$, perciò:
+\begin{align*}
+    &\begin{cases}
+        |\log(1 + x)| < 1 \\
+        x \neq 0
+    \end{cases}
+    &\iff& \qquad \qquad \qquad
+    \begin{cases}
+        -1 < \log(1 + x) < 1 \\
+        x \neq 0
+    \end{cases}
+    \\
+    &\begin{cases}
+        \frac{1}{e} < 1 + x < e \\
+        x \neq 0
+    \end{cases}
+    &\iff& \qquad \qquad \qquad
+    \begin{cases}
+        \frac{1}{e} - 1 < x < e - 1 \\
+        x \neq 0
+    \end{cases}
+\end{align*}
+
+\noindent Ora per $x = 0$ abbiamo che $\log(1 + 0) = 0 \implies \sum_{k = 0}^{+\infty} a_k(x) = \sum_{k = 0}^{+\infty} 0$, cioè converge.\\
+Se $l = (\log(1 + x))^2 > 1$, ossia $x \in (-1, \frac{1}{e} - 1) \cup (e - 1, +\infty)$. Quindi $\sum_{k = 0}^{+\infty} a_k(x)$ diverge.\\
+Se $x = e - 1$, allora $\log(1 + x) = \log(e) = 1$ e $a_k(e - 1) = \frac{k}{k + 2} \to 1$ per $k \to +\infty$. Quindi $\sum_{k = 0}^{+\infty} a_k(e - 1)$ diverge.\\
+Se $x = \frac{1}{e} - 1$ allora $\log(1 + x) = \log(\frac{1}{e}) = -1$ e $a_k(\frac{1}{e} - 1) = \frac{k}{k + 2} \to 1$ per $k \to +\infty$. Quindi diverge.
 \end{document}
