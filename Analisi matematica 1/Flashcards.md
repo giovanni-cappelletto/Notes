@@ -155,6 +155,7 @@
 151. Quando una funzione è primitiva di un'altra funzione?
 152. Dimostra perché se $F$ è primitiva di $f$, allora tutte le funzioni $F + c$ sono primitive di $f$.
 153. Enuncia e dimostra il teorema di integrazione per parti.
+154. Enuncia e dimostra il teorema di integrazione per sostituzione (I) (II) (III) (il III va solamente enunciato).
 
 ## Dimostrazioni
 

@@ -6213,6 +6213,150 @@ Scegliamo $f'(x) = e^x$ e $g(x) = \sin(x)$ e applichiamo l'integrazione per part
     \implies 2 \int e^x\sin(x) = e^x\sin(x) - e^x\cos(x) + c\iff \int e^x\sin(x) = \frac{e^x\sin(x) - e^x\cos(x)}{2} + c \qquad \forall c \in \mathbb{R}
 \end{equation*}
 
+\subsubsection{Integrazione per sostituzione (I)}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $F$ una primitiva di $f$ in $A$. Sia $g: B \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $B \neq \varnothing$, $g$ derivabile in $B$. Allora $(f \circ g)g'$ ha primitiva in $B$ e una di esse è $(F \circ g)$ in $B$.\\
+
+\noindent Dimostriamo ora il precedente teorema:
+\begin{equation*}
+    ((F \circ g)(t))' = (F(g(t)))' = F'(g(t))g'(t) = f(g(t))g'(t) \qquad \forall t \in B
+\end{equation*}
+
+\noindent\textbf{Notazione:} Attraverso gli integrali possiamo scrivere:
+\begin{equation*}
+    \int f(g(t))g'(t) \ dt = \int f(x) \ dt \ \bigg|_{x = g(t)} \qquad t \in B, x \in A
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare $\int \frac{\log t}{t} \ dt$.\\
+Notiamo subito che $g(t) = \log t$ e $g'(t) = \frac{1}{t}$. Avremo quindi $f(x) = x$. Perciò:
+\begin{equation*}
+    \int \frac{\log t}{t} \ dt \underset{\underset{\scriptstyle x \in \mathbb{R}}{t > 0}}{=} \int x \ dx \ \bigg|_{x = \log t} = \frac{x^2}{2} + c \ \bigg|_{x = \log t} = \frac{\log^2t}{2} + c \qquad c \in \mathbb{R}, t > 0
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare $\int \cos^3t\sin t \ dt$.
+Notiamo subito che $f(x) = x^3$, $g(t) = \cos(t)$ e $g'(t) = -\sin(t)$ per cui:
+\begin{align*}
+    \int \cos^3t\sin t \ dt &= - \int \cos^3t (-\sin t) \ dt = -\int x^3 \ dx \ \bigg|_{x = \cos t} = -\frac{x^4}{4} + c \ \bigg|_{x = \cos t} \\
+    &= -\frac{\cos^4 t}{4} + c \qquad c \in \mathbb{R}, t \in \mathbb{R}
+\end{align*}
+
+\subsubsection{Applicazioni immediate del teorema per sostituzione (I)}
+Nel seguito $t \in I$, $I$ intervallo opportuno:
+\begin{equation*}
+    \int (g(t))^\alpha g'(t) \ dt = \int x^\alpha \ dx \ \bigg|_{x = g(t)} = \frac{(g(t))^{\alpha + 1}}{\alpha + 1} + c \qquad con \ \alpha \neq -1, c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \frac{g'(t)}{g(t)} \ dt = \log|g(t)| + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \cos(g(t))g'(t) \ dt = \sin(g(t)) + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \sin(g(t))g'(t) \ dt = -\cos(g(t)) + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int e^{g(t)}g'(t) \ dt = e^{g(t)} + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \frac{g'(t)}{\cos^2(g(t))} \ dt = \tan(g(t)) + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \frac{g'(t)}{\sin^2(g(t))} \ dt = -\cot(g(t)) + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \frac{g'(t)}{\sqrt{1 - g^2(t)}} \ dt = \arcsin(g(t)) + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \frac{g'(t)}{\sqrt{1 + g^2(t)}} \ dt = \log|g(t) + \sqrt{1 + g^2(t)}| + c \qquad c \in \mathbb{R}
+\end{equation*}
+\begin{equation*}
+    \int \frac{g'(t)}{1 + g^2(t)} \ dt = \arctan(g(t)) + c \qquad c \in \mathbb{R}
+\end{equation*}
+
+\subsubsection{Integrazione per sostituzione (II)}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $F$ primitiva di $f$ su $A$. Sia $J \subset \mathbb{R}$, $J$ intervallo e $g: J \xrightarrow{} A$, $g$ biettiva e derivabile in $J$. \\
+Sia $H$ una primitiva di $(f \circ g)g'$ in $J$. Allora $H \circ g^{-1}$ è una primitiva di $f$ in $A$.\\
+
+\noindent Dimostriamo ora questo teorema. Sia $F$ una primitiva di $f$ in $A$. Allora, per il teorema di integrazione per sostituzione (I), $F \circ g$ è primitiva di $(f \circ g)g'$ su $J$, che è un intervallo.\\
+Ma allora $H$ e $F \circ g$ sono entrambe primitive su $J$ di $(f \circ g)g'$. Quindi $\exists c \in \mathbb{R} : H(t) = F(g(t)) + c \qquad \forall t \in J$.\\
+Sia ora $x \in A$, sappiamo quindi che:
+\begin{equation*}
+    (H \circ g^{-1})(x) = H(g^{-1})(x) = F(g(g^{-1}(x))) = F(x) + c \qquad \forall x \in A
+\end{equation*}
+
+\noindent Siccome $F$ è primitiva di $f$ in $A$, allora $F + c$ + primitiva di $f$ in $A$. Pertanto, $H \circ g^{-1}$ è primitiva di $f$ in $A$.\\
+
+\noindent\textbf{Notazione:} Attraverso gli integrali possiamo scrivere:
+\begin{equation*}
+    \int f(x) \ dx = \int f(g(t))g'(t) \ dt \ \bigg|_{t = {g^{-1}(x)}}
+\end{equation*}
+
+\noindent dove $t \in I, x \in A, I$ intervallo, $g$ biettiva e derivabile.
+
+\subsubsection{Integrazione per sostituzione (III)}
+Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $F$ primitiva di $f$ su $A$. Sia $J \subset \mathbb{R}$, $J$ intervallo, $g: J \xrightarrow{} A$, $g$ suriettiva, derivabile in $J$ e $g'(t) \neq 0 \qquad \forall t \in J$. \\
+Sia $H$ una primitiva di $(f \circ g)g'$ in $J$. Allora $H \circ g^{-1}$ è una primitiva di $f$ in $A$.\\
+
+\noindent\textbf{ES.} Calcolare $\int \sqrt{a^2 - x^2} \ dx$ con $a > 0$ e $x \in (-a, a) = I$.\\
+Il trucco per risolvere questi esercizi è vedere se, attraverso un'opportuna sostituzione, l'argomento della radice diventa un quadrato. In questo caso, una valida sostituzione può essere $x = a\cos(t)$, che è derivabile. Il coseno è, inoltre, invertibile nell'intervallo $J = (0, \pi)$, per cui si ha che:
+\begin{align*}
+    g: J & \xrightarrow{} I & g^{-1}: I & \xrightarrow{} J \\
+    t & \mapsto a\cos(t) & x & \mapsto \arccos\left(\frac{x}{a}\right)
+\end{align*}
+
+\noindent Quindi:
+\begin{align*}
+    \int \sqrt{a^2 - x^2} \ dx &\underset{t \in (0, \pi)}{=} \int \sqrt{a^2 - a^2\cos^2t}(-a\sin t) \ dt \ \bigg|_{t = g^{-1}(x)} = -a \int a\sqrt{1 - \cos^2t} (\sin t) \ dt \ \bigg|_{t = g^{-1}(x)}\\
+    & \ \ \ = -a^2 \int \sqrt{\sin^2t}(\sin t) \ dt \ \bigg|_{t = \arccos(\frac{x}{a})} = -a^2 \int |\sin t| \sin t \ dt \ \bigg|_{t = \arccos(\frac{x}{a})} \\
+    & \underset{\underset{\scriptstyle \Rightarrow  \sin t > 0}{t \in (0, \pi)}}{=} -a^2 \int \sin^2t \ dt \bigg|_{t = \arccos(\frac{x}{a})} = -a^2 \left(\frac{t}{2} + \frac{\sin(2t)}{4}\right) \bigg|_{t = \arccos(\frac{x}{a})} \\
+    & \ \ \ = -a^2\left(\frac{t}{2} + \frac{\sin t\cos t}{2}\right) \bigg|_{t = \arccos(\frac{x}{a})} \\
+    & \ \ \implies \frac{-a^2}{2}\arccos\left(\frac{x}{a}\right) - \frac{ax}{2} \sin\left(\arcsin\left(\frac{x}{a}\right)\right) + c \qquad c \in \mathbb{R}
+\end{align*}
+
+\noindent Dato che $\arccos(\frac{x}{a}) \in (0, \pi)$:
+\begin{align*}
+    \implies 0 < \sin\left(\arccos\left(\frac{x}{a}\right)\right) &= \sqrt{\left(\sin\left(\arccos\left(\frac{x}{a}\right)\right)\right)^2} = \sqrt{1 - \left(\cos\left(\arccos\left(\frac{x}{a}\right)\right)\right)^2} \\
+    &= \sqrt{1 - \left(\frac{x}{a}\right)^2} = \sqrt{\frac{a^2 - x^2}{a^2}} \underset{a > 0}{=} \frac{1}{a} \sqrt{a^2 - x^2} \qquad x \in (-a, a)
+\end{align*}
+
+\noindent Pertanto.
+\begin{equation*}
+    \int \sqrt{a^2 - x^2} \ dx = -\frac{a^2}{2}\arccos\left(\frac{x}{a}\right) - \frac{x}{2}\sqrt{a^2 - x^2} + c \qquad c \in \mathbb{R}
+\end{equation*}
+
+\subsubsection{Radici di polinomi a coefficienti reali}
+\textbf{Grado 2}\\
+\noindent Un generico polinomio di grado 2 a coefficienti reali ha equazione: $p(x) = ax^2 + bx + c$ con $a \neq 0$. Si possono quindi verificare tre casi:
+\begin{enumerate}
+    \item $\Delta = 0$, ovvero si ha una radice reale doppia $x_0 \implies$ il polinomio può essere riscritto come: $p(x) = a(x - x_0^2$;
+    \item $\Delta > 0$, ovvero sono presenti due radici reali $x_1$, $x_2 \implies$ il polinomio può essere riscritto come: $p(x) = a(x - x_1)(x - x_2)$;
+    \item $\Delta = b^2 - 4ac < 0$ e quindi non esistono radici reali. Definiamo però: $$\alpha = - \frac{b}{2a} \qquad \qquad \beta = \frac{\sqrt{-\Delta}}{2a} = \frac{\sqrt{4ac - b^2}}{2a}$$ allora possiamo riscrivere il polinomio come: $p(x) = a((x - a)^2 + \beta^2) = aq_{\alpha, \beta}(x)$.
+\end{enumerate}
+
+\noindent\textbf{Grado $\geq 3$}\\
+Allora il polinomio può essere riscritto come prodotto di fattori del tipo:
+\begin{equation*}
+    (x - \Bar{x}) \qquad \qquad q_{\alpha, \beta}(x)
+\end{equation*}
+
+\noindent con $\Bar{x} \in \mathbb{R} \ | \ p(\Bar{x}) = 0$.\\
+
+\noindent\textbf{NB!} Nel caso in cui abbiamo un polinomio di grado $2$ con $\Delta < 0$, allora definiamo $i = \sqrt{-1}$, ossia tale che $i^2 = -1$. Allora:
+\begin{equation*}
+    - \frac{b}{2a} + i \frac{\sqrt{|\Delta|}}{2a} \qquad - \frac{b}{2a} - i \frac{\sqrt{|\Delta|}}{2a}
+\end{equation*}
+
+\noindent sono radici di $p(x) = 0$. ($i$ viene detto \textbf{unità immaginaria}; i numeri del tipo $a + ib$, con $a, b \in \mathbb{R}$, sono detti \textbf{numeri complessi}). Si noti che se $\alpha + i\beta$ e $\alpha - i\beta$ (vengono detti \textbf{numeri coniugati} perché variano solo di segno) sono soluzioni di $p(x) = 0$, allora $(a, b \in \mathbb{R})$:
+\begin{align*}
+    p(x) = a(x - (\alpha + i\beta))(x - (\alpha - i\beta)) &= a((x - \alpha) + i\beta)((x - \alpha) + i\beta) \\
+    &= a((x - \alpha)^2 - i\beta(x - \alpha) + i\beta(x - \alpha) - i^2\beta^2 \\
+    &= a((x - \alpha)^2 + \beta^2)
+\end{align*}
+
+\subsubsection{Teorema fondamentale dell'algebra}
+Ogni polinomio a coefficienti complessi di grado $n$ ha esattamente $n$ radici complesse.\\
+
+\noindent\textbf{Corollario: } Ogni polinomio a coefficienti reali di grado $n$ ha $r$ radici reali e $2c$ radici complesse ($r \geq 0, c \geq 0$) con $n = r + 2c$
+
 \newpage
 \part{Serie numeriche}
 Vogliamo dare significato a $\sum_{k = 0}^{+\infty} a_k$, dove $a_k$ è una successione, $a_k \in \mathbb{R}, k \in \mathbb{N}$. Chiamiamo \textbf{serie} la quantità $\sum_{k = 0}^{+\infty} a_k$ e $a_k$ è detto \textbf{termine generale della serie}. \\
