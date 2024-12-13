@@ -156,6 +156,9 @@
 152. Dimostra perché se $F$ è primitiva di $f$, allora tutte le funzioni $F + c$ sono primitive di $f$.
 153. Enuncia e dimostra il teorema di integrazione per parti.
 154. Enuncia e dimostra il teorema di integrazione per sostituzione (I) (II) (III) (il III va solamente enunciato).
+155. Quando una funzione viene detta Riemann-integrabile?
+156. Enuncia la condizione sufficiente di integrabilità.
+157. Enuncia le proprietà dell'integrale di Riemann.
 
 ## Dimostrazioni
 

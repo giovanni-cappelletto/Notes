@@ -5847,8 +5847,6 @@ Pertanto $0 \leq f'(x_0) \leq 0 \implies f'(x_0) = 0$. \\
 
 \noindent\textbf{NB!} Esistono funzioni che non sono derivabili nei loro minimi: non si può quindi togliere la derivabilità dalle ipotesi del teorema. Ne è un esempio $f(x) = |x|$: $x_0 = 0$ è un punto di minimo globale, ma $\nexists f'(0)$.\\
 
-%\noindent\textbf{NB!} $x_0$ deve essere interno. Ad esempio, presa $f(x) = x$ con $x \in [0, 1]$. Notiamo che $0$ è punto di minimo globale, $1$ è punto di massimo globale e $f'(x) = 1 \qquad \forall x \in [0, 1]$. \\ % da rivedere
-
 \noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$, $x_0$ interno ad $A$ e $f$ sia derivabile in $x_0$. Diremo che $x_0$ è \textbf{punto stazionario (critico) per $f$} se e solo se $f'(x_0) = 0$.
 
 \subsection{Teorema di Rolle}
@@ -6366,7 +6364,7 @@ Siano $p(x), q(x)$ polinomi a coefficienti reali. Osserviamo allora che:
         \item Per ogni $\alpha$, radice reale semplice, si scrive un termine del tipo: $$\frac{A}{x - \alpha}$$ dove $A \in \mathbb{R}$ è da determinare;
         \item Per ogni $\alpha$, radice reale multipla con molteplicità $m \geq 2$, si scrive un termine del tipo: $$\frac{B_1}{x - \alpha} + \frac{B_2}{(x - \alpha)^2} + \ ... \ + \frac{B_n}{(x - \alpha)^n}$$ con $B_1, B_2, ..., B_n \in \mathbb{R}$ da determinare;
         \item Per ogni $\alpha + i\beta$, radice complessa semplice, si scrive un termine del tipo: $$\frac{Cx + D}{(x - \alpha)^2 + \beta^2}$$ con $C, D \in \mathbb{R}$ da determinare;
-        %\item Per ogni $\alpha + i\beta$, radice complessa multipla di molteplicità $m \geq 2$, si scrive un termine del tipo: $$$$
+        \item Per ogni $\alpha + i\beta$, radice complessa multipla di molteplicità $m \geq 2$, si scrive un termine del tipo: $$\frac{C_1x + D_1}{(x - \alpha)^2 + \beta^2} + \frac{C_2x + D_2}{(x - \alpha)^2 + \beta^2} + \ ... \ + \frac{C_mx + D_m}{(x - \alpha)^2 + \beta^2}$$ con $C_1, C_2, ..., C_n, D_1, D_2, ..., D_n \in \mathbb{R}$ da determinare.
     \end{enumerate}
 \end{enumerate}
 
@@ -6403,7 +6401,38 @@ Siano $p(x), q(x)$ polinomi a coefficienti reali. Osserviamo allora che:
     \int \frac{Cx + D}{(x - \alpha)^2 + \beta^2} \ dx = \frac{C}{2} \log((x - \alpha)^2 + \beta^2) + \frac{C\alpha + D}{\beta} \arctan\left(\frac{x - \alpha}{\beta}\right) + c
 \end{equation*}
 
-\noindent\textbf{ES.} Calcolare $\int \frac{x + 1}{x^2 - 3x + 2} \ dx$. \\
+\noindent Per determinare la primitiva del punto \textit{3. (d)} va calcolato $I_k = \int \frac{dx}{((x - \alpha)^2 + \beta^2)^k}$ con $k \geq 2, k \in \mathbb{N}$. Per farlo, non esiste una formula chiusa, ma possiamo vincolarlo al calcolo di $I_{k - 1}$. \\
+L'idea è quella di rincondurci ad una forma del tipo $\int \frac{f'(x)}{g(x)} \ dx$, per poi quindi applicare l'integrazione per parti. Riscriviamo quindi il numeratore come la derivata di $x - \alpha$. In questo modo, il risultato continua ad essere $1$, ma siamo in presenza della forma desiderata. Applichiamo poi il teorema di integrazione per parti utilizzando $f(x) = x - \alpha \implies f'(x) = 1$ e $g(x) = \frac{1}{((x - \alpha)^2 + \beta^2)^{k - 1}} = ((x - \alpha)^2 + \beta^2)^{1 - k} \implies g'(x) = (1 - k)((x - \alpha)^2 + \beta^2)^{-k}(2(x - \alpha))$:
+\begin{align*}
+    I_{k - 1} = \int \frac{1}{((x - \alpha)^2 + \beta^2)^{k - 1}} \ dx &= \int \frac{(x - \alpha)'}{((x - \alpha)^2 + \beta^2)^{k - 1}} \ dx \\ 
+    &= \frac{x - \alpha}{((x - \alpha)^2 + \beta^2)^{k - 1}} - \int \frac{2(x - \alpha)^2(1 - k)}{((x - \alpha)^2 + \beta^2)^k} \ dx
+\end{align*}
+
+\noindent Concentriamoci ora sull'integrale rimanente: portiamo fuori $2(1 - k)$ essendo un numero e poi aggiungiamo e togliamo $\beta^2$. A questo punto, possiamo spaccare l'integrale in due parti, che rappresentano rispettivamente $I_{k - 1}$ e $I_{k}$
+\begin{align*}
+    \int \frac{2(x - \alpha)^2(1 - k)}{((x - \alpha)^2 + \beta^2)^k} \ dx &= 2(1 - k) \int \frac{(x - \alpha)^2 + \beta^2 - \beta^2}{((x - \alpha)^2 + \beta^2)^k} \ dx \\
+    &= 2(1 - k) \int \frac{(x - \alpha)^2 + \beta^2}{((x - \alpha)^2 + \beta^2)^k} \ dx - 2\beta^2(1 - k) \int \frac{1}{((x - \alpha)^2 + \beta^2)^k} \ dx \\
+    &= 2(1 - k) \int \frac{1}{((x - \alpha)^2 + \beta^2)^{k - 1}} \ dx - 2\beta^2(1 - k) I_k \\
+    &= 2(1 - k)I_{k - 1} - 2\beta^2(1 - k) I_k
+\end{align*}
+
+\noindent Andando ora a sostituire il risultato appena calcolato all'integrale di partenza, otteniamo la seguente equazione:
+\begin{equation*}
+    I_{k - 1} = \frac{x - \alpha}{((x - \alpha)^2 + \beta^2)^{k - 1}} - 2(1 - k)I_{k - 1} + 2\beta^2(1 - k) I_k
+\end{equation*}
+
+\noindent Isoliamo ora $I_k$:
+\begin{align*}
+    2\beta^2(1 - k) I_k &= (2(1 - k) + 1)I_{k - 1} - \frac{x - \alpha}{((x - \alpha)^2 + \beta^2)^{k - 1}} \\
+    &= (3 - 2k)I_{k - 1} - \frac{x - \alpha}{((x - \alpha)^2 + \beta^2)^{k - 1}}
+\end{align*}
+\begin{equation*}
+    \implies I_k = \left((3 - 2k)I_{k - 1} - \frac{x - \alpha}{((x - \alpha)^2 + \beta^2)^{k - 1}}\right) \cdot \frac{1}{2\beta^2(1 - k)}
+\end{equation*}
+
+\noindent Capiamo quindi che se volessimo calcolare $I_{k - 1}$, dovremmo farlo in termini di $I_{k - 2}$. In altre parole, stiamo parlando di una formula ricorsiva. \\
+
+\noindent\textbf{ES. Punto a:} Calcolare $\int \frac{x + 1}{x^2 - 3x + 2} \ dx$. \\
 Notiamo subito che $x^2 - 3x + 2 = (x - 1)(x - 2)$. Quindi $q(x)$ ha due radici reali semplici distinte. Scriviamo quindi:
 \begin{equation*}
     \frac{x + 1}{(x - 1)(x - 2)} = \frac{A}{x - 1} + \frac{B}{x - 2} = \frac{Ax - 2A + Bx - B}{(x - 1)(x - 2)} = \frac{x(A + B) - 2A - B}{(x - 1)(x -2)}
@@ -6435,7 +6464,7 @@ Notiamo subito che $x^2 - 3x + 2 = (x - 1)(x - 2)$. Quindi $q(x)$ ha due radici 
 
 \noindent con $f$ che è una funzione costante a tratti su $\mathbb{R} - \{0, 1\}$.\\
 
-\noindent\textbf{ES.} Calcolare $\int \frac{x^3 - 1}{x^2(x + 1)^2} \ dx$.\\
+\noindent\textbf{ES. Punto b:} Calcolare $\int \frac{x^3 - 1}{x^2(x + 1)^2} \ dx$.\\
 Abbiamo quindi che:
 \begin{align*}
     \frac{x^3 - 1}{x^2(x + 1)^2} &= \frac{A}{x} + \frac{B}{x^2} + \frac{C}{x + 1} + \frac{D}{(x + 1)^2} = \frac{Ax(x+1)^2 + B(x + 1)^2 + Cx^2(x + 1) + Dx^2}{x^2(x + 1)^2} \\
@@ -6467,7 +6496,7 @@ Abbiamo quindi che:
 
 \noindent dove $f$ è una funzione costante a tratti su $\mathbb{R} - \{0, 1\}$.\\
 
-\noindent\textbf{ES.} Calcolare $\int \frac{x + 1}{(x - 1)^2(x^2 + x + 1)} \ dx$.\\
+\noindent\textbf{ES. Punto c:} Calcolare $\int \frac{x + 1}{(x - 1)^2(x^2 + x + 1)} \ dx$.\\
 Notiamo che $(x - 1)^2 = 0$ ha come radice reale doppia $x = 1$, mentre $x^2 + x + 1 = 0$ non ha radici reali (infatti $\Delta = -3$). Utilizziamo quindi il seguente metodo per ricavare le soluzioni complesse di questo secondo polinomio:
 \begin{equation*}
     (x - \alpha)^2 + \beta^2 = x^2 - 2\alpha + \alpha^2 + \beta^2 = x^2 + x + 1
@@ -6544,10 +6573,88 @@ Notiamo che $(x - 1)^2 = 0$ ha come radice reale doppia $x = 1$, mentre $x^2 + x
     \int \frac{x + 1}{(x - 1)^2(x^2 + x + 1)} \ dx = -\frac{\log|x - 1|}{3} - \frac{2}{3(x - 1)} + \frac{\log((x + \frac{1}{2})^2 + \frac{3}{4})}{6} - \frac{1}{3\sqrt{3}}\arctan\left(\frac{2x + 1}{\sqrt{3}}\right) + c
 \end{equation*}
 
+\noindent\textbf{ES. Punto d:} Calcolare $\int \frac{dx}{(x^2 + 1)^2}$.\\
+Notiamo subito che $x^2 + 1 = 0$ non ammette radici reali; che l'integrale ha $k = 2$, perciò è $I_2$; che $\alpha = 0$, mentre $\beta = 1$. Applichiamo quindi la formula generale vista precedentemente, ricordando che $f(x) = x \implies f'(x) = 1$ e $g(x) = \frac{1}{x^2 + 1} = (x^2 + 1)^{-1} \implies - \frac{2x}{(x^2 + 1)^2}$:
+\begin{align*}
+    I_1 &= \int \frac{dx}{x^2 + 1} = \int \frac{(x)'}{x^2 + 1} \ dx= \frac{x}{x^2 + 1} + \int \frac{2x^2}{(x^2 + 1)^2} \ dx = \frac{x}{x^2 + 1} + 2\int \frac{x^2 + 1 - 1}{(x^2 + 1)^2} \ dx \\
+    &= \frac{x}{x^2 + 1} + 2\int \frac{dx}{x^2 + 1} - 2\int \frac{dx}{(x^2 + 1)^2} = \frac{x}{x^2 + 1} + 2I_1 - 2I_2
+\end{align*}
+\begin{equation*}
+    \implies 2I_2 = -I_1 - \frac{x}{x^2 + 1} \iff 2\int \frac{dx}{(x^2 + 1)^2} = -\int \frac{dx}{x^2 + 1} - \frac{x}{x^2 + 1}
+\end{equation*}
+\begin{equation*}
+    \implies \int \frac{dx}{(x^2 + 1)^2} = -\frac{\arctan(x)}{2} - \frac{x}{2(x^2 + 1)} + c \qquad c \in \mathbb{R}
+\end{equation*}
+
 \subsubsection{Sostituzioni consigliate}
 Sia $R$ una funzione razionale di più variabili, ossia $R(x, ..., x_n) = \frac{p(x, ..., x_n)}{q(x, ..., x_n)}$ con $p, q$ polinomi in $n$ variabili:
 \begin{enumerate}
     \item Primitiva di $R(x, (\frac{ax + b}{cx + d})^\frac{p}{q}, ..., (\frac{ax + b}{cx + d})^\frac{r}{s})$ con $a, b, c, d \in \mathbb{R}$, $ad - bc \neq 0$, $p, q, ..., r, s \in \mathbb{N} - \{0\}$. Siano allora $m = mcm(q, ..., s)$, $t^m = \frac{ax + b}{cx + d}$ e $x = \frac{dt^m - b}{a - ct^m} =\vcentcolon g(t)$
+\end{enumerate}
+
+\section{Integrale di Riemann (integrali definiti)}
+\begin{wrapfigure}{r}{0.45\textwidth}
+\includegraphics[width=1.\linewidth]{images/riemann.pdf} 
+\end{wrapfigure}
+
+\textbf{Euristica: } Vogliamo dare un significato al concetto (per $f \geq 0$) di "area sottesa del grafico di $f$".\\ 
+
+\noindent\textbf{Def:} Sia $f: [a, b] \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $a, b \in \mathbb{R}$ \textbf{limitata}. Sia $P = \{x_0 = a, x_1, x_2, ..., x_{n + 1} = b\} \subset [a, b]$ una \textbf{partizione di punti} di $[a, b]$, con $x_i < x_{i + 1}$. \\
+Siano inoltre $\lambda_i = inf\{f(x) : x \in [x_i, x_{i + 1}]\} \in \mathbb{R}$ e $\Lambda_i = sup\{f(x) : x \in [x_i, x_{i + 1}]\} \subset \mathbb{R}$. Sia poi $s(P, f) = \sum_{i = 0}^n \lambda_i (x_{i + 1} - x_i)$ la \textbf{somma inferfiore di Riemann per $f$ associata a $P$} e $S(P, f) = \sum_{i = 0}^n \Lambda_i (x_{i + 1} - x_i)$ la \textbf{somma superiore di Riemann per $f$ associata a $P$}. Inoltre sia $G = \{s(P, f) : P \ partizione \ [a, b]\}$ e $H = \{S(P, f) : P \ partizione \ [a, b]\}$.\\
+
+\noindent\textbf{Osservazioni:}
+\begin{enumerate}
+    \item Data $P$ partizione di $[a, b]$ e $f$ limitata in $[a, b]$, allora: $$\sum_{i = 0}^n \lambda_i(x_{i + 1} - x_i) = s(P, f) \leq S(P, f) = \sum_{i = 0}^n \Lambda_i(x_{i + 1} - x_i) \qquad \qquad \lambda_i \leq \Lambda_i \quad \forall i = 0, ..., n$$
+    \item Siano $P_1, P_2$ due approssimazioni di $[a, b]$, ma $P_2 \subset P_1$ (ovvero $P_1$ ha più punti di $P_2$). Allora: $$s(P_2, f) \leq s(P_1, f) \qquad \qquad S(P_2, f) \geq S(P_1, f)$$ Ciò segue dal fatto che se $A \subset B$, allora: $$\begin{cases}
+        infA \geq infB \\ 
+        supA \leq supB
+    \end{cases}$$
+\end{enumerate}
+
+\noindent\textbf{Def:} Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, limitata. $f$ è integrabile secondo Riemann (o Riemann-integrabile) se e solo se $sup(G) = inf(H)$. In tal caso, definisco:
+\begin{equation*}
+    \int_a^b f(x) \ dx = sup(G) \ [= inf(H)]
+\end{equation*}
+
+\noindent che si legge integrale di Riemann o integrale definito di $f$ in $[a, b]$.\\
+
+\noindent\textbf{NB!} Esistono delle funzioni che non sono Riemann-integrabili. Prendiamo, ad esempio, la funzione di Dirichlet:
+\begin{equation*}
+    f(x) = \begin{cases}
+        1 & \qquad se \ x \in \mathbb{Q} \cap [0, 1] \\
+        0 & \qquad se \ x \in [0, 1] - \mathbb{Q} \\
+    \end{cases}
+\end{equation*}
+
+\noindent Notiamo subito che $f$ è limitata, infatti $Imm(f) = \{0, 1\}$. Prendiamo ora una qualunque partizione $P = \{x_0 = 0, ..., x_{n + 1} = 1\}$ in $[0, 1]$ e un qualunque sottointervallo $[x_i, x_{i + 1}]$ di $[0, 1]$. Dato che qualunque partizione e sottointervallo preso, saranno sempre presenti infiniti numeri irrazionali e infiniti numeri reali (\textit{Teorema 4.5}), la funzione ha come estremo inferiore $\lambda_i = 0$ e come estremo superiore $\Lambda_i = 1$. Ciò significa che:
+\begin{equation*}
+    s(P, f) = \sum_{i = 0}^n \lambda_i (x_{i + 1} - x_i) = 0 \implies G = \{0\}
+\end{equation*}
+\begin{align*}
+    S(P, f) = \sum_{i = 0}^n \Lambda_i (x_{i + 1} - x_i) &= \sum_{i = 0}^n (x_{i + 1} - x_i) \\
+    &= (x_1 - x_0) + (x_2 - x_1) + (x_3 - x_2) + \ ... \ + (x_{n + 1} - x_n) \\ 
+    &= x_{n + 1} - x_0 = b - a = 1 - 0 = 1
+    \implies H = \{1\} 
+\end{align*}
+
+\noindent Quindi $G = \{0\}$ e $H = \{1\} \implies supG = 0$ e $infH = 1 \implies f$ non è Riemann-integrabile.
+
+\subsection{Teorema - Condizione sufficiente di integrabilità}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ limitata. Allora:
+\begin{enumerate}
+    \item se $f$ è debolmente monotona in $[a, b] \implies f$ è Riemann-integrabile in $[a, b]$;
+    \item se $f$ è continua in $[a, b] \implies f$ è Riemann-integrabile in $[a, b]$;
+    \item se $f$ è continua in $[a, b] - E$, dove $E$ è formato da un numero finito di punti (ciò significa che $f$ è continua in un intervallo che presenta un numero finito di punti di discontinuità) $\implies f$ è Riemann-integrabile in $[a, b]$;
+\end{enumerate}
+
+\subsection{Proprietà - Integrale di Riemann}
+Siano $f, g: [a, b] \xrightarrow{} \mathbb{R}$, $f, g$ Riemann-integrabili in $[a, b]$. Allora:
+\begin{enumerate}
+    \item $\forall \alpha, \beta \in \mathbb{R}$ si ha che $(\alpha f + \beta g)$ è Riemann-integrabile in $[a, b]$ e: $$\int_a^b (\alpha f + \beta g)(x) \ dx = \alpha\int_a^b f(x) \ dx + \beta\int_a^b g(x) \ dx$$
+    \item se $f(x) \leq g(x) \qquad \forall x \in [a, b]$, allora: $$\int_a^b f(x) \ dx \leq \int_a^b g(x) \ dx$$
+    \item se $|f(x)|$ è Riemann-integrabile in $[a, b]$, allora $$\left|\int_a^b f(x) \ dx\right| \leq \int_a^b |f(x)| \ dx$$ (questa proprietà segue dal fatto che $-|f(x)| \leq f(x) \leq |f(x)|$);
+    \item sia $c \in (a, b)$, allora: $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx + \int_c^b f(x) \ dx$$ (\textbf{addittività rispetto all'insieme di integrazione});
+    \item se $f$ è Riemann-integrabile in $[a, c]$ e in $[c, b]$ (ovvero è integrabile su due intervalli adiacenti), allora è Riemann-integrabile in $[a, b]$ e: $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx + \int_c^b f(x) \ dx$$
 \end{enumerate}
 
 \newpage
