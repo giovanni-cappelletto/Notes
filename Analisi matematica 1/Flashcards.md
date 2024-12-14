@@ -159,6 +159,11 @@
 155. Quando una funzione viene detta Riemann-integrabile?
 156. Enuncia la condizione sufficiente di integrabilità.
 157. Enuncia le proprietà dell'integrale di Riemann.
+158. Enuncia e dimostra il criterio del confronto asintotico.
+159. Cos'è una serie a segni alterni?
+160. Enuncia il criterio di von Leibniz.
+161. Mostra le diverse proprietà delle funzioni iperboliche $\cosh(x)$ e $\sinh(x)$.
+162. Quando $\sinh(x)$ e $\cosh(x)$ sono invertibili? Qual è la loro inversa?
 
 ## Dimostrazioni
 

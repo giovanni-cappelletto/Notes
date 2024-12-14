@@ -4,6 +4,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx} 
 \usepackage{amsmath}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{enumitem}
@@ -6913,6 +6915,168 @@ Sia $a_k \in \mathbb{R} - \{0\} \qquad \forall k \in \mathbb{N}$. Se $\lim_{k \t
 
 \noindent\textbf{NB!} Se $l = 1$ non si può concludere. Ad esempio, $\sum_{k = 0}^{+\infty} \frac{1}{k}$ diverge, $\sum_{k = 0}^{+\infty} \frac{1}{k^2}$ converge.
 
+\subsection{Criterio del confronto asintotico}
+Sia $a_k \geq 0, b_k > 0$. Allora abbiamo che:
+\begin{enumerate}
+    \item se $\lim_{k \to +\infty} \frac{a_k}{b_k} = l > 0$ (ovvero $a_k \sim lb_k$ per $k \to +\infty$), allora $\sum_{k = 0}^{+\infty} a_k$ converge se e solo se $\sum_{k = 0}^{+\infty} b_k$ converge;
+    \item se $\lim_{k \to +\infty} \frac{a_k}{b_k} = 0$ (ovvero $a_k = o(b_k)$): 
+    \begin{enumerate}
+        \item se $\sum_{k = 0}^{+\infty} b_k$ converge, allora $\sum_{k = 0}^{+\infty} a_k$ converge;
+        \item se $\sum_{k = 0}^{+\infty} a_k$ diverge, allora $\sum_{k = 0}^{+\infty} b_k$ diverge;
+    \end{enumerate}
+    \item se $\lim_{k \to +\infty} \frac{a_k}{b_k} = +\infty$ (ovvero $b_k = o(a_k)$): 
+    \begin{enumerate}
+        \item se $\sum_{k = 0}^{+\infty} a_k$ converge, allora $\sum_{k = 0}^{+\infty} b_k$ converge;
+        \item se $\sum_{k = 0}^{+\infty} b_k$ diverge, allora $\sum_{k = 0}^{+\infty} a_k$ diverge;
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Dimostrazione del criterio del confronto asintotico}
+Partiamo dimostrando il primo caso. Scrivere che $\lim_{k \to +\infty} \frac{a_k}{b_k} = l > 0$, significa dire che:
+\begin{equation*}
+    \exists N \in \mathbb{N} : \frac{l}{2} < \frac{a_k}{b_k} < \frac{3}{2}l \qquad per \ k > N
+\end{equation*}
+
+\noindent (abbiamo preso $\varepsilon = \frac{l}{2}$ e quindi:
+\begin{equation*}
+    \frac{l}{2} b_k < a_k < \frac{3}{2}lb_k \qquad per \ k > N
+\end{equation*}
+
+\noindent La tesi segue poi dal criterio del confronto.\\
+Nel secondo e terzo caso si procede in modo analogo, prendendo $\varepsilon = 1$: 
+\begin{equation*}
+    \lim_{k \to +\infty} \frac{a_k}{b_k} = 0 \iff \exists N \in \mathbb{N} : \frac{a_k}{b_k} < 1 \qquad per \ k > N
+\end{equation*}
+
+\noindent Quindi $a_k < b_k$ per $k < N$ e la tesi segue dal criterio del confronto.
+\begin{equation*}
+    \lim_{k \to +\infty} \frac{a_k}{b_k} = +\infty \iff \exists N \in \mathbb{N} : \frac{a_k}{b_k} > 1 \qquad per \ k > N
+\end{equation*}
+\noindent Quindi $a_k > b_k$ per $k < N$ e la tesi segue dal criterio del confronto.\\
+
+\noindent\textbf{NB!} Successioni tipiche da usare per il criterio del confronto asintotico sono la serie armonica generalizzata e la serie di Abel (che converge se e solo se $\alpha > 1$):
+\begin{equation*}
+    b_k = \frac{1}{k^\alpha}, \alpha > 0 \qquad \qquad b_k = \frac{1}{k(\log k)^\alpha}, \alpha > 0
+\end{equation*}
+
+\noindent dato che conosciamo il criterio di convergenza delle serie associate. 
+
+\subsection{Serie a segni alterni}
+\begin{equation*}
+    \sum_{k = 1}^{+\infty} (-1)^{k - 1}a_k \qquad a_k \geq 0
+\end{equation*}
+
+\noindent\textbf{NB!} Se si ha che $\sum_{k = 0}^{+\infty} (-1)^kb_k$ con $b_k \geq 0$ basta notare che:
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} (-1)^k b_k = b_0 + \sum_{k = 1}^{+\infty} (-1)^k b_k = b_0 - \sum_{k = 1}^{+\infty} (-1)^{k - 1} b_k
+\end{equation*}
+
+\subsection{Criterio di von Leibniz}
+Sia $a_k \geq 0$, $a_{k + 1} \leq a_k$ e $\lim_{k \to +\infty} a_k = 0$, allora $\sum_{k = 1}^{+\infty} (-1)^{k - 1} a_k$ converge.\\
+
+\noindent\textbf{ES.} Calcolare il carattere di convergenza di $\sum_{k = 1}^{+\infty} \frac{(-1)^{k - 1}}{k}$.\\
+Notiamo subito che $a_k = \frac{1}{k}$, $a_k \geq 0$, $\lim_{k \to +\infty} \frac{1}{k} = 0$ e che $\frac{1}{k + 1} \leq \frac{1}{k} \qquad \forall k \geq 1 \implies$ per il criterio di von Leibniz $\sum_{k = 1}^{+\infty} \frac{(-1)^{k - 1}}{k}$ converge.\\
+
+\noindent\textbf{Osservazioni:}
+\begin{enumerate}
+    \item $a_k$ è una successione, quindi per studiare la debole decrescenza non posso usare la derivata prima (in altre parole, $a_k$ non si può derivare perché l'unico punto di accumulazione per $\mathbb{N}$ è $+\infty$);
+    \item se $\exists f: [1, +\infty) \xrightarrow{} \mathbb{R}$, $f$ derivabile in $[1, +\infty)$ tale che $f(k) = a_k$, allora posso studiare la monotonia di $f$ con il segno di $f'$. \\
+    Se $f$ è debolmente decrescente in $[1, +\infty) \implies \forall x_1, x_2$ con $1 \leq x_1 < x_2$ si ha che $f(x_1) \geq f(x_2)$ e applicando questo a $x_1 = k$ e $x_2 = k + 1$ si ha che: $$f(k) = a_k \geq a_{k + 1} = f(k + 1)$$ ossia $a_k$ è debolmente decrescente (non è vero però il viceversa, ovvero che se $a_k$ è debolmente decrescente, allora esiste una funzione debolmente decrescente);
+    \item non possiamo usare la decrescenza di $b_k$ tale che $\lim_{k \to +\infty} \frac{a_k}{b_k} = 1$ per ottenere quella di $a_k$.
+\end{enumerate}
+
+\noindent\textbf{ES.} Sia $b_k = \frac{1}{k}$ e $a_k = \frac{1}{k} + \frac{\sin\frac{1}{k^2}}{k^2}$.\\
+Si ha quindi che:
+\begin{equation*}
+    \lim_{k \to +\infty} \frac{a_k}{b_k} = \lim_{k \to +\infty} \frac{\frac{1}{k} + \frac{\sin\frac{1}{k^2}}{k^2}}{\frac{1}{k}} = \lim_{k \to +\infty} 1 + \frac{\sin\frac{1}{k^2}}{k} = 1
+\end{equation*}
+
+\noindent Ma sappiamo che $f(x) = \frac{1}{x}$ ($b_k$) è strettamente decrescente, mentre $g(x) = \frac{1}{x} + \frac{\sin\frac{1}{x^2}}{x^2}$ ($a_k$) cambia monotonia infinite volte in ogni intorno di $+\infty$.
+
+\subsection{Parentesi sulle funzioni iperboliche}
+\textbf{Def:} Dati $\sinh(x) = \frac{e^x - e^{-x}}{2}$ e $\cosh(x) = \frac{e^x + e^{-x}}{2} \quad \forall x \in \mathbb{R}$, si ha che:
+\begin{enumerate}
+    \item $\sinh(x)$ è dispari, infatti: $$\sinh(-x) = \frac{e^{-x} - e^x}{2} = -\sinh(x)$$
+    \item $\cosh(x)$ è pari, infatti: $$\cosh(-x) = \frac{e^{-x} + e^x}{2} = \cosh(x)$$
+    \item $\cosh(x) + \sinh(x) = e^x$, infatti: $$\cosh(x) + \sinh(x) = \frac{e^x - e^{-x}}{2} + \frac{e^x + e^{-x}}{2} = e^x$$
+    \item $\cosh(x) - \sinh(x) = e^{-x}$, infatti: $$\cosh(x) - \sinh(x) = \frac{e^x + e^{-x}}{2} - \frac{e^x - e^{-x}}{2} = e^{-x}$$ 
+    \item $(\cosh(x))^2 - (\sinh(x))^2 = 1$, infatti: $$\frac{e^{2x} + 2 + e^{-2x}}{4} - \frac{e^{2x} - 2 + e^{-2x}}{4} = \frac{4}{4} = 1$$
+    \item $\sinh(x + y) = \sinh(x)\cosh(y) + \sinh(y)\cosh(x) \qquad \forall x, y \in \mathbb{R}$;
+    \item $\cosh(x + y) = \cosh(x)\cosh(y) + \sinh(x)\sinh(y) \qquad \forall x, y \in \mathbb{R}$.
+\end{enumerate}
+
+\noindent Dimostriamo ora il \textit{punto 6.}:
+\begin{align*}
+    \frac{e^{x + y} - e^{-(x + y)}}{2} &= \frac{e^x - e^{-x}}{2} \cdot \frac{e^y + e^{-y}}{2} + \frac{e^y - e^{-y}}{2} \cdot \frac{e^x + e^{-x}}{2} \\ 
+    &= \frac{e^{x + y} + e^{x - y} - e^{-x + y} - e^{-x - y} + e^{x + y} + e^{-x + y} - e^{x - y} - e^{- x - y}}{4} \\
+    &= \frac{2e^{x + y} - 2e^{-x - y}}{4} = \frac{e^{x + y} - e^{- (x + y)}}{2} = \sinh(x + y)
+\end{align*}
+
+\noindent Dimostriamo ora il \textit{punto 7.}:
+\begin{align*}
+    \frac{e^{x + y} + e^{- (x + y)}}{2} &= \frac{e^x + e^{-x}}{2} \cdot \frac{e^y + e^{-y}}{2} + \frac{e^y - e^{-y}}{2} \cdot \frac{e^x - e^{-x}}{2} \\
+    &= \frac{e^{x + y} + e^{x - y} + e^{-x + y} + e^{-x - y} + e^{x + y} - e^{-x + y} - e^{x - y} + e^{- x - y}}{4} \\
+    &= \frac{2e^{x + y} + 2e^{- x - y}}{4} = \frac{e^{x + y} + e^{- (x + y)}}{2} = \cosh(x + y)
+\end{align*}
+
+\noindent\textbf{ES.} $\sinh(x)$ e $\cosh(x)$ sono invertibili? Se sì, determina le loro inverse. \\
+Partiamo dal $\sinh(x)$. Notiamo subito che:
+\begin{equation*}
+    \sinh(x) = \frac{e^x - e^{-x}}{2} = \frac{e^x}{2} - \frac{e^{-x}}{2} = f_1(x) + f_2(x)
+\end{equation*}
+
+\noindent Dato che $f_1(x)$ e $f_2(x)$ sono entrambe strettamente crescenti per $x \in \mathbb{R}$, allora $\sinh(x)$ è strettamente crescente per $x \in \mathbb{R}$, essendo somma di funzioni strettamente crescenti. Pertanto $\sinh(x)$ è invertibile $\forall x \in \mathbb{R}$.\\
+Sia ora $y \in Imm(\sinh(x)) \in \mathbb{R} \implies \exists x \in \mathbb{R} : y = \frac{e^x - e^{-x}}{2}$. Risolviamo quindi questa equazione:
+\begin{align*}
+    y = \frac{e^x - e^{-x}}{2} \iff \frac{e^{2x} - 1}{2e^x} = y \iff e^{2x} - 2ye^x - 1 = 0
+\end{align*}
+
+\noindent Poniamo ora $e^x = u \implies u^2 - 2yu - 1 = 0$:
+\begin{align*}
+    &u_1 = \frac{2y + \sqrt{4y^2 + 4}}{2} = \frac{2y + 2\sqrt{y^2 + 1}}{2} = y + \sqrt{y^2 + 1} > 0 \\
+    & u_2 = y - \sqrt{y^2 + 1} < 0
+\end{align*}
+
+\noindent Dato però che $u = e^x$, e che $e^x > 0 \quad \forall x \in \mathbb{R}$, allora ci interessano solo le soluzioni positive. L'unica soluzione possibile quindi è: $e^x = u_1 = y + \sqrt{y^2 + 1}$, ossia $x = \log(y + \sqrt{y^2 + 1}) = \vcentcolon \arcsinh(x)$.\\
+Prendiamo ora $\cosh(x) = \frac{e^x + e^{-x}}{2}$. Sappiamo che è una funzione pari, per cui non è invertibile su $\mathbb{R}$. Per invertirla quindi è necessario "restingere" il suo dominio. Consideriamo allora $\cosh: [0, +\infty) \xrightarrow{} \mathbb{R}$ e mostriamo che $Imm(\cosh(x)) = [1, +\infty)$. Infatti, se prendiamo $y \in (0, 1)$, allora:
+\begin{align*}
+    \cosh(x) = y \iff e^x + e^{-x} = 2y \iff e^{2x} - 2ye^x + 1 = 0
+\end{align*}
+
+\noindent Ponendo ora $e^x = u$ come prima, abbiamo che:
+\begin{equation*}
+    u^2 - 2yu + 1 = 0 \implies u_1 = y + \sqrt{y^2 - 1} \qquad \qquad u_2 = y - \sqrt{y^2 - 1}
+\end{equation*}
+
+\noindent che hanno senso solo per $y^2 - 1 \geq 0$ (condizione della radice). Ma per $x \in (0, 1)$ si ha che $y^2 - 1 < 0$ per cui $\nexists u_1, u_2 \implies y \in (0, 1)$ non appartiene a $Imm(f)$. Inoltre, $\cosh(x) = \frac{e^x + e^{-x}}{2}$ è somma di quantità positive. Quindi $(-\infty, 0]$ non è contenuto in $Imm(f) \implies Imm(f) \subseteq [1, +\infty)$. \\
+Sia ora $y \geq 1$. Gli stessi calcoli precedenti determinano allora che:
+\begin{equation*}
+    e^{x_1} = u_1 = y + \sqrt{y^2 - 1} \qquad \qquad e^{x_2} = u_2 = y - \sqrt{y^2 - 1}
+\end{equation*}
+
+\noindent Notiamo inoltre che $u_1 \geq 1$, mentre $u_2 \leq 1$ (perché $y \geq 1$ e $\sqrt{y^2 - 1} \geq 0$). Quindi:
+\begin{equation*}
+    x_1 = \log(u_1) \geq 0 \qquad \qquad x_2 = \log(u_2) \leq 0
+\end{equation*}
+
+\noindent Dato che ci siamo ristretti al caso $[0, +\infty)$, consideriamo solo $x_1 \implies x = \log(y + \sqrt{y^2 + 1}) \vcentcolon = \arccosh(x)$ con $y \geq 1$.\\
+In conclusione, $Imm(\cosh(x)) = [1, +\infty)$. Invertiamo quindi $\cosh: [0, +\infty) \xrightarrow{} [1, +\infty)$ e otteniamo:
+\begin{align*}
+    \arccosh(x): \ & [1, +\infty) \xrightarrow{} [0, +\infty) \\
+    & y \longmapsto  \log(y + \sqrt{y^2 - 1})
+\end{align*}
+
+\subsubsection{Formule di Maclaurin}
+\begin{equation*}
+    \sinh(x) = \sum_{k = 0}^n \frac{x^{2k + 1}}{(2k + 1)!} + o(x^{2n + 2}) \qquad per \ x \to 0
+\end{equation*}
+\begin{equation*}
+    \cosh(x) = \sum_{k = 0}^n \frac{x^{2k}}{(2k)!} + o(x^{2n + 1}) \qquad per \ x \to 0
+\end{equation*}
+\begin{equation*}
+    \tanh(x) = x - \frac{x^3}{3} + \frac{2}{15} x^5 - \frac{17}{315} x^7 \qquad per \ x \to 0
+\end{equation*}
+
 \subsection{Esempi}
 \subsubsection{Esempio 1}
 Calcolare il carattere di convergenza della seguente serie: 
@@ -6998,4 +7162,132 @@ Calcolare il carattere di convergenza della seguente serie:
 Se $l = (\log(1 + x))^2 > 1$, ossia $x \in (-1, \frac{1}{e} - 1) \cup (e - 1, +\infty)$. Quindi $\sum_{k = 0}^{+\infty} a_k(x)$ diverge.\\
 Se $x = e - 1$, allora $\log(1 + x) = \log(e) = 1$ e $a_k(e - 1) = \frac{k}{k + 2} \to 1$ per $k \to +\infty$. Quindi $\sum_{k = 0}^{+\infty} a_k(e - 1)$ diverge.\\
 Se $x = \frac{1}{e} - 1$ allora $\log(1 + x) = \log(\frac{1}{e}) = -1$ e $a_k(\frac{1}{e} - 1) = \frac{k}{k + 2} \to 1$ per $k \to +\infty$. Quindi diverge.
+
+\subsubsection{Esempio 5}
+Calcolare il carattere di convergenza della seguente serie:
+\begin{equation*}
+    \sum_{n = 1}^{+\infty} (e^{\frac{1}{n}} - 1)^\alpha, \alpha > 0
+\end{equation*}
+
+\noindent Siccome $e^{\frac{1}{n}} - 1 \to 0$ di ordine $1$, allora abbiamo che:
+\begin{equation*}
+    \lim_{n \to +\infty} \frac{(e^{\frac{1}{n}} - 1)^\alpha}{\frac{1}{n^\alpha}} = 1
+\end{equation*}
+
+\noindent Dato che il risultato del limite è maggiore di $0$, per il criterio del confronto asintotico si ha che $a_k$ e $b_k$ hanno lo stesso carattere di convergenza. In particolare, sappiamo che $\frac{1}{n^\alpha}$ converge se e solo se $\alpha > 1$, altrimenti diverge. Lo stesso quindi accade per $\sum_{k = 0}^{+\infty} (e^{\frac{1}{n}} - 1)^\alpha$.
+
+\subsubsection{Esempio 6}
+Calcolare il carattere di convergenza della seguente serie:
+\begin{equation*}
+    \sum_{k = 0}^{+\infty} \left(\frac{1}{n} - \sin\frac{1}{n}\right)^\beta
+\end{equation*}
+
+\noindent Dato che per Taylor $\sin x = x - \frac{x^3}{6} + o(x^3)$ per $x \to 0^+$, allora:
+\begin{equation*}
+    \frac{1}{n} - \sin\frac{1}{n} = \frac{1}{6n^3} + o\left(\frac{1}{n^3}\right) \quad per \ n \to +\infty
+\end{equation*}
+
+\noindent dove $\frac{1}{6n^3} \to 0$ di ordine $3$ per $n \to +\infty$. Pertanto $(\frac{1}{n} - \sin\frac{1}{n})^\beta \to 0$ di ordine $3\beta$ per $n \to +\infty$.\\
+Ora dato che $\sum_{k = 0}^{+\infty} \frac{1}{n^{3\beta}}$ converge se e solo se $3\beta > 1 \iff \beta > \frac{1}{3} \implies \sum_{k = 0}^{+\infty} (\frac{1}{n} - \sin\frac{1}{n})^\beta$ converge se e solo se $\beta > \frac{1}{3}$.
+
+\subsubsection{Esempio 7}
+Calcolare il carattere di convergenza della seguente serie ($a \in \mathbb{R}$):
+\begin{equation*}
+    \sum_{k = 1}^{+\infty} \frac{k^a}{1 - \cos(e^\frac{1}{k} - 1)}
+\end{equation*}
+
+\noindent Innanzitutto, verifichiamo la condizione necessaria di convergenza delle serie ($\lim_{k \to +\infty} a_k = 0$):
+\begin{align*}
+    \lim_{k \to +\infty} \frac{k^a}{1 - \cos(e^\frac{1}{k} - 1)} &= \lim_{k \to +\infty} \frac{k^a}{(e^\frac{1}{k} - 1)^2} \frac{(e^\frac{1}{k} - 1)^2}{1 - \cos(e^\frac{1}{k} - 1)} = 2\lim_{k \to +\infty} \frac{k^a}{(e^\frac{1}{k} - 1)^2} \\
+    &= 2\lim_{k \to +\infty} \frac{k^a}{\frac{1}{k^2}} \frac{\frac{1}{k^2}}{(e^\frac{1}{k} - 1)^2} = 2 \lim_{k \to +\infty} k^{a + 2} = \begin{cases}
+        +\infty & \quad se \ a > - 2\\
+        2 & \quad se \ a = - 2\\
+        0 & \quad se \ a < - 2\\
+    \end{cases}
+\end{align*}
+
+\noindent Quindi per $a \geq -2$, $\sum_{k = 1}^{+\infty} \frac{k^a}{1 - \cos(e^\frac{1}{k} - 1)}$ diverge. \\
+Sia $a < -2$: allora ci chiediamo $a_k \to 0$ di quale ordine?\\
+Usando nuovamente lo stesso conto precedente, abbiamo che:
+\begin{equation*}
+    \lim_{k \to +\infty} \frac{a_k}{\frac{1}{k^\alpha}} = 2\lim_{k \to +\infty} k^{a + 2 + \alpha} = \begin{cases}
+        +\infty & \quad se \ \alpha > - (a + 2) \\
+        2 & \quad se \ \alpha = - (a + 2) \\
+        0 & \quad se \ 0 < \alpha < - (a + 2)
+    \end{cases}
+\end{equation*}
+
+\noindent Siccome $\sum_{k = 0}^{+\infty} \frac{1}{n^\beta}$ converge $\iff \beta > 1$ ed in questo caso $\beta = -(a + 2)$, allora per il criterio del confronto asintotico: $\sum_{k = 0}^{+\infty} a_k$ converge per $- (a + 2) > 1 \iff a < - 3$.
+
+\subsubsection{Esempio 8}
+Calcolare il carattere di convergenza della seguente serie ($a \in \mathbb{R}$):
+\begin{equation*}
+    \sum_{n = 1}^{+\infty} \frac{1}{n^a} \cdot \frac{\sinh\frac{1}{n} - \frac{1}{n}}{\cosh\frac{1}{n}} 
+\end{equation*}
+
+\noindent Notiamo subito che $\lim_{n \to +\infty}\cosh\frac{1}{n} = 1$. Inoltre, la formula di Taylor-Peano di ordine $3$ fornisce che:
+\begin{equation*}
+    \sinh(u) = u + \frac{u^3}{6} + o(u^4) \qquad per \ u \to 0
+\end{equation*}
+
+\noindent da cui si ha che: $\sinh\frac{1}{n} = \frac{1}{n} + \frac{1}{6n^3} + o(\frac{1}{n^4})$. Pertanto:
+\begin{align*}
+    \lim_{n \to +\infty} a_n &= \lim_{n \to +\infty} \frac{\frac{1}{n} + \frac{1}{6n^3} + o(\frac{1}{n^4}) - \frac{1}{n}}{n^a} = \lim_{n \to +\infty} \left(\frac{1}{6n^{3 + a}} + o\left(\frac{1}{n^{4 + a}}\right)\right) \\ 
+    &= \lim_{n \to +\infty} \frac{1}{6n^{3 + a}} = \begin{cases}
+        0 & \quad se \ a > -3 \\
+        \frac{1}{6} & \quad se \ a = -3 \\
+        +\infty & \quad se \ a < -3
+    \end{cases}
+\end{align*}
+
+\noindent Pertanto per $a \leq -3$, $\sum_{n = 1}^{+\infty} a_n$ diverge perché non vale la condizione necessaria di convergenza. Il calcolo precedente rivela anche che $a_n \to 0$ di ordine $3 + a$ per $n \to +\infty$.\\
+Ricordando ora che $\sum_{n = 0}^{+\infty} \frac{1}{n^\beta}$ converge se e solo se $\beta > 1$, allora il criterio del confronto asintotico permette di concludere che $\sum_{n = 0}^{+\infty} a_n$ converge se e solo se $3 + a > 1 \implies a > -3$.
+
+\subsubsection{Esempio 9}
+Calcolare il carattere di convergenza della seguente serie ($a \in \mathbb{R}$): 
+\begin{equation*}
+    \sum_{n = 4}^{+\infty} (-a)^n \frac{n!}{(n + 1)! - (n!) + 3}
+\end{equation*}
+
+\noindent Notiamo che $a_n \geq 0 \iff (-a) \geq 0 \iff a \leq 0$. Studiamo ora la convergenza assoluta:
+\begin{align*}
+    |a_n| = |a|^n \frac{n!}{(n + 1)! - (n!) + 3} = |a|^n \frac{n!}{(n + 1)!(1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!})} = \frac{|a|^n}{n + 1} \frac{1}{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}}
+\end{align*}
+
+\noindent Ora applichiamo il criterio del rapporto ($a \neq 0$):
+\begin{align*}
+    \left|\frac{a_{n + 1}}{a_n}\right| = \frac{|a|^{n + 1}}{n + 2} \cdot \frac{n + 1}{|a|^n} \cdot \frac{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}}{1 - \frac{1}{n + 2} + \frac{3}{(n + 2)!}} = |a| \cdot \frac{n + 1}{n + 2} \cdot\frac{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}}{1 - \frac{1}{n + 2} + \frac{3}{(n + 2)!}} = |a|
+\end{align*}
+
+\noindent (dato che $\frac{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}}{1 - \frac{1}{n + 2} + \frac{3}{(n + 2)!}} \to 1$ e $\frac{n + 1}{n + 2} \to 1$ per $n \to +\infty$). Quindi $\sum_{n = 4}^{+\infty} a_n$ è assolutamente convergente per $a \neq 0$, $|a| < 1$. Notiamo inoltre che per $a = 0$, $a_n = 0 \qquad \forall n \in \mathbb{N}$. Quindi $\sum_{n = 0}^{+\infty} a_n$ converge assolutamente $\forall a : |a| < 1$. Inoltre, per $|a| > 1$, $\sum_{n = 4}^{+\infty} |a_n|$ è divergente.\\
+Ma cosa succede quando $|a| = 1$? Nel caso in cui $a = - 1$, allora:
+\begin{equation*}
+    a_n = \frac{1}{n + 1} \cdot \frac{1}{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}} \geq 0
+\end{equation*}
+
+\noindent Quindi $a_n \to 0$ di ordine $1$ per $n \to +\infty$. Pertanto, per il criterio del confronto asintotico, $\sum_{n = 0}^{+\infty} a_n$ diverge.\\
+Nel caso in cui $a = 1$, allora:
+\begin{equation*}
+    a_n = (-1)^n \frac{1}{n + 1} \frac{1}{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}} = (-1)^n b_n 
+\end{equation*}
+
+\noindent dove $b_n \geq 0 \implies \sum_{n = 0}^{+\infty} a_n$ è una serie a segni alterni. Abbiamo già mostrato che $\lim_{n \to +\infty} b_n = 0$. Per usare il criterio di von Leibniz quindi serve solo mostrare che $b_{n + 1} \leq b_n$:
+\begin{align*}
+    \frac{(n + 1)!}{(n + 2)! - (n + 1)! + 3} \leq \frac{n!}{(n + 1)! - n! + 3} \iff \frac{n + 1}{(n + 2)! - (n + 1)! + 3} \leq \frac{1}{(n + 1)! - n! + 3}
+\end{align*}
+
+\noindent Svolgiamo ora il denominatore comune:
+\begin{align*}
+    & (n + 1)(n + 1)! - (n + 1)! + 3(n + 1) \leq (n + 2)! - (n + 1)! + 3 \\
+    & (n + 1)(n + 1)! + 3n \leq (n + 2)! \implies 3n \leq (n + 1)![n + 2 - (n + 1)]\\
+    & 3n \leq (n + 1)!
+\end{align*}
+
+\noindent Ricordando ora che $n! \geq n \implies (n + 1)! \geq n(n + 1)$. Pertanto se riusciamo a mostrare che $n(n + 1) \geq 3n$, allora possiamo applicare il criterio di von Leibniz:
+\begin{equation*}
+    n(n + 1) \geq 3n \iff n + 1 \geq 3 \iff n \geq 2
+\end{equation*}
+
+\noindent Quindi $3n \leq (n + 1)!$ è vera per $n \geq 2$, ovvero per $n \geq 2$ si ha che $b_{n + 1} \leq b_n$. Allora per il criterio di von Leibniz possiamo concludere che $\sum_{n = 4}^{+\infty} a_n$ converge per $a = 1$.\\
+In conclusione: $\sum_{n = 4}^{+\infty} a_n$ converge $\iff -1 < a \leq 1$.
 \end{document}
