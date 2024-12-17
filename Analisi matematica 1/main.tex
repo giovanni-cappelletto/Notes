@@ -6591,8 +6591,47 @@ Notiamo subito che $x^2 + 1 = 0$ non ammette radici reali; che l'integrale ha $k
 \subsubsection{Sostituzioni consigliate}
 Sia $R$ una funzione razionale di più variabili, ossia $R(x, ..., x_n) = \frac{p(x, ..., x_n)}{q(x, ..., x_n)}$ con $p, q$ polinomi in $n$ variabili:
 \begin{enumerate}
-    \item Primitiva di $R(x, (\frac{ax + b}{cx + d})^\frac{p}{q}, ..., (\frac{ax + b}{cx + d})^\frac{r}{s})$ con $a, b, c, d \in \mathbb{R}$, $ad - bc \neq 0$, $p, q, ..., r, s \in \mathbb{N} - \{0\}$. Siano allora $m = mcm(q, ..., s)$, $t^m = \frac{ax + b}{cx + d}$ e $x = \frac{dt^m - b}{a - ct^m} =\vcentcolon g(t)$
+    \item Primitiva di $R(x, (\frac{ax + b}{cx + d})^\frac{p}{q}, ..., (\frac{ax + b}{cx + d})^\frac{r}{s})$ con $a, b, c, d \in \mathbb{R}$, $ad - bc \neq 0$, $p, q, ..., r, s \in \mathbb{N} - \{0\}$. Siano allora $m = mcm(q, ..., s)$, $t^m = \frac{ax + b}{cx + d}$, $x = \frac{dt^m - b}{a - ct^m} =\vcentcolon g(t)$ e $(t^m)^\frac{p}{q} = t^{l q}$;
+    \item $\int R(\sin x, \cos x) \ dx$, allora $t = \tan\frac{x}{2}$, con $x \in (-\pi, \pi)$, $\sin x = \frac{2t}{1 + t^2}$ e $\cos x = \frac{1 - t^2}{1 + t^2}$. Inoltre, $g(t) = 2\arctan(t) \implies g'(t) = \frac{2}{1 + t^2}$;
+    \item $\int R(\sin^2x, \cos^2x, \sin x\cos x) \ dx$, allora $t = \tan x$, con $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$, allora $x = \arctan t$ con $t \in \mathbb{R}$. Quindi $\sin^2 x = \frac{t^2}{1 + t^2}$, $\cos^2t = \frac{1}{1 + t^2}$ e $\sin x\cos x = \tan x\cos^2x = \frac{t}{1 + t^2}$;
+    \item $\int \frac{R(\log x)}{x} \ dx$, allora $t = \log x$, con $x > 0$, e $x = e^t$ con $t \in \mathbb{R}$. Quindi $\int \frac{R(\log x)}{x} \ dx = \int \frac{R(t)}{e^t} e^t \ dt \ \bigg|_{t = \log x} = \int R(t) \ dt \ \bigg|_{t = \log x}$
 \end{enumerate}
+
+\noindent\textbf{ES. Punto 1:} Calcolare $\int \frac{\sqrt[3]{x + 1} - 1}{\sqrt{x + 1} + \sqrt[3]{x + 1}} \ dx$.\\
+Notiamo subito che $\frac{p}{q} = \frac{1}{2}$ e $\frac{r}{s} = \frac{1}{3}$, quindi $m = mcm(2, 3) = 6 \implies t^6 = x + 1 \geq 0 \iff x >-1$. Capiamo quindi che $a = 1, b = 1, c = 0, d = 1$ e che $g(t) = t^6 - 1 \implies g'(t) = 6t^5$. Allora:
+\begin{align*}
+    \int \frac{t^2 - 1}{t^3 + t^2} \cdot 6t^5 \ dt \ \bigg|_{t = \sqrt[6]{1 + x}} &= 6\int \frac{(t - 1)(t + 1)}{t^2(t + 1)} t^5 \ dt \ \bigg|_{t = \sqrt[6]{1 + x}} = 6\int t^4 - t^3 \ dt \ \bigg|_{t = \sqrt[6]{1 + x}} \\
+    &= \frac{6}{5} \sqrt[6]{(1 + x)^5} - \frac{3}{2} \sqrt[6]{(1 + x)^2} + c
+\end{align*}
+
+\noindent\textbf{ES. Punto 2:} Calcolare $\int \frac{1 + \sin x}{1 + \cos x} \ dx$.\\
+\begin{align*}
+    \int \frac{1 + \sin x}{1 + \cos x} \ dx &= \int \frac{1 + \frac{2t}{1 + t^2}}{1 + \frac{1 - t^2}{1 + t^2}} \cdot \frac{2}{1 + t^2} \ dt \ \bigg|_{t = \tan\frac{x}{2}} \underset{x \in (-\pi, \pi)}{=} \int \frac{1 + t^2 + 2t}{1 + t^2} \ dt \ \bigg|_{t = \tan\frac{x}{2}} \\
+    &= \int 1 + \frac{2t}{1 + t^2} \ dt \ \bigg|_{t = \tan\frac{x}{2}} = t + \log|1 + t^2| + c \ \bigg|_{t = \tan\frac{x}{2}} \\
+    &= \tan\frac{x}{2} + \log\left|1 + \tan^2\frac{x}{2}\right| + c
+\end{align*}
+
+\noindent\textbf{ES. Punto 3:} Calcolare $\int \frac{3\sin^2x}{1 + 3\sin^2x} \ dx$.\\
+\begin{equation*}
+    \int \frac{3\sin^2x}{1 + 3\sin^2x} \ dx = \int \frac{3\sin^2x + 1 - 1}{1 + 3\sin^2x} \ dx = \int 1 - \frac{1}{1 + 3\sin^2x} \ dx = x - I(x)
+\end{equation*}
+
+\noindent Calcoliamo ora $I(x)$:
+\begin{align*}
+    I(x) &= \int \frac{1}{1 + \frac{3t^2}{1 + t^2}} \cdot \frac{1}{1 + t^2} \ dt \ \bigg|_{t=\tan x} = \int \frac{1}{1 + 4t^2} \ dt \ \bigg|_{t=\tan x} = \int \frac{1}{1 + (2t)^2} \ dt \ \bigg|_{t=\tan x} \\
+    &= \frac{1}{2} \int \frac{du}{u^2 + 1} \bigg|_{u = 2t} = \frac{1}{2} \arctan u + c \ \bigg|_{u = 2t} = \frac{1}{2} \arctan(2\tan x) + c \qquad c \in \mathbb{R}
+\end{align*}
+
+\noindent Quindi:
+\begin{equation*}
+    \int \frac{3\sin^2x}{1 + 3\sin^2x} \ dx = x - \frac{1}{2} \arctan(2\tan x) + c \qquad c \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{ES. Punto 4:} Calcolare $\int \frac{1 - \log x}{(1 + \log^2x)x} \ dx$.\\
+\begin{align*}
+    \int \frac{1 - \log x}{(1 + \log^2x)x} \ dx &= \int \frac{1 - t}{(1 + t^2)e^t} \cdot e^t \ dt \ \bigg|_{t = \log x} = \int \frac{1}{1 + t^2} \ dt \ \bigg|_{t = \log x} - \frac{1}{2} \int \frac{2t}{1 + t^2} \ dt \ \bigg|_{t = \log x} \\
+    &= \arctan(\log x) - \frac{1}{2} \log|1 + \log^2x| + c
+\end{align*}
 
 \section{Integrale di Riemann (integrali definiti)}
 \begin{wrapfigure}{r}{0.45\textwidth}
@@ -6658,6 +6697,68 @@ Siano $f, g: [a, b] \xrightarrow{} \mathbb{R}$, $f, g$ Riemann-integrabili in $[
     \item sia $c \in (a, b)$, allora: $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx + \int_c^b f(x) \ dx$$ (\textbf{addittività rispetto all'insieme di integrazione});
     \item se $f$ è Riemann-integrabile in $[a, c]$ e in $[c, b]$ (ovvero è integrabile su due intervalli adiacenti), allora è Riemann-integrabile in $[a, b]$ e: $$\int_a^b f(x) \ dx = \int_a^c f(x) \ dx + \int_c^b f(x) \ dx$$
 \end{enumerate}
+
+\subsection{Teorema del valor medio integrale}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ Riemann-integrabile in $[a, b]$. Sia $m = inf\{f(x) : x \in [a, b]\} \in \mathbb{R}$ e $M = sup\{f(x) : x \in [a, b]\} \in \mathbb{R}$. Allora:
+\begin{enumerate}
+    \item $m(b - a) \leq \int_a^b f(x) \ dx$;
+    \item $\exists \mu \in [m, M] \ | \ \int_a^b f(x) \ dx = \mu(b - a)$;
+    \item se $f$ è continua in $[a, b]$, allora $\exists x_0 \in [a, b] \ | \ \int_a^b f(x) \ dx = f(x_0)(b - a)$.
+\end{enumerate}
+
+\noindent\textbf{Link:} \href{https://www.geogebra.org/m/EkxYSCJh}{Teorema del valor medio integrale}. 
+
+\subsubsection{Dimostrazione del teorema del valor medio integrale}
+Partiamo dal punto \textit{1.}. Dato che la funzione $f$ è limitata, allora $m \leq f(x) \leq M$ con $x \in [a, b]$. \\
+Prendiamo ora $P = \{a, b\}$, allora $s(P, f) = m(b - a) \in G$ e $S(P, f) = M(b - a) \in H$. Allora è facile notare che:
+\begin{equation*}
+    m(b - a) \leq sup(G) = \int_a^b f(x) \ dx = inf(H) \leq M(b -a)
+\end{equation*}
+
+\noindent Per il punto \textit{2.}, possiamo utilizzare la disequazione ricavata precedentemente:
+\begin{equation*}
+    m(b - a) \leq \int_a^b f(x) \ dx \leq M(b - a) \implies m \leq \frac{\int_a^b f(x) \ dx}{b - a} \leq M
+\end{equation*}
+
+\noindent Sia ora $\mu = \frac{\int_a^b f(x) \ dx}{b - a}$ allora ovviamente si ha che: $\int_a^b f(x) \ dx = \mu(b - a)$.\\
+Per il punto \textit{3.} invece sappiamo da ipotesi che $f \in C^0[a, b]$ (ovvero $f$ è continua in $[a, b]$). Possiamo quindi applicare il teorema dei valori intermedi, per cui $f([a, b])$ (l'immagine di $f$) è intervallo. Il teorema di Weierstrass poi ci garantisce il fatto che $f$ ha massimo e minimo globale, per cui $f([a, b]) = [m, M]$.\\
+Ora per il punto \textit{2.} sappiamo che $\exists \mu \in [m, M] \ | \ \mu(b - a) = \int_a^b f(x) \ dx$, ma $[m, M] = Imm(f) \implies \exists x_0 \in [a, b] \ | \ f(x_0) = \mu$.\\
+
+\noindent\textbf{NB!} Se $\omega(x) \geq 0$ si ha che ($f \in C^0[a, b]$) $\exists x_0 \in [a, b] \ | \ \int_a^b f(x) \omega(x) \ dx = f(x_0) \int_a^b \omega(x) \ dx$.
+
+\subsection{Estensione dell'integrabile di Riemann a casi in cui $a \geq b$}
+\textbf{Def:} Sia $f$ Riemann-integrabile in $[a, b]$ con $a < b$ e $a, b \in \mathbb{R}$. Definiamo ora $\int_a^a f(x) \ dx = 0$ e $\int_b^a f(x) \ dx = - \int_a^b f(x) \ dx$.\\
+
+\noindent\textbf{NB!} Sia $[a, b] \subset \mathbb{R}$, $f$ Riemann-integrabile in $[a, b]$. Qualunque sia la relazione tra $a$ e $b$ ($a < b$, $a = b$, $a > b$), si ha che:
+\begin{equation*}
+    \left|\int_a^b f(x) \ dx \right| \leq \left|\int_a^b |f(x)| \ dx \right|
+\end{equation*}
+
+\subsection{Funzione integrabile}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $a < b$, $f$ Riemann-integrabile in $[a, b]$. Sia $x_0 \in [a, b]$ fissato. Definiamo \textbf{funzione integrabile}:
+\begin{align*}
+    F: \ & [a, b] \xrightarrow{} \mathbb{R}\\
+    & x \longmapsto \int_{x_0}^x f(t) \ dt
+\end{align*}
+
+\noindent\textbf{NB!} Non ha senso scrivere: $\int_x^{x_0} f(x) \ dx$.\\
+
+\noindent\textbf{NB!} È necessaria la definizione per $\Bar{x} < x_0$ perché: $\int_{x_0}^{\Bar{x}} f(t) \ dt = - \int_{\Bar{x}}^{x_0} f(t) \ dt$.\\
+
+\noindent\textbf{Teorema:} Sia $[a, b] \subset \mathbb{R}$ con $a < b$, $f$ Riemann-integrabile in $[a, b]$. Sia $x_0 \in [a, b]$ e $F(x) = \int_{x_0}^x f(t) \ dt \qquad \forall x \in [a, b]$, allora $F$ è continua in $[a, b]$.\\
+
+\noindent Dimostriamo ora questo teorema. Siano $x_1, x_2 \in [a, b]$, allora:
+\begin{align*}
+    0 \leq |F(x_1) - F(x_2)| &= \left|\int_{x_0}^{x_1} f(t) \ dt - \int_{x_0}^{x_2} f(t) \ dt\right| = \left|\int_{x_0}^{x_2} f(t) \ dt + \int_{x_2}^{x_1} f(t) \ dt - \int_{x_0}^{x_2} f(t) \ dt\right| \\
+    &= \left|\int_{x_2}^{x_1} f(t) \ dt\right| \leq \left|\int_{x_2}^{x_1}|f(t)| \ dt\right|
+\end{align*}
+
+\noindent Ora dato che $f$ è limitata in $[a, b]$, allora $|f(t)| \leq M$ per cui: $|\int_{x_2}^{x_1}|f(t)| \ dt| = M|x_1 - x_2|$. Quindi abbiamo ottenuto la seguente disuguaglianza:
+\begin{equation*}
+    0 \leq |F(x_1) - F(x_2)| \leq M|x_1 - x_2|
+\end{equation*}
+    
+\noindent Ora dato che sia $0$ che $M|x_1 - x_2|$ tendono a $0$ per $x_2 \to x_1$, allora per il teorema dei carabinieri si ha che $\lim_{x_2 \to x_1}|F(x_1) - F(x_2)| = 0$, ossia che $\lim_{x_2 \to x_1} F(x_2) = F(x_1)$, per cui $F$ è continua.
 
 \newpage
 \part{Serie numeriche}
@@ -6937,7 +7038,7 @@ Partiamo dimostrando il primo caso. Scrivere che $\lim_{k \to +\infty} \frac{a_k
     \exists N \in \mathbb{N} : \frac{l}{2} < \frac{a_k}{b_k} < \frac{3}{2}l \qquad per \ k > N
 \end{equation*}
 
-\noindent (abbiamo preso $\varepsilon = \frac{l}{2}$ e quindi:
+\noindent (abbiamo preso $\varepsilon = \frac{l}{2}$) e quindi:
 \begin{equation*}
     \frac{l}{2} b_k < a_k < \frac{3}{2}lb_k \qquad per \ k > N
 \end{equation*}
@@ -7059,7 +7160,7 @@ Sia ora $y \geq 1$. Gli stessi calcoli precedenti determinano allora che:
     x_1 = \log(u_1) \geq 0 \qquad \qquad x_2 = \log(u_2) \leq 0
 \end{equation*}
 
-\noindent Dato che ci siamo ristretti al caso $[0, +\infty)$, consideriamo solo $x_1 \implies x = \log(y + \sqrt{y^2 + 1}) \vcentcolon = \arccosh(x)$ con $y \geq 1$.\\
+\noindent Dato che ci siamo ristretti al caso $[0, +\infty)$, consideriamo solo $x_1 \implies x = \log(y + \sqrt{y^2 - 1}) =\vcentcolon \arccosh(x)$ con $y \geq 1$.\\
 In conclusione, $Imm(\cosh(x)) = [1, +\infty)$. Invertiamo quindi $\cosh: [0, +\infty) \xrightarrow{} [1, +\infty)$ e otteniamo:
 \begin{align*}
     \arccosh(x): \ & [1, +\infty) \xrightarrow{} [0, +\infty) \\
@@ -7265,13 +7366,13 @@ Ma cosa succede quando $|a| = 1$? Nel caso in cui $a = - 1$, allora:
     a_n = \frac{1}{n + 1} \cdot \frac{1}{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}} \geq 0
 \end{equation*}
 
-\noindent Quindi $a_n \to 0$ di ordine $1$ per $n \to +\infty$. Pertanto, per il criterio del confronto asintotico, $\sum_{n = 0}^{+\infty} a_n$ diverge.\\
+\noindent Quindi $a_n \to 0$ di ordine $1$ per $n \to +\infty$. Pertanto, per il criterio del confronto asintotico, $\sum_{n = 4}^{+\infty} a_n$ diverge.\\
 Nel caso in cui $a = 1$, allora:
 \begin{equation*}
     a_n = (-1)^n \frac{1}{n + 1} \frac{1}{1 - \frac{1}{n + 1} + \frac{3}{(n + 1)!}} = (-1)^n b_n 
 \end{equation*}
 
-\noindent dove $b_n \geq 0 \implies \sum_{n = 0}^{+\infty} a_n$ è una serie a segni alterni. Abbiamo già mostrato che $\lim_{n \to +\infty} b_n = 0$. Per usare il criterio di von Leibniz quindi serve solo mostrare che $b_{n + 1} \leq b_n$:
+\noindent dove $b_n \geq 0 \implies \sum_{n = 4}^{+\infty} a_n$ è una serie a segni alterni. Abbiamo già mostrato che $\lim_{n \to +\infty} b_n = 0$. Per usare il criterio di von Leibniz quindi serve solo mostrare che $b_{n + 1} \leq b_n$:
 \begin{align*}
     \frac{(n + 1)!}{(n + 2)! - (n + 1)! + 3} \leq \frac{n!}{(n + 1)! - n! + 3} \iff \frac{n + 1}{(n + 2)! - (n + 1)! + 3} \leq \frac{1}{(n + 1)! - n! + 3}
 \end{align*}

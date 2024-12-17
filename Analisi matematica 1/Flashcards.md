@@ -164,6 +164,8 @@
 160. Enuncia il criterio di von Leibniz.
 161. Mostra le diverse proprietà delle funzioni iperboliche $\cosh(x)$ e $\sinh(x)$.
 162. Quando $\sinh(x)$ e $\cosh(x)$ sono invertibili? Qual è la loro inversa?
+163. Enuncia e dimostra il teorema del valor medio integrale.
+164. Mostra che se $f$ è Riemann-integrabile in $[a, b]$, $x_0 \in [a, b]$ e $F(x) = \int_{x_0}^x f(t) \ dt \qquad \forall x \in [a, b]$, allora $F$ è continua in $[a, b]$
 
 ## Dimostrazioni
 
