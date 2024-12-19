@@ -166,6 +166,11 @@
 162. Quando $\sinh(x)$ e $\cosh(x)$ sono invertibili? Qual è la loro inversa?
 163. Enuncia e dimostra il teorema del valor medio integrale.
 164. Mostra che se $f$ è Riemann-integrabile in $[a, b]$, $x_0 \in [a, b]$ e $F(x) = \int_{x_0}^x f(t) \ dt \qquad \forall x \in [a, b]$, allora $F$ è continua in $[a, b]$
+165. Enuncia e dimostra il TFCI.
+166. Dimostra la formula fondamentale del calcolo integrale.
+167. Come funziona l'integrale di Riemann per sostituzione? E quello per parti?
+168. Cosa sono gli integrali impropri?
+169. Enuncia il criterio del confronto e il criterio del confronto asintotico in $(a, b]$ per gli integrali impropri.
 
 ## Dimostrazioni
 

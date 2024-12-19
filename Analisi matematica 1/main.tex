@@ -6760,6 +6760,256 @@ Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $a < b$, $f$ Riemann-integrabile in $
     
 \noindent Ora dato che sia $0$ che $M|x_1 - x_2|$ tendono a $0$ per $x_2 \to x_1$, allora per il teorema dei carabinieri si ha che $\lim_{x_2 \to x_1}|F(x_1) - F(x_2)| = 0$, ossia che $\lim_{x_2 \to x_1} F(x_2) = F(x_1)$, per cui $F$ è continua.
 
+\subsection{Teorema fondamentale del calcolo integrale (TFCI)}
+Sia $[a, b] \subset \mathbb{R}$ con $a < b$. $f$ Riemann-integrabile su $[a, b]$ ed $\exists x_1 \in [a, b]$ tale che $f$ sia continua in $x_1$. Allora, fissato $x_0 \in [a, b]$ e presa $F(x) = \int_{x_0}^x f(t) \ dt$, si ha che $F$ è derivabile in $x_1$ e $F'(x_1) = f(x_1)$.
+
+\subsubsection{Dimostrazione del teorema fondamentale del calcolo integrale}
+Possiamo riscrivere la tesi del teorema come ($x \neq x_1$):
+\begin{align*}
+    0 \leq \left|\frac{F(x) - F(x_1)}{x - x_1} - f(x_1)\right| &= \left|\frac{\int_{x_0}^x f(t) \ dt - \int_{x_0}^{x_1} f(t) \ dt}{x - x_1} - f(x_1)\right| \\ 
+    &= \left|\frac{\int_{x_0}^{x_1} f(t) \ dt + \int_{x_1}^x f(t) \ dt - \int_{x_0}^{x_1} f(t) \ dt}{x - x_1} - f(x_1)\right| \\
+    &= \left|\frac{\int_{x_1}^x f(t) \ dt - f(x_1)(x - x_1)}{x - x_1}\right|
+\end{align*}
+
+\noindent Dato che $\int_{x_1}^x c \ dt = c(x - x_1)$, allora possiamo scrivere: $\int_{x_1}^x f(t) \ dt - f(x_1)(x - x_1) = \int_{x_1}^x (f(t) - f(x_1)) \ dt$. Sfruttiamo poi la disuguaglianza integrale (\textit{NB!} a pagina 155 di questo pdf), per cui si ha che:
+\begin{equation*}
+    \left|\frac{\int_{x_1}^x (f(t) - f(x_1)) \ dt}{x - x_1}\right| \leq \frac{1}{|x - x_1|} \left|\int_{x_1}^x |f(t) 
+    - f(x_1)| \ dt \right|
+\end{equation*}
+
+\noindent Per ipotesi $f$ è continua in $x_1$, ossia $\forall \varepsilon > 0, \exists \delta_\varepsilon > 0 : |f(t) - f(x_1)| < \varepsilon$ per ogni $t$ per cui $0 < |t - x_1| < \delta_\varepsilon$ con $t \in [a, b]$.\\
+Dato che gli estremi dell'integrale sono $x_1$ e $x$, osserviamo che $t \in [x_1, x]$ (oppure $t \in [x, x_1]$), per cui $|t - x_1| \leq |x - x_1|$. Sia allora $x \in [a, b] : |x - x_1| < \delta_\varepsilon$. Quindi $|t - x_1| \leq |x - x_1| < \delta_\varepsilon$ e $|f(t) - f(x_1)| < \varepsilon$. Allora si ha che:
+\begin{equation*}
+    0 \leq \left|\frac{F(x) - F(x_1)}{x - x_1} - f(x_1)\right| < \frac{1}{|x - x_1|} \left|\int_{x_1}^x \varepsilon \ dt  \right| = \varepsilon \cdot \frac{|x - x_1|}{|x - x_1|} = \varepsilon
+\end{equation*}
+
+\noindent Ossia $\forall \varepsilon > 0, \exists \delta_\varepsilon > 0$ tale che $\left|\frac{F(x) - F(x_1)}{x - x_1} - f(x_1)\right| < \varepsilon$ per ogni $x$ tale che $0 < |x - x_1| < \delta_\varepsilon$ con $x \in [a, b]$, cioè $\lim_{x \to x_1} \frac{F(x) - F(x_1)}{x - x_1}$ esiste e vale $f(x_1)$. Quindi $F'(x_1) = f(x_1)$.\\
+
+\noindent\textbf{Corollari:} Sia $f \in C^0[a, b]$ e sia $F(x) = \int_{x_0}^x f(t) \ dt$ con $x, x_0 \in [a, b]$. Allora:
+\begin{enumerate}
+    \item $F$ è derivabile in $(a, b)$ e $F'(x) = f(x) \qquad \forall x \in (a, b)$;
+    \item $F$ è primitiva di $f$ in $(a, b)$;
+    \item $f$ ammette primitiva in $(a, b)$.
+\end{enumerate}
+
+\subsection{Formula fondamentale del calcolo integrale}
+Sia $f \in C^0[a, b]$ e sia $G: [a, b] \xrightarrow{} \mathbb{R}$ una primitiva di $f$ in $[a, b]$. Allora:
+\begin{equation*}
+    \int_a^b f(t) \ dt = G(b) - G(a) \qquad \left(= G(x) \Big|_a^b\right)
+\end{equation*}
+
+\subsubsection{Dimostrazione della formula fondamentale del calcolo integrale}
+Sia $x_0 \in [a, b]$ e $F(x) = \int_{x_0}^x f(t) \ dt$. Per il TFCI, $F$ è derivabile in $[a, b]$ e $F'(x) = f(x) \qquad \forall x \in [a, b]$. Dato che $F$ e $G$ sono primitive di $f$ in un intervallo $[a, b]$, $\exists c \in \mathbb{R} : G(x) = F(x) + c \qquad \forall x \in [a, b]$.\\
+Osserviamo adesso che:
+\begin{equation*}
+    G(b) - G(a) = F(b) + c - F(a) - c = F(b) - F(a) = \int_{x_0}^b f(t) \ dt - \int_{x_0}^a f(t) \ dt
+\end{equation*}
+
+\noindent\textbf{Osservazione:} Sia $f \in C^0[a, b]$ e sia $H(x) = \int_{\alpha(x)}^{\beta(x)} f(t) \ dt$ dove $\alpha, \beta: [a, b] \xrightarrow{} \mathbb{R}$ derivabili in $[a, b]$. Sapendo che $F(u) = \int_{x_0}^u f(t) \ dt$, si ha allora che $H(x)$ è derivabile perché composizione di funzioni derivabili:
+\begin{equation*}
+    H(x) = \int_{x_0}^{\beta(x)} f(t) \ dt - \int_{x_0}^{\alpha(x)} f(t) \ dt = F(\beta(x)) - F(\alpha(x))
+\end{equation*}
+
+\noindent Inoltre: 
+\begin{equation*}
+    H'(x) = F'(\beta(x))\beta'(x) - F'(\alpha(x))\alpha'(x) = f(\beta(x))\beta'(x) - f(\alpha(x))\alpha'(x) \qquad \forall x \in [a, b]
+\end{equation*}
+
+\noindent\textbf{ES.} Calcolare $\lim_{x \to 0^+} \frac{1}{x^2} \int_0^{\sin x} e^{-t^2} \ dt$.\\
+Sia $F(u) = \int_0^u e^{-t^2} \ dt$. Dato che la funzione integranda $e^{-t^2}$ è continua in $[0, u]$ (composizione di funzioni continue), allora per il TFCI, $F$ è continua e derivabile. Inoltre, notiamo che $F(0) = 0$, dato che $\lim_{x \to 0^+} \sin x = 0$, per cui il limite è una forma indeterminata del tipo $\frac{0}{0}$. Verifichiamo quindi le ipotesi di Bernoulli - De L'Hôpital: sia il numeratore che il denominatore sono funzioni derivabili. Inoltre, la derivata del denominatore è diversa da $0$ per $x \neq 0$. Infine, abbiamo già mostrato che entrambi i limiti di numeratore e denominatore tendono a $0$ per $x \to 0^+$. Possiamo allora applicare Bernoulli - De L'Hôpital:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{e^{-\sin^2x}\cos x}{2x} = \lim_{x \to 0^+} \frac{\cos x}{2xe^{\sin^2x}} = +\infty = \lim_{x \to 0^+} \frac{1}{x^2} \int_0^{\sin x} e^{-t^2} \ dt
+\end{equation*}
+
+\noindent\textbf{ES.} Data $F(x) = \int_0^{\sin x} e^{-t^2} \ dt$, calcolare la sua formula di Taylor di ordine $2$, centrata in $0$.\\
+Dall'esercizio precedente sappiamo che $F(0) = 0$ e che $F'(x) = e^{-\sin^2x} \cos x \implies F'(0) = 1$. Deriviamo ora $F'(x)$: $F''(x) = e^{-\sin^2x} (-2\sin x\cos x) - e^{-\sin^2 x} \sin x \implies F''(0) = 0$. Possiamo quindi ora scrivere la formula di Taylor richiesta dall'esercizio:
+\begin{align*}
+    F(x) &= F(0) + F'(0)(x - 0) + F''(0) \frac{(x - 0)^2}{2!} + o((x - 0)^2) \qquad per \ x \to 0^+ \\
+    &= x + o(x^2) \qquad per \ x \to 0^+
+\end{align*}
+
+\noindent Per risolvere l'esercizio precedente, basterebbe quindi sostituire all'interno del limite $\int_0^{\sin x} e^{-t^2} \ dt$ a $x + o(x^2)$:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{1}{x^2} \int_0^{\sin x} e^{-t^2} \ dt = \lim_{x \to 0^+} \frac{x + o(x)}{x^2} = \lim_{x \to 0^+} \frac{1}{x}  = +\infty
+\end{equation*}
+
+\subsection{Teorema - Integrale di Riemann per sostituzione}
+Sia $f: [a, b] \xrightarrow{} \mathbb{R}, f \in C^0[a, b]$ con $a, b \in \mathbb{R}$. Sia inoltre $g: [c, d] \xrightarrow{} [a, b], g \in C^1[c, d]$ con $c, d \in \mathbb{R}$. Allora:
+\begin{equation*}
+    \int_c^d f(g(t))g'(t) \ dt = \int_{g(c)}^{g(d)} f(x) \ dx
+\end{equation*}
+
+\noindent Se inoltre si ha che $g$ è suriettiva e strettamente crescente, allora:
+\begin{equation*}
+    \int_a^b f(x) \ dx = \int_{g^{-1}(a)}^{g^{-1}(b)} f(g(t))g'(t) \ dt
+\end{equation*}
+
+%\noindent\textbf{ES.} Calcolare $\int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{\sin x}{\sin x + 2 \cos x} \ dx$. \\
+%Applichiamo la sostituzione consigliata $t = \tan\frac{x}{2} = g^{-1}(x) \implies g(t) = 2\arctan t$, che è suriettiva e strettamente crescente. Inoltre:
+%\begin{equation*}
+%    \tan\left(\frac{\pi}{3} \cdot \frac{1}{2}\right) = \tan\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{3} \qquad \qquad \tan\left(-\frac{\pi}{3} \cdot \frac{1}{2}\right) = \tan\left(-\frac{\pi}{6}\right) = -\frac{\sqrt{3}}{3}
+%\end{equation*}
+
+%\noindent Per cui possiamo riscrivere l'integrale come:
+%\begin{align*}
+%    \int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{\sin x}{\sin x + 2 \cos x} \ dx &= \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{\frac{2t}{1 + t^2}}{\frac{2t}{1 + t^2} + 2\frac{1 - t^2}{1 + t^2}} \cdot \frac{2}{1 +t ^2} \ dt \Bigg|_{t = \tan\frac{x}{2}} = \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{2t}{(t + 1 - t^2)(1 + t^2)} \ dt \Bigg|_{t = \tan\frac{x}{2}} \\
+%    &= \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} 
+%\end{align*}
+
+\subsection{Teorema - Integrale di Riemann per parti}
+Siano $f, g: [a, b] \xrightarrow{} \mathbb{R}$, $f, g \in C^1[a, b]$. Allora:
+\begin{equation*}
+    \int_a^b f(x)g'(x) \ dx = f(x)g(x) \ \bigg|_a^b - \int_a^b f'(x)g(x) \ dx = f(b)g(b) - f(a)g(a) - \int_a^b f'(x)g(x) \ dx
+\end{equation*}
+
+\noindent Dimostriamo ora il teorema qui sopra. Dato che per ipotesi $f, g \in C^1[a, b]$, allora $f'g$ e $fg'$ sono continue in $[a, b]$ e quindi sono Riemann-integrabili in $[a, b]$. Inoltre:
+\begin{equation*}
+    \int_a^b (fg)'(x) \ dx = \int_a^b f'(x)g(x) \ dx +\int_a^bf(x)g'(x) \ dx
+\end{equation*}
+
+\noindent Ma $fg$ è primitiva di $(fg)'$, quindi: $\int_a^b (fg)'(x) \ dx = f(b)g(b) - f(a)g(a)$. Allora:
+\begin{equation*}
+    f(b)g(b) - f(a)g(a) = \int_a^b f'(x)g(x) \ dx + \int_a^bf(x)g'(x) \ dx
+\end{equation*}
+\begin{equation*}
+    \implies \int_a^bf(x)g'(x) \ dx = f(b)g(b) - f(a)g(a) - \int_a^b f'(x)g(x)
+\end{equation*}
+
+\section{Integrali impropri (generalizzati)}
+Sia $f: (a, b] \xrightarrow{} \mathbb{R}$. Se $\forall x > a$ si ha che $f$ è Riemann-integrabile in $[x, b]$, allora diremo che $f$ ha \textbf{integrale improprio convergente in $(a, b]$} se e solo se:
+\begin{equation*}
+    \lim_{x \to a^+} \left(\int_x^b f(t) \ dt\right) = l \in \mathbb{R}
+\end{equation*}
+
+\noindent e in tal caso scriviamo $l = \int_a^b f(t) \ dt$. \\
+È detto \textbf{divergente in $(a, b]$} nel caso in cui:
+\begin{equation*}
+    \lim_{x \to a^+} \left(\int_x^b f(t) \ dt\right) = \begin{cases}
+        + \infty \\
+        -\infty
+    \end{cases}
+\end{equation*}
+
+\noindent È detto \textbf{indeterminato in $(a, b]$} nel caso in cui $\nexists \lim_{x \to a^+} \int_x^b f(t) \ dt$.\\
+
+\noindent\textbf{ES.} Consideriamo $f(t) = \frac{1}{(t - a)^\alpha}$ (ovvero l'infinito fondamentale di ordine $\alpha$, di $a$ da destra), $t \in (a, b]$ con $\alpha > 0$. Allora:
+\begin{align*}
+    \int_x^b \frac{dt}{(t - a)^\alpha} &= \begin{cases}
+        \log|t - a| \ \bigg|_x^b & \qquad se \ \alpha = 1 \\
+        \dfrac{(t - a)^{1 - \alpha}}{1 - \alpha} \ \bigg|_x^b & \qquad se \ \alpha \neq 1, \alpha > 0
+    \end{cases}\\\\
+    &= \begin{cases}
+        \log|b - a| - \log|x - a| & \qquad se \ \alpha = 1 \\\\
+        \dfrac{(b - a)^{1 - \alpha}}{1 - \alpha} - \dfrac{(x - a)^{1 - \alpha}}{1 - \alpha} & \qquad se \ \alpha \neq 1, \alpha > 0
+    \end{cases}
+\end{align*}
+
+\noindent Quindi:
+\begin{align*}
+    \lim_{x \to a^+} \int_x^b \frac{dt}{(t - a)^\alpha} = \begin{cases}
+        +\infty & \qquad se \ \alpha = 1 \ \ \ (diverge) \\
+        \frac{(b - a)^{1 - \alpha}}{1 - \alpha} & \qquad se \ 0 < \alpha < 1 \ \ \ (converge) \\
+        +\infty & \qquad se \ \alpha > 1 \ \ \ (diverge)
+    \end{cases}
+\end{align*}
+
+\noindent Queste funzioni sono quindi gli infiniti fondamentali in $(a, b]$ di $f(t)$. Usandoli possiamo capire il comportamento di altri integrali impropri.
+
+\subsection{Criterio del confronto}
+Siano $f, g: (a, b] \xrightarrow{} \mathbb{R}$, $0 \leq f(t) \leq g(t) \qquad \forall t \in (a, b]$. Siano $f, g$ Riemann-integrabili in $[x, b] \qquad \forall x > a$. Allora:
+\begin{enumerate}
+    \item se $g$ ha integrale improprio convergente in $(a, b]$, allora $f$ ha integrale improprio convergente in $(a, b]$;
+    \item se $f$ ha integrale improprio divergente in $(a, b]$, allora $g$ ha integrale improprio divergente in $(a, b]$.
+\end{enumerate}
+
+\subsection{Criterio del confronto asintotico in $(a, b]$}
+Siano $f, g: (a, b] \xrightarrow{} (0, +\infty)$, $f, g$ Riemann-integrabili in $[x, b] \qquad \forall x > a$. Siano $f, g$ infinite per $t \to a^+$. Allora:
+\begin{enumerate}
+    \item se $\lim_{t \to a^+} \frac{f(t)}{g(t)} = l \in \mathbb{R} - \{0\}$, allora $\int_a^b f(t) \ dt$ converge se e solo se $\int_a^b g(t) \ dt$ converge;
+    \item se $\lim_{t \to a^+} \frac{f(t)}{g(t)} = 0$ (cioè $f$ è infinito di ordine inferiore rispetto a $g$), allora se $\int_a^b g(t) \ dt$ converge, allora $\int_a^b f(t) \ dt$ converge e se $\int_a^b f(t) \ dt$ diverge, allora $\int_a^b g(t) \ dt$ diverge;
+    \item se $\lim_{t \to a^+} \frac{f(t)}{g(t)} = +\infty$ (cioè $f$ è infinito di ordine superiore rispetto a $g$), allora se $\int_a^b f(t) \ dt$ converge, allora $\int_a^b g(t) \ dt$ converge e se $\int_a^b g(t) \ dt$ diverge, allora $\int_a^b f(t) \ dt$ diverge.
+\end{enumerate}
+
+\noindent Per dimostrarlo basta utilizzare la definizione di limite e poi applicare il criterio del confronto.\\
+
+\noindent\textbf{ES.} Calcolare il seguente integrale:
+\begin{equation*}
+    \int_0^{\frac{1}{2}} \frac{x^{\frac{1}{3}} - x^{\frac{1}{2}}}{(x^{\frac{1}{2}} - x^{\frac{2}{3}})^2} \ dx
+\end{equation*}
+
+\noindent Innanzitutto, dobbiamo capire se l'esercizio ci sta chiedendo di calcolare un integrale di Riemann oppure un integrale improprio. Per farlo, calcoliamo il dominio della funzione:
+\begin{equation*}
+    f(x) = \frac{x^{\frac{1}{3}} - x^{\frac{1}{2}}}{(x^{\frac{1}{2}} - x^{\frac{2}{3}})^2} = \frac{x^{\frac{1}{3}}(1 - x^{\frac{1}{6}})}{x(1 - x^{\frac{1}{6}})^2} = \frac{1}{x^{\frac{2}{3}} (1 - x^{\frac{1}{6}})}
+\end{equation*}
+
+\noindent (tra il secondo e terzo passaggio abbiamo semplificato senza problemi perché il punto di annullamento di $(1 - x^\frac{1}{6})$ è a $x = 1$, che non è compreso all'interno dell'intervallo stabilito dagli estremi dell'integrale). L'unico punto non appartenente al dominio di questa funzione nell'intervallo preso è quindi $x = 0$. Dato che è proprio uno degli estremi dell'integrale, l'esercizio ci sta chiedendo di risolvere un integrale improprio. Quindi:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{1}{x^{\frac{2}{3}} (1 - x^{\frac{1}{6}})} = +\infty
+\end{equation*}
+
+\noindent Ma di che ordine? Basta confrontarlo con l'infinito fondamentale:
+\begin{equation*}
+    \lim_{x \to 0^+} \frac{\frac{1}{x^{\frac{2}{3}} (1 - x^{\frac{1}{6}})}}{\frac{1}{x^\alpha}} = \lim_{x \to 0^+} \frac{x^{\alpha - \frac{2}{3}}}{1 - x^{\frac{1}{6}}} = l \in \mathbb{R} - \{0\} \iff \alpha = \frac{2}{3}
+\end{equation*}
+
+\noindent Pertanto, $\int_0^{\frac{1}{2}} f(x) \ dx$ ha lo stesso carattere di convergenza di $\int_0^{\frac{1}{2}} \frac{dx}{x^{\frac{2}{3}}}$, che converge.\\
+
+\noindent\textbf{ES.} Calcolare $\int_0^\frac{1}{2} \frac{dt}{t(-\log t)^{\gamma}}$ con $\gamma > 0$.\\
+\noindent Sappiamo che $\lim_{t \to 0^+} \frac{1}{{t(-\log t)^{\gamma}}} = +\infty$, ma non ha ordine di infinito. Infatti:
+\begin{equation*}
+    \lim_{t \to 0^+} \frac{\frac{1}{{t(-\log t)^{\gamma}}}}{\frac{1}{t}} = \lim_{t \to 0^+} \frac{1}{{(-\log t)^{\gamma}}} = 0 \implies ordine \ inferiore \ a \ \frac{1}{t}
+\end{equation*}
+
+\noindent Ma presa $\varepsilon > 0$:
+\begin{equation*}
+    \lim_{t \to 0^+} \frac{\frac{1}{{t(-\log t)^{\gamma}}}}{\frac{1}{t^{1 - \varepsilon}}} = \lim_{t \to 0^+} \frac{1}{{t^\varepsilon(-\log t)^{\gamma}}} = 0 \implies ordine \ superiore \ a \ \frac{1}{t^{1 - \varepsilon}} \qquad \forall \varepsilon > 0
+\end{equation*}
+
+\noindent Per avere ordine di infinito avremmo dovuto trovare un numero reale positivo nel calcolo di uno dei due limiti. Per risolvere l'esercizio, è necessario dividerlo nei vari casi e studiarli indipendentemente. Sia allora $x > 0$:
+\begin{equation*}
+    \int_x^\frac{1}{2} \frac{dt}{t(-\log t)^\gamma} = \begin{cases}
+        -\log(-\log t) \ \bigg|_x^\frac{1}{2} & \qquad se \ \gamma = 1 \\
+        - \dfrac{(-\log t)^{1 - \gamma}}{1 - \gamma} \ \bigg|_x^\frac{1}{2} & \qquad se \ \gamma \neq 1, \gamma > 0 \\
+    \end{cases}
+\end{equation*}
+
+\noindent Per $\gamma = 1$, si ha che:
+\begin{equation*}
+    \lim_{x \to 0^+} -\log\left(-\log\frac{1}{2}\right) + \log(-\log(x)) = +\infty
+\end{equation*}
+
+\noindent e allora l'integrale improprio diverge. Per $\gamma \neq 1, \gamma > 0$, si ha che:
+\begin{equation*}
+    \lim_{x \to 0^+} - \frac{(-\log(\frac{1}{2}))^{1 - \gamma}}{1 - \gamma} + \frac{(-\log x)^{1 - \gamma}}{1 - \gamma} = \begin{cases}
+        + \infty & \qquad se \ 0 < \gamma < 1 \\
+        \frac{(\log 2)^{1 - \gamma}}{\gamma - 1} & \qquad se \ \gamma > 1
+    \end{cases}
+\end{equation*}
+
+\noindent Pertanto $\int_x^\frac{1}{2} \frac{dt}{t(-\log t)^\gamma}$ converge se e solo se $\gamma > 1$ e in tal caso vale $\frac{(\log 2)^{1 - \gamma}}{\gamma - 1}$.\\
+
+\noindent\textbf{ES.} Calcolare il seguente integrale:
+\begin{equation*}
+    \int_{\frac{1}{2}}^1 \frac{x^{\frac{1}{3}} - x^{\frac{1}{2}}}{(x^{\frac{1}{2}} - x^{\frac{2}{3}})^2} \ dx
+\end{equation*}
+
+\noindent Il problema di convergenza questa volta è in $1$. L'integrazione è la stessa dell'esercizio svolto precedentemente, quindi $f(x) = \frac{1}{x^{\frac{2}{3}} (1 - x^\frac{1}{6})} \to +\infty$ per $x \to 1$. Ma di che ordine? Per calcolarlo, conviene studiare l'ordine di infinitesimo di $1 - x^\frac{1}{6}$ e poi fare il reciproco, ottenendo così l'ordine di infinito. Sia allora $g(x) = 1 - x^\frac{1}{6}$. Utilizziamo Taylor-Peano centrato in $x_0 = 1$:
+\begin{align*}
+    & g(x) = 1 - x^\frac{1}{6} && \qquad \qquad g(1) = 0 \\
+    & g'(x) = -\frac{1}{6} x^{-\frac{5}{6}} && \qquad \qquad g'(1) = -\frac{1}{6}
+\end{align*}
+
+\noindent Quindi $g(x) = -\frac{1}{6}(x - 1) + o(x - 1)$ per $x \to 1^-$ (ovvero è ordine di infinitesimo pari a $1$). Quindi $f(x) \to +\infty$ per $x \to 1^-$ di ordine $1$, infatti:
+\begin{equation*}
+    \lim_{x \to 1^-} \frac{\frac{1}{x^\frac{2}{3}(1 - x^\frac{1}{6})}}{\frac{1}{1 - x}} = \lim_{x \to 1^-} \frac{1 - x}{x^\frac{2}{3}(1 - x^\frac{1}{6})} = \lim_{x \to 1^-} \frac{1 - x}{1 - x^\frac{1}{6}} = \lim_{x \to 1^-} \frac{1 - x}{\frac{1}{6} (1 - x) + o(x - 1)} = 6
+\end{equation*}
+
+\noindent Quindi $\int_\frac{1}{2}^1 f(x) \ dx$ ha lo stesso carattere di convergenza di $\int_\frac{1}{2}^1 \frac{1}{1 - x} \ dx$ ossia diverge.\\
+
+\noindent\textbf{NB!} Se il testo avesse chiesto lo studio di $\int_0^1 \frac{x^{\frac{1}{3}} - x^{\frac{1}{2}}}{(x^{\frac{1}{2}} - x^{\frac{2}{3}})^2} \ dx$, allora il problema andava studiato separatamente in $(0, \frac{1}{2}]$ e in $[\frac{1}{2}, 1)$. Inoltre, $\int_0^1 f(x) \ dx$ converge se e solo se sia $\int_0^\frac{1}{2} f(x) \ dx$, che $\int_\frac{1}{2}^1 f(x) \ dx$ convergono. \\
+
+\noindent\textbf{NB!} In generale, in un intervallo del tipo $(a, b) - \{x_0\}$ va studiata la convergenza in $(a, x_1]$, in $x_1, x_0)$, in $(x_0, x_2]$ e in $[x_2, b)$, dove $a < x_1 < x_0 < x_2 < b$ e $\int_a^b f(t) \ dt$ converge se e solo se $\int_a^{x_1} f(x) \ dx$, $\int_{x_1}^{x_0} f(x) \ dx$, $\int_{x_0}^{x_2} f(x) \ dx$ e $\int_{x_0}^b f(x) \ dx$ convergono.
+
 \newpage
 \part{Serie numeriche}
 Vogliamo dare significato a $\sum_{k = 0}^{+\infty} a_k$, dove $a_k$ è una successione, $a_k \in \mathbb{R}, k \in \mathbb{N}$. Chiamiamo \textbf{serie} la quantità $\sum_{k = 0}^{+\infty} a_k$ e $a_k$ è detto \textbf{termine generale della serie}. \\
