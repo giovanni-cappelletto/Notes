@@ -6844,17 +6844,89 @@ Sia $f: [a, b] \xrightarrow{} \mathbb{R}, f \in C^0[a, b]$ con $a, b \in \mathbb
     \int_a^b f(x) \ dx = \int_{g^{-1}(a)}^{g^{-1}(b)} f(g(t))g'(t) \ dt
 \end{equation*}
 
-%\noindent\textbf{ES.} Calcolare $\int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{\sin x}{\sin x + 2 \cos x} \ dx$. \\
-%Applichiamo la sostituzione consigliata $t = \tan\frac{x}{2} = g^{-1}(x) \implies g(t) = 2\arctan t$, che è suriettiva e strettamente crescente. Inoltre:
-%\begin{equation*}
-%    \tan\left(\frac{\pi}{3} \cdot \frac{1}{2}\right) = \tan\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{3} \qquad \qquad \tan\left(-\frac{\pi}{3} \cdot \frac{1}{2}\right) = \tan\left(-\frac{\pi}{6}\right) = -\frac{\sqrt{3}}{3}
-%\end{equation*}
+\noindent\textbf{ES.} Calcolare $\int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{\sin x}{\sin x + 2 \cos x} \ dx$. \\
+Applichiamo la sostituzione consigliata $t = \tan\frac{x}{2} = g^{-1}(x) \implies g(t) = 2\arctan t$, che è suriettiva e strettamente crescente. Inoltre:
+\begin{equation*}
+    \tan\left(\frac{\pi}{3} \cdot \frac{1}{2}\right) = \tan\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{3} \qquad \qquad \tan\left(-\frac{\pi}{3} \cdot \frac{1}{2}\right) = \tan\left(-\frac{\pi}{6}\right) = -\frac{\sqrt{3}}{3}
+\end{equation*}
 
-%\noindent Per cui possiamo riscrivere l'integrale come:
-%\begin{align*}
-%    \int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{\sin x}{\sin x + 2 \cos x} \ dx &= \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{\frac{2t}{1 + t^2}}{\frac{2t}{1 + t^2} + 2\frac{1 - t^2}{1 + t^2}} \cdot \frac{2}{1 +t ^2} \ dt \Bigg|_{t = \tan\frac{x}{2}} = \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{2t}{(t + 1 - t^2)(1 + t^2)} \ dt \Bigg|_{t = \tan\frac{x}{2}} \\
-%    &= \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} 
-%\end{align*}
+\noindent Per cui possiamo riscrivere l'integrale come:
+\begin{align*}
+    \int_{-\frac{\pi}{3}}^{\frac{\pi}{3}} \frac{\sin x}{\sin x + 2 \cos x} \ dx &= \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{\frac{2t}{1 + t^2}}{\frac{2t}{1 + t^2} + 2\frac{1 - t^2}{1 + t^2}} \cdot \frac{2}{1 +t ^2} \ dt \ \Bigg|_{t = \tan\frac{x}{2}} = \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{2t}{(t + 1 - t^2)(1 + t^2)} \ dt \ \Bigg|_{t = \tan\frac{x}{2}} \\ 
+\end{align*}
+
+\noindent Notiamo inoltre che $1 + t^2$ non ammette radici reali (e ha $\alpha = 0$ e $\beta = 1$), mentre $t + 1 - t^2 = 0$ ammette due radici reali e quindi:
+\begin{equation*}
+    (t + 1 - t^2) = \left(t - \frac{1 - \sqrt{5}}{2}\right)\left(t-  \frac{1 + \sqrt{5}}{2}\right) = (t - t_1)(t - t_2)
+\end{equation*}
+
+\noindent Scomponiamo quindi il denominatore in fratti semplici:
+\begin{equation*}
+    \frac{2t}{(t - t_1)(t - t_2)(1 + t^2)} = \frac{A}{t - t_1} + \frac{B}{t - t_2} + \frac{Ct + D}{1 + t^2}
+\end{equation*}
+\begin{equation*}
+    \frac{A(t - t_2)(1 + t^2) + B(t - t_1)(1 + t^2) + Ct(t + 1 - t^2) + D(t + 1 - t^2)}{(t - t_1)(t - t_2)(1 + t^2)}
+\end{equation*}
+\begin{equation*}
+    \frac{(A + At^2)(t - t_2) + (B + Bt^2)(t - t_1) + Ct^2 + Ct - Ct^3 + Dt + D - Dt^2}{(t - t_1)(t - t_2)(1 + t^2)}
+\end{equation*}
+\begin{equation*}
+    \frac{At - At_2 + At^3 - At^2t_2 + Bt - Bt_1 + Bt^3 - Bt^2t_1 + Ct^2 + Ct - Ct^3 + Dt + D - Dt^2}{(t - t_1)(t - t_2)(1 + t^2)}
+\end{equation*}
+\begin{equation*}
+    \frac{t^3(A + B - C) + t^2(-At_2 - Bt_1 + C - D) + t(A + B + C + D) - At_2 - Bt_1 + D}{(t - t_1)(t - t_2)(1 + t^2)}
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+        A + B - C = 0 \\
+        -At_2 - Bt_1 + C - D = 0 \\
+        A + B + C + D = 2 \\
+        -At_2 - Bt_1 + D = 0
+    \end{cases}
+\end{equation*}
+
+\noindent Dalla prima equazione otteniamo che $C = A + B$ e dalla quarta abbiamo che $D = At_2 + Bt_1$. Quindi prendendo la seconda equazione otteniamo che:
+\begin{align*}
+    -At_2 - Bt_1 + C - D &= -2At_2 - 2Bt_1 + A + B = A(1 - 2t_2) + B(1 - 2t_1) \\
+    &= A(1 - 1 - \sqrt{5}) + B(1 - 1 + \sqrt{5})  = -A\sqrt{5} + B\sqrt{5} = 0 \implies B = A
+\end{align*}
+
+\noindent Possiamo quindi riscrivere la prima equazione come $C = A + B = A + A = 2A$. Prendiamo ora la quarta equazione:
+\begin{align*}
+    D = A\left(\frac{1 + \sqrt{5}}{2}\right) + B\left(\frac{1 - \sqrt{5}}{2}\right) = A\left(\frac{1 + \sqrt{5}}{2}\right) + A\left(\frac{1 - \sqrt{5}}{2}\right) = A \implies D = A
+\end{align*}
+
+\noindent Dalla terza equazione invece otteniamo:
+\begin{align*}
+    2 &= A + B + C + D  \\
+    &= A + A +2A + A = 5A \implies A = \frac{2}{5}
+\end{align*}
+
+\noindent Riassumendo:
+\begin{equation*}
+    \begin{cases}
+        A = \frac{2}{5} \\
+        B = A = \frac{2}{5} \\
+        C = 2A = \frac{4}{5} \\
+        D = A = \frac{2}{5}
+    \end{cases}
+\end{equation*}
+
+\noindent Quindi:
+\begin{equation*}
+    \frac{2t}{(t - t_1)(t - t_2)(1 + t^2)} = \frac{\frac{2}{5}}{t - t_1} + \frac{\frac{2}{5}}{t - t_2} + \frac{\frac{4}{5}t + \frac{2}{5}}{1 + t^2}
+\end{equation*}
+\begin{align*}
+     \int \frac{2t}{(t + 1 - t^2)(1 + t^2)} \ dt &= \frac{2}{5}\int \frac{1}{t - \frac{1 - \sqrt{5}}{2}} \ dt + \frac{2}{5} \int \frac{1}{t - \frac{1 + \sqrt{5}}{2}}  \ dt + \frac{2}{5} \int \frac{2t}{1 + t^2} \ dt + \frac{2}{5} \int \frac{1}{1 + t^2} \ dt \\
+     &= \frac{2}{5}\left(\log\left|t - \frac{1 - \sqrt{5}}{2}\right| + \log\left|t - \frac{1 + \sqrt{5}}{2}\right| + \log|1 + t^2| + \arctan t + c \right) \\
+     &= -\frac{2}{5}\log|t + 1 - t^2| + \frac{2}{5}\log|1 + t^2| + \frac{2}{5}\arctan t + c
+\end{align*}
+
+\noindent Non ci resta che calcolare l'integrale definito:
+\begin{align*}
+    \int_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \frac{2t}{(t + 1 - t^2)(1 + t^2)} \ dt \ \Bigg|_{t = \tan\frac{x}{2}} &= \left[-\frac{2}{5}\log|t + 1 - t^2| + \frac{2}{5}\log|1 + t^2| + \frac{2}{5}\arctan t\right]_{-\frac{\sqrt{3}}{3}}^{\frac{\sqrt{3}}{3}} \\
+    &=  \frac{4}{5}\arctan\left(\frac{\sqrt{3}}{3}\right) - \frac{2}{5} \log\left|\frac{2 + \sqrt{3}}{2 - \sqrt{3}}\right|
+\end{align*}
 
 \subsection{Teorema - Integrale di Riemann per parti}
 Siano $f, g: [a, b] \xrightarrow{} \mathbb{R}$, $f, g \in C^1[a, b]$. Allora:
