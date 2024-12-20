@@ -7082,6 +7082,174 @@ Siano $f, g: (a, b] \xrightarrow{} (0, +\infty)$, $f, g$ Riemann-integrabili in 
 
 \noindent\textbf{NB!} In generale, in un intervallo del tipo $(a, b) - \{x_0\}$ va studiata la convergenza in $(a, x_1]$, in $x_1, x_0)$, in $(x_0, x_2]$ e in $[x_2, b)$, dove $a < x_1 < x_0 < x_2 < b$ e $\int_a^b f(t) \ dt$ converge se e solo se $\int_a^{x_1} f(x) \ dx$, $\int_{x_1}^{x_0} f(x) \ dx$, $\int_{x_0}^{x_2} f(x) \ dx$ e $\int_{x_0}^b f(x) \ dx$ convergono.
 
+\subsection{Integrali impropri su insiemi illimitati}
+Lavoriamo su insiemi $[a, +\infty), (-\infty, b], (-\infty, +\infty)$. \\
+
+\noindent\textbf{Def:} Sia $f: [a, +\infty) \xrightarrow{} \mathbb{R}$, $f$ sia Riemann-integrabile in $[a, x]$ per ogni $x > a$. Diremo che $f$ ha integrale improprio convergente in $[a, +\infty)$ se e solo se: 
+\begin{equation*}
+    \lim_{x \to +\infty} \left(\int_a^x f(t) \ dt \right) = l \in \mathbb{R}
+\end{equation*}
+
+\noindent Lo diremo divergente in $[a, +\infty)$ se e solo se:
+\begin{equation*}
+    \lim_{x \to +\infty} \left(\int_a^x f(t) \ dt\right) = \begin{cases}
+        +\infty \\ 
+        -\infty
+    \end{cases}
+\end{equation*}
+
+\noindent Lo diremo indeterminato in $[a, +\infty)$ se e solo se $\nexists \lim_{x \to +\infty} (\int_a^x f(t) \ dt)$. Nel primo caso (convergenza), scriviamo: 
+\begin{equation*}
+    l = \int_a^{+\infty} f(t) \ dt
+\end{equation*}
+
+\subsubsection{Condizione necessaria di convergenza - Teorema: 
+} Nelle ipotesi della definizione precedente ed inoltre se:
+\begin{equation*}
+    \lim_{t \to +\infty} f(t) = \begin{cases}
+        l \in \mathbb{R} - \{0\} \\
+        +\infty \\
+        -\infty
+    \end{cases}
+\end{equation*}
+
+\noindent si ha che $\int_a^{+\infty} f(t) \ dt$ è divergente.\\
+
+\noindent Per dimostrare il teorema precedente, utilizziamo la definizione di limite con $l \in \mathbb{R} - \{0\}$:
+\begin{equation*}
+    \forall \varepsilon > 0, \exists K_\varepsilon \in \mathbb{R} \ | \ f(t) > l - \varepsilon \qquad t > K_\varepsilon
+\end{equation*}
+
+\noindent Sia ora $l > 0$ e $\varepsilon = \frac{l}{2}$, allora $f(t) > \frac{l}{2} \qquad \forall t > K_\varepsilon$. Se poi $x > K_\varepsilon$, abbiamo che:
+\begin{equation*}
+    \int_{K_\varepsilon}^x f(t) \ dt > \frac{l}{2} \int_{K_\varepsilon}^x 1 \cdot dt = \frac{l}{2} (x - K_\varepsilon)
+\end{equation*}
+
+\noindent Dato che $\frac{l}{2} (x - K_\varepsilon) \to +\infty$ per $x \to +\infty$, allora per il teorema del confronto, l'integrale improprio è divergente. \\ 
+% Dimostrare il teorema anche negli altri casi
+
+\noindent\textbf{NB!} Dal teorema precedente segue che se $f(t)$ ammette limite $l$ a $+\infty$, l'unica possibilità per cui possa avere integrale improprio convergente a $+\infty$ è che $l = 0$ (ossia che $f(t)$ è infinitesima per $t \to +\infty$). Studieremo quindi la convergenza degli infinitesimi fondamentali a $+\infty$. \\
+
+\noindent Sia $\alpha > 0, a > 0$. Siccome:
+\begin{align*}
+    \int_a^x \frac{dt}{t^\alpha} &= \begin{cases}
+        \log|t| \ \bigg|_a^x & \qquad se \ \alpha = 1\\ \\
+        \dfrac{t^{1 - \alpha}}{1 - \alpha} \ \bigg|_a^x & \qquad se \ \alpha \neq 1, \alpha > 0
+    \end{cases} \\ 
+    &=
+    \begin{cases}
+        \log|x| - \log|a| & \qquad se \ \alpha = 1 \\ \\
+        \dfrac{x^{1 - \alpha}}{1 - \alpha} - \dfrac{a^{1 - \alpha}}{1 - \alpha} & \qquad se \ \alpha \neq 1, \alpha > 0
+    \end{cases}
+\end{align*}
+
+\noindent Ottengo che:
+\begin{align*}
+    \int_a^{+\infty} \frac{dt}{t^\alpha} = \begin{cases}
+        + \infty & \qquad se \ \alpha = 1 \ \ \ (diverge) \\
+        +\infty & \qquad se \ 0 < \alpha < 1 \ \ \ (diverge) \\
+        \dfrac{a^{1 - \alpha}}{\alpha - 1} & \qquad se \ \alpha > 1 \ \ \ (converge)
+    \end{cases}
+\end{align*}
+
+\subsubsection{Criterio del confronto}
+Siano $f, g: [a, +\infty) \xrightarrow{} \mathbb{R}$, $0 \leq f(t) \leq g(t) \qquad \forall t \in [a, +\infty)$. Inoltre, $f, g$ siano Riemann-integrabili in $[a, x] \qquad \forall x > a$. Allora:
+\begin{enumerate}
+    \item se $\int_a^{+\infty} g(t) \ dt$ converge, allora $\int_a^{+\infty} f(t) \ dt$ converge;
+    \item se $\int_a^{+\infty} f(t) \ dt$ diverge, allora $\int_a^{+\infty} g(t) \ dt$ diverge.
+\end{enumerate}
+
+\subsubsection{Criterio del confronto asintotico in $[a, +\infty)$}
+Siano $f, g: [a, +\infty) \xrightarrow{} (0, +\infty)$, $f, g$ Riemann-integrabili in $[a, x] \qquad \forall x > a$, $f, g$ infinitesime per $t \to +\infty$. Allora:
+\begin{enumerate}
+    \item se $\lim_{t \to +\infty} \frac{f(t)}{g(t)} = l \in \mathbb{R} - \{0\}$, allora $\int_a^{+\infty} f(t) \ dt$ converge se e solo se $\int_a^{+\infty} g(t) \ dt$ converge;
+    \item se $\lim_{t \to +\infty} \frac{f(t)}{g(t)} = 0$ (ovvero $f$ è infinitesimo di ordine superiore a $g$), allora se $\int_a^{+\infty} g(t) \ dt$ converge, allora $\int_a^{+\infty} f(t) \ dt$ converge e se $\int_a^{+\infty} f(t) \ dt$ diverge, allora $\int_a^{+\infty} g(t) \ dt$ diverge;
+    \item se $\lim_{t \to +\infty} \frac{f(t)}{g(t)} = +\infty$ (ovvero $f$ è infinitesimo di ordine inferiore a $g$), allora se $\int_a^{+\infty} f(t) \ dt$ converge, allora $\int_a^{+\infty} g(t) \ dt$ converge e se $\int_a^{+\infty} g(t) \ dt$ diverge, allora $\int_a^{+\infty} f(t) \ dt$ diverge.
+\end{enumerate}
+
+\noindent Anche in questo caso dobbiamo capire il comportamento di funzioni prive di ordine di infinitesimo per $t \to +\infty$. Studieremo:
+\begin{equation*}
+    \int_2^{+\infty} \frac{dt}{t(\log t)^\gamma} \qquad \gamma > 0
+\end{equation*}
+
+\noindent Poiché per $x > 2$ si ha che:
+\begin{align*}
+    \int_2^x \frac{dt}{t(\log t)^\gamma} &= \begin{cases}
+        \log(\log t) \ \bigg|_2^x & \qquad se \ \gamma = 1 \\ \\
+        \dfrac{(\log t)^{1 - \gamma}}{1 - \gamma} \ \bigg|_2^x & \qquad se \ \gamma \neq 1, \gamma > 0
+    \end{cases}\\
+    &=
+    \begin{cases}
+        \log(\log x) - \log(\log 2) & \qquad se \ \gamma = 1 \\ \\
+        \dfrac{(\log x)^{1 - \gamma}}{1 - \gamma} - \dfrac{(\log 2)^{1 - \gamma}}{1 - \gamma} & \qquad se \ \gamma \neq 1, \gamma > 0
+    \end{cases}
+\end{align*}
+
+\noindent Abbiamo che, per $\gamma = 1$, $\lim_{x \to +\infty} \int_2^x \frac{dt}{t\log t} = +\infty$ (diverge); per $\gamma \in (0, 1)$, $\lim_{x \to +\infty} \int_2^x \frac{dt}{t(\log t)^\gamma} = +\infty$ (diverge); per $\gamma > 1$, $\lim_{x \to +\infty} \int_2^x \frac{dt}{t(\log t)^\gamma} = \frac{(\log 2)^{1 - \gamma}}{\gamma - 1}$  (converge).\\
+Pertanto $\int_2^{+\infty} \frac{dt}{t(\log t)^\gamma}$ converge se e solo se $\gamma > 1$ e in tal caso vale $\frac{(\log 2)^{1 - \gamma}}{\gamma - 1}$.\\
+
+\noindent\textbf{ES.} Calcolare, se esiste, $\int_{-\infty}^{+\infty} te^{-t^2}$ con $t \in \mathbb{R}$. \\
+Notiamo subito che $f(t) > 0 \iff t > 0$ e che $f(t) < 0 \iff t < 0$. Inoltre, $f(t)$ è dispari:
+\begin{equation*}
+    f(-t) = -te^{-t^2} = -f(t) \qquad \forall t \in \mathbb{R}
+\end{equation*}
+
+\noindent Siccome $f$ cambia segno, dobbiamo studiare separatamente $\int_0^{+\infty} f(t) \ dt$ e $\int_{-\infty}^0 f(t) \ dt$. \\
+Dato che:
+\begin{equation*}
+    \lim_{t \to +\infty} \frac{te^{-t^2}}{\frac{1}{t^\alpha}} = \lim_{t \to +\infty} t^{\alpha + 1}e^{-t^2} = 0 \qquad \forall \alpha > 0
+\end{equation*}
+
+\noindent allora $f(t)$ ha ordine di infinitesimo superiore a $\frac{1}{t^\alpha} \qquad \forall \alpha > 0$ per $t \to +\infty$. Pertanto, ha ordine di infinitesimo superiore anche a $\frac{1}{t^\frac{3}{2}}$, che ha integrale improprio convergente. Capiamo quindi che $\int_0^{+\infty} te^{-t^2} \ dt$ converge (lo stesso ragionamento può essere applicato per $t \to -\infty$) Ma a cosa converge?
+\begin{equation*}
+    \lim_{x \to +\infty} -\frac{1}{2} \int_0^x -2te^{-t^2} \ dt = \lim_{x \to +\infty} \left(-\frac{1}{2}e^{-t^2}\right)_0^x = \lim_{x \to +\infty} \left(-\frac{1}{2}e^{-x^2} + \frac{1}{2}\right) = \frac{1}{2}
+\end{equation*}
+\begin{equation*}
+    \implies \int_0^{+\infty} te^{-t^2} \ dt = \frac{1}{2}
+\end{equation*}
+
+\noindent D'altra parte: 
+\begin{equation*}
+    \lim_{x \to -\infty} -\frac{1}{2} \int_x^0 -2te^{-t^2} \ dt = \lim_{x \to -\infty} \left(-\frac{1}{2}e^{-t^2}\right)_x^0 = \lim_{x \to -\infty} \left(-\frac{1}{2} + \frac{1}{2}e^{-x^2}\right) = -\frac{1}{2}
+\end{equation*}
+\begin{equation*}
+    \implies \int_{-\infty}^0 te^{-t^2} \ dt = -\frac{1}{2}
+\end{equation*}
+
+\noindent Quindi $\int_{-\infty}^{+\infty} f(t) \ dt = 0$. \\
+
+\noindent\textbf{ES.} Calcolare, se è convergente, $\int_0^{+\infty} \frac{dx}{(x^2 + 1)^\frac{3}{2}}$.\\
+Sia $f(x) = \frac{1}{(x^2 + 1)^\frac{3}{2}}$, $f: \mathbb{R} \xrightarrow{} \mathbb{R}$ ed è continua in $\mathbb{R}$ (perché composizione di funzioni continue su tutto $\mathbb{R}$). Inoltre, $f(x) > 0 \qquad \forall x \in \mathbb{R}$ (perché $x^2 + 1 \geq 1 > 0 \qquad \forall x \in \mathbb{R}$). Notiamo poi che $\lim_{x \to +\infty} f(x) = 0$ (quindi può converge per la condizione necessaria di convergenza). Studiamo ora l'ordine di infinitesimo:
+\begin{align*}
+    \lim_{x \to +\infty} \frac{f(x)}{\frac{1}{x^\alpha}} &= \lim_{x \to +\infty} \frac{x^\alpha}{(x^2 + 1)^\frac{3}{2}} = \lim_{x \to +\infty} \frac{x^\alpha}{(x^2(1 + x^{-2})^\frac{3}{2})} \\
+    &= \lim_{x \to +\infty} \frac{x^{\alpha - 3}}{(1 + x^{-2})^\frac{3}{2}} = \begin{cases}
+        +\infty & \qquad se \ \alpha > 3 \\
+        1 & \qquad se \ \alpha = 3 \\ 
+        0 & \qquad se \ 0 < \alpha < 3
+    \end{cases}
+\end{align*}
+
+\noindent Pertanto, $f(x) \to 0$ per $x \to +\infty$ di ordine $3$. Quindi, per il criterio del confronto asintotico, dato che $\int_1^{+\infty} \frac{dx}{x^3}$ converge, allora $\int_0^{+\infty} \frac{dt}{(x^2 + 1)^\frac{3}{2}}$ converge. \\
+Possiamo quindi calcolare il valore dell'integrale improprio. Per farlo, osserviamo che $f$ è continua in $[0, x] \qquad \forall x > 0$ e quindi:
+\begin{equation*}
+    \lim_{u \to +\infty} \int_0^u \frac{dx}{(x^2 + 1)^\frac{3}{2}} = \lim_{u \to +\infty} (F(u) - F(0))
+\end{equation*}
+
+\noindent dove $F$ è primitiva di $f$. Non ci resta quindi che calcolare $F$. Sia allora $g: (-\frac{\pi}{2}, \frac{\pi}{2})$, che associa $t$ a $\tan t$ e poniamo $x = g(t)$; $g$ è strettamente crescente e suriettiva; $g'(t) = 1 + \tan^2(t)$, allora:
+\begin{equation*}
+    \int \frac{dx}{(x^2 + 1)^\frac{3}{2}} = \int \frac{1 + \tan^2 t}{(1 + \tan^2 t)^\frac{3}{2}} \ dt \ \bigg|_{t = \arctan x} = \int \frac{dt}{(1 + \tan^2 t)^\frac{1}{2}}
+\end{equation*}
+
+Ma $1 + \tan^2 t = 1 + \frac{\sin^2 t}{\cos^2 t} = \frac{1}{\cos^2 t}$. Inoltre $t \in (-\frac{\pi}{2}, \frac{\pi}{2})$ da cui segue che $\cos t > 0$. Pertanto:
+\begin{equation*}
+    \int \frac{dx}{(x^2 + 1)^\frac{3}{2}} = \int \cos t \ dt \ \bigg|_{t = \arctan x} = \sin\arctan x + c \qquad c \in \mathbb{R}, \forall x \in \mathbb{R}
+\end{equation*}
+
+\noindent Quindi $F(u) = \sin\arctan u$, $F(0) = \sin(0) = 0$ e $\lim_{u \to +\infty} \sin(\arctan u) = \sin(\frac{\pi}{2}) = 1$:
+\begin{equation*}
+    \implies \int_0^{+\infty} \frac{dx}{(x^2 + 1)^\frac{3}{2}}
+\end{equation*}
+
 \newpage
 \part{Serie numeriche}
 Vogliamo dare significato a $\sum_{k = 0}^{+\infty} a_k$, dove $a_k$ è una successione, $a_k \in \mathbb{R}, k \in \mathbb{N}$. Chiamiamo \textbf{serie} la quantità $\sum_{k = 0}^{+\infty} a_k$ e $a_k$ è detto \textbf{termine generale della serie}. \\

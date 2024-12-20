@@ -171,6 +171,7 @@
 167. Come funziona l'integrale di Riemann per sostituzione? E quello per parti?
 168. Cosa sono gli integrali impropri?
 169. Enuncia il criterio del confronto e il criterio del confronto asintotico in $(a, b]$ per gli integrali impropri.
+170. Enuncia e dimostra la condizione necessaria di convergenza.
 
 ## Dimostrazioni
 
