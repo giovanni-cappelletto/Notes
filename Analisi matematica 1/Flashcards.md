@@ -172,6 +172,8 @@
 168. Cosa sono gli integrali impropri?
 169. Enuncia il criterio del confronto e il criterio del confronto asintotico in $(a, b]$ per gli integrali impropri.
 170. Enuncia e dimostra la condizione necessaria di convergenza.
+171. Che equazione generale hanno le equazioni differenziali lineari del I ordine? Qual è la soluzione delle equazioni differenziali lineari del I ordine? Dimostra perché si ottiene proprio questa soluzione.
+172. Che equazione generale hanno le equazioni differenziali del II ordine a coefficienti costanti?
 
 ## Dimostrazioni
 

@@ -297,7 +297,7 @@ Riprendiamo ora l'ipotesi di partenza e svolgiamo alcuni calcoli:
     2h^2 = n^2
 \end{equation*}
 
-\noindent Essendo $2h^2$ un numero pari, allora anche $n^2$ è un numero pari e, per lo stesso ragionamento fatto sul lemma, anche $n$ è pari. Arriviamo quindi ad una contraddizione: sia $m$, che $n$ sono numeri pari, ciò significa che $mcd(m,n) \neq 1$ (ovvero non sono numeri coprimi, ma sono in realtà divisibili tra loro). Possiamo così confermare il fatto che non esistono soluzioni razionali a $p(x)$, infatti $\sqrt{2} \notin \mathbb{Z}$. Più in generale, si può dire che $x^2 - p = 0$, dove $p$ è un numero primo, non ha soluzioni razionali ($\sqrt{p} \notin \mathbb{Q})$.\\
+\noindent Essendo $2h^2$ un numero pari, allora anche $n^2$ è un numero pari e, per lo stesso ragionamento fatto sul lemma, anche $n$ è pari. Arriviamo quindi ad una contraddizione: sia $m$, che $n$ sono numeri pari, ciò significa che $mcd(m,n) \neq 1$ (ovvero non sono numeri coprimi, ma sono in realtà divisibili tra loro). Possiamo così confermare il fatto che non esistono soluzioni razionali a $p(x)$, infatti $\sqrt{2} \notin \mathbb{Q}$. Più in generale, si può dire che $x^2 - p = 0$, dove $p$ è un numero primo, non ha soluzioni razionali ($\sqrt{p} \notin \mathbb{Q})$.\\
 
 \noindent\textbf{NB!} I numeri primi sono i numeri diversi da 1, con fattori solo 1 e se stessi.
 
@@ -331,7 +331,7 @@ Dimostriamo la seguente proposizione: $n! \geq n \quad \forall n \in \mathbb{N}$
     (n+1)! = (n+1)(n!)
 \end{equation*}
 
-\noindent Abbiamo già precedentemente dimostrato come $n! \leq n$. Moltiplichiamo ora a destra e a sinistra questa disequazione per $(n+1)$: il verso della disequazione non cambia, essendo che tale numero è sicuramente positivo. Otteniamo quindi:
+\noindent Abbiamo già precedentemente dimostrato come $n! \geq n$. Moltiplichiamo ora a destra e a sinistra questa disequazione per $(n+1)$: il verso della disequazione non cambia, essendo che tale numero è sicuramente positivo. Otteniamo quindi:
 
 \begin{equation*}
     (n+1)! = (n+1)(n!) \geq (n+1)n
@@ -2203,7 +2203,7 @@ Se invece:
     \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |f(x) - 0| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 \begin{equation*}
-    \forall \varepsilon > 0, \exists V_{x_0} \ intorno \ di \ x_0 : ||f(x)| - 0| - 0| < \varepsilon \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\}
+    \forall \varepsilon > 0, \exists V_{x_0} \ intorno \ di \ x_0 : ||f(x)| - 0| < \varepsilon \qquad \forall x \in (V_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 
 \noindent Dato che $||f(x)|| = |f(x)|$, allora $||f(x)| - 0| = |f(x) - 0|$. Possiamo quindi notare ancora una volta l'uguaglianza tra le due espressioni.\\
@@ -2242,10 +2242,10 @@ Per ipotesi invece:
     \forall \varepsilon > 0, \exists U_{x_0} \ intorno \ di \ x_0 : |[f(x)]^2| < \varepsilon \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 
-\noindent Dato che $|[f(x)]^2| < \varepsilon$, allora $|f(x)| < \sqrt{\varepsilon}$ (ovvero $- \sqrt{\varepsilon} < f(x) < \sqrt{\varepsilon}$). Per la proprietà 2) verificata precedentemente, se $lim_{x \to 0} |f(x)| = 0$, allora $\lim_{x \to 0} f(x) = 0$.
+\noindent Dato che $|[f(x)]^2| < \varepsilon$, allora $|f(x)| < \sqrt{\varepsilon}$ (ovvero $- \sqrt{\varepsilon} < f(x) < \sqrt{\varepsilon}$). Per la proprietà 2) verificata precedentemente, se $\lim_{x \to x_0} |f(x)| = 0$, allora $\lim_{x \to x_0} f(x) = 0$.
 
 \subsection{Teorema del limite della somma}
-Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $A \neq \varnothing$, $x_0 \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. \\
+Siano $f, g: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, con $A \neq \varnothing$, $x_0 \in \widetilde{\mathbb{R}}$ punto di accumulazione per $A$. \\
 Inoltre, assumo che $\lim_{x \to x_0} f(x) = l_1 \in \widetilde{\mathbb{R}}$ e che $\lim_{x \to x_0} g(x) = l_2 \in \widetilde{\mathbb{R}}$. Allora:
 
 \begin{enumerate}[label=\alph{enumi})]
@@ -2261,7 +2261,7 @@ Sia $\varepsilon > 0$, allora $\exists U'_{x_0}, U''_{x_0}$ intorni di $x_0$ tal
     |f(x) - l_1| < \varepsilon \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 \begin{equation*}
-    |f(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+    |g(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 
 \noindent Sia ora $W_{x_0} = (U'_{x_0} \cap U''_{x_0})$ un intorno di $x_0$, allora: 
@@ -2282,7 +2282,7 @@ Se $l_1 = +\infty$ e $l_2 \in \mathbb{R}$, allora significa che:
     V_{l_1} = (K, + \infty) \implies \forall K > 0, \exists U'_{x_0} \ intorno \ di \ x_0 : f(x) > K \qquad \forall x \in (U'_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 \begin{equation*}
-    V_{l_2} = (l_2 - \varepsilon, l_2 + \varepsilon) \implies \forall \varepsilon > 0, \exists U''_{x_0} \ intorno \ di \ x_0 : |f(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
+    V_{l_2} = (l_2 - \varepsilon, l_2 + \varepsilon) \implies \forall \varepsilon > 0, \exists U''_{x_0} \ intorno \ di \ x_0 : |g(x) - l_2| < \varepsilon \qquad \forall x \in (U''_{x_0} \cap A) - \{x_0\}
 \end{equation*}
 
 \noindent Se $x \in W_{x_0} = (U'_{x_0} \cap U''_{x_0})$, dato che $f(x) > K$ e $-\varepsilon < g(x) - l_2$, allora:
@@ -2682,7 +2682,7 @@ In questo caso, infatti, si ha una catena di composizione del tipo:
     \item $x_0 \in A$ e $f(x_0) = l$ e quindi $l \in \mathbb{R}$
 \end{enumerate}
 
-\noindent allora $\lim_{t \to t_0} f(\varphi(t)) = l$, dove ($f(\varphi(t))$ sarebbe $2^\frac{1}{t^2}$ nell'esempio di prima; in pratica, il valore del limite diventa il punto di accumulazione del limite successivo). \\
+\noindent allora $\lim_{t \to t_0} f(\varphi(t)) = l$, dove ($f(\varphi(t)$ sarebbe $2^\frac{1}{t^2}$ nell'esempio di prima; in pratica, il valore del limite diventa il punto di accumulazione del limite successivo). \\
 In pratica, l'assunzione $\lim_{t \to t_0} \varphi(t) = x_0$ ci sta dicendo che $\varphi(t)$ appartiene ad intorni di $x_0$ e, l'ipotesi 1., aggiunge che si tratta di intorni bucati, dato che $x_0$ non appartiene all'insieme immagine. L'ipotesi 2., invece, dice che la funzione esterna vale in intorni pieni, ovvero che è possibile calcolare $f(x_0)$.
 
 \subsubsection{Dimostrazione del teorema sui limiti per sostituzione}
@@ -2803,7 +2803,7 @@ Una successione è un'applicazione del tipo $f: A \subset \mathbb{N} \xrightarro
 \subsubsection{Punti di accumulazione in $\mathbb{N}$}
 \begin{itemize}
     \item $-1$, così come $x < 0, x \in \mathbb{R}$, non può essere un punto di accumulazione per $\mathbb{N}$ perché possiamo sempre trovare un $x +\delta < 0$ (per cui $(D(x, \delta) \cap \mathbb{N}) = \varnothing$);
-    \item Nemmeno $x = 0$ va bene perché se prendiamo per esempio $D(m, \frac{1}{2})$, si ha che $(D(0, \frac{1}{2}) \cap \mathbb{N}) = \varnothing$;
+    \item Nemmeno $x = 0$ va bene perché se prendiamo per esempio $D(0, \frac{1}{2})$, si ha che $(D(0, \frac{1}{2}) \cap \mathbb{N}) = \varnothing$;
     \item Neanche $m \in \mathbb{N}$ può andare bene perché, allo stesso modo di prima, se prendiamo come intorno $D(m, \frac{1}{2})$, l'intersezione tra questo e l'insieme dei numeri naturali risulta ancora essere vuota;
     \item Anche prendendo $x > 0, x \in \mathbb{R}$ non risolviamo il nostro problema. Infatti, questo numero $x$ sarà sicuramente compreso tra la sua parte intera e il numero successivo a questa. In simboli: $\lfloor x \rfloor < x < \lfloor x \rfloor + 1$. Per cui basterà prendere come raggio la metà della minima distanza tra un numero intero e l'altro, in simboli: $\delta = \frac{min(\Delta_1, \Delta_2)}{2}$ (dove $\Delta_1$ è la distanza tra $\lfloor x \rfloor$ e $x$, mentre $\Delta_2$ è la distanza tra $\lfloor x \rfloor + 1$ e $x$).
     \item Se invece prendiamo $x_0 = +\infty$, allora abbiamo un intorno del tipo $(K, +\infty)$. Quindi per la proprietà di Archimede, avremo sicuramente dei numeri naturali maggiori di $K$ (anche perché se non fosse così, significherebbe che $\mathbb{N}$ è superiormente limitato). Per cui otteniamo che $((K, + \infty) \cap \mathbb{N}) \neq \varnothing$ e che $x_0 = +\infty$ è un punto di accumulazione per $\mathbb{N}$.
@@ -2813,7 +2813,7 @@ Una successione è un'applicazione del tipo $f: A \subset \mathbb{N} \xrightarro
 
 \noindent Ne deriva inoltre il fatto che se abbiamo $A \subset \mathbb{N}$, con $A$ contenente finiti punti, allora $A$ non ha punti di accumulazione perché per qualsiasi punto $x_0$ preso, sia che $x_0 < 0$, sia che $x_0 \geq 0$, sarà sempre possibile prendere un raggio abbastanza piccolo tale che $D(x, \delta) \cap A = \varnothing$. Supponiamo per esempio che $A = (2, 7) \in \mathbb{N}$, allora se $x_0 = 2$, ma $\delta = \frac{1}{2}$ allora $D(x_0, \delta) \cap A = \varnothing$; se, per esempio, $4 < x_0 < 5$, allora se $\delta = \frac{min(\Delta_1, \Delta_2)}{2}$ (dove $\Delta_1$ è la distanza tra $\lfloor x \rfloor$ e $x$, mentre $\Delta_2$ è la distanza tra $\lfloor x \rfloor + 1$ e $x$), si ha che $D(x_0, \delta) \cap A = \varnothing$; se invece $x_0 < 2$ o $x_0 > 7$, allora basta prendere rispettivamente un $\delta < 2 - x_0$ o $\delta < x_0 - 7$.\\
 
-\noindent\textbf{ES.} Dimostriamo che $\lim_{n \to +\infty} = 0$.\\
+\noindent\textbf{ES.} Dimostriamo che $\lim_{n \to +\infty} \frac{1}{n} = 0$.\\
 Ciò significa che:
 \begin{equation*}
     \forall \varepsilon > 0, \exists K_\varepsilon \in \mathbb{R} : \left|\frac{1}{n} - 0\right| < \varepsilon \qquad \forall n \in (K_\varepsilon, +\infty) \cap \mathbb{N}
@@ -2844,7 +2844,7 @@ Si ha quindi che $\sin(a_n) = 1 \qquad \forall n \in \mathbb{N}$ e $\sin(b_n) = 
 
 \noindent\textbf{Teorema:}
 \begin{equation*}
-    \lim_{n +\infty} \left(1 + \frac{1}{n}\right)^n = e \in (2, 3)
+    \lim_{n \to +\infty} \left(1 + \frac{1}{n}\right)^n = e \in (2, 3)
 \end{equation*}
 
 \noindent dove $e$ è il \textbf{numero di Napier} (Nepero).
@@ -2923,7 +2923,7 @@ Infatti, dato che $k! \geq k$ (\textit{Dimostrazione 3.2.1} di questo pdf) e che
 
 \noindent\textbf{Proposizione 2:} $\lim_{k \to +\infty} a^\frac{1}{k} = 1 \qquad con \ a > 0$.\\
 Infatti, se $a = 1 \implies a^\frac{1}{k} = 1 \qquad \forall k \geq 1$ (in altre parole, si ottiene una successione costante).\\
-Se $a > 1 \implies a^\frac{1}{k} > 1$ dato che la radice k-esima è strettamente crescente. Sia ora:
+Se $a > 1 \implies a^\frac{1}{k} > 1$ dato che la radice k-esima è strettamente decrescente. Sia ora:
 \begin{equation*}
     b_k = a^\frac{1}{k} - 1 > 0 \implies a^\frac{1}{k} = (b_k + 1) \implies a = (b_k + 1)^k
 \end{equation*}
@@ -2970,7 +2970,7 @@ A questo punto, calcoliamo i risultati del primo e dell'ultimo termine della par
 \noindent\textbf{Proposizione 4:} $\lim_{k \to +\infty} \frac{a^k}{k!} = 0 \qquad \forall a \in \mathbb{R}$.\\
 Se $a = 0 \implies a^k = 0$ e $\frac{a^k}{k!} = 0 \qquad \forall k \in \mathbb{N}, k \geq 1$.\\
 Se $a \neq 0$, allora sia $K = \lfloor |a| \rfloor + 1 > |a|$ per la proprietà della parte intera. La tesi che vogliamo dimostrare è che $\lim_{k \to +\infty} \frac{|a^k|}{k!} = 0$ (che è equivalente a questa proposizione per l'\textit{Osservazione 2} a pagina 50 di questo pdf).\\
-In generale, sappiamo che vale la seguente proprietà $k = K + m$ con $m \in \mathbb{Z}$. Prendiamo ora il caso in cui $m \in \mathbb{N}$ e scriviamo quindi la tesi come:
+In generale, sappiamo che vale la seguente proprietà $k = K + m$ con $m \in \mathbb{Z}$. Prendiamo ora il caso in cui $m \in \mathbb{N}$ (ovvero il caso in cui $k > K$, tanto se $k \leq K$, abbiamo un semplice rapporto, mentre qui dobbiamo verificare se per $k > K$ diverge) e scriviamo quindi la tesi come:
 \begin{equation*}
     0 \leq \frac{|a^k|}{k!} = \frac{|a|^{K + m}}{(K + m)!} = \frac{|a|^{K + m}}{K!(K + 1)(K + 2)...(K + m)}
 \end{equation*}
@@ -3523,7 +3523,7 @@ Sia $f: \mathbb{R} \xrightarrow{} \mathbb{R}$. Dimostriamo che $f$ è una funzio
 
 \noindent Dimostriamo, innanzitutto, l'implicazione ($\Leftarrow$). Per definizione sappiamo che $f(x) = ax + b$, quindi $f(1) = a + b$, $f(0) = b$ e $f(1) - f(0) = a$. Ora è facile notare che:
 \begin{equation*}
-    f(x + y) = a(x + y) = b = ax + b + ay = f(x) + (f(1) - f(0))y
+    f(x + y) = a(x + y) + b = ax + b + ay = f(x) + (f(1) - f(0))y
 \end{equation*}
 
 \noindent Dimostriamo ora la controimplicazione ($\Rightarrow$). Consideriamo il caso $x = t$ e $y = 1$, allora per ipotesi:
@@ -3601,7 +3601,7 @@ Sia ora $U_{OBD}$ il triangolo $OBD$. Notiamo subito che $U_{OBD}$ contiene il s
 
 \noindent Mostriamo ora la seconda parte di proposizione, ovvero che $|\sin(x)| \leq |x| \qquad \forall x \in \mathbb{R}$. Sia $x \in (0, \frac{\pi}{2})$, allora, per la parte di proposizione precedentemente dimostrata, sappiamo che $0 < \sin(x) < x$. Sappiamo inoltre che se $x > 0$, allora $-x < 0$. Quindi possiamo estendere la nostra catena di disuguaglianze in: $-x < 0 < \sin(x) < x$, che significa $\sin(x) < |x| \qquad \forall x \in \mathbb{R}$.\\
 Sia ora $x \geq \frac{\pi}{2} \implies -x \leq -\frac{\pi}{2}$. Possiamo quindi dire che $x \geq \frac{\pi}{2} > 1 \geq \sin(x)$. Allo stesso modo: $\sin(x) \geq -1 > -\frac{\pi}{2} \geq -x$. Quindi per $x \geq \frac{\pi}{2}$ si ha che: $-x < \sin(x) < x$, cioè $|\sin(x)| < |x|$.\\
-Sia ora $x = 0$, allora $\sin(0) = 0 = x$. Per cui possiamo estendere quanto detto prima a $|\sin(x)| \leq |x| \qquad \forall x \leq 0$.\\
+Sia ora $x = 0$, allora $\sin(0) = 0 = x$. Per cui possiamo estendere quanto detto prima a $|\sin(x)| \leq |x| \qquad \forall x \geq 0$.\\
 Sia infine $x < 0$, allora $x = -|x|$ (infatti se $x < 0 \implies |x| = -x \iff x = -|x|$) e $\sin(x) = \sin(-|x|)$. Essendo però la funzione seno una funzione dispari, si ha che: $\sin(-|x|) = -\sin(|x|)$.\\
 Per quanto dimostrato precedentemente, se $|x| > 0$, allora abbiamo che $-|x| < \sin(x) < |x|$. Ora moltiplichiamo tutto per $-1$ ed otteniamo: $|x| > -\sin(|x|) > -|x| \implies |x| > \sin(-|x|) > -|x|$. Allora se $-|x| = x \implies -|x| < \sin(x) < |x| \qquad \forall x < 0$.\\
 In conclusione, si ha che: $|\sin(x)| \leq |x| \qquad \forall x \in \mathbb{R}$.\\
@@ -3682,7 +3682,7 @@ Prendiamo ora l'intorno $(0, \frac{\pi}{2})$. Se $x$ appartiene a questo intorno
 \end{equation*}
 
 \subsubsection{Esercizio 22}
-Calcolare $\lim_{x \to 0^+} \frac{\log(1 - 5x)(e^{3x} - 1)}{(\tan(x))^\alpha(2 + \cos(x)} = l$ al variare di $\alpha \in \mathbb{R}$.\\
+Calcolare $\lim_{x \to 0^+} \frac{\log(1 - 5x)(e^{3x} - 1)}{(\tan(x))^\alpha(2 + \cos(x))} = l$ al variare di $\alpha \in \mathbb{R}$.\\
 
 \noindent\textbf{NB!} L'esercizio è stato costruito correttamente nel chiederci solo il limite unilatero destro. Nel caso in cui ci avesse chiesto di calcolare un limite bilatero, ci sarebbe stato qualche problema perché avremmo avuto $\tan(x) < 0$ e quindi $(\tan(x))^\alpha$, che non è calcolabile.\\
 
@@ -3887,7 +3887,7 @@ Sia:
 
 \noindent Sia $x > 0$, allora $f(x) = \frac{\sin(x)}{x}$ è continua $\forall a \in \mathbb{R}$ perché ci troviamo di fronte ad un rapporto di funzioni continue. \\
 \noindent Sia $x < 0$, allora $f(x) = \log(1 + |x|)$. Abbiamo quindi $|x|$ (che è continua), $1 + |x|$ (anch'essa continua) e $\log(x)$ (che è continua in $(0, +\infty)$). Dato che $1 + |x| \geq 1$, allora $\log(1 + |x|)$ è continua $\forall x < 0, \forall a \in \mathbb{R}$.\\
-\noindent Sia $x = 0$, allora abbiamo che $f(0) = a$. Per la continuità in $0$, $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^-} = f(0)$, ma:
+\noindent Sia $x = 0$, allora abbiamo che $f(0) = a$. Per la continuità in $0$, $\lim_{x \to 0^+} f(x) = \lim_{x \to 0^-} f(x) = f(0)$, ma:
 \begin{equation*}
     \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1 \qquad \lim_{x \to 0^-} \log(1 + |x|) = 0
 \end{equation*}
@@ -4041,7 +4041,7 @@ Come le successioni, anche le derivate possono essere scritte secondo diverse no
 
 \noindent Basterebbe questo per dire che $0$ è punto cuspidale per $g(x)$, ma calcoliamo anche il limite sinistro:
 \begin{equation*}
-    \lim_{x \to 0^-} \frac{g(x) - g(x_0)}{x - 0} = \lim_{x \to 0^-} \frac{\sqrt{-x}}{-x} = \lim_{x \to 0^-} -\left(\frac{\sqrt{-x}}{-x}\right) = - \lim_{x \to 0^-} \frac{1}{\sqrt{-x}} = -\infty
+    \lim_{x \to 0^-} \frac{g(x) - g(x_0)}{x - 0} = \lim_{x \to 0^-} \frac{\sqrt{-x}}{x} = \lim_{x \to 0^-} -\left(\frac{\sqrt{-x}}{-x}\right) = - \lim_{x \to 0^-} \frac{1}{\sqrt{-x}} = -\infty
 \end{equation*}
 
 \noindent\textbf{NB!} Abbiamo dovuto "inserire" un "-" perché per semplificare l'espressione dobbiamo avere una quantità positiva e quindi $x < 0 \implies -x > 0$.
@@ -4146,7 +4146,7 @@ Sia $x > 0$, $a > 0$ con $a \neq 1$ e $f(x) = \log_a(x)$, allora $f'(x) = \frac{
 
 \noindent\textbf{NB!} Abbiamo potuto compiere operazioni su $x + h$ solo perché abbiamo posto che $h > -x$, altrimenti il logaritmo non sarebbe stato definito.\\
 
-\noindent\textbf{Osservazione:} $(log(e))' = \frac{1}{x} \qquad \forall x > 0$.\\
+\noindent\textbf{Osservazione:} $(\log(x))' = \frac{1}{x} \qquad \forall x > 0$.\\
 
 \noindent\textbf{Osservazione:} $(\log|x|)' = \frac{1}{x} \qquad \forall x \neq 0$ (e non $\frac{1}{|x|}$).\\
 Innanzitutto, sappiamo che $D_f: \mathbb{R} - \{0\}$ e riscriviamo la funzione:
@@ -4172,7 +4172,7 @@ Innanzitutto, sappiamo che $D_f: \mathbb{R} - \{0\}$ e riscriviamo la funzione:
     \lim_{h \to 0} \frac{\log|x + h| - \log|x|}{h} = \frac{1}{x} \lim_{h \to 0} \frac{\log\left(1 + \dfrac{h}{x}\right)}{\frac{h}{x}} = \frac{1}{x} \qquad \forall x \in \mathbb{R} \implies (\log|x|)' = \frac{1}{x} \qquad \forall x \neq 0
 \end{equation*}
 
-\noindent\textbf{Teorema:} Siano $f, g: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$ e $f, g$ derivabili in $x_0$. Allora $f + g$ e $f \cdot g$ sono derivabili in $x_0$ e, se $g(x_0) \neq 0$, allora $\frac{f}{g}$ è derivabile in $x_0$. Inolte:
+\noindent\textbf{Teorema:} Siano $f, g: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \in I$, $x_0$ interno ad $I$ e $f, g$ derivabili in $x_0$. Allora $f + g$ e $f \cdot g$ sono derivabili in $x_0$ e, se $g(x_0) \neq 0$, allora $\frac{f}{g}$ è derivabile in $x_0$. Inoltre:
 \begin{enumerate}
     \item $(f + g)'(x_0) = f'(x_0) + g'(x_0)$;
     \item $(f \cdot g)'(x_0) = f'(x_0)g(x_0) + f(x_0)g'(x_0)$;
@@ -4899,12 +4899,12 @@ Consideriamo d'ora in avanti $x_0 \in \mathbb{R}$. Dimostriamo ora il \textit{pu
 
 \noindent Allora si ha che:
 \begin{equation*}
-    0 \leq \frac{|f_1(x) \pm g(x)|}{|x - x_0|^q} \leq \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q}
+    0 \leq \frac{|f_1(x) \pm g_1(x)|}{|x - x_0|^q} \leq \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g_1(x)|}{|x - x_0|^q}
 \end{equation*}
 
 \noindent (tra la seconda e la terza espressione abbiamo sfruttato la seguente disuguaglianza triangolare: $|\alpha + \beta| \leq |\alpha| +|\beta|$ e $|\alpha - \beta| \leq |\alpha| + |-\beta| = |\alpha + \beta|$; $q = min(a, b)$). Come prima si ha che:
 \begin{equation*}
-    \lim_{x \to x_0} 0 = 0 \qquad \lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q} = 0
+    \lim_{x \to x_0} 0 = 0 \qquad \lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g_1(x)|}{|x - x_0|^q} = 0
 \end{equation*}
 
 \noindent (sappiamo che $\lim_{x \to x_0} \frac{|f_1(x)|}{|x - x_0|^q} + \frac{|g(x)|}{|x - x_0|^q} = 0$ perché, supponendo che $q = b$, ovvero $b < a$, allora $\lim_{x \to x_0} \frac{g(x)}{|x - x_0|^b} = 0$, mentre $f(x)$ può essere riscritta come $|x - x_0|^a$ e quindi si ha che $\lim_{x \to x_0} \frac{f(x)}{|x - x_0|^b} = \lim_{x \to x_0} \frac{|x - x_0|^a}{|x - x_0|^b} = \lim_{x \to x_0} |x - x_0|^{a - b} = 0$) per cui, per il teorema dei carabinieri, anche $\lim_{x \to x_0} \frac{|f_1(x) \pm g(x)|}{|x - x_0|^q} = 0$.\\
@@ -5038,7 +5038,7 @@ Dimostriamo ora il \textit{punto 7}. Sappiamo che $\exists U_{x_0}$ intorno di $
 \end{equation*}
 
 \subsubsection{Teorema della sostituzione degli infiniti di ordine inferiore}
-Siano $f, g, f_1, g_1$ infiniti per $x \to x_0$. Sia, inoltre, $f_1$ infinito di ordine inferiore a $f$ per $x \to x_0$ e $g_1$ infinito di ordine superiore a $g$ per $x \to x_0$. Allora:
+Siano $f, g, f_1, g_1$ infiniti per $x \to x_0$. Sia, inoltre, $f_1$ infinito di ordine inferiore a $f$ per $x \to x_0$ e $g_1$ infinito di ordine inferiore a $g$ per $x \to x_0$. Allora:
 \begin{equation*}
     \lim_{x \to x_0} \frac{f(x) + f_1(x)}{g(x) + g_1(x)} \ esiste \iff \lim_{x \to x_0} \frac{f(x)}{g(x)} \ esiste
 \end{equation*}
@@ -5395,7 +5395,7 @@ Sia $f(x) = \tan(x)$ definita in $x \in (-\frac{\pi}{2}, \frac{\pi}{2})$. Calcol
 \end{equation*}
 
 \subsubsection{Formula di $\tanh(x)$}
-Sia $\tanh(x) \vcentcolon = \frac{\sin(x)}{\cos(x)}$ con $x \in \mathbb{R}$. In maniera simile alla tangente, ma con il segno alternato abbiamo che:
+Sia $\tanh(x) \vcentcolon = \frac{\sinh(x)}{\cosh(x)}$ con $x \in \mathbb{R}$. In maniera simile alla tangente, ma con il segno alternato abbiamo che:
 \begin{equation*}
     \tanh(x) = x - \frac{x^3}{3} + \frac{2}{15}x^5 - \frac{17}{315}x^7 + \frac{62}{2835}x^9 + o(x^{10}) \ per \ x \to 0
 \end{equation*}
@@ -5406,7 +5406,7 @@ Sia $f(x) = \sin(x)$. Sappiamo che $\sin(0) = 0$, ora calcoliamo un po' di deriv
     & f'(x) = \cos(x) && f'(0) = 1 \\
     & f''(x) = -\sin(x) && f''(0) = 0 \\
     & f'''(x) = -\cos(x) && f'''(0) = -1 \\
-    & f'''(x) = \sin(x) && f'''(0) = 0
+    & f^{(4)}(x) = \sin(x) && f^{(4)}(0) = 0
 \end{align*}
 
 \noindent Notiamo che la derivata quarta della funzione originaria è proprio la funzione originaria. Quindi la derivata quinta della funzione originaria sarà uguale alla derivata prima, la derivata sesta della funzione originaria sarà uguale alla derivata seconda e così via. In altre parole, i valori ottenuti calcolando le derivate in $0$ continuano a ripetersi. Allora si ha che:
@@ -5474,7 +5474,7 @@ Dato che $g(t)$ è un esponenziale, sappiamo che esso è uguale a tutte le sue d
     &= e^3 \sum_{k = 0}^n \frac{(2x)^k}{k!} + o ((2x)^n) \ per \ x \to 0
 \end{align*}
 
-\noindent dove, per il teorema "viceversa" di Taylor, $e^3\sum_{k = 0}^n \frac{(2x)^k}{k!}$ è il polinomio di Taylor di $f(x) = e^{2x + 3}$ centrato in $x_0 = 0$, di ordine $n$.\\
+\noindent dove, per il teorema "viceversa" di Taylor, $e^3\sum_{k = 0}^n \frac{(2x)^k}{k!}$ è il polinomio di Taylor di $f(x) = e^{2x + 3}$ centrato in $x_0 = 0$, di grado $n$.\\
 
 \noindent In maniera più semplice, potevamo risolvere anche l'esercizio notando che $e^{2x + 3} = e^{2x} e^3$ e quindi bastava applicare la formula di Taylor per $e^{2x}$ e moltiplicarla a $e^3$.\\
 
@@ -5754,7 +5754,7 @@ Consideriamo ora la sottosuccessione $\{f(x_{n_k}) : k \in \mathbb{N}\}$ di $\{f
 Ricordando ora che $\lim_{k \to +\infty} x_{n_k} = l \in [a, b]$, abbiamo che $\lim_{k \to +\infty} f(x_{n_k}) = \lim_{x \to l} f(x) = f(l) \in Imm(f)$ per continuità di $f$.\\
 Per il teorema di unicità del limite, $f(l) = \lambda$ e quindi $\lambda = min(Imm(f))$ (dato che $\lambda$ era già l'estremo inferiore di $Imm(f)$, ma essendo uguale a $f(l)$ (un valore appartenente all'immagine stessa), concludiamo che $\lambda \in Imm(f)$), mentre $l$ è punto di minimo globale per $f$ in $[a, b]$.
 
-\subsubsection{Dimostrazione: esistenza del minimo globale}
+\subsubsection{Dimostrazione: esistenza del massimo globale}
 Sia $\Lambda = sup(Imm(f)) = sup\{f(x) : x \in [a, b]\}$. Allora $\exists \{x_n\} \subset Imm(f)$ tale che $\lim_{n \to +\infty} x_n = \Lambda$ (in altre parole, $x_n$ è la successione massimizzante).\\
 Siccome $x_n \in Imm(f) \implies \exists x_p \in [a, b] : f(x_p) = x_n$. Dato che $x_p \in [a, b]$, ovvero $a \leq x_p \leq b$, allora $x_p$ è una successione limitata. Per il teorema di Bolzano - Weierstrass, $\exists \{x_{p_k}\}$ sottosuccessione convergente di $x_{p}$, ossia $\lim_{k \to +\infty} x_{p_k} = l$.\\
 Dato che $a \leq x_p \leq b$, allora anche $a \leq x_{p_k} \leq b$ e, per il teorema del confronto, si ha che $l \in [a, b] = D_f$ (dato che $a \leq x_{p_k} \leq b$ è uguale a $a \leq l \leq b$ per $k \to +\infty$).\\
@@ -5855,7 +5855,7 @@ Pertanto $0 \leq f'(x_0) \leq 0 \implies f'(x_0) = 0$. \\
 Sia $f: [a, b] \xrightarrow{} \mathbb{R}$, $f$ continua in $[a, b]$, $f$ derivabile in $(a, b)$ e $f(a) = f(b)$. Allora $\exists \Bar{x} \in (a, b) : f'(\Bar{x}) = 0$.
 
 \subsubsection{Dimostrazione del teorema di Rolle}
-Per il teorema di Weierstrass: $f$ ha punti di minimo globale e punti di massimo globale in $[a, b]$, ovvero $\exists x_1, x_2 \in [a, b] : f(x_1) \leq f(x) \leq f(x_2) \qquad \forall x \in [a, b]$.\\
+Per il teorema di Weierstrass: $f$ ha punto di minimo globale e punto di massimo globale in $[a, b]$, ovvero $\exists x_1, x_2 \in [a, b] : f(x_1) \leq f(x) \leq f(x_2) \qquad \forall x \in [a, b]$.\\
 Se $x_1 = a$ e $x_2 = b$ (o viceversa), dato che $f(a) = f(b)$ (dove $f(a)$ è il minimo globale e $f(b)$ è il massimo globale), allora $f(x) = f(a) \qquad \forall x \in [a, b] \implies f'(x) = 0 \qquad \forall x \in (a, b)$.\\
 Se almeno uno tra $x_1$ e $x_2$ non è in un estremo di $[a, b]$: sia, ad esempio, $x_1 \in (a, b)$. Allora $x_1$ è interno ad $[a, b]$. Per la condizione necessaria di estremalità locale, si ha che $f'(x_1) = 0$. Nel caso di $x_2 \in (a, b)$ si replica lo stesso ragionamento.
 
@@ -5919,7 +5919,7 @@ Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $I$ intervallo, $x_0 \i
 \noindent Dimostriamo ora il punto \textit{1.} qui sopra. Sia $x \in (x_0 - \delta, x_0) \subset I$. Consideriamo quindi $[x, x_0] \implies f$ è continua in $[x, x_0]$ e derivabile in $(x, x_0)$.\\
 Per il teorema di Lagrange, $\exists \Bar{x} \in [x, x_0] : f(x_0) - f(x) = f'(\Bar{x})(x_0 - x) \geq 0$ (dato che $f'(\Bar{x}) \geq 0$ per ipotesi e $(x_0 - x) > 0$). Quindi $f(x_0) \geq f(x) \qquad \forall x \in (x_0 - \delta, x_0)$.\\
 Sia ora $x \in (x_0, x_0 + \delta)$. Consideriamo quindi $[x_0, x] \implies f$ è continua in $[x_0, x]$ e derivabile in $(x_0, x)$. \\
-Per il teorema di Lagrange, $\exists \Bar{x} \in [x_0, x] : f(x) - f(x_0) = f'(\Bar{x})(x - x_0) \leq 0$ (dato che $f'(\Bar{x}) \leq 0$ per ipotesi e $(x - x_0) > 0$). Quindi $f(x_0) \leq f(x) \qquad \forall x \in (x_0, x_0 + \delta)$.\\
+Per il teorema di Lagrange, $\exists \Bar{x} \in [x_0, x] : f(x) - f(x_0) = f'(\Bar{x})(x - x_0) \leq 0$ (dato che $f'(\Bar{x}) \leq 0$ per ipotesi e $(x - x_0) > 0$). Quindi $f(x) \leq f(x_0) \qquad \forall x \in (x_0, x_0 + \delta)$.\\
 In conclusione, $f(x) \leq f(x_0) \qquad \forall x \in (x_0 - \delta, x_0 + \delta)$.\\
 
 \noindent\textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$, $x_0 \in A$ è detto \textbf{punto di minimo (massimo) locale forte per $f$} se e solo se $\exists U_{x_0}$ intorno di $x_0$ tale che $f(x) \underset{(<)}{>} f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$.
@@ -5953,7 +5953,7 @@ Dato che $(x - x_0)^2 > 0$ per $x \neq x_0$, allora $f(x) \underset{(<)}{>} f(x_
 \subsubsection{Dimostrazione della condizione necessaria di estremalità del secondo ordine}
 Per la condizione necessaria di estremalità locale del primo ordine si ha che $f'(x_0) = 0$. Sia ora $x_0$ punto di minimo locale. Se avessimo $f''(x_0) < 0$, allora potremmo applicare la condizione sufficiente di estremalità del secondo ordine (punto \textit{a)}). Per cui $x_0$ sarebbe punto di massimo locale forte, ovvero $\exists U_{x_0}$ intorno di $x_0 : f(x) < f(x_0) \qquad \forall x \in (U_{x_0} \cap A) - \{x_0\}$. Ma in ipotesi abbiamo che $x_0$ è punto di minimo locale, ovvero $\exists V_{x_0}$ intorno di $x_0 : f(x_0) \leq f(x) \qquad \forall x \in (V_{x_0} \cap A)$.\\
 Se prendiamo però $x \in (V_{x_0} \cap U_{x_0}) \cap A$, allora $f(x) < f(x_0) \leq f(x)$ il che è chiaramente falso. \\
-Dato che siamo giunti ad una contraddizione, significa che la supposizione di partenza $f''(x_0) < 0$ è falsa, ovvero in realtà si ha che $f''(x_0) > 0$.
+Dato che siamo giunti ad una contraddizione, significa che la supposizione di partenza $f''(x_0) < 0$ è falsa, ovvero in realtà si ha che $f''(x_0) \geq 0$.
 
 \subsection{Teorema delle derivate successive}
 Sia $n \in \mathbb{N}, n \geq 1, f \in C^{n - 1}(I), I$ intervallo, $x_0 \in I, x_0$ interno ad $I$ (sono le ipotesi necessarie per applicare Taylor). Supponiamo ora che $\exists f^{(n)}(x_0)$ e che $f^{(k)}(x_0) = 0$ per $k = 1, 2, ..., n - 1$ e che $f^{(n)}(x_0) \underset{(<)}{>} 0$. Allora:
@@ -5964,7 +5964,7 @@ Sia $n \in \mathbb{N}, n \geq 1, f \in C^{n - 1}(I), I$ intervallo, $x_0 \in I, 
 
 \subsection{Periodicità}
 \textbf{Def:} Sia $f: A \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ e sia $T > 0$. Diremo che $T$ è un periodo per $f$ se e solo se $\forall x \in A$ si ha che $x + T \in A$ ed inoltre $f(x) = f(x + T)$.\\
-Sia $p = min\{T > 0 : T \ periodo \ per \ T\}$, se esiste. $p$ è detto \textbf{minimo periodo di $f$}. Se $f$ ha minimo periodo $p$ è detta \textbf{periodica di periodo $p$} (oppure ha periodo $p$).\\
+Sia $p = min\{T > 0 : T \ periodo \ per \ f\}$, se esiste. $p$ è detto \textbf{minimo periodo di $f$}. Se $f$ ha minimo periodo $p$ è detta \textbf{periodica di periodo $p$} (oppure ha periodo $p$).\\
 
 \noindent\textbf{Osservazioni:} 
 \begin{enumerate}
@@ -6031,7 +6031,7 @@ Diremo che $f$ è \textbf{concava in $I$} se e solo se $(-f)$ è convessa.\\
     \item $f'(x)$ è debolmente crescente (decrescente) in $I$.
 \end{enumerate}
 
-\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ derivabile due volte in $I$, $I$ intervallo. Allora $f$ è convessa (concava) in $I \iff f'(x) \underset{(\leq)}{\geq} 0 \qquad \forall x \in I$. \\
+\noindent\textbf{Teorema:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}$ derivabile due volte in $I$, $I$ intervallo. Allora $f$ è convessa (concava) in $I \iff f''(x) \underset{(\leq)}{\geq} 0 \qquad \forall x \in I$. \\
 
 \noindent\textbf{Punti di flesso - Def:} Sia $f: I \subset \mathbb{R} \xrightarrow{} \mathbb{R}, I$ intervallo. $x_0 \in I$ è \textbf{punto di flesso per $f$} se e solo se $\exists \delta > 0$ tale che $f$ sia convessa in $(x_0 - \delta, x_0)$ e $f$ sia concava in $(x_0, x_0 + \delta)$ o viceversa.\\
 
@@ -6072,10 +6072,10 @@ Prendiamo ad esempio:
 
 \noindent Capiamo quindi che $G(x)$ è primitiva di $\frac{1}{x}$ in $\mathbb{R} - \{0\}$, ma è falso che esista un costante reale $c$ tale che $G(x) - F(x) = c$, infatti:
 \begin{equation*}
-    G(x) - F(x) = \begin{cases*}
-        1 & \qquad se x > 0 \\
-        -3 & \qquad se x < 0
-    \end{cases*}
+    G(x) - F(x) = \begin{cases}
+        1 & \qquad se \ x > 0 \\
+        -3 & \qquad se \ x < 0
+    \end{cases}
 \end{equation*}
 
 \noindent ovvero su ogni sottointervallo $G(x) - F(x)$ è costante, ma le costanti tra i due intervalli possono essere diverse (si parla quindi di \textbf{funzione costante a tratti}). In generale, tutte e sole le primitive di $\frac{1}{x}$ in $\mathbb{R} - \{0\}$ sono:
@@ -6309,7 +6309,7 @@ Il trucco per risolvere questi esercizi è vedere se, attraverso un'opportuna so
     & \ \ \ = -a^2 \int \sqrt{\sin^2t}(\sin t) \ dt \ \bigg|_{t = \arccos(\frac{x}{a})} = -a^2 \int |\sin t| \sin t \ dt \ \bigg|_{t = \arccos(\frac{x}{a})} \\
     & \underset{\underset{\scriptstyle \Rightarrow  \sin t > 0}{t \in (0, \pi)}}{=} -a^2 \int \sin^2t \ dt \bigg|_{t = \arccos(\frac{x}{a})} = -a^2 \left(\frac{t}{2} + \frac{\sin(2t)}{4}\right) \bigg|_{t = \arccos(\frac{x}{a})} \\
     & \ \ \ = -a^2\left(\frac{t}{2} + \frac{\sin t\cos t}{2}\right) \bigg|_{t = \arccos(\frac{x}{a})} \\
-    & \ \ \implies \frac{-a^2}{2}\arccos\left(\frac{x}{a}\right) - \frac{ax}{2} \sin\left(\arcsin\left(\frac{x}{a}\right)\right) + c \qquad c \in \mathbb{R}
+    & \ \ \implies \frac{-a^2}{2}\arccos\left(\frac{x}{a}\right) - \frac{ax}{2} \sin\left(\arccos\left(\frac{x}{a}\right)\right) + c \qquad c \in \mathbb{R}
 \end{align*}
 
 \noindent Dato che $\arccos(\frac{x}{a}) \in (0, \pi)$:
@@ -7881,4 +7881,133 @@ Nel caso in cui $a = 1$, allora:
 
 \noindent Quindi $3n \leq (n + 1)!$ è vera per $n \geq 2$, ovvero per $n \geq 2$ si ha che $b_{n + 1} \leq b_n$. Allora per il criterio di von Leibniz possiamo concludere che $\sum_{n = 4}^{+\infty} a_n$ converge per $a = 1$.\\
 In conclusione: $\sum_{n = 4}^{+\infty} a_n$ converge $\iff -1 < a \leq 1$.
+
+\newpage
+\part{Equazioni differenziali ordinarie (cenni)}
+\textbf{Def:} Diremo equazione differenziale un'equazione che coinvolga $y(x), y'(x), y''(x), ..., y^{(n)}(x)$. L'ordine massimale delle derivate coinvolte $(n)$ è detto \textbf{ordine dell'equazione differenziale}.\\
+
+\noindent\textbf{Def:} Diremo \textbf{problema di Cauchy} alle condizioni iniziali la combinazione di un'equazione differenziale con le condizioni iniziali al punto $x_0$, ossia $y(x_0) = y_0; y'(x_0) = y_1; y''(x_0) = y^2; ...; y^{(n - 1)}(x_0) = y_{n - 1}$ con $y_0, y_1, ..., y_{n - 1} \in \mathbb{R}$.\\
+
+\noindent\textbf{ES.} Il problema $y'(x) = f(x)$ con $f \in C^0(I)$, $I$ intervallo è una riscrittura del problema di determinare le primitive di $f$ in $I$ e le soluzioni sono $y(x) = \int_{x_0}^x f(u) \ du + c$ con $c \in \mathbb{R}, x_0, x \in I$.
+
+\section{Equazioni differenziali lineari del I ordine}
+\textbf{Def:} Siano $a(x), b(x) \in C^0(I)$, $I$ intervallo. Diremo equazioni differenziali lineari del I ordine a coefficienti continui le equazioni: 
+\begin{equation}
+    y'(x) = a(x)y(x) + b(x) \qquad \qquad \forall x \in I
+    \label{eq:19}
+\end{equation}
+
+\noindent in cui $y(x)$ è l'incognita. \\
+Diremo che $y(x)$ è soluzione di (\ref{eq:19}) se e solo se $\begin{cases}
+    y(x) \ derivabile \ in \ I \\
+        y(x) \ verifica \ (\ref{eq:19}) \qquad \qquad \forall x \in I
+\end{cases}$
+
+\noindent\textbf{Teorema:} Siano $a(x), b(x) \in C^0(I)$, $I$ intervallo e sia $A(x)$ una primitiva di $a(x)$ in $I$. Allora tutte e solo le soluzioni di (\ref{eq:19}) sono: 
+\begin{equation}
+    y(x) = e^{A(x)} \int e^{-A(x)}b(x) \ dx
+    \label{eq:20}
+\end{equation}
+
+\noindent Dimostriamo il teorema qui sopra. Partiamo dall'implicazione. Sia $y(x)$ come in (\ref{eq:20}). Proviamo allora che (\ref{eq:19}) è vera. \\
+Notiamo innanzitutto che $e^{-A(x)} b(x)$ è continua in $I$. Quindi ammette primitive e $y(x)$ è derivabile in $I$:
+\begin{align*}
+    y'(x) &= a(x) e^{A(x)} \int e^{-A(x)}b(x) \ dx + e^{A(x)}(e^{-A(x)}b(x)) \\
+    &= a(x)y(x) + b(x) \qquad \forall x \in I
+\end{align*}
+
+\noindent Ossia $y(x)$ risolve (\ref{eq:19}). Dimostriamo ora la controimplicazione. Notiamo che $e^{-A(x)} > 0 \qquad \forall x \in I$. Sia $y(x)$ che verifica (\ref{eq:19}), allora:
+\begin{align*}
+    y'(x) = a(x)y(x) + b(x) & \iff e^{-A(x)}y'(x) = e^{-A(x)}a(x)y(x) + e^{-A(x)}b(x) & \forall x \in I \\
+    & \iff e^{-A(x)}y'(x) - e^{-A(x)}a(x)y(x) = e^{-A(x)}b(x) & \forall x \in I \\
+    & \iff e^{-A(x)}(y'(x) - a(x)y(x)) = e^{-A(x)}b(x) & \forall x \in I \\
+    & \iff (y(x)e^{-A(x)})' = e^{-A(x)}b(x) & \forall x \in I \\
+    & \iff y(x)e^{-A(x)} = \int e^{-A(x)}b(x) & \forall x \in I 
+\end{align*}
+\begin{equation*}
+    \implies y(x) = e^{A(x)} \int e^{-A(x)}b(x) \qquad \qquad  \forall x \in I
+\end{equation*}
+
+\noindent ossia $y(x)$ verifica (\ref{eq:20}). \\
+
+\noindent\textbf{ES.} Risolvere $y'(x) = \frac{xy(x) + 1}{x^2}$ con $x \neq 0$.\\
+Chiaramente si ha che:
+\begin{equation*}
+    y'(x) = \frac{xy(x) + 1}{x^2} = \frac{y(x)}{x} + \frac{1}{x^2} \implies a(x) = \frac{1}{x} \quad b(x) = \frac{1}{x^2}
+\end{equation*}
+
+\noindent Dato che le formule viste valgono solo su intervalli, ma $\mathbb{R} - \{0\}$ è un'unione di intervalli, dobbiamo risolvere l'esercizio sia in $(0, +\infty)$ che in $(-\infty, 0)$. Partiamo da $I = (0, +\infty)$. Notiamo subito che $a(x), b(x) \in C^0((0, +\infty))$. Troviamo una primitiva di $a(x)$:
+\begin{equation*}
+    \int a(x) \ dx = \int \frac{dx}{x} = \log|x| + c \underset{x > 0}{=} \log x + c \qquad c \in \mathbb{R}
+\end{equation*}
+
+\noindent Scegliamo per semplicità $A(x) = \log x$, allora:
+\begin{equation*}
+    y(x) = e^{\log x} \int e^{-\log x} \frac{dx}{x^2} = x \int \frac{dx}{x^3} = - \frac{1}{2x} + c_1x \qquad x > 0, \forall c_1 \in \mathbb{R}
+\end{equation*}
+
+\noindent Risolviamo ora l'esercizio in $(-\infty, 0)$. Analogamente a prima $A(x) = \log|x| = \log(-x)$, quindi:
+\begin{equation*}
+    y(x) = e^{\log(-x)} \int e^{-\log(-x)} \frac{dx}{x^2} = -x \int - \frac{dx}{x^3} = x \int \frac{dx}{x^3} = - \frac{1}{2x} + c_2x \qquad x < 0, \forall c_2 \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{ES.} Risolvere $\begin{cases}
+    y'(x) = \frac{1}{x} y(x) + \frac{1}{x^2} \\ 
+    y(1) = 3
+\end{cases}$
+
+\noindent Siccome $x_0 = 1 > 0 \implies$ utilizzo la risoluzione dell'intervallo $(0, +\infty)$ nell'esercizio precedente:
+\begin{equation*}
+    \begin{cases}
+        y(x) = -\frac{1}{2x} + c_1x \\
+        y(1) = 3
+    \end{cases}
+    \begin{cases}
+        -\frac{1}{2} + c_1 = 3 \\
+        y(1) = 3
+    \end{cases}
+    \begin{cases}
+        c_1 = \frac{7}{2} \\
+        y(1) = 3
+    \end{cases}
+\end{equation*}
+
+\noindent L'unica soluzione è quindi $y(x) = - \frac{1}{2x} + \frac{7}{2}x$.
+
+\section{Equazioni differenziali alle variabili separabili}
+Sono le equazioni differenziali del tipo $y'(x) = f(x)g(y(x))$ con $f \in C^0(I), g \in C^0(J)$ con $I, J$ intervalli. \\
+Osserviamo che se $\exists y_0 \in J$ tale che $g(y_0) = 0$, allora l'equazione diventa:
+\begin{equation*}
+    \begin{cases}
+        y'(x) = 0 \qquad \qquad per \ x \in I \\
+        y(x) = y_0
+    \end{cases}
+\end{equation*}
+
+\noindent da cui segue che $y(x) = y_0 \qquad \forall x \in I$.\\
+Se $g(y) \neq 0 \qquad \forall y \in J$, allora $y'(x) = f(x)g(y(x))$ se e solo se $\frac{y'(x)}{g(y(x))} = f(x) \qquad \forall x \in I$. Quindi:
+\begin{equation*}
+    \int \frac{y'(x)}{g(y(x))} \ dx = \int f(x) \ dx \qquad \forall x \in I
+\end{equation*}
+
+\noindent Sia ora $G(y)$ una primitiva di $\frac{1}{g(y)}$ in $J$. Allora $(G(y(x)))' = G'(y(x))y'(x) = \frac{y'(x)}{g(y(x)) } \qquad \forall x \in I$. Quindi si ha che $G(y(x)) = F(x) + c \quad c \in \mathbb{R}$, dove $F$ è una primitiva di $f$ in $I$ (\textbf{soluzione implicita del problema}). Se $G$ poi è invertibile in $J$, allora si ha che: $y(x) = G^{-1}(F(x) + c) \qquad x \in I, \forall c \in \mathbb{R}$. \\
+
+\noindent\textbf{ES.} Risolvere $y'(x) = 2(x + x(y(x))^2)$.\\
+Notiamo che $y'(x) = 2(x + x(y(x))^2) = 2x(1 + (y(x))^2)$ e quindi il problema è a variabili separabili con $f(x) = 2x$ e $g(y) = 1 + y^2$ con $I = J = \mathbb{R}$.\\
+Siccome $1 + y^2 \geq 1 > 0 \qquad \forall y \in \mathbb{R}$ (ovvero $g(y)$ non ha punti di azzeramento), allora abbiamo che:
+\begin{align*}
+    \frac{y'(x)}{1 + (y(x))^2} = 2x & \iff \int \frac{y'(x)}{1 + (y(x))^2} \ dx = \int 2x \ dx \\
+    &\iff \int \frac{du}{1 + u^2} \bigg|_{u = y(x)} = x^2 + c \qquad c \in \mathbb{R} \\
+    &\iff \arctan(y(x)) = x^2 + c \qquad c \in \mathbb{R}, x \ | \ x^2 + c \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)
+\end{align*}
+
+\noindent Allora $y(x) = \tan(x^2 + c)$ con $c \in \mathbb{R}, x \ | \ x^2 + c \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$.
+
+\section{Equazioni differenziali del II ordine a coefficienti costanti}
+\textbf{Def:} Le equazioni differenziali ordinarie del II ordine a coefficienti costanti sono del tipo:
+\begin{equation*}
+    y''(x) + ay'(x) + by(x) = f(x)
+\end{equation*}
+
+\noindent dove $a, b \in \mathbb{R}$, $f \in C^0(I)$, I intervallo.
 \end{document}
