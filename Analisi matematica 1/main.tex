@@ -8009,5 +8009,264 @@ Siccome $1 + y^2 \geq 1 > 0 \qquad \forall y \in \mathbb{R}$ (ovvero $g(y)$ non 
     y''(x) + ay'(x) + by(x) = f(x)
 \end{equation*}
 
-\noindent dove $a, b \in \mathbb{R}$, $f \in C^0(I)$, I intervallo.
+\noindent dove $a, b \in \mathbb{R}$, $f \in C^0(I)$, I intervallo.\\
+
+\noindent\textbf{Def:} Sia $L(y)$ l'operatore che agisce sulla funzione $y$ ottenendo la funzione $y'' + ay' + by$. Possiamo quindi scrivere l'equazione differenziale come $L(y) = f(x)$. \\
+
+\noindent\textbf{NB!} $L(y)$ è lineare, ovvero: $L(y_1 + y_2) = L(y_1) + L(y_2)$.\\
+
+\noindent\textbf{Teorema:} Sia $\Bar{y}(x)$ una soluzione di $L(y) = f(x)$ in $I$. Allora tutte e sole le soluzioni di $L(y) = f(x)$ in $I$ sono: 
+\begin{equation}
+    y(x) = \Bar{y}(x) + y_0(x)
+    \label{eq:21}
+\end{equation}
+
+\noindent e $y_0(x)$ varia su tutte le soluzioni di $L(y) = 0$.\\
+Dimostriamo ora il teorema qui sopra. Verifichiamo innanzitutto che (\ref{eq:21}) sia soluzione di $L(y) = f(x)$:
+\begin{equation*}
+    L(y) = L(\Bar{y}(x) + y_0(x)) = L(\Bar{y}(x)) + L(y_0(x)) = L(\Bar{y}(x)) + 0 = f(x)
+\end{equation*}
+
+\noindent Sia ora $y_1$ una soluzione di $L(y) = f(x)$. Allora $y_1 - \Bar{y}$ è soluzione di $L(y) = 0$. Infatti:
+\begin{equation*}
+    L(y_1 - \Bar{y}) = L(y_1) - L(\Bar{y}) = f - f = 0
+\end{equation*}
+
+\noindent Pertanto $\exists y_0$ soluzione di $L(y) = 0$ tale che $y_1 - \Bar{y} = y_0 \implies y_1 = y_0 + \Bar{y}$.
+
+\subsection{Problema omogeneo}
+Abbiamo $L(y) = y'' + ay' + by$ e dobbiamo determinare tutte le soluzioni di $L(y) = 0$, per cui:
+\begin{enumerate}
+    \item sia $p(\lambda) = \lambda^2 + a\lambda + b$ dove $a, b \in \mathbb{R}$ e $p(\lambda)$ è detto \textbf{polinomio caratteristico di $L(y) = 0$};
+    \item determinare le soluzioni di $p(\lambda) = 0$.
+\end{enumerate}
+
+\noindent Quindi a seconda dei casi si ha:
+
+\begin{table}[h]
+\begin{center}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{|>{\centering\arraybackslash}m{5cm}|>{\centering\arraybackslash}m{8.7cm}|}
+    \hline
+    $p(\lambda) = 0$ & Soluzioni di $L(y) = 0$ \\ \hline
+    $\lambda_1 \neq \lambda_2 \in \mathbb{R}$ & $y(x) = c_1e^{\lambda_1x} + c_2e^{\lambda_2x}$ con $c_1, c_2 \in \mathbb{R}$ \\ \hline
+    $\lambda_1 = \lambda_2 \in \mathbb{R}$ & $y(x) = c_1e^{\lambda_1x} + c_2xe^{\lambda_1x}$ con $c_1, c_2 \in \mathbb{R}$ \\ \hline
+    $\lambda_1, \lambda_2 \in \mathbb{C}$ $(\lambda_1 = \alpha + i\beta, \lambda_2 = \alpha - i\beta)$ & $y(x) = c_1e^{\alpha x}\cos(\beta x) + c_2e^{\alpha x}\sin(\beta x)$ con $c_1, c_2 \in \mathbb{R}$ \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\noindent\textbf{ES.} Prendiamo l'equazione dell'oscillatore armonico: $my''(x) + ky(x) = 0 \iff y''(x) + \frac{k}{m}y(x) = 0$ ($m > 0, k > 0$). Quindi risolviamo il problema omogeneo: $p(\lambda) = \lambda^2 + \frac{k}{m} = 0$, dove $\alpha = 0, \beta = \sqrt{\frac{k}{m}}$. Otteniamo quindi due soluzioni complesse: $\lambda_1 = i\sqrt{\frac{k}{m}}$ e $\lambda_2 = -i\sqrt{\frac{k}{m}}$. Quindi tutte e sole le soluzioni sono $y(x) = c_1\cos\left(\sqrt{\frac{k}{m}}x\right) + c_2\sin\left(\sqrt{\frac{k}{m}x}\right)$ con $x \in \mathbb{R}, c_1, c_2 \in \mathbb{R}$.\\
+
+\noindent\textbf{ES.} Risolvere $y''(x) + y'(x) = 0$. \\
+Prendiamo il polinomio caratteristico di $L(y) = 0$ e determiniamone le soluzioni:
+\begin{equation*}
+    p(\lambda) = \lambda^2 + \lambda = \lambda(\lambda + 1) = 0 \implies \lambda_1 = 0, \lambda_2 = -1
+\end{equation*}
+
+\noindent Quindi tutte e sole le soluzioni di $L(y) = 0$ sono $y(x) = c_1 + c_2 e^{-x}$ con $x \in \mathbb{R}, c_1, c_2 \in \mathbb{R}$.
+
+\subsection{Equazioni non omogenee $L(y) = f$ - Metodo di somiglianza}
+Sia $f \in C^0(I)$ con $I$ intervallo. Supponiamo che 
+\begin{equation}
+    f(x) = e^{\alpha x}[p_1(x)\cos(\beta x) + p_2(x)\sin(\beta x)]
+    \label{eq:22}
+\end{equation}
+
+\noindent dove $\alpha, \beta \in \mathbb{R}, p_1, p_2$ sono polinomi a coefficienti reali. Sia inoltre $m = max(grado(p_1), grado(p_2))$. Allora:
+\begin{enumerate}
+    \item se $\alpha \pm i\beta$ non sono soluzioni di $p(\lambda) = 0$ allora una soluzione particolare di $L(y) = 0$ è data da $\Bar{y}(x) = e^{\alpha x}(q_1(x)\cos(\beta x) + q_2(x)\sin(\beta x))$ dove $\alpha, \beta$ sono quelli in (\ref{eq:22}) e $q_1, q_2$ sono polinomi a coefficienti reali (da determinare) di grado $\leq m$;
+    \item se $\alpha \pm i\beta$ sono soluzioni di $p(\lambda) = 0$ di molteplicità $k \in \mathbb{N}$ (e $k \in \{1, 2\}$) allora $\Bar{y}(x) = x^k e^{\alpha x}(q_1(x)\cos(\beta x) + q_2(x)\sin(\beta x))$ con $q_1(x), q_2(x)$ polinomi a coefficienti reali (da determinare) di grado $\leq m$ e $\alpha, \beta$ sono quelli di (\ref{eq:22}).
+\end{enumerate}
+
+\noindent\textbf{ES.} Determinare tutte le soluzioni di $y''(x) + y'(x) = x^3 - 2$.\\
+\noindent Prendiamo il problema omogeneo associato: $y''(x) + y'(x) = 0 \implies p(\lambda) = \lambda^2 + \lambda = \lambda(\lambda + 1) = 0 \implies \lambda_1 = 0, \lambda_2 = -1$. Tutte e sole le soluzioni dell'omogenea associata sono quindi $y(x) = c_1 + c_2e^{-x}$ con $c_1, c_2 \in \mathbb{R}$. \\
+Determiniamo ora $\Bar{y}$ soluzione particolare di $f(x) = x^3 - 2$. Abbiamo quindi che:
+\begin{equation*}
+    x^3 - 2 = e^{\alpha x}(p_1(x)\cos(\beta x) + p_2(x)\sin(\beta x))
+\end{equation*}
+
+\noindent Ponendo quindi $\alpha = \beta = 0$, otteniamo $x^3 - 2 = p_1(x)$, mentre $p_2(x)$ è costante. Capiamo quindi che $m = max(grado(p_1), grado(p_2)) = 3$.\\
+Siccome $\alpha \pm i\beta = 0$ è soluzione di molteplicità $1$ di $p(\lambda) = 0$, allora per il metodo di somiglianza si ha che:
+\begin{align*}
+    \Bar(y)(x) &= xe^{0 \cdot x}[q_1(x)\cos(0x) + q_2(x)\sin(0x)] \\
+    &= xq_1(x) \quad con \ grado \ q \leq 3 \\
+    &= x(a_3x^3 + a_2x^2 + a_1x + a_0) 
+\end{align*}
+
+\noindent con $a_0, a_1, a_2, a_3 \in \mathbb{R}$ da determinare. Calcoliamo ora derivata prima e derivata seconda di $\Bar(y)$:
+\begin{equation*}
+    \Bar{y}'(x) = 4a_3x^3 + 3x^2a_2 + 2a_1x + a_0
+\end{equation*}
+\begin{equation*}
+    \Bar{y}''(x) = 12a_3x^2 + 6xa_2 + 2a_1 
+\end{equation*}
+
+\noindent Quindi il fatto che $L(\Bar{y}) = f(x) = x^3 - 2$ equivale a:
+\begin{equation*}
+    12a_3x^2 + 6xa_2 + 2a_1 + 4a_3x^3 + 3x^2a_2 + 2a_1x + a_0 = x^3 - 2
+\end{equation*}
+\begin{equation*}
+    \begin{cases}
+        4a_3 = 1 \\
+        12a_3 + 3a_2 = 0 \\
+        6a_2 + 2a_1 = 0 \\
+        2a_1 + a_0 = 2
+    \end{cases}
+    \begin{cases}
+        a_3 = \frac{1}{4} \\
+        a_2 = -1 \\
+        a_1 = 3 \\
+        a_0 = -8
+    \end{cases}
+\end{equation*}
+
+\noindent Quindi $\Bar{y}(x) = \frac{1}{4}x^4 - x^3 + 3x^2 - 8x$. Pertanto tutte e sole le soluzioni di $L(y) = f(x)$ sono date da $y(x) = c_1 + c_2e^{-x} + \frac{1}{4}x^4 - x^3 + 3x^2 - 8x$ con $c_1, c_2 \in \mathbb{R}$. \\
+
+\noindent\textbf{ES.} Risolvere $y''(x) + y'(x) + 2y(x) = 2\cos x$.\\
+Risolviamo il problema omogeneo associato: $p(\lambda) = \lambda^2 + \lambda + 2 = 0$ le cui soluzioni sono $\lambda_1 = - \frac{1}{2} + i\frac{\sqrt{7}}{2}$ e $\lambda_2 = -\frac{1}{2} - i\frac{\sqrt{7}}{2}$. Quindi tutte e sole le soluzioni di $L(y) = 0$ sono date da:
+\begin{equation*}
+    y(x) = c_1e^{-\frac{x}{2}}\cos\left(\frac{\sqrt{7}}{2}x\right) + c_2\sin\left(\frac{\sqrt{7}}{2}x\right) \qquad c_1, c_2 \in \mathbb{R}
+\end{equation*}
+
+\noindent Prendiamo ora il problema non omogeneo: $L(y) = f(x) = 2\cos x$. Siccome:
+\begin{equation*}
+    2\cos x = e^{0 \cdot x}(2\cos(1x) + 0\sin(1x)) \implies \alpha = 0, \beta = 1
+\end{equation*}
+
+\noindent Quindi $\alpha \pm i\beta = \pm i$ che non è soluzione di $p(\lambda) = 0$. Per il metodo di somiglianza abbiamo che:
+\begin{equation*}
+    \Bar{y}(x) = e^{0x}(q_1(x)\cos x + q_2(x)\sin x)
+\end{equation*}
+
+\noindent con $grado(q_1) = grado(q_2) \leq 0$. Allora $\Bar{y} = A\cos x + B\sin x$ con $A, B \in \mathbb{R}$. Quindi $\Bar{y}'(x) = -A\sin x + B\cos x$ e $\Bar{y}''(x) = -A\cos x - B\sin x$ e quindi abbiamo che $L(y) = f(x)$ se e solo se:
+\begin{equation*}
+    -A\cos x - B\sin x - A\sin x + B \cos + 2A \cos x + 2B \sin x = 2 \cos x
+\end{equation*}
+
+\noindent Quindi risolvendo il sistema:
+\begin{equation*}
+    \begin{cases}
+        -A + B + 2A = 2 \\
+        -B - A + 2B = 0
+    \end{cases}
+    \begin{cases}
+        A + B = 2 \\
+        A = B
+    \end{cases}
+    \begin{cases}
+        A = 1 \\
+        B = 1
+    \end{cases}
+\end{equation*}
+
+\noindent Quindi tutte e sole le soluzioni di $L(y) = f(x)$ sono $y(x) = e^{-\frac{x}{2}}(c_1\cos(\frac{\sqrt{7}}{2}x) + c_2\sin(\frac{\sqrt{7}}{2}x)) + \cos x + \sin x$ con $c_1, c_2 \in \mathbb{R}$.
+
+\subsection{Metodo di sovrapposizione}
+Abbiamo $y''(x) + ay'(x) + by(x) = f_1(x) + f_2(x)$ con $a, b \in \mathbb{R}, f_1, f_2 \in C^0(I)$. Allora:
+\begin{enumerate}
+    \item risolviamo $L(y) = 0$ (troviamo quindi una soluzione del tipo $c_1y_1(x) + c_2y_2(x)$ con $c_1, c_2 \in \mathbb{R}$);
+    \item determiniamo $\Bar{y}_1(x)$ soluzione particolare di $L(y) = f_1(x)$;
+    \item determiniamo $\Bar{y}_2(x)$ soluzione particolare di $L(y) = f_2(x)$;
+    \item tutte e sole le soluzioni di $L(y) = f_1(x) + f_2(x)$ sono date da $y(x) = c_1y_1(x) + c_2y_2(x) + \Bar{y}_1(x) + \Bar{y}_2(x)$.
+\end{enumerate}
+
+\noindent Segue dal fatto che $L$ è lineare, quindi: $L(y) = c_1L(y_1) + c_2L(y_2) + L(\Bar{y}_1) + L(\Bar{y}_2) = f_1(x) + f_2(x)$. \\
+
+\noindent\textbf{ES.} Risolvere $y''(x) + 2y'(x) = x + e^x$. \\
+Risolviamo il problema omogeneo: $p(\lambda) = \lambda^2 + 2\lambda = \lambda(\lambda + 2) = 0 \implies \lambda_1 = 0, \lambda_2 = -2$. Tutte e sole le soluzioni di $L(y) = 0$ sono quindi: $c_1 + c_2e^{-2x}$ con $c_1, c_2 \in \mathbb{R}$. \\
+Risolviamo ora $L(\Bar{y}_1) = f_1(x)$, quindi:
+\begin{equation*}
+    x = e^{0 x}[p_1(x)\cos(0x) + p_2(x)\sin(0x)] = p_1(x) \implies \alpha = \beta = 0
+\end{equation*}
+
+\noindent Abbiamo che $p_1(x) = x$, mentre $p_2(x) = c \implies m = 1$. Inoltre, $\alpha \pm i\beta = 0$ è soluzione di $p(\lambda) = 0$ di molteplicità $k = 1$. Allora:
+\begin{equation*}
+    \Bar{y}_1(x) = xe^{0x}[q_1(x)\cos(0x) + q_2\sin(0x)] = x(Ax + B) = Ax^2 + Bx
+\end{equation*}
+
+\noindent Calcoliamo ora derivata prima e seconda di $\Bar{y}_1(x)$:
+\begin{equation*}
+    \Bar{y}_1(x) = 2Ax + B
+\end{equation*}
+\begin{equation*}
+    \Bar{y}_1(x) = 2A
+\end{equation*}
+\begin{equation*}
+    \implies 2A + 2(2Ax + B) = x \iff 2A + 4Ax + B = x
+\end{equation*}
+
+\noindent da cui si ottiene che $A = \frac{1}{4}$ e $B = - \frac{1}{4}$. Quindi $\Bar{y}(x) = \frac{1}{4}x^2 - \frac{1}{4}x$. \\
+Prendiamo ora $L(\Bar{y}_2) = f_2(x)$, quindi:
+\begin{equation*}
+    e^x = e^{1x}[p_1(x)\cos(0x) + p_2\sin(0x)] \implies \alpha = 1, \beta = 0
+\end{equation*}
+
+\noindent Abbiamo che $p_1(x) = p_2(x) = 1$, $\alpha \pm i\beta = 1$ e $m = 0$. Siccome $p(1) \neq 0$, allora $\Bar{y}_2(x) = Ae^x$ con $A \in \mathbb{R}$. Da cui segue che $\Bar{y}_2' = Ae^x, \Bar{y}_2'' = Ae^x$. Pertanto $L(\Bar{y}_2) = f_2(x)$ se e solo se: $Ae^x + 2Ae^x = e^x \implies A = \frac{1}{3}$. Quindi $\Bar{y}_2(x) = \frac{1}{3}e^x$.\\
+Quindi per il metodo di sovrapposizione tutte e sole le soluzioni di $L(y) = f_1(x) + f_2(x)$ sono: 
+\begin{equation*}
+    y(x) = c_1 + c_2e^{-2x} + \frac{1}{4}x^2 - \frac{1}{4}x + \frac{1}{3}e^x \qquad con \ c_1, c_2 \in \mathbb{R}
+\end{equation*}
+
+\noindent\textbf{ES.} Risolvere $y''(x) + y(x) = x$ con $y(0) = y'(0) = 0$.\\
+Risolviamo innanzitutto il problema omogeneo: $p(\lambda) = \lambda^2 + 1 = 0 \implies \lambda_1 = i, \lambda_2 = -i$. Tutte e sole le soluzioni di $y''(x) + y(x) = 0$ sono quindi: $y(x) = c_1\cos x + c_2\sin x$ con $c_1, c_2 \in \mathbb{R}$. \\
+Utilizziamo ora il metodo di somiglianza per $L(y) = x$:
+\begin{equation*}
+    x = e^{\alpha x}(p_1(x)\cos(\beta x) + p_2(x)\sin(\beta x)) \implies \alpha = \beta = 0
+\end{equation*}
+
+\noindent Quindi $p_1(x) = x, p_2(x) = c \in \mathbb{R}$ e $m = 1$. Inoltre $\alpha \pm i\beta = 0$ e $p(0) \neq 0$. Una soluzione particolare di $L(y) = x$ è allora $\Bar{y}(x) = q_1(x) = Ax + B$ con $A, B \in \mathbb{R} \implies \Bar{y}'(x) = A, \Bar{y}''(x) = 0$:
+\begin{equation*}
+    L(\Bar{y}) = 0 + Ax + B = x \iff A = 1, B = 0
+\end{equation*}
+
+\noindent Quindi $\Bar{y}(x) = x$. In conclusione, tutte e sole le soluzioni di tipo $L(y) = x$ sono date da $y(x) = c_1\cos x + c_2\sin x + x$ con $c_1, c_2 \in \mathbb{R}$. \\
+Risolviamo ora il problema di Cauchy. Le condizioni iniziali erano: $y(0) = y'(0) = 0$, per cui calcoliamo la derivata prima: $y'(x) = -c_1\sin x + c_1\cos x + 1$. Quindi:
+\begin{equation*}
+    \begin{cases}
+        c_1 + 0 = 0 \\
+        c_2 + 1 = 0
+    \end{cases}
+    \begin{cases}
+        c_1 = 0 \\
+        c_2 = -1
+    \end{cases}
+\end{equation*}
+
+\noindent L'unica soluzione del problema di Cauchy è $y(x) = -\sin x + x$ con $x \in \mathbb{R}$.\\
+
+\noindent\textbf{ES.} Risolvere $\begin{cases}
+    y''(x) + 4y'(x) + 4y(x) = e^x \\
+    y(0) = 0; y'(0) = 1
+\end{cases}$
+Risolviamo il problema omogeneo: $p(\lambda) = \lambda^2 + 4\lambda + 4 = 0 \iff (\lambda + 2)^2 = 0 \implies \lambda = -2$. Quindi $y(x) = c_1xe^{-2x} + c_2 e^{-2x}$ con $c_1, c_2, x \in \mathbb{R}$.\\
+Prendiamo ora $f(x) = e^x$ e utilizziamo il metodo di somiglianza:
+\begin{equation*}
+    e^x = e^{1x}(p_1(x)\cos(0x) + p_2(x)\sin(0x)) \implies \alpha = 1, \beta = 0
+\end{equation*}
+
+\noindent Quindi $p_1(x) = 1, p_2(x) = c \in \mathbb{R}, m = 0$. Inoltre, $\alpha \pm i\beta = 1$ con $p(1) \neq 0$. Allora una soluzione particolare di $L(y) = f(x)$ è $\Bar{y}(x) = Ae^x$. Chiaramente $\Bar{y}'(x) = Ae^x$ e $\Bar{y}''(x) = Ae^x$. Quindi $L(\Bar{y}) = e^x$ equivale a $e^x = Ae^x + 4Ae^x + 4Ae^x = 9Ae^x \iff A = \frac{1}{9}$.\\
+Allora $\Bar{y}(x) = \frac{1}{9}e^x$. Di conseguenza tutte e sole le soluzioni di $L(y) = f(x)$ sono:
+\begin{equation*}
+    y(x) = c_1xe^{-2x} + c_2e^{-2x} + \frac{1}{9}e^x \qquad c_1, c_2, x \in \mathbb{R}
+\end{equation*}
+
+\noindent Risolviamo ora il problema di Cauchy. Calcoliamo allora la derivata prima di $y(x)$: $y'(x) = c_1e^{-2x} -2c_1xe^{-2x} - 2c_2e^{-2x} + \frac{1}{9}e^x$. Quindi:
+\begin{equation*}
+    \begin{cases}
+        c_2 + \frac{1}{9} = 0 \\
+        c_1 - 2c_2 + \frac{1}{9} = 1
+    \end{cases}
+    \begin{cases}
+        c_2 = - \frac{1}{9} \\
+        c_1 + \frac{1}{3} = 1 
+    \end{cases}
+    \begin{cases}
+        c_2 = - \frac{1}{9}\\
+        c_1 = \frac{2}{3}
+    \end{cases}
+\end{equation*}
+
+\noindent L'unica soluzione di Cauchy è quindi: $y(x) = \frac{2}{3}xe^{-2x} - \frac{1}{9}e^{-2x} + \frac{1}{9}e^x$ con $x \in \mathbb{R}$.
 \end{document}

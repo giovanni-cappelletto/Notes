@@ -174,6 +174,9 @@
 170. Enuncia e dimostra la condizione necessaria di convergenza.
 171. Che equazione generale hanno le equazioni differenziali lineari del I ordine? Qual è la soluzione delle equazioni differenziali lineari del I ordine? Dimostra perché si ottiene proprio questa soluzione.
 172. Che equazione generale hanno le equazioni differenziali del II ordine a coefficienti costanti?
+173. Come si risolve un problema omogeneo?
+174. Come si applica il metodo di somiglianza?
+175. Come si applica il metodo di sovrapposizione?
 
 ## Dimostrazioni
 
